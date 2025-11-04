@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ohaps7u6r2k0"]
+
+[ext_resource type="Texture2D" uid="uid://yfhrdv5jhiag" path="res://Assets/Sprites/Spritesheets/Vaw_Idle.png" id="1_1a3vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
+size = Vector2(4, 8)
+
+[node name="Vaw" type="CharacterBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_1a3vd")
+hframes = 4
+
+[node name="NormCol" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uvlj0")
+
+[node name="Sine" type="Area2D" parent="."]
+
+[node name="Lume" type="Area2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
