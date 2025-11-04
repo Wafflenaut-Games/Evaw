@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=15 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Spritesheets/Vaw_Run.png" id="1_1a3vd"]
+[ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
+[ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="2_8aoa4"]
 [ext_resource type="Texture2D" uid="uid://dqtsxn2tsopac" path="res://Assets/Sprites/Spritesheets/Vaw_Sine_Hor.png" id="2_kx6vr"]
 [ext_resource type="Texture2D" uid="uid://bb3yu2ht8eje0" path="res://Assets/Sprites/Spritesheets/Vaw_Lume_Hor.png" id="3_hy5rl"]
 
@@ -286,6 +288,9 @@ _data = {
 }
 
 [node name="Vaw" type="CharacterBody2D"]
+script = ExtResource("1_hy5rl")
+
+[node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("CompressedTexture2D_uvlj0")

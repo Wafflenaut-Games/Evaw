@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=4 uid="uid://be0wlssyhghrs"]
+
+[ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="1_mrvjg"]
+[ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="2_yt48e"]
+
+[node name="Lvl1" type="Node2D"]
+
+[node name="Vaw" parent="." instance=ExtResource("1_mrvjg")]
+
+[node name="Tileset" parent="." instance=ExtResource("2_yt48e")]
+tile_map_data = PackedByteArray("AAD8/wMAAQAAAAUAAAD8/wQAAQAAAAYAAAD8/wUAAQAAAAYAAAD9/wMAAQABAAUAAAD+/wMAAQABAAUAAAD//wMAAQABAAUAAAAAAAMAAQABAAUAAAABAAMAAQABAAUAAAACAAMAAQACAAUAAAACAAQAAQACAAcAAAD8/wYAAQABAAoAAAD9/wUAAQABAAcAAAD+/wUAAQABAAcAAAD//wUAAQABAAcAAAAAAAUAAQABAAcAAAABAAUAAQACAAcAAAD9/wQAAQADAAcAAAD+/wQAAQAEAAkAAAD//wQAAQAEAAkAAAAAAAQAAQADAAkAAAABAAQAAQADAAkAAAAHAAYAAQADAAMAAAAHAAUAAQADAAIAAAAGAAYAAQABAAMAAAAGAAUAAQAEAAQAAAAGAAQAAQAHAAEAAAAHAAQAAQAGAAQAAAA=")
