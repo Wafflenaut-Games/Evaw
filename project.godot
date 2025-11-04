@@ -14,7 +14,17 @@ config/name="Vaw"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=160
+window/size/viewport_height=120
+window/size/window_width_override=1440
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
