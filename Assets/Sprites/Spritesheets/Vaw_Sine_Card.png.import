@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sd51gtn3kmx8"
-path="res://.godot/imported/Vaw_to_Sine_Hor.png-728b56bd87e9c79b6585234b1b70140d.ctex"
+uid="uid://dqtsxn2tsopac"
+path="res://.godot/imported/Vaw_Sine_Card.png-09c1d7e55f3b2c9eac1eb8e6691d8fcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_to_Sine_Hor.png"
-dest_files=["res://.godot/imported/Vaw_to_Sine_Hor.png-728b56bd87e9c79b6585234b1b70140d.ctex"]
+source_file="res://Assets/Sprites/Spritesheets/Vaw_Sine_Card.png"
+dest_files=["res://.godot/imported/Vaw_Sine_Card.png-09c1d7e55f3b2c9eac1eb8e6691d8fcc.ctex"]
 
 [params]
 
