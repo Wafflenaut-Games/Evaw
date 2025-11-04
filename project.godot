@@ -12,7 +12,6 @@ config_version=5
 
 config/name="Vaw"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
@@ -21,6 +20,14 @@ window/size/viewport_height=120
 window/size/window_width_override=1440
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "yellow",
+"res://Scripts/": "purple"
+}
 
 [rendering]
 
