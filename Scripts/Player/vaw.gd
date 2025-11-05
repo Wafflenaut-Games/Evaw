@@ -139,15 +139,26 @@ func handle_anims() -> void:
 			sprite.flip_h = true
 		
 		sprite.rotation_degrees = 0
-	else:
-		if velocity.x > 0:
+	else: # Waves
+		# Diagonal
+		if velocity.y < 0 and velocity.x > 0:
 			sprite.rotation_degrees = 0
-		elif velocity.x < 0:
-			sprite.rotation_degrees = 180
-		elif velocity.y > 0:
-			sprite.rotation_degrees = 90
-		elif velocity.y < 0:
+		elif velocity.y < 0 and velocity.x < 0:
 			sprite.rotation_degrees = -90
+		elif velocity.y > 0 and velocity.x > 0:
+			sprite.rotation_degrees = 90
+		elif velocity.y > 0 and velocity.x < 0:
+			sprite.rotation_degrees = 180
+		else:
+			# Cardinal
+			if velocity.x > 0:
+				sprite.rotation_degrees = 0
+			elif velocity.x < 0:
+				sprite.rotation_degrees = 180
+			elif velocity.y > 0:
+				sprite.rotation_degrees = 90
+			elif velocity.y < 0:
+				sprite.rotation_degrees = -90
 		
 		sprite.flip_h = false
 	
@@ -159,6 +170,16 @@ func handle_anims() -> void:
 		else:
 			ap.play("idle")
 	elif form == "sine":
-		ap.play("sine_card")
+		if not velocity.y == 0 and not velocity.x == 0:
+			ap.play("sine_dia")
+		elif velocity.y == 0 and velocity.x == 0:
+			ap.play("")
+		else:
+			ap.play("sine_card")
 	elif form == "lume":
-		ap.play("lume_card")
+		if not velocity.y == 0 and not velocity.x == 0:
+			ap.play("lume_dia")
+		elif velocity.y == 0 and velocity.x == 0:
+			ap.play("")
+		else:
+			ap.play("lume_card")

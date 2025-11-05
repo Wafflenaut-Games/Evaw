@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=19 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Spritesheets/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="2_8aoa4"]
 [ext_resource type="Texture2D" uid="uid://dqtsxn2tsopac" path="res://Assets/Sprites/Spritesheets/Vaw_Sine_Card.png" id="2_kx6vr"]
 [ext_resource type="Texture2D" uid="uid://bb3yu2ht8eje0" path="res://Assets/Sprites/Spritesheets/Vaw_Lume_Card.png" id="3_hy5rl"]
+[ext_resource type="Texture2D" uid="uid://bphadb2i0h4fs" path="res://Assets/Sprites/Spritesheets/Vaw_Lume_Dia.png" id="6_snyf7"]
+[ext_resource type="Texture2D" uid="uid://unyac6scchjk" path="res://Assets/Sprites/Spritesheets/Vaw_Sine_Dia.png" id="7_ssfky"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uvlj0"]
 load_path = "res://.godot/imported/Vaw_Idle.png-632672daaee0cd69b2e6a8ff8ccc64a1.ctex"
@@ -278,13 +280,121 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_nfhue"]
+resource_name = "lume_dia"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_snyf7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_3akl4"]
+resource_name = "sine_dia"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_ssfky")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kx6vr"]
 _data = {
 &"RESET": SubResource("Animation_uvlj0"),
 &"idle": SubResource("Animation_kx6vr"),
 &"lume_card": SubResource("Animation_llipg"),
+&"lume_dia": SubResource("Animation_nfhue"),
 &"run": SubResource("Animation_hy5rl"),
-&"sine_card": SubResource("Animation_8aoa4")
+&"sine_card": SubResource("Animation_8aoa4"),
+&"sine_dia": SubResource("Animation_3akl4")
 }
 
 [node name="Vaw" type="CharacterBody2D"]
