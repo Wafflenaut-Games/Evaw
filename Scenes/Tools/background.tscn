@@ -1,10 +1,8 @@
-[gd_scene format=3 uid="uid://dfs1exwbyuunj"]
+[gd_scene load_steps=2 format=3 uid="uid://dfs1exwbyuunj"]
 
-[node name="Background" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="1_lysia"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1050.0
-offset_top = -779.0
-offset_right = 1002.0
-offset_bottom = 804.0
-color = Color(0, 0, 0, 1)
+[node name="TentativeBackg" type="Sprite2D"]
+position = Vector2(5.5002704, 12.999977)
+scale = Vector2(16.176666, 15.486667)
+texture = ExtResource("1_lysia")
