@@ -18,6 +18,8 @@ var grav
 var spd
 var form = "norm"
 var awaiting_dir = false
+var sine_used = false
+var lume_used = false
 
 #endregion
 
@@ -25,6 +27,7 @@ var awaiting_dir = false
 func _physics_process(delta: float) -> void:
 	# Waveforms
 	forms()
+	reset_uses()
 	wave_spds()
 	wave_dir(delta)
 	
@@ -42,12 +45,14 @@ func _physics_process(delta: float) -> void:
 
 func forms() -> void:
 	if form == "norm":
-		if Input.is_action_just_pressed("sine"):
+		if Input.is_action_just_pressed("sine") and sine_used == false:
 			form = "sine"
+			sine_used = true
 			velocity = Vector2(0, 0)
 			awaiting_dir = true
-		elif Input.is_action_just_pressed("lume"):
+		elif Input.is_action_just_pressed("lume") and lume_used == false:
 			form = "lume"
+			lume_used = true
 			velocity = Vector2(0, 0)
 			awaiting_dir = true
 	elif form == "sine":
@@ -58,6 +63,12 @@ func forms() -> void:
 		if Input.is_action_just_released("lume"):
 			form = "norm"
 			velocity = Vector2(0, 0)
+
+
+func reset_uses() -> void:
+	if is_on_floor():
+		sine_used = false
+		lume_used = false
 
 
 func wave_spds() -> void:
