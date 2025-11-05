@@ -7,10 +7,10 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite
 
 const SPEED = 3000.0
-const SINE_SPD = 4000.0
+const SINE_SPD = 2000.0
 const LUME_SPD = 5000.0
-const JUMP_VELOCITY = -200.0
-const GRAV = 500.0
+const JUMP_VELOCITY = -160.0
+const GRAV = 570.0
 const F_GRAV = 750.0 # Fall gravity
 
 var direction
