@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=4 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="1_mrvjg"]
+[ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="1_yt48e"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="2_yt48e"]
 
 [node name="Lvl1" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_yt48e")]
 
 [node name="Vaw" parent="." instance=ExtResource("1_mrvjg")]
 position = Vector2(56, 22)

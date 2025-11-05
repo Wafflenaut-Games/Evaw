@@ -131,15 +131,34 @@ func is_falling() -> bool:
 
 
 func handle_anims() -> void:
+	# Sprite Transformations
 	if form == "norm":
-		# Flip
 		if direction > 0:
 			sprite.flip_h = false
 		elif direction < 0:
 			sprite.flip_h = true
 		
-		# Animations
+		sprite.rotation_degrees = 0
+	else:
+		if velocity.x > 0:
+			sprite.rotation_degrees = 0
+		elif velocity.x < 0:
+			sprite.rotation_degrees = 180
+		elif velocity.y > 0:
+			sprite.rotation_degrees = 90
+		elif velocity.y < 0:
+			sprite.rotation_degrees = -90
+		
+		sprite.flip_h = false
+	
+	
+	# Animations
+	if form == "norm":
 		if direction:
 			ap.play("run")
 		else:
 			ap.play("idle")
+	elif form == "sine":
+		ap.play("sine_card")
+	elif form == "lume":
+		ap.play("lume_card")

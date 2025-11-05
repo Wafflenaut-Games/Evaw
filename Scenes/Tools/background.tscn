@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfs1exwbyuunj"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1050.0
+offset_top = -779.0
+offset_right = 1002.0
+offset_bottom = 804.0
+color = Color(0, 0, 0, 1)
