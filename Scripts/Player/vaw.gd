@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite
+@onready var norm_col: CollisionShape2D = $NormCol
+@onready var sine_col: CollisionShape2D = $Sine/CollisionShape2D
+@onready var lume_col: CollisionShape2D = $Lume/CollisionShape2D
 
 const SPEED = 3000.0
 const SINE_SPD = 2000.0
@@ -26,7 +29,8 @@ var lume_used = false
 
 func _physics_process(delta: float) -> void:
 	# Waveforms
-	forms()
+	formshift()
+	form_collision()
 	reset_uses()
 	wave_spds()
 	wave_dir(delta)
@@ -43,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func forms() -> void:
+func formshift() -> void:
 	if form == "norm":
 		if Input.is_action_just_pressed("sine") and sine_used == false:
 			form = "sine"
@@ -63,6 +67,21 @@ func forms() -> void:
 		if Input.is_action_just_released("lume"):
 			form = "norm"
 			velocity = Vector2(0, 0)
+
+
+func form_collision() -> void:
+	if form == "norm":
+		norm_col.disabled = false
+		sine_col.disabled = true
+		lume_col.disabled = true
+	elif form == "sine":
+		norm_col.disabled = true
+		sine_col.disabled = false
+		lume_col.disabled = true
+	elif form == "lume":
+		norm_col.disabled = true
+		sine_col.disabled = true
+		lume_col.disabled = false
 
 
 func reset_uses() -> void:
