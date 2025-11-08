@@ -403,8 +403,11 @@ script = ExtResource("1_hy5rl")
 texture = SubResource("CompressedTexture2D_uvlj0")
 hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="NormCol" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvlj0")
+
+[node name="WaveCol" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -4, -4, -1, -4, 1, -1, 4, 1, 4, 4, 1, 4, -1, 1, -4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

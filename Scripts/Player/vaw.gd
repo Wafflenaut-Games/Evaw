@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite
+@onready var norm_col: CollisionShape2D = $NormCol
+@onready var wave_col: CollisionPolygon2D = $WaveCol
 
 const SPEED = 3000.0
 const SINE_SPD = 2000.0
@@ -69,10 +71,16 @@ func formshift() -> void:
 func form_collision() -> void:
 	if form == "norm":
 		collision_mask = 0b00001111
+		norm_col.disabled = false
+		wave_col.disabled = true
 	elif form == "sine":
 		collision_mask = 0b00001001
+		norm_col.disabled = true
+		wave_col.disabled = false
 	elif form == "lume":
 		collision_mask = 0b00000101
+		norm_col.disabled = true
+		wave_col.disabled = false
 
 
 func reset_uses() -> void:
