@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var wave_col: CollisionPolygon2D = $WaveCol
 @onready var coyote_timer: Timer = $"Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Jump Timers/JBufferTimer"
+@onready var dir_choose_timer: Timer = $DirChooseTimer
+
 
 const SPEED = 3000.0
 const SINE_SPD = 2000.0
@@ -16,6 +18,7 @@ const LUME_SPD = 5000.0
 const JUMP_VELOCITY = -160.0
 const GRAV = 570.0
 const F_GRAV = 750.0 # Fall gravity
+
 
 var direction
 var grav
@@ -26,6 +29,11 @@ var sine_used = false
 var lume_used = false
 var coyote_time = false
 var jump_buffering = false
+var transforming = false
+var wave_dir = ""
+var wave_dia = false
+var no_x_wdir = false
+var no_y_wdir = false
 
 #endregion
 
@@ -35,8 +43,8 @@ func _physics_process(delta: float) -> void:
 	formshift()
 	form_collision()
 	reset_uses()
-	wave_spds()
-	wave_dir(delta)
+	wave_spds(delta)
+	wave_direction()
 	
 	# Movement
 	gravity(delta)
@@ -58,19 +66,23 @@ func formshift() -> void:
 			form = "sine"
 			sine_used = true
 			velocity = Vector2(0, 0)
-			awaiting_dir = true
+			dir_choose_timer.start()
+			transforming = true
 		elif Input.is_action_just_pressed("lume") and lume_used == false:
 			form = "lume"
 			lume_used = true
 			velocity = Vector2(0, 0)
-			awaiting_dir = true
+			dir_choose_timer.start()
+			transforming = true
 	elif form == "sine":
 		if Input.is_action_just_released("sine"):
 			form = "norm"
+			wave_dir = ""
 			velocity = Vector2(0, 0)
 	elif form == "lume":
 		if Input.is_action_just_released("lume"):
 			form = "norm"
+			wave_dir = ""
 			velocity = Vector2(0, 0)
 
 
@@ -95,27 +107,77 @@ func reset_uses() -> void:
 		lume_used = false
 
 
-func wave_spds() -> void:
+func wave_spds(delta) -> void:
+	# Check for diagonal
+	if wave_dir.length() > 1:
+		wave_dia = true
+	else:
+		wave_dia = false
+	
+	# Set speeds
 	if form == "sine":
-		spd = SINE_SPD
+		if not wave_dia:
+			spd = SINE_SPD
+		else:
+			spd = sqrt(2) * SINE_SPD
 	elif form == "lume":
-		spd = LUME_SPD
-
-
-func wave_dir(delta) -> void:
-	if awaiting_dir == true:
-		if Input.is_action_just_pressed("up"):
-			velocity.y = -spd * delta
-			awaiting_dir = false
-		if Input.is_action_just_pressed("down"):
-			velocity.y = spd * delta
-			awaiting_dir = false
-		if Input.is_action_just_pressed("left"):
-			velocity.x = -spd * delta
-			awaiting_dir = false
-		if Input.is_action_just_pressed("right"):
+		if not wave_dia:
+			spd = LUME_SPD
+		else:
+			spd = sqrt(2) * LUME_SPD
+	
+	# Apply speed
+	if not form == "norm":
+		if wave_dir == "r":
 			velocity.x = spd * delta
+		elif wave_dir == "l":
+			velocity.x = -spd * delta
+		elif wave_dir == "d":
+			velocity.y = spd * delta
+		elif wave_dir == "u":
+			velocity.y = -spd * delta
+		elif wave_dir == "ur":
+			velocity.x = spd * delta
+			velocity.y = -spd * delta
+		elif wave_dir == "ul":
+			velocity.x = -spd * delta
+			velocity.y = -spd * delta
+		elif wave_dir == "dr":
+			velocity.x = spd * delta
+			velocity.y = spd * delta
+		elif wave_dir == "dl":
+			velocity.x = -spd * delta
+			velocity.y = spd * delta
+
+
+func wave_direction() -> void:
+	if awaiting_dir:
+		if Input.is_action_pressed("up"):
 			awaiting_dir = false
+			wave_dir += "u"
+			no_y_wdir = false
+		elif Input.is_action_pressed("down"):
+			awaiting_dir = false
+			wave_dir += "d"
+			no_y_wdir = false
+		else:
+			no_y_wdir = true
+		if Input.is_action_pressed("left"):
+			awaiting_dir = false
+			wave_dir += "l"
+			no_x_wdir = false
+		elif Input.is_action_pressed("right"):
+			awaiting_dir = false
+			wave_dir += "r"
+			no_x_wdir = false
+		else:
+			no_x_wdir = true
+	
+	# Default if no directional input
+	if no_x_wdir and no_y_wdir:
+		awaiting_dir = false
+		wave_dir = "r"
+		no_x_wdir = false
 
 
 func gravity(delta) -> void:
@@ -188,26 +250,24 @@ func handle_anims() -> void:
 			sprite.flip_h = true
 		
 		sprite.rotation_degrees = 0
-	else: # Waves
-		# Diagonal
-		if velocity.y < 0 and velocity.x > 0:
+	else:
+		# Waves
+		if wave_dir == "ur":
 			sprite.rotation_degrees = 0
-		elif velocity.y < 0 and velocity.x < 0:
+		elif wave_dir == "ul":
 			sprite.rotation_degrees = -90
-		elif velocity.y > 0 and velocity.x > 0:
+		elif wave_dir == "dr":
 			sprite.rotation_degrees = 90
-		elif velocity.y > 0 and velocity.x < 0:
+		elif wave_dir == "dl":
 			sprite.rotation_degrees = 180
-		else:
-			# Cardinal
-			if velocity.x > 0:
-				sprite.rotation_degrees = 0
-			elif velocity.x < 0:
-				sprite.rotation_degrees = 180
-			elif velocity.y > 0:
-				sprite.rotation_degrees = 90
-			elif velocity.y < 0:
-				sprite.rotation_degrees = -90
+		if wave_dir == "r":
+			sprite.rotation_degrees = 0
+		elif wave_dir == "l":
+			sprite.rotation_degrees = 180
+		elif wave_dir == "d":
+			sprite.rotation_degrees = 90
+		elif wave_dir == "u":
+			sprite.rotation_degrees = -90
 		
 		sprite.flip_h = false
 	
@@ -219,17 +279,16 @@ func handle_anims() -> void:
 		else:
 			ap.play("idle")
 	elif form == "sine":
-		if not velocity.y == 0 and not velocity.x == 0:
-			ap.play("sine_dia")
-		elif velocity.y == 0 and velocity.x == 0:
-			ap.play("")
+		if transforming:
+			ap.play("to_sine_card")
 		else:
-			ap.play("sine_card")
+			if wave_dia:
+				ap.play("sine_dia")
+			else:
+				ap.play("sine_card")
 	elif form == "lume":
-		if not velocity.y == 0 and not velocity.x == 0:
+		if wave_dia:
 			ap.play("lume_dia")
-		elif velocity.y == 0 and velocity.x == 0:
-			ap.play("")
 		else:
 			ap.play("lume_card")
 
@@ -240,3 +299,8 @@ func _on_coyote_timer_timeout() -> void:
 
 func _on_j_buffer_timer_timeout() -> void:
 	jump_buffering = false
+
+
+func _on_dir_choose_timer_timeout() -> void:
+	awaiting_dir = true
+	transforming = false
