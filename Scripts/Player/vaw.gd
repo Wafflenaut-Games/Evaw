@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite
 @onready var norm_col: CollisionShape2D = $NormCol
 @onready var wave_col: CollisionPolygon2D = $WaveCol
+@onready var coyote_timer: Timer = $"Jump Timers/CoyoteTimer"
+@onready var j_buffer_timer: Timer = $"Jump Timers/JBufferTimer"
 
 const SPEED = 3000.0
 const SINE_SPD = 2000.0
@@ -22,6 +24,8 @@ var form = "norm"
 var awaiting_dir = false
 var sine_used = false
 var lume_used = false
+var coyote_time = false
+var jump_buffering = false
 
 #endregion
 
@@ -38,6 +42,8 @@ func _physics_process(delta: float) -> void:
 	gravity(delta)
 	move(delta)
 	jump()
+	jump_buffer()
+	coyote_time_set()
 	
 	# Animations
 	handle_anims()
@@ -137,12 +143,26 @@ func move(delta) -> void:
 func jump() -> void:
 	if form == "norm":
 		# Jump
-		if Input.is_action_just_pressed("up") and is_on_floor():
+		if (Input.is_action_just_pressed("up") or jump_buffering) and (is_on_floor() or coyote_time):
 			velocity.y = JUMP_VELOCITY
+			coyote_time = false
+			jump_buffering = false
 		
 		# Jump Cut
 		if Input.is_action_just_released("up") and velocity.y < 0:
 			velocity.y = 0
+
+
+func coyote_time_set() -> void:
+	if is_on_floor() and not is_jumping():
+		coyote_timer.start()
+		coyote_time = true
+
+
+func jump_buffer() -> void:
+	if not is_on_floor() and not coyote_time and Input.is_action_just_pressed("up"):
+		jump_buffering = true
+		j_buffer_timer.start()
 
 
 func is_jumping() -> bool:
@@ -212,3 +232,11 @@ func handle_anims() -> void:
 			ap.play("")
 		else:
 			ap.play("lume_card")
+
+
+func _on_coyote_timer_timeout() -> void:
+	coyote_time = false
+
+
+func _on_j_buffer_timer_timeout() -> void:
+	jump_buffering = false

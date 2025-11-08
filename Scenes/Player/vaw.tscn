@@ -414,3 +414,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_kx6vr")
 }
 autoplay = "idle"
+
+[node name="Jump Timers" type="Node" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="Jump Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="JBufferTimer" type="Timer" parent="Jump Timers"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Jump Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="Jump Timers/JBufferTimer" to="." method="_on_j_buffer_timer_timeout"]
