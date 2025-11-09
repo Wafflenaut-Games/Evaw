@@ -66,33 +66,20 @@ func _physics_process(delta: float) -> void:
 
 func formshift() -> void:
 	
-	if form == "norm":
-		if Input.is_action_just_released("sine") and sine_used == false:
-			get_mouse_direction()
-			form = "sine"
-			sine_used = true
-			velocity = Vector2(0, 0)
-			dir_choose_timer.start()
-			transforming = true
-		if Input.is_action_just_released("lume") and lume_used == false:
-			get_mouse_direction()
-			form = "lume"
-			lume_used = true
-			velocity = Vector2(0, 0)
-			dir_choose_timer.start()
-			transforming = true
-	elif form == "sine":
-		pass
-		#if not Input.is_action_pressed("sine") and not soft_lock_override:
-		#	form = "norm"
-		#	wave_dir = ""
-		#	velocity = Vector2(0, 0)
-	elif form == "lume":
-		pass
-		#if not Input.is_action_pressed("lume") and not soft_lock_override:
-		#	form = "norm"
-		#	wave_dir = ""
-		#	velocity = Vector2(0, 0)
+	if Input.is_action_just_released("sine") and sine_used == false:
+		get_mouse_direction()
+		form = "sine"
+		sine_used = true
+		velocity = Vector2(0, 0)
+		dir_choose_timer.start()
+		transforming = true
+	if Input.is_action_just_released("lume") and lume_used == false:
+		get_mouse_direction()
+		form = "lume"
+		lume_used = true
+		velocity = Vector2(0, 0)
+		dir_choose_timer.start()
+		transforming = true
 	
 	#if form == "norm":
 	#	if Input.is_action_just_pressed("sine") and sine_used == false:
@@ -276,6 +263,10 @@ func is_falling() -> bool:
 
 
 func handle_anims() -> void:
+	
+	if transforming:
+		velocity = Vector2.ZERO
+	
 	# Sprite Transformations
 	if form == "norm":
 		if direction > 0:
