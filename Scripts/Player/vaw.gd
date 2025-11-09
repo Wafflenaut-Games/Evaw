@@ -356,6 +356,20 @@ func get_mouse_direction():
 	var angle_degrees = rad_to_deg(angle_radians)
 	print(str(angle_degrees))
 	
-	#if angle_degrees > -22.5 and angle degrees < 22.5:
-	#	pass
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "r"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "l"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "u"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "d"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "ur"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "ul"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "dr"
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		wave_dir = "dl"
 	
