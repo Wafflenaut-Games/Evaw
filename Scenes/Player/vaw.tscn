@@ -449,6 +449,8 @@ _data = {
 }
 
 [node name="Vaw" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 15
 script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
@@ -460,7 +462,9 @@ hframes = 4
 [node name="NormCol" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvlj0")
 
-[node name="WaveCol" type="CollisionPolygon2D" parent="."]
+[node name="WaveColCheck" type="Area2D" parent="."]
+
+[node name="WaveCol2" type="CollisionPolygon2D" parent="WaveColCheck"]
 polygon = PackedVector2Array(-1, -4, -4, -1, -4, 1, -1, 4, 1, 4, 4, 1, 4, -1, 1, -4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -480,9 +484,12 @@ wait_time = 0.1
 one_shot = true
 
 [node name="DirChooseTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.25
 one_shot = true
 
+[node name="WaveRays" type="Node" parent="."]
+
+[connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
 [connection signal="timeout" from="Jump Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Jump Timers/JBufferTimer" to="." method="_on_j_buffer_timer_timeout"]
 [connection signal="timeout" from="DirChooseTimer" to="." method="_on_dir_choose_timer_timeout"]

@@ -6,10 +6,10 @@ extends CharacterBody2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite
 @onready var norm_col: CollisionShape2D = $NormCol
-@onready var wave_col: CollisionPolygon2D = $WaveCol
 @onready var coyote_timer: Timer = $"Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Jump Timers/JBufferTimer"
 @onready var dir_choose_timer: Timer = $DirChooseTimer
+@onready var wave_col_check: Area2D = $WaveColCheck
 
 
 const SPEED = 3000.0
@@ -90,17 +90,14 @@ func formshift() -> void:
 
 func form_collision() -> void:
 	if form == "norm":
-		collision_mask = 0b00001111
 		norm_col.disabled = false
-		wave_col.disabled = true
+		wave_col_check.collision_mask = 0b00000000
 	elif form == "sine":
-		collision_mask = 0b00001001
 		norm_col.disabled = true
-		wave_col.disabled = false
+		wave_col_check.collision_mask = 0b00001001
 	elif form == "lume":
-		collision_mask = 0b00000101
 		norm_col.disabled = true
-		wave_col.disabled = false
+		wave_col_check.collision_mask = 0b00000101
 
 
 func reset_uses() -> void:
@@ -306,3 +303,10 @@ func _on_j_buffer_timer_timeout() -> void:
 func _on_dir_choose_timer_timeout() -> void:
 	awaiting_dir = true
 	transforming = false
+
+
+func _on_wave_col_check_body_entered(_body: Node2D) -> void:
+	if not is_on_floor():
+		form = "norm"
+		wave_dir = ""
+		wave_dia = false
