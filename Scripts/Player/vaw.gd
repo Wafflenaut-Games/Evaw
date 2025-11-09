@@ -65,14 +65,16 @@ func _physics_process(delta: float) -> void:
 
 
 func formshift() -> void:
+	
 	if form == "norm":
-		if Input.is_action_just_pressed("sine") and sine_used == false:
-			form = "sine"
-			sine_used = true
-			velocity = Vector2(0, 0)
-			dir_choose_timer.start()
-			transforming = true
-		elif Input.is_action_just_pressed("lume") and lume_used == false:
+		if Input.is_action_just_released("sine") and sine_used == false:
+				get_mouse_direction()
+				form = "sine"
+				sine_used = true
+				velocity = Vector2(0, 0)
+				dir_choose_timer.start()
+				transforming = true
+		elif Input.is_action_pressed("lume") and lume_used == false:
 			form = "lume"
 			lume_used = true
 			velocity = Vector2(0, 0)
@@ -88,6 +90,30 @@ func formshift() -> void:
 			form = "norm"
 			wave_dir = ""
 			velocity = Vector2(0, 0)
+	
+	#if form == "norm":
+	#	if Input.is_action_just_pressed("sine") and sine_used == false:
+	#		form = "sine"
+	#		sine_used = true
+	#		velocity = Vector2(0, 0)
+	#		dir_choose_timer.start()
+	#		transforming = true
+	#	elif Input.is_action_just_pressed("lume") and lume_used == false:
+	#		form = "lume"
+	#		lume_used = true
+	#		velocity = Vector2(0, 0)
+	#		dir_choose_timer.start()
+	#		transforming = true
+	#elif form == "sine":
+	#	if not Input.is_action_pressed("sine") and not soft_lock_override:
+	#		form = "norm"
+	#		wave_dir = ""
+	#		velocity = Vector2(0, 0)
+	#elif form == "lume":
+	#	if not Input.is_action_pressed("lume") and not soft_lock_override:
+	#		form = "norm"
+	#		wave_dir = ""
+	#		velocity = Vector2(0, 0)
 
 
 func form_collision() -> void:
@@ -323,3 +349,13 @@ func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
 	soft_lock_override = false
+
+func get_mouse_direction():
+	var direction_vector = get_global_mouse_position() - global_position
+	var angle_radians = direction_vector.angle()
+	var angle_degrees = rad_to_deg(angle_radians)
+	print(str(angle_degrees))
+	
+	#if angle_degrees > -22.5 and angle degrees < 22.5:
+	#	pass
+	
