@@ -68,28 +68,31 @@ func formshift() -> void:
 	
 	if form == "norm":
 		if Input.is_action_just_released("sine") and sine_used == false:
-				get_mouse_direction()
-				form = "sine"
-				sine_used = true
-				velocity = Vector2(0, 0)
-				dir_choose_timer.start()
-				transforming = true
-		elif Input.is_action_pressed("lume") and lume_used == false:
+			get_mouse_direction()
+			form = "sine"
+			sine_used = true
+			velocity = Vector2(0, 0)
+			dir_choose_timer.start()
+			transforming = true
+		if Input.is_action_just_released("lume") and lume_used == false:
+			get_mouse_direction()
 			form = "lume"
 			lume_used = true
 			velocity = Vector2(0, 0)
 			dir_choose_timer.start()
 			transforming = true
 	elif form == "sine":
-		if not Input.is_action_pressed("sine") and not soft_lock_override:
-			form = "norm"
-			wave_dir = ""
-			velocity = Vector2(0, 0)
+		pass
+		#if not Input.is_action_pressed("sine") and not soft_lock_override:
+		#	form = "norm"
+		#	wave_dir = ""
+		#	velocity = Vector2(0, 0)
 	elif form == "lume":
-		if not Input.is_action_pressed("lume") and not soft_lock_override:
-			form = "norm"
-			wave_dir = ""
-			velocity = Vector2(0, 0)
+		pass
+		#if not Input.is_action_pressed("lume") and not soft_lock_override:
+		#	form = "norm"
+		#	wave_dir = ""
+		#	velocity = Vector2(0, 0)
 	
 	#if form == "norm":
 	#	if Input.is_action_just_pressed("sine") and sine_used == false:
@@ -181,27 +184,28 @@ func wave_spds(delta) -> void:
 
 
 func wave_direction() -> void:
-	if awaiting_dir:
-		if Input.is_action_pressed("up"):
-			awaiting_dir = false
-			wave_dir += "u"
-			no_y_wdir = false
-		elif Input.is_action_pressed("down"):
-			awaiting_dir = false
-			wave_dir += "d"
-			no_y_wdir = false
-		else:
-			no_y_wdir = true
-		if Input.is_action_pressed("left"):
-			awaiting_dir = false
-			wave_dir += "l"
-			no_x_wdir = false
-		elif Input.is_action_pressed("right"):
-			awaiting_dir = false
-			wave_dir += "r"
-			no_x_wdir = false
-		else:
-			no_x_wdir = true
+	pass
+	#if awaiting_dir:
+	#	if Input.is_action_pressed("up"):
+	#		awaiting_dir = false
+	#		wave_dir += "u"
+	#		no_y_wdir = false
+	#	elif Input.is_action_pressed("down"):
+	#		awaiting_dir = false
+	#		wave_dir += "d"
+	#		no_y_wdir = false
+	#	else:
+	#		no_y_wdir = true
+	#	if Input.is_action_pressed("left"):
+	#		awaiting_dir = false
+	#		wave_dir += "l"
+	#		no_x_wdir = false
+	#	elif Input.is_action_pressed("right"):
+	#		awaiting_dir = false
+	#		wave_dir += "r"
+	#		no_x_wdir = false
+	#	else:
+	#		no_x_wdir = true
 	
 	# Default if no directional input
 	if no_x_wdir and no_y_wdir:
@@ -354,22 +358,29 @@ func get_mouse_direction():
 	var direction_vector = get_global_mouse_position() - global_position
 	var angle_radians = direction_vector.angle()
 	var angle_degrees = rad_to_deg(angle_radians)
-	print(str(angle_degrees))
 	
 	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "r"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if abs(angle_degrees) > 157.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "l"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > -112.5 and angle_degrees < -67.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "u"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > -67.5 and angle_degrees < 112.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "d"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > -67.5 and angle_degrees < -22.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "ur"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > -157.5 and angle_degrees < -112.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "ul"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > 22.5 and angle_degrees < 67.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "dr"
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > 112.5 and angle_degrees < 157.5:
+		await get_tree().create_timer(0.2).timeout
 		wave_dir = "dl"
 	
