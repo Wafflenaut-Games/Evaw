@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var j_buffer_timer: Timer = $"Jump Timers/JBufferTimer"
 @onready var dir_choose_timer: Timer = $DirChooseTimer
 @onready var wave_col_check: Area2D = $WaveColCheck
+@onready var no_soft_lock: Area2D = $NoSoftLock
 
 
 const SPEED = 3000.0
@@ -36,6 +37,7 @@ var wave_dir = ""
 var wave_dia = false
 var no_x_wdir = false
 var no_y_wdir = false
+var soft_lock_override = false
 
 #endregion
 
@@ -77,12 +79,12 @@ func formshift() -> void:
 			dir_choose_timer.start()
 			transforming = true
 	elif form == "sine":
-		if Input.is_action_just_released("sine"):
+		if not Input.is_action_pressed("sine") and not soft_lock_override:
 			form = "norm"
 			wave_dir = ""
 			velocity = Vector2(0, 0)
 	elif form == "lume":
-		if Input.is_action_just_released("lume"):
+		if not Input.is_action_pressed("lume") and not soft_lock_override:
 			form = "norm"
 			wave_dir = ""
 			velocity = Vector2(0, 0)
@@ -91,12 +93,15 @@ func formshift() -> void:
 func form_collision() -> void:
 	if form == "norm":
 		norm_col.disabled = false
+		no_soft_lock.collision_mask = 0b00000000
 		wave_col_check.collision_mask = 0b00000000
 	elif form == "sine":
 		norm_col.disabled = true
+		no_soft_lock.collision_mask = 0b00000110
 		wave_col_check.collision_mask = 0b00001001
 	elif form == "lume":
 		norm_col.disabled = true
+		no_soft_lock.collision_mask = 0b00001010
 		wave_col_check.collision_mask = 0b00000101
 
 
@@ -310,3 +315,11 @@ func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 		form = "norm"
 		wave_dir = ""
 		wave_dia = false
+
+
+func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
+	soft_lock_override = true
+
+
+func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
+	soft_lock_override = false
