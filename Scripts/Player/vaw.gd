@@ -40,6 +40,7 @@ var no_x_wdir = false
 var no_y_wdir = false
 var soft_lock_override = false
 var moused_dir = false
+var soft_lock_timer_started = false
 
 #endregion
 
@@ -99,7 +100,7 @@ func formshift() -> void:
 		transforming = true
 	
 	
-	# Revert to normal
+	# Revert to normal or start death in soft lock buffer
 	if not soft_lock_override:
 		if form == "sine":
 			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
@@ -111,6 +112,17 @@ func formshift() -> void:
 				form = "norm"
 				wave_dir = ""
 				velocity = Vector2(0, 0)
+	else:
+		if form == "sine":
+			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
+				if soft_lock_timer_started == false:
+					soft_lock_timer.start()
+					soft_lock_timer_started = true
+		elif form == "lume":
+			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
+				if soft_lock_timer_started == false:
+					soft_lock_timer.start()
+					soft_lock_timer_started = true
 
 
 func form_collision() -> void:
@@ -378,7 +390,6 @@ func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 
 func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
 	soft_lock_override = true
-	soft_lock_timer.start()
 
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
@@ -389,3 +400,4 @@ func _on_soft_lock_timer_timeout() -> void:
 	if soft_lock_override:
 		death()
 		soft_lock_override = false
+		soft_lock_timer_started = false
