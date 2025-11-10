@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var dir_choose_timer: Timer = $DirChooseTimer
 @onready var wave_col_check: Area2D = $WaveColCheck
 @onready var no_soft_lock: Area2D = $NoSoftLock
+@onready var soft_lock_timer: Timer = $SoftLockTimer
 
 
 const SPEED = 3000.0
@@ -262,6 +263,41 @@ func is_falling() -> bool:
 		return false
 
 
+func get_mouse_direction() -> void:
+	var direction_vector = get_global_mouse_position() - global_position
+	var angle_radians = direction_vector.angle()
+	var angle_degrees = rad_to_deg(angle_radians)
+	
+	if angle_degrees > -22.5 and angle_degrees < 22.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "r"
+	if abs(angle_degrees) > 157.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "l"
+	if angle_degrees > -112.5 and angle_degrees < -67.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "u"
+	if angle_degrees > -67.5 and angle_degrees < 112.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "d"
+	if angle_degrees > -67.5 and angle_degrees < -22.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "ur"
+	if angle_degrees > -157.5 and angle_degrees < -112.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "ul"
+	if angle_degrees > 22.5 and angle_degrees < 67.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "dr"
+	if angle_degrees > 112.5 and angle_degrees < 157.5:
+		await get_tree().create_timer(0.2).timeout
+		wave_dir = "dl"
+
+
+func death() -> void:
+	print("dead goofy") # Replace this with respawn stuff later
+
+
 func handle_anims() -> void:
 	
 	if transforming:
@@ -340,38 +376,14 @@ func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 
 func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
 	soft_lock_override = true
+	soft_lock_timer.start()
 
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
 	soft_lock_override = false
 
-func get_mouse_direction():
-	var direction_vector = get_global_mouse_position() - global_position
-	var angle_radians = direction_vector.angle()
-	var angle_degrees = rad_to_deg(angle_radians)
-	
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "r"
-	if abs(angle_degrees) > 157.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "l"
-	if angle_degrees > -112.5 and angle_degrees < -67.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "u"
-	if angle_degrees > -67.5 and angle_degrees < 112.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "d"
-	if angle_degrees > -67.5 and angle_degrees < -22.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "ur"
-	if angle_degrees > -157.5 and angle_degrees < -112.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "ul"
-	if angle_degrees > 22.5 and angle_degrees < 67.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "dr"
-	if angle_degrees > 112.5 and angle_degrees < 157.5:
-		await get_tree().create_timer(0.2).timeout
-		wave_dir = "dl"
-	
+
+func _on_soft_lock_timer_timeout() -> void:
+	if soft_lock_override:
+		death()
+		soft_lock_override = false

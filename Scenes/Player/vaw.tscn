@@ -494,9 +494,14 @@ one_shot = true
 
 [node name="WaveRays" type="Node" parent="."]
 
+[node name="SoftLockTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
 [connection signal="body_entered" from="NoSoftLock" to="." method="_on_no_soft_lock_body_entered"]
 [connection signal="body_exited" from="NoSoftLock" to="." method="_on_no_soft_lock_body_exited"]
 [connection signal="timeout" from="Jump Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Jump Timers/JBufferTimer" to="." method="_on_j_buffer_timer_timeout"]
 [connection signal="timeout" from="DirChooseTimer" to="." method="_on_dir_choose_timer_timeout"]
+[connection signal="timeout" from="SoftLockTimer" to="." method="_on_soft_lock_timer_timeout"]
