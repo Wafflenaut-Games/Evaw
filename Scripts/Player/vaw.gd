@@ -39,6 +39,7 @@ var wave_dia = false
 var no_x_wdir = false
 var no_y_wdir = false
 var soft_lock_override = false
+var moused_dir = false
 
 #endregion
 
@@ -66,45 +67,50 @@ func _physics_process(delta: float) -> void:
 
 
 func formshift() -> void:
-	
-	if Input.is_action_just_released("sine") and sine_used == false:
-		get_mouse_direction()
+	# Switching to waveform
+	# Mouse controls
+	if Input.is_action_just_pressed("sine_m") and sine_used == false:
+		moused_dir = true
 		form = "sine"
 		sine_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
-	if Input.is_action_just_released("lume") and lume_used == false:
-		get_mouse_direction()
+	if Input.is_action_just_pressed("lume_m") and lume_used == false:
+		moused_dir = true
 		form = "lume"
 		lume_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
 	
-	#if form == "norm":
-	#	if Input.is_action_just_pressed("sine") and sine_used == false:
-	#		form = "sine"
-	#		sine_used = true
-	#		velocity = Vector2(0, 0)
-	#		dir_choose_timer.start()
-	#		transforming = true
-	#	elif Input.is_action_just_pressed("lume") and lume_used == false:
-	#		form = "lume"
-	#		lume_used = true
-	#		velocity = Vector2(0, 0)
-	#		dir_choose_timer.start()
-	#		transforming = true
-	#elif form == "sine":
-	#	if not Input.is_action_pressed("sine") and not soft_lock_override:
-	#		form = "norm"
-	#		wave_dir = ""
-	#		velocity = Vector2(0, 0)
-	#elif form == "lume":
-	#	if not Input.is_action_pressed("lume") and not soft_lock_override:
-	#		form = "norm"
-	#		wave_dir = ""
-	#		velocity = Vector2(0, 0)
+	# Keyboard controls
+	if Input.is_action_just_pressed("sine") and sine_used == false:
+		form = "sine"
+		sine_used = true
+		velocity = Vector2(0, 0)
+		dir_choose_timer.start()
+		transforming = true
+	elif Input.is_action_just_pressed("lume") and lume_used == false:
+		form = "lume"
+		lume_used = true
+		velocity = Vector2(0, 0)
+		dir_choose_timer.start()
+		transforming = true
+	
+	
+	# Revert to normal
+	if not soft_lock_override:
+		if form == "sine":
+			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
+				form = "norm"
+				wave_dir = ""
+				velocity = Vector2(0, 0)
+		elif form == "lume":
+			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
+				form = "norm"
+				wave_dir = ""
+				velocity = Vector2(0, 0)
 
 
 func form_collision() -> void:
@@ -172,34 +178,34 @@ func wave_spds(delta) -> void:
 
 
 func wave_direction() -> void:
-	pass
-	#if awaiting_dir:
-	#	if Input.is_action_pressed("up"):
-	#		awaiting_dir = false
-	#		wave_dir += "u"
-	#		no_y_wdir = false
-	#	elif Input.is_action_pressed("down"):
-	#		awaiting_dir = false
-	#		wave_dir += "d"
-	#		no_y_wdir = false
-	#	else:
-	#		no_y_wdir = true
-	#	if Input.is_action_pressed("left"):
-	#		awaiting_dir = false
-	#		wave_dir += "l"
-	#		no_x_wdir = false
-	#	elif Input.is_action_pressed("right"):
-	#		awaiting_dir = false
-	#		wave_dir += "r"
-	#		no_x_wdir = false
-	#	else:
-	#		no_x_wdir = true
+	if awaiting_dir:
+		if Input.is_action_pressed("up"):
+			awaiting_dir = false
+			wave_dir += "u"
+			no_y_wdir = false
+		elif Input.is_action_pressed("down"):
+			awaiting_dir = false
+			wave_dir += "d"
+			no_y_wdir = false
+		else:
+			no_y_wdir = true
+		if Input.is_action_pressed("left"):
+			awaiting_dir = false
+			wave_dir += "l"
+			no_x_wdir = false
+		elif Input.is_action_pressed("right"):
+			awaiting_dir = false
+			wave_dir += "r"
+			no_x_wdir = false
+		else:
+			no_x_wdir = true
 	
 	# Default if no directional input
 	if no_x_wdir and no_y_wdir:
 		awaiting_dir = false
 		wave_dir = "r"
 		no_x_wdir = false
+		no_y_wdir = false
 
 
 func gravity(delta) -> void:
@@ -269,28 +275,20 @@ func get_mouse_direction() -> void:
 	var angle_degrees = rad_to_deg(angle_radians)
 	
 	if angle_degrees > -22.5 and angle_degrees < 22.5:
-		await get_tree().create_timer(0.2).timeout
 		wave_dir = "r"
-	if abs(angle_degrees) > 157.5:
-		await get_tree().create_timer(0.2).timeout
+	elif abs(angle_degrees) > 157.5:
 		wave_dir = "l"
-	if angle_degrees > -112.5 and angle_degrees < -67.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > -112.5 and angle_degrees < -67.5:
 		wave_dir = "u"
-	if angle_degrees > -67.5 and angle_degrees < 112.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > -67.5 and angle_degrees < 112.5:
 		wave_dir = "d"
-	if angle_degrees > -67.5 and angle_degrees < -22.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > -67.5 and angle_degrees < -22.5:
 		wave_dir = "ur"
-	if angle_degrees > -157.5 and angle_degrees < -112.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > -157.5 and angle_degrees < -112.5:
 		wave_dir = "ul"
-	if angle_degrees > 22.5 and angle_degrees < 67.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > 22.5 and angle_degrees < 67.5:
 		wave_dir = "dr"
-	if angle_degrees > 112.5 and angle_degrees < 157.5:
-		await get_tree().create_timer(0.2).timeout
+	elif angle_degrees > 112.5 and angle_degrees < 157.5:
 		wave_dir = "dl"
 
 
@@ -363,8 +361,12 @@ func _on_j_buffer_timer_timeout() -> void:
 
 
 func _on_dir_choose_timer_timeout() -> void:
-	awaiting_dir = true
 	transforming = false
+	
+	if moused_dir:
+		get_mouse_direction()
+	else:
+		awaiting_dir = true
 
 
 func _on_wave_col_check_body_entered(_body: Node2D) -> void:
