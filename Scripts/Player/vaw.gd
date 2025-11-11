@@ -292,7 +292,7 @@ func get_mouse_direction() -> void:
 		wave_dir = "l"
 	elif angle_degrees > -112.5 and angle_degrees < -67.5:
 		wave_dir = "u"
-	elif angle_degrees > -67.5 and angle_degrees < 112.5:
+	elif angle_degrees > 67.5 and angle_degrees < 112.5:
 		wave_dir = "d"
 	elif angle_degrees > -67.5 and angle_degrees < -22.5:
 		wave_dir = "ur"
