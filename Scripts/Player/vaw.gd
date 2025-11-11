@@ -20,7 +20,7 @@ const DIA_SINE_SPD = SINE_SPD/sqrt(2)
 const LUME_SPD = 5000.0
 const DIA_LUME_SPD = LUME_SPD/sqrt(2)
 const JUMP_VELOCITY = -160.0
-const GRAV = 570.0
+const GRAV = 500.0
 const F_GRAV = 750.0 # Fall gravity
 
 
