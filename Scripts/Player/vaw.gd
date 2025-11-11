@@ -309,10 +309,6 @@ func death() -> void:
 
 
 func handle_anims() -> void:
-	
-	if transforming:
-		velocity = Vector2.ZERO
-	
 	# Sprite Transformations
 	if form == "norm":
 		if direction > 0:
@@ -348,7 +344,10 @@ func handle_anims() -> void:
 		if direction:
 			ap.play("run")
 		else:
-			ap.play("idle")
+			if is_falling():
+				ap.play("fall")
+			else:
+				ap.play("idle")
 	elif form == "sine":
 		if transforming:
 			ap.play("to_sine_card")
@@ -358,10 +357,13 @@ func handle_anims() -> void:
 			else:
 				ap.play("sine_card")
 	elif form == "lume":
-		if wave_dia:
-			ap.play("lume_dia")
+		if transforming:
+			ap.play("to_lume_card")
 		else:
-			ap.play("lume_card")
+			if wave_dia:
+				ap.play("lume_dia")
+			else:
+				ap.play("lume_card")
 
 
 func _on_coyote_timer_timeout() -> void:
@@ -381,6 +383,13 @@ func _on_dir_choose_timer_timeout() -> void:
 		awaiting_dir = true
 
 
+func _on_soft_lock_timer_timeout() -> void:
+	if soft_lock_override:
+		death()
+		soft_lock_override = false
+		soft_lock_timer_started = false
+
+
 func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 	if not is_on_floor():
 		form = "norm"
@@ -394,10 +403,3 @@ func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
 	soft_lock_override = false
-
-
-func _on_soft_lock_timer_timeout() -> void:
-	if soft_lock_override:
-		death()
-		soft_lock_override = false
-		soft_lock_timer_started = false

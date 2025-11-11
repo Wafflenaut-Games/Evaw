@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kgkfihcwnwio"
-path="res://.godot/imported/VawTileset.png-f5edffaf7dac45eda306ae96d6a3925c.ctex"
+uid="uid://be6vfgdhy2ill"
+path="res://.godot/imported/Vaw_Tileset.png-955ec9458aa766af1e26d882b4f5f07e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tilesets/VawTileset.png"
-dest_files=["res://.godot/imported/VawTileset.png-f5edffaf7dac45eda306ae96d6a3925c.ctex"]
+source_file="res://Assets/Sprites/Tilesets/Vaw_Tileset.png"
+dest_files=["res://.godot/imported/Vaw_Tileset.png-955ec9458aa766af1e26d882b4f5f07e.ctex"]
 
 [params]
 
