@@ -22,6 +22,7 @@ const DIA_LUME_SPD = LUME_SPD/sqrt(2)
 const JUMP_VELOCITY = -160.0
 const GRAV = 500.0
 const F_GRAV = 750.0 # Fall gravity
+const MAX_VEL = 10000.0
 
 
 var direction
@@ -56,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	# Movement
 	gravity(delta)
 	move(delta)
+	max_vel(delta)
 	jump()
 	jump_buffer()
 	coyote_time_set()
@@ -73,6 +75,7 @@ func formshift() -> void:
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
 		moused_dir = true
 		form = "sine"
+		wave_dir = ""
 		sine_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
@@ -80,6 +83,7 @@ func formshift() -> void:
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
 		moused_dir = true
 		form = "lume"
+		wave_dir = ""
 		lume_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
@@ -87,13 +91,17 @@ func formshift() -> void:
 	
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
+		moused_dir = false
 		form = "sine"
+		wave_dir = ""
 		sine_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
+		moused_dir = false
 		form = "lume"
+		wave_dir = ""
 		lume_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
@@ -240,6 +248,11 @@ func move(delta) -> void:
 			velocity.x = direction * SPEED * delta
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+func max_vel(delta) -> void:
+	if velocity.y >= MAX_VEL * delta:
+		velocity.y = MAX_VEL * delta
 
 
 func jump() -> void:
