@@ -40,10 +40,10 @@ type = "steel"
 position = Vector2(148, -58)
 type = "glass"
 
-[node name="Node" type="Node" parent="."]
+[node name="OneWays" type="Node" parent="."]
 
-[node name="OneWayPlatform" parent="Node" instance=ExtResource("5_10khu")]
+[node name="OneWayPlatform" parent="OneWays" instance=ExtResource("5_10khu")]
 position = Vector2(100, -82)
 
-[node name="OneWayPlatform2" parent="Node" instance=ExtResource("5_10khu")]
+[node name="OneWayPlatform2" parent="OneWays" instance=ExtResource("5_10khu")]
 position = Vector2(108, -82)
