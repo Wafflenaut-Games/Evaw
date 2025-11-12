@@ -253,5 +253,6 @@ physics_layer_3/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_t7m2n")
 
 [node name="Tileset" type="TileMapLayer"]
+z_index = 1
 use_parent_material = true
 tile_set = SubResource("TileSet_5w166")
