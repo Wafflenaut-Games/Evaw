@@ -102,7 +102,6 @@ func formshift() -> void:
 		moused_dir = false
 		form = "lume"
 		wave_dir = ""
-		lume_used = true
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
@@ -114,11 +113,13 @@ func formshift() -> void:
 			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
 				form = "norm"
 				wave_dir = ""
+				sine_used = true
 				velocity = Vector2(0, 0)
 		elif form == "lume":
 			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
 				form = "norm"
 				wave_dir = ""
+				lume_used = true
 				velocity = Vector2(0, 0)
 	else:
 		if form == "sine":
