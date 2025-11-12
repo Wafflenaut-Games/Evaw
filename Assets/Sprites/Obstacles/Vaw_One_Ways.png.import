@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07ifrf745jbi"
-path="res://.godot/imported/Vaw_Oneways.png-1887d114066cb3a525ed12e726865a38.ctex"
+uid="uid://nr3alo6bk6gk"
+path="res://.godot/imported/Vaw_One_Ways.png-e69019d6377fd5f553fce166cbeab92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Obstacles/Vaw_Oneways.png"
-dest_files=["res://.godot/imported/Vaw_Oneways.png-1887d114066cb3a525ed12e726865a38.ctex"]
+source_file="res://Assets/Sprites/Obstacles/Vaw_One_Ways.png"
+dest_files=["res://.godot/imported/Vaw_One_Ways.png-e69019d6377fd5f553fce166cbeab92a.ctex"]
 
 [params]
 

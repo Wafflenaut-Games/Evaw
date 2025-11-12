@@ -8,6 +8,7 @@ func _ready() -> void:
 	format_dir()
 	dir_rotation()
 
+
 func dir_rotation() -> void:
 	if direction == "u":
 		rotation_degrees = 0
