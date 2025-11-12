@@ -2,11 +2,17 @@ extends StaticBody2D
 
 
 @export var direction: String = "Up"
+@onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var vaw: CharacterBody2D = $"../../Vaw"
 
 
 func _ready() -> void:
 	format_dir()
 	dir_rotation()
+
+
+func _process(_delta: float) -> void:
+	wave_block()
 
 
 func dir_rotation() -> void:
@@ -38,3 +44,10 @@ func format_dir() -> void:
 			direction = "l"
 		"right":
 			direction = "r"
+
+
+func wave_block() -> void:
+	if vaw.form == "norm":
+		collision.one_way_collision = true
+	else:
+		collision.one_way_collision = false
