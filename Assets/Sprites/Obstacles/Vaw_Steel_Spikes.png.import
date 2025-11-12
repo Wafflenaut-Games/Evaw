@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sd51gtn3kmx8"
-path="res://.godot/imported/Vaw_to_Sine_Card.png-0cb45a31f627973b40944f51a309c3d8.ctex"
+uid="uid://bn4bmpbh7j4bd"
+path="res://.godot/imported/Vaw_Steel_Spikes.png-b8a3be75096847f5306692c6d8d412e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_to_Sine_Card.png"
-dest_files=["res://.godot/imported/Vaw_to_Sine_Card.png-0cb45a31f627973b40944f51a309c3d8.ctex"]
+source_file="res://Assets/Sprites/Obstacles/Vaw_Steel_Spikes.png"
+dest_files=["res://.godot/imported/Vaw_Steel_Spikes.png-b8a3be75096847f5306692c6d8d412e3.ctex"]
 
 [params]
 

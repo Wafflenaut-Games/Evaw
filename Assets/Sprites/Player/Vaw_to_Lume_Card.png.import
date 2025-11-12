@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vec8ek5g6rlx"
-path="res://.godot/imported/Vaw_to_Lume_Card.png-ad2d79a19b74d48fcf37f5a4b1338573.ctex"
+path="res://.godot/imported/Vaw_to_Lume_Card.png-1d6373d3d0a88deabfd3a814b7375ade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_to_Lume_Card.png"
-dest_files=["res://.godot/imported/Vaw_to_Lume_Card.png-ad2d79a19b74d48fcf37f5a4b1338573.ctex"]
+source_file="res://Assets/Sprites/Player/Vaw_to_Lume_Card.png"
+dest_files=["res://.godot/imported/Vaw_to_Lume_Card.png-1d6373d3d0a88deabfd3a814b7375ade.ctex"]
 
 [params]
 

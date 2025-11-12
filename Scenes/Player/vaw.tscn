@@ -1,21 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=26 format=3 uid="uid://ohaps7u6r2k0"]
 
-[ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Spritesheets/Vaw_Run.png" id="1_1a3vd"]
+[ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="2_8aoa4"]
-[ext_resource type="Texture2D" uid="uid://dqtsxn2tsopac" path="res://Assets/Sprites/Spritesheets/Vaw_Sine_Card.png" id="2_kx6vr"]
-[ext_resource type="Texture2D" uid="uid://bb3yu2ht8eje0" path="res://Assets/Sprites/Spritesheets/Vaw_Lume_Card.png" id="3_hy5rl"]
-[ext_resource type="Texture2D" uid="uid://bphadb2i0h4fs" path="res://Assets/Sprites/Spritesheets/Vaw_Lume_Dia.png" id="6_snyf7"]
-[ext_resource type="Texture2D" uid="uid://unyac6scchjk" path="res://Assets/Sprites/Spritesheets/Vaw_Sine_Dia.png" id="7_ssfky"]
-[ext_resource type="Texture2D" uid="uid://dsy6f7oy1m553" path="res://Assets/Sprites/Spritesheets/Vaw_Fall.png" id="8_nfhue"]
-[ext_resource type="Texture2D" uid="uid://sd51gtn3kmx8" path="res://Assets/Sprites/Spritesheets/Vaw_to_Sine_Card.png" id="8_ssfky"]
-[ext_resource type="Texture2D" uid="uid://vec8ek5g6rlx" path="res://Assets/Sprites/Spritesheets/Vaw_to_Lume_Card.png" id="9_3akl4"]
+[ext_resource type="Texture2D" uid="uid://dqtsxn2tsopac" path="res://Assets/Sprites/Player/Vaw_Sine_Card.png" id="2_kx6vr"]
+[ext_resource type="Texture2D" uid="uid://bb3yu2ht8eje0" path="res://Assets/Sprites/Player/Vaw_Lume_Card.png" id="3_hy5rl"]
+[ext_resource type="Texture2D" uid="uid://bphadb2i0h4fs" path="res://Assets/Sprites/Player/Vaw_Lume_Dia.png" id="6_snyf7"]
+[ext_resource type="Texture2D" uid="uid://unyac6scchjk" path="res://Assets/Sprites/Player/Vaw_Sine_Dia.png" id="7_ssfky"]
+[ext_resource type="Texture2D" uid="uid://dsy6f7oy1m553" path="res://Assets/Sprites/Player/Vaw_Fall.png" id="8_nfhue"]
+[ext_resource type="Texture2D" uid="uid://sd51gtn3kmx8" path="res://Assets/Sprites/Player/Vaw_to_Sine_Card.png" id="8_ssfky"]
+[ext_resource type="Texture2D" uid="uid://vec8ek5g6rlx" path="res://Assets/Sprites/Player/Vaw_to_Lume_Card.png" id="9_3akl4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uvlj0"]
 load_path = "res://.godot/imported/Vaw_Idle.png-632672daaee0cd69b2e6a8ff8ccc64a1.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
 size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d0l2"]
+size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3akl4"]
 size = Vector2(2, 2)
@@ -572,14 +575,24 @@ texture = SubResource("CompressedTexture2D_uvlj0")
 hframes = 4
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_uvlj0")
 
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_1d0l2")
+
 [node name="WaveColCheck" type="Area2D" parent="."]
+visible = false
 
 [node name="WaveCol" type="CollisionPolygon2D" parent="WaveColCheck"]
 polygon = PackedVector2Array(-1, -2, -2, -1, -2, 1, -1, 2, 1, 2, 2, 1, 2, -1, 1, -2)
 
 [node name="NoSoftLock" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoSoftLock"]
 shape = SubResource("RectangleShape2D_3akl4")
@@ -610,6 +623,7 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
 [connection signal="body_entered" from="NoSoftLock" to="." method="_on_no_soft_lock_body_entered"]
 [connection signal="body_exited" from="NoSoftLock" to="." method="_on_no_soft_lock_body_exited"]

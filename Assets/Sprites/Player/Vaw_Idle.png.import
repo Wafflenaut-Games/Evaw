@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfp6pm5bxk85r"
-path="res://.godot/imported/Vaw_Idle.png-632672daaee0cd69b2e6a8ff8ccc64a1.ctex"
+path="res://.godot/imported/Vaw_Idle.png-37b083ab36c14a71455b2263fb2480e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_Idle.png"
-dest_files=["res://.godot/imported/Vaw_Idle.png-632672daaee0cd69b2e6a8ff8ccc64a1.ctex"]
+source_file="res://Assets/Sprites/Player/Vaw_Idle.png"
+dest_files=["res://.godot/imported/Vaw_Idle.png-37b083ab36c14a71455b2263fb2480e5.ctex"]
 
 [params]
 

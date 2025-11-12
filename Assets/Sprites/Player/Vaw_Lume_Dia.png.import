@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsy6f7oy1m553"
-path="res://.godot/imported/Vaw_Fall.png-eeef3ff9340662c1ae93d81f06967c0b.ctex"
+uid="uid://bphadb2i0h4fs"
+path="res://.godot/imported/Vaw_Lume_Dia.png-c69bc380e2cfb75edbfc702563c21c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_Fall.png"
-dest_files=["res://.godot/imported/Vaw_Fall.png-eeef3ff9340662c1ae93d81f06967c0b.ctex"]
+source_file="res://Assets/Sprites/Player/Vaw_Lume_Dia.png"
+dest_files=["res://.godot/imported/Vaw_Lume_Dia.png-c69bc380e2cfb75edbfc702563c21c1d.ctex"]
 
 [params]
 

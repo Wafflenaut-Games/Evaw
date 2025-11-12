@@ -417,3 +417,7 @@ func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
 	soft_lock_override = false
+
+
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	death()

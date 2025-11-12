@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bphadb2i0h4fs"
-path="res://.godot/imported/Vaw_Lume_Dia.png-a6ae08dcf358d7d22d8605d7e8d5e708.ctex"
+uid="uid://dqtsxn2tsopac"
+path="res://.godot/imported/Vaw_Sine_Card.png-8097f17b21138c32a51cc23d20815424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spritesheets/Vaw_Lume_Dia.png"
-dest_files=["res://.godot/imported/Vaw_Lume_Dia.png-a6ae08dcf358d7d22d8605d7e8d5e708.ctex"]
+source_file="res://Assets/Sprites/Player/Vaw_Sine_Card.png"
+dest_files=["res://.godot/imported/Vaw_Sine_Card.png-8097f17b21138c32a51cc23d20815424.ctex"]
 
 [params]
 
