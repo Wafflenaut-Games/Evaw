@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=25 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Spritesheets/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -16,6 +16,9 @@ load_path = "res://.godot/imported/Vaw_Idle.png-632672daaee0cd69b2e6a8ff8ccc64a1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
 size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3akl4"]
+size = Vector2(2, 2)
 
 [sub_resource type="Animation" id="Animation_uvlj0"]
 length = 0.001
@@ -574,12 +577,12 @@ shape = SubResource("RectangleShape2D_uvlj0")
 [node name="WaveColCheck" type="Area2D" parent="."]
 
 [node name="WaveCol" type="CollisionPolygon2D" parent="WaveColCheck"]
-polygon = PackedVector2Array(-1, -4, -4, -1, -4, 1, -1, 4, 1, 4, 4, 1, 4, -1, 1, -4)
+polygon = PackedVector2Array(-1, -2, -2, -1, -2, 1, -1, 2, 1, 2, 2, 1, 2, -1, 1, -2)
 
 [node name="NoSoftLock" type="Area2D" parent="."]
 
-[node name="WaveCol" type="CollisionPolygon2D" parent="NoSoftLock"]
-polygon = PackedVector2Array(-1, -3, -3, -1, -3, 1, -1, 3, 1, 3, 3, 1, 3, -1, 1, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoSoftLock"]
+shape = SubResource("RectangleShape2D_3akl4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
