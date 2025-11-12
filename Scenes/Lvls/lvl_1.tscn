@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=7 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="1_mrvjg"]
+[ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_ndgdw"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="1_yt48e"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="2_yt48e"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="4_ms17w"]
@@ -8,8 +9,11 @@
 
 [node name="Lvl1" type="Node2D"]
 
+[node name="Respawn" parent="." instance=ExtResource("1_ndgdw")]
+position = Vector2(48, 42)
+
 [node name="Vaw" parent="." instance=ExtResource("1_mrvjg")]
-position = Vector2(56, 22)
+position = Vector2(57, 27)
 
 [node name="Background" parent="." instance=ExtResource("1_yt48e")]
 position = Vector2(-221.99998, 119.99999)

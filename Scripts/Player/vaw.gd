@@ -6,12 +6,15 @@ extends CharacterBody2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite
 @onready var norm_col: CollisionShape2D = $NormCol
-@onready var coyote_timer: Timer = $"Jump Timers/CoyoteTimer"
-@onready var j_buffer_timer: Timer = $"Jump Timers/JBufferTimer"
-@onready var dir_choose_timer: Timer = $DirChooseTimer
 @onready var wave_col_check: Area2D = $WaveColCheck
 @onready var no_soft_lock: Area2D = $NoSoftLock
-@onready var soft_lock_timer: Timer = $SoftLockTimer
+@onready var respawn_point: Node2D = $"../Respawn"
+@onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
+@onready var j_buffer_timer: Timer = $"Timers/Jump Timers/JBufferTimer"
+@onready var dir_choose_timer: Timer = $Timers/DirChooseTimer
+@onready var soft_lock_timer: Timer = $Timers/SoftLockTimer
+@onready var death_timer: Timer = $Timers/DeathTimer
+@onready var respawn_timer: Timer = $Timers/RespawnTimer
 
 
 const SPEED = 3000.0
@@ -42,31 +45,33 @@ var no_y_wdir = false
 var soft_lock_override = false
 var moused_dir = false
 var soft_lock_timer_started = false
+var inactive = false
 
 #endregion
 
 
 func _physics_process(delta: float) -> void:
-	# Waveforms
-	formshift()
-	form_collision()
-	reset_uses()
-	wave_spds(delta)
-	wave_direction()
-	
-	# Movement
-	gravity(delta)
-	move(delta)
-	max_vel(delta)
-	jump()
-	jump_buffer()
-	coyote_time_set()
-	
-	# Animations
-	handle_anims()
-	
-	
-	move_and_slide()
+	if not inactive:
+		# Waveforms
+		formshift()
+		form_collision()
+		reset_uses()
+		wave_spds(delta)
+		wave_direction()
+		
+		# Movement
+		gravity(delta)
+		move(delta)
+		max_vel(delta)
+		jump()
+		jump_buffer()
+		coyote_time_set()
+		
+		# Animations
+		handle_anims()
+		
+		
+		move_and_slide()
 
 
 func formshift() -> void:
@@ -319,7 +324,17 @@ func get_mouse_direction() -> void:
 
 
 func death() -> void:
-	print("dead goofy") # Replace this with respawn stuff later
+	inactive = true
+	sprite.rotation_degrees = 0
+	ap.play("die")
+	death_timer.start()
+
+
+func respawn() -> void:
+	position = respawn_point.position
+	inactive = true
+	ap.play("revive")
+	respawn_timer.start()
 
 
 func handle_anims() -> void:
@@ -421,3 +436,11 @@ func _on_no_soft_lock_body_exited(_body: Node2D) -> void:
 
 func _on_hitbox_area_entered(_area: Area2D) -> void:
 	death()
+
+
+func _on_death_timer_timeout() -> void:
+	respawn()
+
+
+func _on_respawn_timer_timeout() -> void:
+	inactive = false
