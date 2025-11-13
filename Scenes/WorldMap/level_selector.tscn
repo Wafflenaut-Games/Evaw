@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://duscro0qotpwl"]
+[gd_scene load_steps=10 format=3 uid="uid://duscro0qotpwl"]
 
+[ext_resource type="Script" uid="uid://ckpge3w3cqvcr" path="res://Scripts/WorldMap/level_selector.gd" id="1_3k21t"]
 [ext_resource type="Texture2D" uid="uid://c6l51lebwmnmy" path="res://Assets/Sprites/Tools/Vaw_WM_Complete_Lvl.png" id="1_kfcxh"]
 [ext_resource type="Texture2D" uid="uid://cje5kvn7gleds" path="res://Assets/Sprites/Tools/Vaw_WM_Incomplete_Lvl.png" id="2_3k21t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_olb76"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k21t"]
 size = Vector2(3, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4x3cc"]
@@ -48,13 +49,19 @@ animations = [{
 }]
 
 [node name="Level_Selector" type="Area2D"]
+z_index = 1
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_3k21t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_olb76")
+shape = SubResource("RectangleShape2D_3k21t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, -3.5)
 sprite_frames = SubResource("SpriteFrames_mb50n")
 animation = &"incomplete"
 autoplay = "incomplete"
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://8y27bmc3xa2q"]
+
+[ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
+[ext_resource type="Script" uid="uid://bhaxa76n8j4dx" path="res://Scripts/Player/world_map_vaw.gd" id="1_ieowi"]
+[ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Select.png" id="2_ieowi"]
+[ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grdko"]
+size = Vector2(3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqemg"]
+atlas = ExtResource("1_grdko")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7hab"]
+atlas = ExtResource("1_grdko")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60gf1"]
+atlas = ExtResource("2_ieowi")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjsvn"]
+atlas = ExtResource("2_ieowi")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af2u1"]
+atlas = ExtResource("3_qyhwb")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsog5"]
+atlas = ExtResource("3_qyhwb")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46h5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqemg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7hab")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60gf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjsvn")
+}],
+"loop": true,
+"name": &"select",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af2u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsog5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[node name="WorldMap_Vaw" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_ieowi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_grdko")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_46h5t")
+animation = &"idle"
+autoplay = "idle"

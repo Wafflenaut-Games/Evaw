@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Vaw"
-run/main_scene="res://Scenes/Lvls/test_lvl.tscn"
+run/main_scene="uid://b8klvtukak5kw"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [autoload]
