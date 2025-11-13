@@ -31,7 +31,6 @@ const MAX_VEL = 10000.0
 var direction
 var grav
 var spd
-var form = "norm"
 var awaiting_dir = false
 var sine_used = false
 var lume_used = false
@@ -79,7 +78,7 @@ func formshift() -> void:
 	# Mouse controls
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
 		moused_dir = true
-		form = "sine"
+		Global.vaw_form = "sine"
 		wave_dir = ""
 		sine_used = true
 		velocity = Vector2(0, 0)
@@ -87,7 +86,7 @@ func formshift() -> void:
 		transforming = true
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
 		moused_dir = true
-		form = "lume"
+		Global.vaw_form = "lume"
 		wave_dir = ""
 		lume_used = true
 		velocity = Vector2(0, 0)
@@ -97,7 +96,7 @@ func formshift() -> void:
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
 		moused_dir = false
-		form = "sine"
+		Global.vaw_form = "sine"
 		wave_dir = ""
 		sine_used = true
 		velocity = Vector2(0, 0)
@@ -105,7 +104,7 @@ func formshift() -> void:
 		transforming = true
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
 		moused_dir = false
-		form = "lume"
+		Global.vaw_form = "lume"
 		wave_dir = ""
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
@@ -114,25 +113,25 @@ func formshift() -> void:
 	
 	# Revert to normal or start death in soft lock buffer
 	if not soft_lock_override:
-		if form == "sine":
+		if Global.vaw_form == "sine":
 			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
-				form = "norm"
+				Global.vaw_form = "norm"
 				wave_dir = ""
 				sine_used = true
 				velocity = Vector2(0, 0)
-		elif form == "lume":
+		elif Global.vaw_form == "lume":
 			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
-				form = "norm"
+				Global.vaw_form = "norm"
 				wave_dir = ""
 				lume_used = true
 				velocity = Vector2(0, 0)
 	else:
-		if form == "sine":
+		if Global.vaw_form == "sine":
 			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
 				if soft_lock_timer_started == false:
 					soft_lock_timer.start()
 					soft_lock_timer_started = true
-		elif form == "lume":
+		elif Global.vaw_form == "lume":
 			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
 				if soft_lock_timer_started == false:
 					soft_lock_timer.start()
@@ -140,15 +139,15 @@ func formshift() -> void:
 
 
 func form_collision() -> void:
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		norm_col.disabled = false
 		no_soft_lock.collision_mask = 0b00000000
 		wave_col_check.collision_mask = 0b00000000
-	elif form == "sine":
+	elif Global.vaw_form == "sine":
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00000110
 		wave_col_check.collision_mask = 0b00001001
-	elif form == "lume":
+	elif Global.vaw_form == "lume":
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00001010
 		wave_col_check.collision_mask = 0b00000101
@@ -168,19 +167,19 @@ func wave_spds(delta) -> void:
 		wave_dia = false
 	
 	# Set speeds
-	if form == "sine":
+	if Global.vaw_form == "sine":
 		if not wave_dia:
 			spd = SINE_SPD
 		else:
 			spd = DIA_SINE_SPD
-	elif form == "lume":
+	elif Global.vaw_form == "lume":
 		if not wave_dia:
 			spd = LUME_SPD
 		else:
 			spd = DIA_LUME_SPD
 	
 	# Apply speed
-	if not form == "norm":
+	if not Global.vaw_form == "norm":
 		if wave_dir == "r":
 			velocity.x = spd * delta
 		elif wave_dir == "l":
@@ -235,7 +234,7 @@ func wave_direction() -> void:
 
 
 func gravity(delta) -> void:
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		# Set gravity
 		if is_falling():
 			grav = F_GRAV
@@ -248,7 +247,7 @@ func gravity(delta) -> void:
 
 
 func move(delta) -> void:
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		direction = Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED * delta
@@ -262,7 +261,7 @@ func max_vel(delta) -> void:
 
 
 func jump() -> void:
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		# Jump
 		if (Input.is_action_just_pressed("up") or jump_buffering) and (is_on_floor() or coyote_time):
 			velocity.y = JUMP_VELOCITY
@@ -287,14 +286,14 @@ func jump_buffer() -> void:
 
 
 func is_jumping() -> bool:
-	if velocity.y < 0 and form == "norm":
+	if velocity.y < 0 and Global.vaw_form == "norm":
 		return true
 	else:
 		return false
 
 
 func is_falling() -> bool:
-	if velocity.y > 0 and form == "norm":
+	if velocity.y > 0 and Global.vaw_form == "norm":
 		return true
 	else:
 		return false
@@ -339,7 +338,7 @@ func respawn() -> void:
 
 func handle_anims() -> void:
 	# Sprite Transformations
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		if direction > 0:
 			sprite.flip_h = false
 		elif direction < 0:
@@ -369,7 +368,7 @@ func handle_anims() -> void:
 	
 	
 	# Animations
-	if form == "norm":
+	if Global.vaw_form == "norm":
 		if direction:
 			ap.play("run")
 		else:
@@ -377,7 +376,7 @@ func handle_anims() -> void:
 				ap.play("fall")
 			else:
 				ap.play("idle")
-	elif form == "sine":
+	elif Global.vaw_form == "sine":
 		if transforming:
 			ap.play("to_sine_card")
 		else:
@@ -385,7 +384,7 @@ func handle_anims() -> void:
 				ap.play("sine_dia")
 			else:
 				ap.play("sine_card")
-	elif form == "lume":
+	elif Global.vaw_form == "lume":
 		if transforming:
 			ap.play("to_lume_card")
 		else:
@@ -421,7 +420,7 @@ func _on_soft_lock_timer_timeout() -> void:
 
 func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 	if not is_on_floor():
-		form = "norm"
+		Global.vaw_form = "norm"
 		wave_dir = ""
 		wave_dia = false
 

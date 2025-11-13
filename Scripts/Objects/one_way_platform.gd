@@ -47,7 +47,7 @@ func format_dir() -> void:
 
 
 func wave_block() -> void:
-	if vaw.form == "norm":
+	if Global.vaw_form == "norm":
 		collision.one_way_collision = true
 	else:
 		collision.one_way_collision = false

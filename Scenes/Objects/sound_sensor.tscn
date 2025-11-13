@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctkgetwx63vg2"]
+
+[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sprites/Sensors/soundsensor.png" id="1_t0eoo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgv8"]
+size = Vector2(6, 6.25)
+
+[node name="sound_sensor" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_3dgv8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t0eoo")

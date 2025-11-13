@@ -64,12 +64,12 @@ func active_material() -> void:
 	if type == "clay":
 		damager.disabled = false
 	elif type == "steel":
-		if vaw.form == "sine":
+		if Global.vaw_form == "sine":
 			damager.disabled = true
 		else:
 			damager.disabled = false
 	elif type == "glass":
-		if vaw.form == "lume":
+		if Global.vaw_form == "lume":
 			damager.disabled = true
 		else:
 			damager.disabled = false
