@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6l51lebwmnmy"
-path="res://.godot/imported/Vaw_WM_Complete_Lvl.png-3017ee5944147b631873e079b16addcc.ctex"
+uid="uid://cje5kvn7gleds"
+path="res://.godot/imported/Vaw_WM_Incomplete_Lvl.png-14a4ece8f699cdce9914946145bcbd56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tools/Vaw_WM_Complete_Lvl.png"
-dest_files=["res://.godot/imported/Vaw_WM_Complete_Lvl.png-3017ee5944147b631873e079b16addcc.ctex"]
+source_file="res://Assets/Tools/Vaw_WM_Incomplete_Lvl.png"
+dest_files=["res://.godot/imported/Vaw_WM_Incomplete_Lvl.png-14a4ece8f699cdce9914946145bcbd56.ctex"]
 
 [params]
 
