@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8klvtukak5kw"]
+[gd_scene load_steps=9 format=3 uid="uid://b8klvtukak5kw"]
 
 [ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Sprites/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="1_uwqkr"]
@@ -27,13 +27,25 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwqkr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
 [node name="WorldMap" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("1_uwqkr")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="WorldMapAnims" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e2gad")
 autoplay = "default"
+
+[node name="Transitions" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uwqkr")
+animation = &"1"
 
 [node name="WorldMap_Vaw" parent="." instance=ExtResource("2_e2gad")]
 position = Vector2(-73, -13)
@@ -43,67 +55,84 @@ position = Vector2(-73, -13)
 [node name="Level_Selector" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-73, -13)
 directions = Array[String](["right"])
+level = 0
 
 [node name="Level_Selector2" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-53, -13)
 directions = Array[String](["right", "left"])
+level = 1
 
 [node name="Level_Selector3" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-32, -13)
 directions = Array[String](["down", "left"])
+level = 2
 
 [node name="Level_Selector4" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-32, 11)
 directions = Array[String](["up", "right", "down"])
+level = 3
 
 [node name="Level_Selector5" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-12, 11)
 directions = Array[String](["left", "right"])
+level = 5
 
 [node name="Level_Selector6" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, 11)
 directions = Array[String](["left", "up"])
+level = 6
 
 [node name="Level_Selector7" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-32, 33)
 directions = Array[String](["up"])
+level = 4
 
 [node name="Level_Selector8" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, -45)
 directions = Array[String](["down", "right", "left"])
+level = 8
 
 [node name="Level_Selector9" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(36, -45)
 directions = Array[String](["left", "right"])
+level = 10
 
 [node name="Level_Selector10" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -56)
 directions = Array[String](["left", "down"])
+level = 11
 
 [node name="Level_Selector11" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -19)
 directions = Array[String](["up", "down"])
+level = 12
 
 [node name="Level_Selector12" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, 11)
 directions = Array[String](["up", "left"])
+level = 13
 
 [node name="Level_Selector13" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(24, 11)
 directions = Array[String](["right", "down"])
+level = 14
 
 [node name="Level_Selector14" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(24, 36)
 directions = Array[String](["right", "up"])
+level = 15
 
 [node name="Level_Selector15" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(55, 36)
 directions = Array[String](["left"])
+level = 16
 
 [node name="Level_Selector16" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-25, -45)
 directions = Array[String](["right"])
+level = 9
 
 [node name="Level_Selector17" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, -20)
 directions = Array[String](["up", "down"])
+level = 7

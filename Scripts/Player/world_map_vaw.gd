@@ -16,19 +16,20 @@ func _physics_process(delta: float) -> void:
 
 
 func move(delta) -> void:
-	if Input.is_action_just_pressed("up") and Global.world_map_dirs.has("up"):
-		velocity.y = -SPEED * delta
-		moving = true
-		Global.world_map_dirs = []
-	elif Input.is_action_just_pressed("down") and Global.world_map_dirs.has("down"):
-		velocity.y = SPEED * delta
-		moving = true
-		Global.world_map_dirs = []
-	elif Input.is_action_just_pressed("left") and Global.world_map_dirs.has("left"):
-		velocity.x = -SPEED * delta
-		moving = true
-		Global.world_map_dirs = []
-	elif Input.is_action_just_pressed("right") and Global.world_map_dirs.has("right"):
-		velocity.x = SPEED * delta
-		moving = true
-		Global.world_map_dirs = []
+	if not Global.lvl_selected:
+		if Input.is_action_just_pressed("up") and Global.world_map_dirs.has("up"):
+			velocity.y = -SPEED * delta
+			moving = true
+			Global.world_map_dirs = []
+		elif Input.is_action_just_pressed("down") and Global.world_map_dirs.has("down"):
+			velocity.y = SPEED * delta
+			moving = true
+			Global.world_map_dirs = []
+		elif Input.is_action_just_pressed("left") and Global.world_map_dirs.has("left"):
+			velocity.x = -SPEED * delta
+			moving = true
+			Global.world_map_dirs = []
+		elif Input.is_action_just_pressed("right") and Global.world_map_dirs.has("right"):
+			velocity.x = SPEED * delta
+			moving = true
+			Global.world_map_dirs = []
