@@ -81,5 +81,5 @@ shape = SubResource("RectangleShape2D_grdko")
 z_index = 5
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_46h5t")
-animation = &"idle"
+animation = &"select"
 autoplay = "idle"

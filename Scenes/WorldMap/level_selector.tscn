@@ -53,8 +53,6 @@ z_index = 1
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_3k21t")
-directions = null
-level = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
@@ -66,4 +64,9 @@ sprite_frames = SubResource("SpriteFrames_mb50n")
 animation = &"incomplete"
 autoplay = "incomplete"
 
+[node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

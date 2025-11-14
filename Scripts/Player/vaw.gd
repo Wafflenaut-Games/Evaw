@@ -50,9 +50,6 @@ var inactive = false
 
 
 func _physics_process(delta: float) -> void:
-	
-	print(str(collision_layer))
-	
 	if not inactive:
 		# Waveforms
 		formshift()
@@ -269,13 +266,13 @@ func max_vel(delta) -> void:
 func jump() -> void:
 	if Global.vaw_form == "norm":
 		# Jump
-		if (Input.is_action_just_pressed("up") or jump_buffering) and (is_on_floor() or coyote_time):
+		if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("jump") or jump_buffering) and (is_on_floor() or coyote_time):
 			velocity.y = JUMP_VELOCITY
 			coyote_time = false
 			jump_buffering = false
 		
 		# Jump Cut
-		if Input.is_action_just_released("up") and velocity.y < 0:
+		if (Input.is_action_just_released("up") or Input.is_action_just_released("jump")) and velocity.y < 0:
 			velocity.y = 0
 
 
@@ -286,7 +283,7 @@ func coyote_time_set() -> void:
 
 
 func jump_buffer() -> void:
-	if not is_on_floor() and not coyote_time and Input.is_action_just_pressed("up"):
+	if not is_on_floor() and not coyote_time and (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("jump")):
 		jump_buffering = true
 		j_buffer_timer.start()
 
