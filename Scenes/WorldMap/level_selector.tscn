@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://duscro0qotpwl"]
 
 [ext_resource type="Script" uid="uid://ckpge3w3cqvcr" path="res://Scripts/WorldMap/level_selector.gd" id="1_3k21t"]
-[ext_resource type="Texture2D" uid="uid://c6l51lebwmnmy" path="res://Assets/Sprites/Tools/Vaw_WM_Complete_Lvl.png" id="1_kfcxh"]
-[ext_resource type="Texture2D" uid="uid://cje5kvn7gleds" path="res://Assets/Sprites/Tools/Vaw_WM_Incomplete_Lvl.png" id="2_3k21t"]
+[ext_resource type="Texture2D" uid="uid://c6l51lebwmnmy" path="res://Assets/Tools/Vaw_WM_Complete_Lvl.png" id="1_kfcxh"]
+[ext_resource type="Texture2D" uid="uid://cje5kvn7gleds" path="res://Assets/Tools/Vaw_WM_Incomplete_Lvl.png" id="2_3k21t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k21t"]
 size = Vector2(3, 3)
