@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=8 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_1qo6x"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_sj2hf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="5_8xn0a"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="6_iebl6"]
+[ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
 
 [node name="Test_Lvl" type="Node2D"]
 
@@ -51,3 +52,7 @@ position = Vector2(100, -82)
 
 [node name="OneWayPlatform2" parent="OneWays" instance=ExtResource("6_iebl6")]
 position = Vector2(108, -82)
+
+[node name="sound_sensor" parent="." instance=ExtResource("7_sj2hf")]
+position = Vector2(35, 65)
+scale = Vector2(-1, -1)
