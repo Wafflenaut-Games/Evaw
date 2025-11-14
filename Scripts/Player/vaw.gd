@@ -50,6 +50,9 @@ var inactive = false
 
 
 func _physics_process(delta: float) -> void:
+	
+	print(str(collision_layer))
+	
 	if not inactive:
 		# Waveforms
 		formshift()
@@ -140,14 +143,17 @@ func formshift() -> void:
 
 func form_collision() -> void:
 	if Global.vaw_form == "norm":
+		collision_layer = 0b00000000
 		norm_col.disabled = false
 		no_soft_lock.collision_mask = 0b00000000
 		wave_col_check.collision_mask = 0b00000000
 	elif Global.vaw_form == "sine":
+		collision_layer = 0b00001001
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00000110
 		wave_col_check.collision_mask = 0b00001001
 	elif Global.vaw_form == "lume":
+		collision_layer = 0b00000101
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00001010
 		wave_col_check.collision_mask = 0b00000101

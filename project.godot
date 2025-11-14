@@ -85,12 +85,12 @@ lume_m={
 [layer_names]
 
 2d_physics/layer_1="normal"
-2d_physics/layer_2="mesh"
-2d_physics/layer_3="steel"
-2d_physics/layer_4="glass"
+2d_physics/layer_2="wave"
+2d_physics/layer_3="sine"
+2d_physics/layer_4="light"
 2d_physics/layer_5="killzone"
 2d_physics/layer_6="world"
-2d_physics/layer_7="sensors"
+2d_physics/layer_7="Layer 7"
 
 [rendering]
 
