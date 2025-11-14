@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=13 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_crycw"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_i2041"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://be6vfgdhy2ill" path="res://Assets/Sprites/Tilesets/Vaw_Tileset.png" id="5_usj0q"]
+[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Tools/bubblebig.png" id="6_7ia4a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j5gb"]
 texture = ExtResource("5_usj0q")
@@ -267,6 +268,27 @@ initial_velocity_max = 75.0
 gravity = Vector3(0, 0, 0)
 scale_max = 1.5
 
+[sub_resource type="Gradient" id="Gradient_m0urk"]
+colors = PackedColorArray(0.23137255, 0.34509805, 0.47843137, 0.9019608, 1, 1, 1, 0.77254903)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r4ib6"]
+gradient = SubResource("Gradient_m0urk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ltx7"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+direction = Vector3(0, -100, 0)
+spread = 0.0
+initial_velocity_min = 47.27
+initial_velocity_max = 76.36
+gravity = Vector3(0, -90, 0)
+scale_min = 0.5
+color_initial_ramp = SubResource("GradientTexture1D_r4ib6")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+collision_use_scale = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Respawn" parent="." instance=ExtResource("1_v8kj3")]
@@ -284,8 +306,17 @@ tile_map_data = PackedByteArray("AAD9/wUAAQAIAAEAAAD+/wUAAQAIAAEAAAD//wUAAQAIAAE
 tile_set = SubResource("TileSet_mx85b")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(34, -290)
 amount = 2500
 lifetime = 15.0
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 process_material = SubResource("ParticleProcessMaterial_v8kj3")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(72, 272)
+amount = 1600
+texture = ExtResource("6_7ia4a")
+lifetime = 60.0
+visibility_rect = Rect2(-5000, -5000, 100000, 19000)
+process_material = SubResource("ParticleProcessMaterial_2ltx7")
