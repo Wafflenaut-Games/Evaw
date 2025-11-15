@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 #region vars
 
-@onready var ap: AnimationPlayer = $AnimationPlayer
-@onready var sprite: Sprite2D = $Sprite
+@onready var ap: AnimatedSprite2D = $AnimatedSprite2D
 @onready var norm_col: CollisionShape2D = $NormCol
 @onready var wave_col_check: Area2D = $WaveColCheck
 @onready var no_soft_lock: Area2D = $NoSoftLock
@@ -327,7 +326,7 @@ func get_mouse_direction() -> void:
 
 func death() -> void:
 	inactive = true
-	sprite.rotation_degrees = 0
+	ap.rotation_degrees = 0
 	ap.play("die")
 	death_timer.start()
 
@@ -343,31 +342,31 @@ func handle_anims() -> void:
 	# Sprite Transformations
 	if Global.vaw_form == "norm":
 		if direction > 0:
-			sprite.flip_h = false
+			ap.flip_h = false
 		elif direction < 0:
-			sprite.flip_h = true
+			ap.flip_h = true
 		
-		sprite.rotation_degrees = 0
+		ap.rotation_degrees = 0
 	else:
 		# Waves
 		if wave_dir == "ur":
-			sprite.rotation_degrees = 0
+			ap.rotation_degrees = 0
 		elif wave_dir == "ul":
-			sprite.rotation_degrees = -90
+			ap.rotation_degrees = -90
 		elif wave_dir == "dr":
-			sprite.rotation_degrees = 90
+			ap.rotation_degrees = 90
 		elif wave_dir == "dl":
-			sprite.rotation_degrees = 180
+			ap.rotation_degrees = 180
 		if wave_dir == "r":
-			sprite.rotation_degrees = 0
+			ap.rotation_degrees = 0
 		elif wave_dir == "l":
-			sprite.rotation_degrees = 180
+			ap.rotation_degrees = 180
 		elif wave_dir == "d":
-			sprite.rotation_degrees = 90
+			ap.rotation_degrees = 90
 		elif wave_dir == "u":
-			sprite.rotation_degrees = -90
+			ap.rotation_degrees = -90
 		
-		sprite.flip_h = false
+		ap.flip_h = false
 	
 	
 	# Animations
@@ -381,7 +380,7 @@ func handle_anims() -> void:
 				ap.play("idle")
 	elif Global.vaw_form == "sine":
 		if transforming:
-			ap.play("to_sine_card")
+			ap.play("to_sine")
 		else:
 			if wave_dia:
 				ap.play("sine_dia")
@@ -389,7 +388,7 @@ func handle_anims() -> void:
 				ap.play("sine_card")
 	elif Global.vaw_form == "lume":
 		if transforming:
-			ap.play("to_lume_card")
+			ap.play("to_lume")
 		else:
 			if wave_dia:
 				ap.play("lume_dia")

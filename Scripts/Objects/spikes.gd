@@ -3,7 +3,7 @@ extends Node2D
 
 #region vars
 
-@onready var ap: AnimationPlayer = $AnimationPlayer
+@onready var ap: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Area2D
 @onready var vaw: CharacterBody2D = $"../../Vaw"
 @onready var damager: CollisionShape2D = $Area2D/CollisionShape2D
