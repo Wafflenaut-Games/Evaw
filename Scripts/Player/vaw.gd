@@ -8,12 +8,14 @@ extends CharacterBody2D
 @onready var wave_col_check: Area2D = $WaveColCheck
 @onready var no_soft_lock: Area2D = $NoSoftLock
 @onready var respawn_point: Node2D = $"../Respawn"
+@onready var transitions: AnimatedSprite2D = $Transitions
 @onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Timers/Jump Timers/JBufferTimer"
 @onready var dir_choose_timer: Timer = $Timers/DirChooseTimer
 @onready var soft_lock_timer: Timer = $Timers/SoftLockTimer
 @onready var death_timer: Timer = $Timers/DeathTimer
 @onready var respawn_timer: Timer = $Timers/RespawnTimer
+@onready var transition_timer: Timer = $Timers/TransitionTimer
 
 
 const SPEED = 3000.0
@@ -43,12 +45,15 @@ var no_y_wdir = false
 var soft_lock_override = false
 var moused_dir = false
 var soft_lock_timer_started = false
-var inactive = false
+var inactive = true
+var level_begun = false
 
 #endregion
 
 
 func _physics_process(delta: float) -> void:
+	level_begin()
+	
 	if not inactive:
 		# Waveforms
 		formshift()
@@ -70,6 +75,13 @@ func _physics_process(delta: float) -> void:
 		
 		move_and_slide()
 		
+
+
+func level_begin() -> void:
+	if level_begun == false:
+		transitions.play("%s" % Global.level)
+		transition_timer.start()
+		level_begun = true
 
 
 func formshift() -> void:
@@ -450,3 +462,7 @@ func _on_sensor_checker_area_shape_entered(area_rid: RID, area: Area2D, area_sha
 	if area.is_in_group("sound_sensor"):
 		if Global.vaw_form == "sine":
 			area.get_parent().activate()
+
+
+func _on_transition_timer_timeout() -> void:
+	inactive = false

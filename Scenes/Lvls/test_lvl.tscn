@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="5_8xn0a"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="6_iebl6"]
-[ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="7_x4073"]
 
 [node name="Test_Lvl" type="Node2D"]

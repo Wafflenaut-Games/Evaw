@@ -5,7 +5,7 @@ extends Area2D
 @onready var vaw: CharacterBody2D = $"../../WorldMap_Vaw"
 @onready var ap: AnimatedSprite2D = $AnimatedSprite2D
 @onready var transition_timer: Timer = $TransitionTimer
-@onready var transitions: AnimatedSprite2D = $"../../Transitions"
+@onready var camera: Camera2D = $"../../Camera"
 
 var complete = false
 
@@ -39,8 +39,8 @@ func select_lvl() -> void:
 	if vaw_on() and (Input.is_action_just_pressed("sine") or Input.is_action_just_pressed("lume") or Input.is_action_just_pressed("jump")):
 		if typeof(level) == TYPE_INT and level > 0:
 			vaw.selecting = true
+			camera.transitioning = true
 			transition_timer.start()
-			transitions.play("%s" % level)
 
 
 func handle_anims() -> void:
@@ -63,3 +63,5 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_transition_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Lvls/lvl_%s.tscn" % level)
 	vaw.selecting = false
+	camera.transitioning = false
+	Global.level = level

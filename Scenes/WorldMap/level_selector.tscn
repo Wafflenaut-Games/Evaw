@@ -65,7 +65,6 @@ animation = &"incomplete"
 autoplay = "incomplete"
 
 [node name="TransitionTimer" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
