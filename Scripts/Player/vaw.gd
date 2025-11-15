@@ -327,14 +327,14 @@ func get_mouse_direction() -> void:
 func death() -> void:
 	inactive = true
 	ap.rotation_degrees = 0
-	ap.play("die")
+	ap.play("die%s" % Global.water_lvl)
 	death_timer.start()
 
 
 func respawn() -> void:
 	position = respawn_point.position
 	inactive = true
-	ap.play("revive")
+	ap.play("revive%s" % Global.water_lvl)
 	respawn_timer.start()
 
 
@@ -372,12 +372,12 @@ func handle_anims() -> void:
 	# Animations
 	if Global.vaw_form == "norm":
 		if direction:
-			ap.play("run")
+			ap.play("run%s" % Global.water_lvl)
 		else:
 			if is_falling():
-				ap.play("fall")
+				ap.play("fall%s" % Global.water_lvl)
 			else:
-				ap.play("idle")
+				ap.play("idle%s" % Global.water_lvl)
 	elif Global.vaw_form == "sine":
 		if transforming:
 			ap.play("to_sine")
