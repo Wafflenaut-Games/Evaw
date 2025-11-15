@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw5f0oxki15so"]
+
+[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Tools/bubblebig.png" id="1_v2fr4"]
+
+[sub_resource type="Gradient" id="Gradient_vp1d2"]
+colors = PackedColorArray(0.23137255, 0.34509805, 0.47843137, 0.9019608, 1, 1, 1, 0.77254903)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r4ib6"]
+gradient = SubResource("Gradient_vp1d2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_prkqm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+direction = Vector3(0, -100, 0)
+spread = 0.0
+initial_velocity_min = 47.27
+initial_velocity_max = 76.36
+gravity = Vector3(0, -90, 0)
+scale_min = 0.5
+color_initial_ramp = SubResource("GradientTexture1D_r4ib6")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+collision_use_scale = true
+
+[node name="Bubbles" type="GPUParticles2D"]
+position = Vector2(72, 272)
+amount = 1600
+texture = ExtResource("1_v2fr4")
+lifetime = 60.0
+visibility_rect = Rect2(-5000, -5000, 100000, 19000)
+process_material = SubResource("ParticleProcessMaterial_prkqm")

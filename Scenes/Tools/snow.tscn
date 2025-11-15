@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmfe287ym3k2d"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gkixu"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+direction = Vector3(14, 35, 0)
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+scale_max = 1.5
+
+[node name="Snow" type="GPUParticles2D"]
+position = Vector2(34, -290)
+amount = 2500
+lifetime = 15.0
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+process_material = SubResource("ParticleProcessMaterial_gkixu")
