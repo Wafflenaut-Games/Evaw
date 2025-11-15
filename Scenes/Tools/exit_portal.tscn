@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bevp80kkiyk8q"]
+
+[ext_resource type="Script" uid="uid://cq3me87k1j3vv" path="res://Scripts/Tools/exit_portal.gd" id="1_y7q4h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erf8c"]
+
+[node name="ExitPortal" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_y7q4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_erf8c")
+
+[node name="TransitionTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

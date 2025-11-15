@@ -6,7 +6,6 @@ extends Camera2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var transition_timer: Timer = $TransitionTimer
 
-var transitioning = false
 var trans_timer_started = false
 
 #endregion
@@ -17,7 +16,7 @@ func _process(_delta: float) -> void:
 
 
 func fade() -> void:
-	if transitioning == true:
+	if Global.is_transitioning == true:
 		ap.play("fade_in")
 		if not trans_timer_started:
 			transition_timer.start()
@@ -25,5 +24,6 @@ func fade() -> void:
 
 
 func _on_transition_timer_timeout() -> void:
-	transitioning = false
+	ap.stop(false)
+	Global.is_transitioning = false
 	trans_timer_started = false

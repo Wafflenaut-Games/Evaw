@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=10 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_1qo6x"]
+[ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="2_6ay57"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_sj2hf"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_x4073"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
@@ -13,6 +14,9 @@
 
 [node name="Respawn" parent="." instance=ExtResource("1_1qo6x")]
 position = Vector2(48, 42)
+
+[node name="ExitPortal" parent="." instance=ExtResource("2_6ay57")]
+position = Vector2(41, 102)
 
 [node name="Vaw" parent="." instance=ExtResource("2_sj2hf")]
 position = Vector2(57, 27)

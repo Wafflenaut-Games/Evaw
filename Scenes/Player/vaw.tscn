@@ -1012,7 +1012,6 @@ size = Vector2(6, 6)
 
 [node name="Vaw" type="CharacterBody2D" groups=["player"]]
 z_index = 5
-collision_layer = 0
 collision_mask = 15
 script = ExtResource("1_hy5rl")
 

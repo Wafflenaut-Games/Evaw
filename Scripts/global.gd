@@ -5,3 +5,6 @@ var world_map_dirs: Array = []
 var level = 0
 var lvl_selected = false
 var water_lvl = "" # always only set to "" or "_w"
+var completed_lvls = []
+var feathers_collected = []
+var is_transitioning = false

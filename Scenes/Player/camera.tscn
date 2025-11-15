@@ -80,6 +80,7 @@ libraries = {
 }
 
 [node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 0.95
 one_shot = true
 
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

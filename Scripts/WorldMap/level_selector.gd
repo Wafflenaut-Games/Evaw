@@ -39,7 +39,7 @@ func select_lvl() -> void:
 	if vaw_on() and (Input.is_action_just_pressed("sine") or Input.is_action_just_pressed("lume") or Input.is_action_just_pressed("jump")):
 		if typeof(level) == TYPE_INT and level > 0:
 			vaw.selecting = true
-			camera.transitioning = true
+			Global.is_transitioning = true
 			transition_timer.start()
 
 
@@ -63,5 +63,4 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_transition_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Lvls/lvl_%s.tscn" % level)
 	vaw.selecting = false
-	camera.transitioning = false
 	Global.level = level
