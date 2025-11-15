@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br42mqtu4d1m5"
-path="res://.godot/imported/bubblesmall.png-260ea7ab3062bdd8ab861d10abef6f73.ctex"
+uid="uid://cje5kvn7gleds"
+path="res://.godot/imported/Vaw_WM_Incomplete_Lvl.png-90296335a319dce5ea7cab31951cdcb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/bubblesmall.png"
-dest_files=["res://.godot/imported/bubblesmall.png-260ea7ab3062bdd8ab861d10abef6f73.ctex"]
+source_file="res://Assets/Sprites/Tools/Vaw_WM_Incomplete_Lvl.png"
+dest_files=["res://.godot/imported/Vaw_WM_Incomplete_Lvl.png-90296335a319dce5ea7cab31951cdcb1.ctex"]
 
 [params]
 

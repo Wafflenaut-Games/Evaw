@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw5f0oxki15so"]
 
-[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Tools/bubblebig.png" id="1_v2fr4"]
+[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="1_v2fr4"]
 
 [sub_resource type="Gradient" id="Gradient_vp1d2"]
 colors = PackedColorArray(0.23137255, 0.34509805, 0.47843137, 0.9019608, 1, 1, 1, 0.77254903)
