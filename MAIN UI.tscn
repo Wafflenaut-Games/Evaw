@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk4egnlrkrcxy"]
+
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="1_a4qpl"]
+[ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Sprites/Backgrounds/Vaw_WM_Sheet.png" id="1_r5twg"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/5x3-font.ttf" id="1_sewp4"]
+[ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://main_ui.gd" id="1_veyoh"]
+[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="5_5bpaq"]
+[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sprites/Sensors/soundsensor.png" id="5_veyoh"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Sprites/Interactables/buttonhover.png" id="6_ieu2w"]
+
+[sub_resource type="Theme" id="Theme_r5twg"]
+
+[node name="Main Menu!" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_veyoh")
+
+[node name="VawWmSheet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 0)
+texture = ExtResource("1_r5twg")
+
+[node name="TentativeBackg" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
+texture = ExtResource("1_a4qpl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -48.0
+offset_right = 44.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TITLE" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("1_sewp4")
+theme_override_font_sizes/font_size = 14
+text = "Evaw"
+horizontal_alignment = 1
+
+[node name="START" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5019608, 0.47843137, 0.5019608, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_sewp4")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("5_5bpaq")
+button_mask = 5
+text = "  START"
+alignment = 0
+
+[node name="OPTIONS" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_r5twg")
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5019608, 0.47843137, 0.5019608, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_sewp4")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("6_ieu2w")
+text = "  OPTIONS"
+alignment = 0
+
+[node name="QUIT" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5004912, 0.47686583, 0.5004912, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_sewp4")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("5_veyoh")
+text = "  QUIT"
+alignment = 0
+text_overrun_behavior = 1
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
