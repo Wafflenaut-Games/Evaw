@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=134 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -881,9 +881,12 @@ size = Vector2(4, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3akl4"]
 size = Vector2(2, 2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w850c"]
+size = Vector2(7, 8)
+
 [node name="Vaw" type="CharacterBody2D" groups=["player"]]
 z_index = 5
-collision_layer = 63
+collision_layer = 0
 collision_mask = 15
 script = ExtResource("1_hy5rl")
 
@@ -891,7 +894,7 @@ script = ExtResource("1_hy5rl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
-animation = &"run_w"
+animation = &"idle"
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvlj0")
@@ -912,6 +915,15 @@ polygon = PackedVector2Array(-1, -2, -2, -1, -2, 1, -1, 2, 1, 2, 2, 1, 2, -1, 1,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoSoftLock"]
 shape = SubResource("RectangleShape2D_3akl4")
+
+[node name="SensorChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorChecker"]
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_w850c")
 
 [node name="Timers" type="Node" parent="."]
 
@@ -945,6 +957,7 @@ one_shot = true
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
 [connection signal="body_entered" from="NoSoftLock" to="." method="_on_no_soft_lock_body_entered"]
 [connection signal="body_exited" from="NoSoftLock" to="." method="_on_no_soft_lock_body_exited"]
+[connection signal="area_shape_entered" from="SensorChecker" to="." method="_on_sensor_checker_area_shape_entered"]
 [connection signal="timeout" from="Timers/Jump Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Timers/Jump Timers/JBufferTimer" to="." method="_on_j_buffer_timer_timeout"]
 [connection signal="timeout" from="Timers/DirChooseTimer" to="." method="_on_dir_choose_timer_timeout"]

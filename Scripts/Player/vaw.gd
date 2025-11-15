@@ -68,8 +68,8 @@ func _physics_process(delta: float) -> void:
 		# Animations
 		handle_anims()
 		
-		
 		move_and_slide()
+		
 
 
 func formshift() -> void:
@@ -139,7 +139,6 @@ func formshift() -> void:
 
 func form_collision() -> void:
 	if Global.vaw_form == "norm":
-		collision_layer = 0b00000000
 		norm_col.disabled = false
 		no_soft_lock.collision_mask = 0b00000000
 		wave_col_check.collision_mask = 0b00000000
@@ -445,3 +444,9 @@ func _on_death_timer_timeout() -> void:
 
 func _on_respawn_timer_timeout() -> void:
 	inactive = false
+
+
+func _on_sensor_checker_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("sound_sensor"):
+		if Global.vaw_form == "sine":
+			area.get_parent().activate()
