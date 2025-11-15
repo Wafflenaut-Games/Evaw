@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://8y27bmc3xa2q"]
+[gd_scene load_steps=23 format=3 uid="uid://8y27bmc3xa2q"]
 
 [ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
 [ext_resource type="Script" uid="uid://bhaxa76n8j4dx" path="res://Scripts/Player/world_map_vaw.gd" id="1_ieowi"]
 [ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Select.png" id="2_ieowi"]
 [ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
+[ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk_Back.png" id="5_eqemg"]
+[ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk_Front.png" id="6_b7hab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grdko"]
 size = Vector2(3, 3)
@@ -31,6 +33,38 @@ region = Rect2(0, 0, 9, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsog5"]
 atlas = ExtResource("3_qyhwb")
 region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46h5t"]
+atlas = ExtResource("5_eqemg")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yqqq"]
+atlas = ExtResource("5_eqemg")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sgkt"]
+atlas = ExtResource("5_eqemg")
+region = Rect2(18, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtw8b"]
+atlas = ExtResource("5_eqemg")
+region = Rect2(27, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4fl4"]
+atlas = ExtResource("6_b7hab")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63mug"]
+atlas = ExtResource("6_b7hab")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aimp4"]
+atlas = ExtResource("6_b7hab")
+region = Rect2(18, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtflq"]
+atlas = ExtResource("6_b7hab")
+region = Rect2(27, 0, 9, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_46h5t"]
 animations = [{
@@ -66,6 +100,40 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46h5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yqqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sgkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtw8b")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4fl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63mug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aimp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtflq")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
 }]
 
 [node name="WorldMap_Vaw" type="CharacterBody2D"]
@@ -81,5 +149,5 @@ shape = SubResource("RectangleShape2D_grdko")
 z_index = 5
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_46h5t")
-animation = &"select"
+animation = &"walk_front"
 autoplay = "idle"

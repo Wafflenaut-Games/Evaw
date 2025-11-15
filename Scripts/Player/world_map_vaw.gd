@@ -43,6 +43,17 @@ func handle_anims() -> void:
 		ap.play("select")
 	else:
 		if not stopped:
-			ap.play("walk")
+			if velocity.x > 0:
+				ap.play("walk")
+				ap.flip_h = false
+			elif velocity.x < 0:
+				ap.play("walk")
+				ap.flip_h = true
+			elif velocity.y > 0:
+				ap.play("walk_front")
+				ap.flip_h = false
+			elif velocity.y < 0:
+				ap.play("walk_back")
+				ap.flip_h = false
 		else:
 			ap.play("idle")
