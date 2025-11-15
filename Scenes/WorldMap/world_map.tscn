@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8klvtukak5kw"]
+[gd_scene load_steps=9 format=3 uid="uid://b8klvtukak5kw"]
 
 [ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Sprites/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="1_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://8y27bmc3xa2q" path="res://Scenes/Player/world_map_vaw.tscn" id="2_e2gad"]
-[ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="3_b0fsr"]
 [ext_resource type="PackedScene" uid="uid://duscro0qotpwl" path="res://Scenes/WorldMap/level_selector.tscn" id="3_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://dkjp126re2mij" path="res://Scenes/WorldMap/vertical_wm_ends.tscn" id="6_iv8dp"]
 
@@ -29,131 +28,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iv8dp"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(0, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qx6hv"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(160, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vqpy"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(320, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvxal"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(480, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mytm"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(640, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eteny"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(800, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ev1mf"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(960, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cco7p"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1120, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sk4ac"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1280, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whet8"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1440, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wba5"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1600, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ubjsr"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1760, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5afw"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(1920, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ydb8c"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(2080, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2k02a"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(2240, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0fsr"]
-atlas = ExtResource("3_b0fsr")
-region = Rect2(2240, 0, 160, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_uwqkr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iv8dp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qx6hv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8vqpy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvxal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6mytm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eteny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ev1mf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cco7p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sk4ac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_whet8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7wba5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ubjsr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5afw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ydb8c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2k02a")
-}],
-"loop": false,
-"name": &"1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b0fsr")
-}],
-"loop": true,
-"name": &"RESET",
-"speed": 5.0
-}]
-
 [node name="WorldMap" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("1_uwqkr")]
@@ -161,12 +35,6 @@ animations = [{
 [node name="WorldMapAnims" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e2gad")
 autoplay = "default"
-
-[node name="Transitions" type="AnimatedSprite2D" parent="."]
-z_index = 2
-sprite_frames = SubResource("SpriteFrames_uwqkr")
-animation = &"RESET"
-autoplay = "RESET"
 
 [node name="WorldMap_Vaw" parent="." instance=ExtResource("2_e2gad")]
 position = Vector2(-73, -13)
