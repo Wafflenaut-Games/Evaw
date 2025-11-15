@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_3k21t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, -3.5)
 sprite_frames = SubResource("SpriteFrames_mb50n")
-animation = &"incomplete"
+animation = &"complete"
 autoplay = "incomplete"
 
 [node name="TransitionTimer" type="Timer" parent="."]

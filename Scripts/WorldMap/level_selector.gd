@@ -10,6 +10,7 @@ extends Area2D
 var complete = false
 
 @export var directions: Array[String]
+@export var blocked_dirs: Array[String]
 @export var level: int = 0
 
 #endregion
@@ -19,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 	set_vars()
 	select_lvl()
 	handle_anims()
+	set_complete()
 
 
 func vaw_on() -> bool:
@@ -33,6 +35,12 @@ func set_vars() -> void:
 		Global.world_map_dirs = directions
 		vaw.velocity = Vector2.ZERO
 		vaw.stopped = true
+
+
+func set_complete() -> void:
+	if Global.completed_lvls.has(level):
+		complete = true
+		directions.append_array(blocked_dirs)
 
 
 func select_lvl() -> void:

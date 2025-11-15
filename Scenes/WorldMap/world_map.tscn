@@ -47,17 +47,20 @@ directions = Array[String](["right"])
 
 [node name="Level_Selector2" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-53, -13)
-directions = Array[String](["right", "left"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["right"])
 level = 1
 
 [node name="Level_Selector3" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-32, -13)
-directions = Array[String](["down", "left"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["down"])
 level = 2
 
 [node name="Level_Selector4" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-32, 11)
-directions = Array[String](["up", "right", "down"])
+directions = Array[String](["up"])
+blocked_dirs = Array[String](["right", "down"])
 level = 3
 
 [node name="Level_Selector7" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
@@ -67,22 +70,26 @@ level = 4
 
 [node name="Level_Selector5" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-12, 11)
-directions = Array[String](["left", "right"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["right"])
 level = 5
 
 [node name="Level_Selector6" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, 11)
-directions = Array[String](["left", "up"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["up"])
 level = 6
 
 [node name="Level_Selector17" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, -20)
-directions = Array[String](["up", "down"])
+directions = Array[String](["down"])
+blocked_dirs = Array[String](["up"])
 level = 7
 
 [node name="Level_Selector8" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(7, -45)
-directions = Array[String](["down", "right", "left"])
+directions = Array[String](["down"])
+blocked_dirs = Array[String](["left", "right"])
 level = 8
 
 [node name="Level_Selector16" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
@@ -92,32 +99,38 @@ level = 9
 
 [node name="Level_Selector9" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(36, -45)
-directions = Array[String](["left", "right"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["right"])
 level = 10
 
 [node name="Level_Selector10" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -56)
-directions = Array[String](["left", "down"])
+directions = Array[String](["left"])
+blocked_dirs = Array[String](["down"])
 level = 11
 
 [node name="Level_Selector11" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -19)
-directions = Array[String](["up", "down"])
+directions = Array[String](["up"])
+blocked_dirs = Array[String](["down"])
 level = 12
 
 [node name="Level_Selector12" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, 11)
-directions = Array[String](["up", "left"])
+directions = Array[String](["up"])
+blocked_dirs = Array[String](["left"])
 level = 13
 
 [node name="Level_Selector13" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(24, 11)
-directions = Array[String](["right", "down"])
+directions = Array[String](["right"])
+blocked_dirs = Array[String](["down"])
 level = 14
 
 [node name="Level_Selector14" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(24, 36)
-directions = Array[String](["right", "up"])
+directions = Array[String](["up"])
+blocked_dirs = Array[String](["right"])
 level = 15
 
 [node name="Level_Selector15" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
