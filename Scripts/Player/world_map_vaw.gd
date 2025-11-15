@@ -7,9 +7,11 @@ extends CharacterBody2D
 
 
 const SPEED = 1000.0
+const V_SPD = 600.0
 
 var stopped = false
 var selecting = false
+var v_moving = false
 
 #endregion
 

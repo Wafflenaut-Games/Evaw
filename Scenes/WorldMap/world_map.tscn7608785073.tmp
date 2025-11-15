@@ -262,39 +262,29 @@ level = 16
 [node name="VerticalWMEnds" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(51, -45)
 v_dir = "Up"
-dir = "Left"
+h_dir = "Left"
 
 [node name="VerticalWMEnds2" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(51, -56)
 v_dir = "Down"
-dir = "Right"
+h_dir = "Right"
 
 [node name="VerticalWMEnds3" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(64, -37)
 v_dir = "Down"
-dir = "Up"
+h_dir = "Up"
 
 [node name="VerticalWMEnds4" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(64, -25)
 v_dir = "Up"
-dir = "Down"
+h_dir = "Down"
 
 [node name="VerticalWMEnds5" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(64, -13)
 v_dir = "Down"
-dir = "Up"
+h_dir = "Up"
 
 [node name="VerticalWMEnds6" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(64, 5)
 v_dir = "Up"
-dir = "Down"
-
-[node name="VerticalWMEnds7" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
-position = Vector2(7, 6)
-v_dir = "Up"
-dir = "Down"
-
-[node name="VerticalWMEnds8" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
-position = Vector2(7, -14)
-v_dir = "Down"
-dir = "Up"
+h_dir = "Down"

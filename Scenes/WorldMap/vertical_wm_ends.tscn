@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjp126re2mij"]
+
+[ext_resource type="Script" uid="uid://cio2ks1ycty21" path="res://Scripts/WorldMap/vertical_wm_ends.gd" id="1_h55r0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssx2r"]
+size = Vector2(2, 2)
+
+[node name="VerticalWMEnds" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_h55r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ssx2r")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
