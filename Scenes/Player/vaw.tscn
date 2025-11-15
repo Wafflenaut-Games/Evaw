@@ -1017,6 +1017,8 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
+[node name="SubViewport" type="SubViewport" parent="Camera"]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"
@@ -1090,7 +1092,6 @@ one_shot = true
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
 [connection signal="body_entered" from="NoSoftLock" to="." method="_on_no_soft_lock_body_entered"]
 [connection signal="body_exited" from="NoSoftLock" to="." method="_on_no_soft_lock_body_exited"]
-[connection signal="area_shape_entered" from="SensorChecker" to="." method="_on_sensor_checker_area_shape_entered"]
 [connection signal="timeout" from="Timers/Jump Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Timers/Jump Timers/JBufferTimer" to="." method="_on_j_buffer_timer_timeout"]
 [connection signal="timeout" from="Timers/DirChooseTimer" to="." method="_on_dir_choose_timer_timeout"]

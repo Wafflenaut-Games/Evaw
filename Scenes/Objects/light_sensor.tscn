@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://u02hubxi4t0h"]
+
+[ext_resource type="Script" uid="uid://deia40h2vaif7" path="res://Scripts/Objects/sound_sensor.gd" id="1_xlkdb"]
+[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="2_xlkdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgv8"]
+size = Vector2(6, 6.25)
+
+[node name="sound_sensor" type="Node2D"]
+script = ExtResource("1_xlkdb")
+
+[node name="Area2D" type="Area2D" parent="." groups=["light_sensor"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3dgv8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("2_xlkdb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 4096.0

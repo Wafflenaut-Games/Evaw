@@ -73,6 +73,9 @@ func _physics_process(delta: float) -> void:
 		# Animations
 		handle_anims()
 		
+		# Other
+		sensor_collision()
+		
 		move_and_slide()
 		
 
@@ -458,11 +461,15 @@ func _on_respawn_timer_timeout() -> void:
 	inactive = false
 
 
-func _on_sensor_checker_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.is_in_group("sound_sensor"):
-		if Global.vaw_form == "sine":
-			area.get_parent().activate()
-
-
 func _on_transition_timer_timeout() -> void:
 	inactive = false
+
+
+func sensor_collision():
+	var areas = $SensorChecker.get_overlapping_areas()
+	
+	for area in areas:
+		if area.is_in_group("sound_sensor") and Global.vaw_form == "sine":
+			area.get_parent().activate()
+		if area.is_in_group("light_sensor") and Global.vaw_form == "light":
+			area.get_parent().activate()
