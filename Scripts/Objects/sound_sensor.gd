@@ -3,7 +3,7 @@ extends Node2D
 
 var activated = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#print(str(Global.vaw_form))
 	pass
 

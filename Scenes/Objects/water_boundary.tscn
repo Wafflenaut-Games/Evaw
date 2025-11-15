@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://c57qokokvchkc"]
+
+[ext_resource type="Texture2D" uid="uid://ckbdoei784wj1" path="res://Assets/Sprites/Obstacles/Vaw_Waves.png" id="1_11uu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5iof"]
+atlas = ExtResource("1_11uu6")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7skf"]
+atlas = ExtResource("1_11uu6")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grr6i"]
+atlas = ExtResource("1_11uu6")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llbq1"]
+atlas = ExtResource("1_11uu6")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lmvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5iof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7skf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grr6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llbq1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwvt6"]
+size = Vector2(8, 8)
+
+[node name="WaterBoundary" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8lmvs")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gwvt6")
