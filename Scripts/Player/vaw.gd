@@ -125,6 +125,7 @@ func formshift() -> void:
 		moused_dir = false
 		Global.vaw_form = "lume"
 		wave_dir = ""
+		lume_used = true # @kadaiadak bro u forgot this line :sob:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true

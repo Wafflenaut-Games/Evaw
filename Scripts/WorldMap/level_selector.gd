@@ -46,6 +46,7 @@ func set_complete() -> void:
 func select_lvl() -> void:
 	if vaw_on() and Input.is_action_just_pressed("interact"):
 		if typeof(level) == TYPE_INT and level > 0:
+			Global.wm_hovering = level
 			vaw.selecting = true
 			Global.is_transitioning = true
 			transition_timer.start()
