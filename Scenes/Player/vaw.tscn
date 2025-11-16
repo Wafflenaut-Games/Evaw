@@ -1113,6 +1113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseUI" parent="Camera/UI" instance=ExtResource("4_25jie")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
@@ -1199,6 +1200,7 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 1.75
 texture = SubResource("GradientTexture2D_25jie")
