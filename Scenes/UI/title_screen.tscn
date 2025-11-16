@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://sb8tnvqip77k"]
 
-[ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/pause_menu.gd" id="1_hy7uo"]
+[ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="1_wv540"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="2_e3r1x"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="3_a2t6b"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="4_hjk0h"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
-[node name="MainMenuUI" type="Control"]
+[node name="TitleScreen" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 8
@@ -19,7 +19,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hy7uo")
+script = ExtResource("1_wv540")
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]
 position = Vector2(3.8146973e-06, -3.8146973e-06)

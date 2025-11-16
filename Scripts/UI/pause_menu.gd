@@ -3,9 +3,6 @@ extends Control
 
 #region vars
 
-#@onready var vaw: CharacterBody2D = $"../.." THIS DOESNT WORK FOR SOME REASON
-
-
 const WM = preload("res://Scenes/WorldMap/world_map.tscn")
 
 
@@ -16,11 +13,6 @@ var active = false
 
 func _process(_delta: float) -> void:
 	pausing()
-	
-	if active == true:
-		get_tree().paused = true
-	else:
-		get_tree().paused = false
 
 
 func pausing() -> void:
@@ -28,16 +20,20 @@ func pausing() -> void:
 		active = !active
 	
 	visible = active
-	#vaw.inactive = !active
+	
+	if active == true:
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
 
 
-func _on_start_pressed():
+func _on_start_pressed() -> void:
 	active = false
 
 
-func _on_options_pressed():
+func _on_options_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_quit_pressed():
+func _on_quit_pressed() -> void:
 	get_tree().quit()
