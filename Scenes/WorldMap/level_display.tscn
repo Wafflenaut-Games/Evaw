@@ -15,10 +15,13 @@ _data = {
 
 [node name="level_display" type="Node2D"]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = -38.0
+[node name="everything" type="Node2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="everything"]
+offset_left = -34.0
 offset_top = -19.0
-offset_right = 38.0
+offset_right = 34.0
 offset_bottom = 18.0
 texture = ExtResource("1_idunx")
 patch_margin_left = 1
@@ -26,10 +29,10 @@ patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
 
-[node name="level_number" type="Label" parent="."]
-offset_left = -20.0
+[node name="level_number" type="Label" parent="everything"]
+offset_left = -39.0
 offset_top = -23.0
-offset_right = 20.0
+offset_right = 1.0
 offset_bottom = -8.0
 theme_override_fonts/font = ExtResource("2_ssfm0")
 theme_override_font_sizes/font_size = 7
@@ -37,23 +40,24 @@ text = "Level 1"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="level_name" type="Label" parent="."]
-offset_left = -37.0
+[node name="level_name" type="Label" parent="everything"]
+offset_left = -33.0
 offset_top = -19.0
-offset_right = 37.0
+offset_right = 33.0
 offset_bottom = 10.0
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("2_ssfm0")
 theme_override_font_sizes/font_size = 7
+text = "In Big Bird's big nest"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="feather_outline" type="Sprite2D" parent="."]
+[node name="feather_outline" type="Sprite2D" parent="everything"]
 position = Vector2(0, 11)
 texture = ExtResource("1_w5mcf")
 
-[node name="feather_inline" type="Sprite2D" parent="."]
+[node name="feather_inline" type="Sprite2D" parent="everything"]
 position = Vector2(0, 11)
 texture = ExtResource("4_84eer")
 

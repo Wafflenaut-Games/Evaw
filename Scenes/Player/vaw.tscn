@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dl3dcji42vxrk" path="res://Assets/Sprites/Player/Vaw_Revive.png" id="12_bih53"]
 [ext_resource type="Texture2D" uid="uid://dordd4eyo5ikc" path="res://Assets/Sprites/Player/Water/Vaw_Water_Run.png" id="14_s1hrp"]
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
-[ext_resource type="Shader" path="res://Scenes/Lvls/shockwave.gdshader" id="20_52i0t"]
+[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="20_52i0t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
