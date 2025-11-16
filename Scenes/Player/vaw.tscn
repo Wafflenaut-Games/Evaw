@@ -21,6 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="20_52i0t"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
+shader = ExtResource("20_52i0t")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.056
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.1
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg1s8"]
 atlas = ExtResource("11_dk2r0")
 region = Rect2(0, 0, 24, 24)
@@ -1011,19 +1018,12 @@ size = Vector2(2, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w850c"]
 size = Vector2(6, 6)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
-shader = ExtResource("20_52i0t")
-shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/force = 0.056
-shader_parameter/size = 0.0
-shader_parameter/thickness = 0.1
-
 [sub_resource type="Animation" id="Animation_s1hrp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1039,7 +1039,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1061,6 +1061,21 @@ collision_mask = 15
 script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
+
+[node name="UI" type="Node2D" parent="Camera"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera/UI"]
+material = SubResource("ShaderMaterial_52i0t")
+custom_minimum_size = Vector2(160, 120)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -60.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
@@ -1141,22 +1156,7 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_52i0t")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -60.0
-offset_right = -80.0
-offset_bottom = -60.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_vl8gu")
 }

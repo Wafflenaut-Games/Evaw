@@ -77,6 +77,7 @@ offset_bottom = 60.0
 color = Color(0.12941177, 0.12156863, 0.12941177, 1)
 
 [node name="PauseUI" parent="." instance=ExtResource("2_2ffh2")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

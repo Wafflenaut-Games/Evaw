@@ -19,7 +19,7 @@ extends CharacterBody2D
 @onready var transition_timer: Timer = $Timers/TransitionTimer
 @onready var ground_checker_l: RayCast2D = $ground_checkerL
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
-@onready var animation_player = $CanvasLayer/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 const SPEED = 3000.0
@@ -97,6 +97,7 @@ func formshift() -> void:
 	# Switching to waveform
 	# Mouse controls
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
+		shockwave()
 		moused_dir = true
 		Global.vaw_form = "sine"
 		wave_dir = ""
@@ -105,6 +106,7 @@ func formshift() -> void:
 		dir_choose_timer.start()
 		transforming = true
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
+		shockwave()
 		moused_dir = true
 		Global.vaw_form = "lume"
 		wave_dir = ""
@@ -115,6 +117,7 @@ func formshift() -> void:
 	
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
+		shockwave()
 		moused_dir = false
 		Global.vaw_form = "sine"
 		wave_dir = ""
@@ -123,6 +126,7 @@ func formshift() -> void:
 		dir_choose_timer.start()
 		transforming = true
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
+		shockwave()
 		moused_dir = false
 		Global.vaw_form = "lume"
 		wave_dir = ""
@@ -494,3 +498,7 @@ func sensor_collision():
 			area.get_parent().activate()
 		if area.is_in_group("feather"):
 			area.get_parent().collect(self)
+
+
+func shockwave():
+	animation_player.play("shcokawave")
