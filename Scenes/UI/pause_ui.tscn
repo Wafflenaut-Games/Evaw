@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhxrfxl1y1xdq"]
 
-[ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/main_ui.gd" id="1_pr555"]
+[ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/pause_menu.gd" id="1_pr555"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="2_8dpcc"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="3_qjk66"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="4_1yf2f"]
@@ -10,6 +10,7 @@
 [sub_resource type="Theme" id="Theme_r5twg"]
 
 [node name="PauseUI" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
