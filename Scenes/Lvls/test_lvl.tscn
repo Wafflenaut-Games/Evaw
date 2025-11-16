@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_x4073"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="5_8xn0a"]
-[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Lvls/shine.gdshader" id="6_8xn0a"]
+[ext_resource type="Shader" path="res://Scenes/Lvls/shine.gdshader" id="6_8xn0a"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="6_iebl6"]
 [ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="7_x4073"]
-[ext_resource type="Shader" uid="uid://eknc8rdwr0bk" path="res://Scenes/Lvls/shine2.gdshader" id="10_iebl6"]
+[ext_resource type="Shader" path="res://Scenes/Lvls/shine2.gdshader" id="10_iebl6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iebl6"]
 
