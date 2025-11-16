@@ -1,5 +1,8 @@
 extends Node2D
 
+#JAMES READ THIS BASICALLY YOU GOTTA MAKE FEATHER SPEED CHANGE WITH DIFFERENT WAVE FORMS
+#AND FINISH THE LEVEL DISPLAY IN THE WORLDMAP AND MAKE THE FEATHERS RESET WHEN YOU DIE
+
 
 @export var level: int = 1
 
@@ -7,7 +10,7 @@ var starting_pos: Vector2
 
 var collecting = false
 
-var speed = randf_range(20,60)
+var speed = randf_range(30,70)
 
 var player
 
