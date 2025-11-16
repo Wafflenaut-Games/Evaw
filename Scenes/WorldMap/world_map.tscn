@@ -184,4 +184,4 @@ dir = "Up"
 
 [node name="level_display" parent="." instance=ExtResource("6_qx6hv")]
 z_index = 10
-position = Vector2(0, -43)
+position = Vector2(-53, -44)
