@@ -7,7 +7,7 @@ var starting_pos: Vector2
 
 var collecting = false
 
-var speed = randf_range(20,60)
+var speed = randf_range(30,70)
 
 var player
 
