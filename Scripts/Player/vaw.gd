@@ -473,3 +473,5 @@ func sensor_collision():
 			area.get_parent().activate()
 		if area.is_in_group("light_sensor") and Global.vaw_form == "light":
 			area.get_parent().activate()
+		if area.is_in_group("feather"):
+			area.get_parent().collect(self)

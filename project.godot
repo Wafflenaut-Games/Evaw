@@ -106,7 +106,7 @@ pause={
 2d_physics/layer_4="light"
 2d_physics/layer_5="killzone"
 2d_physics/layer_6="world"
-2d_physics/layer_7="Layer 7"
+2d_physics/layer_7="collectables"
 
 [rendering]
 
