@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=160 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -1080,6 +1080,16 @@ _data = {
 &"shcokawave": SubResource("Animation_25jie")
 }
 
+[sub_resource type="Gradient" id="Gradient_rjtbf"]
+offsets = PackedFloat32Array(0.003921569, 0.26666668, 1)
+colors = PackedColorArray(0.65, 0.65, 0.65, 1, 0.4, 0.4, 0.4, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_25jie"]
+gradient = SubResource("Gradient_rjtbf")
+fill = 1
+fill_from = Vector2(0.5, 0.52136755)
+fill_to = Vector2(0.1923077, 0.86752135)
+
 [node name="Vaw" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_mask = 15
@@ -1187,6 +1197,12 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_vl8gu")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.9607843, 0.93333334, 0.6901961, 1)
+energy = 1.75
+texture = SubResource("GradientTexture2D_25jie")
+texture_scale = 1.75
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
