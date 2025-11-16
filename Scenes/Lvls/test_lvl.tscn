@@ -27,34 +27,10 @@ shader_parameter/shine_angle = 45.000000670554
 
 [sub_resource type="Animation" id="Animation_4dybp"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_uh0uy"]
 resource_name = "shine"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2.9281716, 4.9245806),
-"update": 0,
-"values": [0.0, 0.999999977648]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey41x"]
 _data = {
