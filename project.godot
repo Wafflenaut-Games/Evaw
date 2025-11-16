@@ -30,6 +30,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Assets/": "red",
+"res://Assets/Sprites/Collectibles/": "red",
 "res://Scenes/": "yellow",
 "res://Scripts/": "purple"
 }
