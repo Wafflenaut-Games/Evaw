@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=12 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_crycw"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_i2041"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="6_7ia4a"]
+[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="6_e4rng"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v8kj3"]
 particle_flag_disable_z = true
@@ -38,6 +39,13 @@ turbulence_enabled = true
 turbulence_noise_scale = 1.0
 collision_use_scale = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5dds"]
+shader = ExtResource("6_e4rng")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.056
+shader_parameter/size = 0.315
+shader_parameter/thickness = 0.1
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Respawn" parent="." instance=ExtResource("1_v8kj3")]
@@ -53,6 +61,7 @@ tile_map_data = PackedByteArray("AAD9/wUAAAAGAAwAAAD+/wUAAAAGAAwAAAD//wUAAAAGAAw
 position = Vector2(-440, 82)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(34, -290)
 amount = 2500
 lifetime = 15.0
@@ -67,3 +76,15 @@ texture = ExtResource("6_7ia4a")
 lifetime = 60.0
 visibility_rect = Rect2(-5000, -5000, 100000, 19000)
 process_material = SubResource("ParticleProcessMaterial_2ltx7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_k5dds")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
