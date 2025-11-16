@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var transition_timer: Timer = $Timers/TransitionTimer
 @onready var ground_checker_l: RayCast2D = $ground_checkerL
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
+@onready var animation_player = $CanvasLayer/AnimationPlayer
 
 
 const SPEED = 3000.0
