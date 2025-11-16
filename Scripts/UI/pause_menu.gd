@@ -7,6 +7,7 @@ extends Control
 
 
 var active = false
+var reset_inactive = true
 
 #endregion
 
@@ -18,13 +19,15 @@ func _process(_delta: float) -> void:
 func pausing() -> void:
 	if Input.is_action_just_pressed("pause"):
 		active = !active
+		reset_inactive = false
 	
 	visible = active
 	
-	if active == true:
+	if active:
 		vaw.inactive = true
-	else:
+	elif not active and not reset_inactive:
 		vaw.inactive = false
+		reset_inactive = true
 
 
 func _on_start_pressed() -> void:

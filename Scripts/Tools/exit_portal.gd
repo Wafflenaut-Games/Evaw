@@ -12,6 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.is_transitioning = true
 		transition_timer.start()
+		body.inactive = true
 
 
 func _on_transition_timer_timeout() -> void:

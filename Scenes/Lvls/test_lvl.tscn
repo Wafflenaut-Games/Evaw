@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_x4073"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="5_8xn0a"]
-[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Lvls/shine.gdshader" id="6_8xn0a"]
+[ext_resource type="Shader" path="res://Scenes/Lvls/shine.gdshader" id="6_8xn0a"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="6_iebl6"]
-[ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="7_x4073"]
-[ext_resource type="Shader" uid="uid://eknc8rdwr0bk" path="res://Scenes/Lvls/shine2.gdshader" id="10_iebl6"]
+[ext_resource type="Shader" path="res://Scenes/Lvls/shine2.gdshader" id="10_iebl6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iebl6"]
 
@@ -24,6 +24,21 @@ shader_parameter/shine_color = Color(1, 0, 1, 0.43137255)
 shader_parameter/shine_progress = 0.0
 shader_parameter/shine_size = 0.07999999821184
 shader_parameter/shine_angle = 45.000000670554
+
+[sub_resource type="Animation" id="Animation_4dybp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_uh0uy"]
 resource_name = "shine"
@@ -39,21 +54,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(2.9281716, 4.9245806),
 "update": 0,
 "values": [0.0, 0.999999977648]
-}
-
-[sub_resource type="Animation" id="Animation_4dybp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey41x"]
@@ -78,6 +78,33 @@ colors = PackedColorArray(0.12941177, 0.12156863, 0.12941177, 1, 0.12941177, 0.1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5gbqm"]
 gradient = SubResource("Gradient_hpwsk")
 width = 20
+
+[sub_resource type="Animation" id="Animation_2esi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/line_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.050000002375]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0450000971375]
+}
 
 [sub_resource type="Animation" id="Animation_duswi"]
 resource_name = "speed"
@@ -105,33 +132,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(2.7320802, 0.003644664),
 "update": 0,
 "values": [0.814000038665, 1.52800007258]
-}
-
-[sub_resource type="Animation" id="Animation_2esi0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/line_width")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.050000002375]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:material:shader_parameter/speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0450000971375]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gfh6a"]
