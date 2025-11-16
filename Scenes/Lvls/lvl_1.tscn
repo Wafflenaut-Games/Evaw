@@ -21,12 +21,6 @@ position = Vector2(758, -55)
 [node name="feather" parent="." instance=ExtResource("6_ndgdw")]
 position = Vector2(508, 22)
 
-[node name="feather2" parent="." instance=ExtResource("6_ndgdw")]
-position = Vector2(570, -29)
-
-[node name="feather3" parent="." instance=ExtResource("6_ndgdw")]
-position = Vector2(635, -42)
-
 [node name="Vaw" parent="." instance=ExtResource("2_v0gr0")]
 position = Vector2(100, 65)
 

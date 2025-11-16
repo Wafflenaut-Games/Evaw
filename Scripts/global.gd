@@ -11,7 +11,7 @@ var is_transitioning = false
 
 var wm_hovering = 0
 
-var lvl_names: Array = ["Glass Bridge","idk lvl 2 or smt idk","lvl 3 is rly cool trust"]
+var lvl_names: Array = ["Glass Bridge","Ruined Skyline","lvl 3 is rly cool trust"]
 
 #region Feather vars
 

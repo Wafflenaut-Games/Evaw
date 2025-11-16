@@ -7,8 +7,6 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $PointLight2D/AnimationPlayer
 
 
-@export var level: int = 1
-
 var starting_pos: Vector2
 
 var collecting = false
@@ -31,6 +29,44 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	# End level
+	if Global.is_transitioning:
+		if collecting == true:
+			match Global.level:
+				1:
+					Global.feather_lvl_1 = true
+				2:
+					Global.feather_lvl_2 = true
+				3:
+					Global.feather_lvl_3 = true
+				4:
+					Global.feather_lvl_4 = true
+				5:
+					Global.feather_lvl_5 = true
+				6:
+					Global.feather_lvl_6 = true
+				7:
+					Global.feather_lvl_7 = true
+				8:
+					Global.feather_lvl_8 = true
+				9:
+					Global.feather_lvl_9 = true
+				10:
+					Global.feather_lvl_10 = true
+				11:
+					Global.feather_lvl_11 = true
+				12:
+					Global.feather_lvl_12 = true
+				13:
+					Global.feather_lvl_13 = true
+				14:
+					Global.feather_lvl_14 = true
+				15:
+					Global.feather_lvl_15 = true
+				16:
+					Global.feather_lvl_16 = true
+	
 	if Global.vaw_form == "norm":
 		real_speed = start_speed
 	if Global.vaw_form == "sine":

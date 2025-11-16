@@ -1,99 +1,107 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc14s1gwiqgon"]
+[gd_scene load_steps=10 format=3 uid="uid://dc14s1gwiqgon"]
 
+[ext_resource type="Script" uid="uid://402i6yqtm5hw" path="res://Scripts/WorldMap/level_display.gd" id="1_84eer"]
 [ext_resource type="Texture2D" uid="uid://dhfts4osar8nj" path="res://Assets/Sprites/UI/textbox2.png" id="1_idunx"]
 [ext_resource type="Texture2D" uid="uid://ctwvym7b13w5q" path="res://Assets/Sprites/UI/featheroutline.png" id="1_w5mcf"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="2_ssfm0"]
 [ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Sprites/Collectibles/featherinline.png" id="4_84eer"]
 
-[sub_resource type="Animation" id="Animation_ssfm0"]
-resource_name = "fade_in"
+[sub_resource type="Animation" id="Animation_84eer"]
+length = 0.4
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("everything:position:x")
+tracks/0/path = NodePath("everything:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(12, -0.25, 0, 0.13333334, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("everything:position:y")
+tracks/1/path = NodePath("everything:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("everything:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.033333335, 1),
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_84eer"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_ssfm0"]
+resource_name = "fade_in"
+length = 0.4
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("everything:position:x")
+tracks/0/path = NodePath("everything:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(12, -0.25, 0, 0.10307168, -9.5, 0, -0.06666667, 1.3333334, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("everything:position:y")
+tracks/1/path = NodePath("everything:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.033333335, 1, 1, -0.06666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("everything:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+
+[sub_resource type="Animation" id="Animation_jhhlx"]
+resource_name = "fade_out"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("everything:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, 12, -0.063595, -11.5, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("everything:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.13333334, 0, 0, -0.25, 0, 0.033333335, 1),
+"times": PackedFloat32Array(0, 0.4)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_84eer"]
 _data = {
 &"RESET": SubResource("Animation_84eer"),
-&"fade_in": SubResource("Animation_ssfm0")
+&"fade_in": SubResource("Animation_ssfm0"),
+&"fade_out": SubResource("Animation_jhhlx")
 }
 
 [node name="level_display" type="Node2D"]
+script = ExtResource("1_84eer")
 
 [node name="everything" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(0, 8)
+position = Vector2(0, 12)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="everything"]
-offset_left = -34.0
-offset_top = -19.0
-offset_right = 34.0
-offset_bottom = 18.0
+offset_left = -28.0
+offset_top = -16.0
+offset_right = 28.0
+offset_bottom = 15.0
 texture = ExtResource("1_idunx")
 patch_margin_left = 1
 patch_margin_top = 1
@@ -101,10 +109,10 @@ patch_margin_right = 1
 patch_margin_bottom = 1
 
 [node name="level_number" type="Label" parent="everything"]
-offset_left = -39.0
-offset_top = -22.0
-offset_right = 1.0
-offset_bottom = -7.0
+offset_left = -33.0
+offset_top = -19.0
+offset_right = 7.0
+offset_bottom = -4.0
 theme_override_fonts/font = ExtResource("2_ssfm0")
 theme_override_font_sizes/font_size = 7
 text = "Level 1"
@@ -112,9 +120,9 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="level_name" type="Label" parent="everything"]
-offset_left = -33.0
+offset_left = -32.0
 offset_top = -10.0
-offset_right = 33.0
+offset_right = 34.0
 offset_bottom = 19.0
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("2_ssfm0")
@@ -125,11 +133,11 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="feather_outline" type="Sprite2D" parent="everything"]
-position = Vector2(26, -12)
+position = Vector2(20, -9)
 texture = ExtResource("1_w5mcf")
 
 [node name="feather_inline" type="Sprite2D" parent="everything"]
-position = Vector2(26, -12)
+position = Vector2(20, -9)
 texture = ExtResource("4_84eer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
