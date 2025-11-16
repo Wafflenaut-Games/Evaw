@@ -1017,8 +1017,6 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
-[node name="SubViewport" type="SubViewport" parent="Camera"]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"

@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var no_soft_lock: Area2D = $NoSoftLock
 @onready var respawn_point: Node2D = $"../Respawn"
 @onready var transitions: AnimatedSprite2D = $Transitions
+@onready var sensor_checker: Area2D = $SensorChecker
 @onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Timers/Jump Timers/JBufferTimer"
 @onready var dir_choose_timer: Timer = $Timers/DirChooseTimer
@@ -25,7 +26,9 @@ const LUME_SPD = 5000.0
 const DIA_LUME_SPD = LUME_SPD/sqrt(2)
 const JUMP_VELOCITY = -160.0
 const GRAV = 500.0
-const F_GRAV = 750.0 # Fall gravity
+const W_GRAV = 300.0 # Underwater gravity
+const F_GRAV = 600.0 # Fall gravity
+const F_W_GRAV = 350.0 # Underwater fall gravity
 const MAX_VEL = 10000.0
 
 
@@ -252,14 +255,21 @@ func wave_direction() -> void:
 func gravity(delta) -> void:
 	if Global.vaw_form == "norm":
 		# Set gravity
-		if is_falling():
-			grav = F_GRAV
+		if Global.water_lvl:
+			if is_falling():
+				grav = F_W_GRAV
+			else:
+				grav = W_GRAV
 		else:
-			grav = GRAV
+			if is_falling():
+				grav = F_GRAV
+			else:
+				grav = GRAV
+			
 		
 		# Apply gravity
 		if not is_on_floor():
-			velocity.y += GRAV * delta
+			velocity.y += grav * delta
 
 
 func move(delta) -> void:
@@ -279,13 +289,13 @@ func max_vel(delta) -> void:
 func jump() -> void:
 	if Global.vaw_form == "norm":
 		# Jump
-		if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("jump") or jump_buffering) and (is_on_floor() or coyote_time):
+		if (Input.is_action_just_pressed("jump") or jump_buffering) and (is_on_floor() or coyote_time):
 			velocity.y = JUMP_VELOCITY
 			coyote_time = false
 			jump_buffering = false
 		
 		# Jump Cut
-		if (Input.is_action_just_released("up") or Input.is_action_just_released("jump")) and velocity.y < 0:
+		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y = lerp(velocity.y, 0.0, 0.5)
 
 
@@ -466,7 +476,7 @@ func _on_transition_timer_timeout() -> void:
 
 
 func sensor_collision():
-	var areas = $SensorChecker.get_overlapping_areas()
+	var areas = sensor_checker.get_overlapping_areas()
 	
 	for area in areas:
 		if area.is_in_group("sound_sensor") and Global.vaw_form == "sine":
