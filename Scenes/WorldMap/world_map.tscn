@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8klvtukak5kw"]
+[gd_scene load_steps=10 format=3 uid="uid://b8klvtukak5kw"]
 
 [ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Sprites/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="1_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://8y27bmc3xa2q" path="res://Scenes/Player/world_map_vaw.tscn" id="2_e2gad"]
 [ext_resource type="PackedScene" uid="uid://duscro0qotpwl" path="res://Scenes/WorldMap/level_selector.tscn" id="3_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://dkjp126re2mij" path="res://Scenes/WorldMap/vertical_wm_ends.tscn" id="6_iv8dp"]
+[ext_resource type="PackedScene" uid="uid://dc14s1gwiqgon" path="res://Scenes/WorldMap/level_display.tscn" id="6_qx6hv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fso2m"]
 atlas = ExtResource("1_fso2m")
@@ -179,3 +180,8 @@ dir = "Down"
 position = Vector2(7, -14)
 v_dir = "Down"
 dir = "Up"
+
+[node name="level_display" parent="." instance=ExtResource("6_qx6hv")]
+visible = false
+z_index = 10
+position = Vector2(1, -38)

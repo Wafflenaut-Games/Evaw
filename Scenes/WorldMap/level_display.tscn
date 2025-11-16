@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc14s1gwiqgon"]
+
+[ext_resource type="Texture2D" uid="uid://dhfts4osar8nj" path="res://Assets/Sprites/UI/textbox2.png" id="1_idunx"]
+[ext_resource type="Texture2D" uid="uid://ctwvym7b13w5q" path="res://Assets/Sprites/UI/featheroutline.png" id="1_w5mcf"]
+
+[node name="level_display" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -40.0
+offset_top = -19.0
+offset_right = 38.0
+offset_bottom = 19.0
+texture = ExtResource("1_idunx")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="feather_outline" type="Sprite2D" parent="."]
+position = Vector2(0, 10)
+texture = ExtResource("1_w5mcf")
