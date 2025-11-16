@@ -1,7 +1,7 @@
 extends Node2D
 
 #JAMES READ THIS BASICALLY YOU GOTTA MAKE FEATHER SPEED CHANGE WITH DIFFERENT WAVE FORMS done
-#AND FINISH THE LEVEL DISPLAY IN THE WORLDMAP AND MAKE THE FEATHERS RESET WHEN YOU DIE
+#AND FINISH THE LEVEL DISPLAY IN THE WORLDMAP done AND MAKE THE FEATHERS RESET WHEN YOU DIE
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $PointLight2D/AnimationPlayer
@@ -29,6 +29,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# Reset when you die
+	if Global.respawning:
+		global_position = starting_pos
 	
 	# End level
 	if Global.is_transitioning:

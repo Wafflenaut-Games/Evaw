@@ -9,6 +9,9 @@ var water_lvl = "" # always only set to "" or "_w"
 var completed_lvls = []
 var is_transitioning = false
 
+var dying = false
+var respawning = false
+
 var wm_hovering = 0
 
 var lvl_names: Array = ["Glass Bridge","Ruined Skyline","lvl 3 is rly cool trust"]
