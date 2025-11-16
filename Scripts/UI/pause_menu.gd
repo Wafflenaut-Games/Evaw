@@ -21,10 +21,10 @@ func pausing() -> void:
 	
 	visible = active
 	
-	if active == true:
-		get_tree().paused = true
-	else:
-		get_tree().paused = false
+	#if active == true:
+	#	get_tree().paused = true
+	#else:
+	#	get_tree().paused = false
 
 
 func _on_start_pressed() -> void:
