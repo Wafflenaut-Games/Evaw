@@ -286,7 +286,7 @@ func jump() -> void:
 		
 		# Jump Cut
 		if (Input.is_action_just_released("up") or Input.is_action_just_released("jump")) and velocity.y < 0:
-			velocity.y = lerp(velocity.y, 0.0, 0.4)
+			velocity.y = lerp(velocity.y, 0.0, 0.5)
 
 
 func coyote_time_set() -> void:
