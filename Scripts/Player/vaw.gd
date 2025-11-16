@@ -350,6 +350,7 @@ func get_mouse_direction() -> void:
 
 
 func death() -> void:
+	Global.dying = true
 	inactive = true
 	ap.rotation_degrees = 0
 	ap.play("die%s" % Global.water_lvl)
@@ -357,6 +358,8 @@ func death() -> void:
 
 
 func respawn() -> void:
+	Global.dying = false
+	Global.respawning = true
 	position = respawn_point.position
 	inactive = true
 	ap.play("revive%s" % Global.water_lvl)
@@ -475,6 +478,7 @@ func _on_death_timer_timeout() -> void:
 
 
 func _on_respawn_timer_timeout() -> void:
+	Global.respawning = false
 	inactive = false
 
 
