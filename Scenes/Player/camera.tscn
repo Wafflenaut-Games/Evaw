@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4pqfioq72qfj"]
+[gd_scene load_steps=6 format=3 uid="uid://b4pqfioq72qfj"]
 
 [ext_resource type="Script" uid="uid://cg1gyjfpn4wyj" path="res://Scripts/Player/camera.gd" id="1_8yjwa"]
+[ext_resource type="PackedScene" uid="uid://bhxrfxl1y1xdq" path="res://Scenes/UI/pause_ui.tscn" id="2_2ffh2"]
 
 [sub_resource type="Animation" id="Animation_8yjwa"]
 length = 0.001
@@ -73,6 +74,8 @@ offset_top = -60.0
 offset_right = 81.0
 offset_bottom = 60.0
 color = Color(0.12941177, 0.12156863, 0.12941177, 1)
+
+[node name="PauseUI" parent="." instance=ExtResource("2_2ffh2")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
