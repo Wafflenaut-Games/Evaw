@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://u02hubxi4t0h"]
 
-[ext_resource type="Script" uid="uid://deia40h2vaif7" path="res://Scripts/Objects/sound_sensor.gd" id="1_xlkdb"]
+[ext_resource type="Script" uid="uid://deia40h2vaif7" path="res://Scripts/Objects/sensor.gd" id="1_xlkdb"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="2_xlkdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgv8"]
