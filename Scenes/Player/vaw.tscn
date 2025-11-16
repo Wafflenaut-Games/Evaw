@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dl3dcji42vxrk" path="res://Assets/Sprites/Player/Vaw_Revive.png" id="12_bih53"]
 [ext_resource type="Texture2D" uid="uid://dordd4eyo5ikc" path="res://Assets/Sprites/Player/Water/Vaw_Water_Run.png" id="14_s1hrp"]
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
-[ext_resource type="Shader" path="res://Scenes/Lvls/shockwave.gdshader" id="20_52i0t"]
+[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
@@ -1126,23 +1126,19 @@ animation = &"0"
 autoplay = "0"
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_uvlj0")
 
 [node name="ground_checkerL" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(-2, 0)
 target_position = Vector2(0, 5)
 collision_mask = 255
 
 [node name="ground_checkerR" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(2, 0)
 target_position = Vector2(0, 5)
 collision_mask = 255
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -1150,7 +1146,6 @@ collision_mask = 16
 shape = SubResource("RectangleShape2D_1d0l2")
 
 [node name="WaveColCheck" type="Area2D" parent="."]
-visible = false
 
 [node name="WaveCol" type="CollisionPolygon2D" parent="WaveColCheck"]
 polygon = PackedVector2Array(-1, -2, -2, -1, -2, 1, -1, 2, 1, 2, 2, 1, 2, -1, 1, -2)
@@ -1163,7 +1158,6 @@ collision_mask = 128
 shape = SubResource("RectangleShape2D_3akl4")
 
 [node name="SensorChecker" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 76
 
