@@ -313,81 +313,81 @@ position = Vector2(-60, 123)
 [node name="WaterBoundary42" parent="WaterBoundaries" instance=ExtResource("7_x4073")]
 position = Vector2(-52, 123)
 
-[node name="Node" type="Node" parent="."]
+[node name="GlassShimmers" type="Node" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node"]
+[node name="Sprite2D" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(148, 17.000006)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D2" type="Sprite2D" parent="Node"]
+[node name="Sprite2D2" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(148, 41.000008)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D2"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node"]
+[node name="Sprite2D3" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(148, -6.9999943)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D3"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D4" type="Sprite2D" parent="Node"]
+[node name="Sprite2D4" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(148, -30.999992)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D4"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D5" type="Sprite2D" parent="Node"]
+[node name="Sprite2D5" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(148, -54.999992)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D5"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D6" type="Sprite2D" parent="Node"]
+[node name="Sprite2D6" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(100, 17.000006)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D6"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
 
-[node name="Sprite2D7" type="Sprite2D" parent="Node"]
+[node name="Sprite2D7" type="Sprite2D" parent="GlassShimmers"]
 material = SubResource("ShaderMaterial_5pt1e")
 position = Vector2(100, 41.000008)
 scale = Vector2(1.1, 21.999998)
 texture = SubResource("GradientTexture1D_5gbqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlassShimmers/Sprite2D7"]
 libraries = {
 &"": SubResource("AnimationLibrary_gfh6a")
 }
@@ -401,7 +401,9 @@ color = Color(0.24, 0.24, 0.24, 1)
 [node name="sound_sensor" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("7_sj2hf")]
 position = Vector2(35, 63)
 rotation = -3.1415927
-connected_door = NodePath("../../Doors")
+connected_door = NodePath("../../Doors/Doors")
 
-[node name="Doors" parent="." instance=ExtResource("12_4uee3")]
+[node name="Doors" type="Node" parent="."]
+
+[node name="Doors" parent="Doors" instance=ExtResource("12_4uee3")]
 position = Vector2(24, 32)
