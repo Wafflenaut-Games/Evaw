@@ -3,8 +3,10 @@ extends Control
 
 #region vars
 
-const WM = preload("res://Scenes/WorldMap/world_map.tscn")
+@onready var vaw: CharacterBody2D = $"../../.."
 
+
+const WM = preload("res://Scenes/WorldMap/world_map.tscn")
 
 var active = false
 
@@ -21,10 +23,10 @@ func pausing() -> void:
 	
 	visible = active
 	
-	#if active == true:
-	#	get_tree().paused = true
-	#else:
-	#	get_tree().paused = false
+	if active == true:
+		vaw.inactive = true
+	else:
+		vaw.inactive = false
 
 
 func _on_start_pressed() -> void:
