@@ -4,6 +4,8 @@ extends Node2D
 #AND FINISH THE LEVEL DISPLAY IN THE WORLDMAP AND MAKE THE FEATHERS RESET WHEN YOU DIE
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $PointLight2D/AnimationPlayer
+
 
 @export var level: int = 1
 
@@ -11,16 +13,21 @@ var starting_pos: Vector2
 
 var collecting = false
 
-var start_speed = randf_range(25,50)
+var start_speed = randf_range(15,100)
 var real_speed = start_speed
 
 var player
 
+func random_timer():
+	await get_tree().create_timer(randf_range(1,5)).timeout
+	animation_player.play("light stuff")
+	random_timer()
 
 func _ready() -> void:
 	real_speed = start_speed
 	starting_pos = global_position
 	animated_sprite_2d.frame = randi_range(0,9)
+	random_timer()
 
 
 func _process(delta: float) -> void:

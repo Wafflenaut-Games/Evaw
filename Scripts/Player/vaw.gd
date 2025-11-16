@@ -81,6 +81,7 @@ func _physics_process(delta: float) -> void:
 		
 		# Other
 		sensor_collision()
+		disable_raycasts()
 		restart()
 		
 		move_and_slide()
@@ -502,3 +503,12 @@ func sensor_collision():
 
 func shockwave():
 	animation_player.play("shcokawave")
+
+
+func disable_raycasts():
+	if Global.vaw_form != "norm":
+		ground_checker_l.enabled = false
+		ground_checker_r.enabled = false
+	else:
+		ground_checker_l.enabled = true
+		ground_checker_r.enabled = true

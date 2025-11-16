@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://q8k2rmqdt40a"]
+[gd_scene load_steps=20 format=3 uid="uid://q8k2rmqdt40a"]
 
 [ext_resource type="Texture2D" uid="uid://c7mg3ti0ppda0" path="res://Assets/Sprites/Collectibles/lost_in_the_featheroutline.png" id="1_cg832"]
 [ext_resource type="Script" uid="uid://dxl3weboigqal" path="res://Scripts/Objects/feather.gd" id="1_rjtbf"]
@@ -84,6 +84,100 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg832"]
 radius = 7.0
 
+[sub_resource type="Gradient" id="Gradient_rjtbf"]
+offsets = PackedFloat32Array(0.003921569, 1)
+colors = PackedColorArray(0.81, 0.81, 0.81, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_84csc"]
+gradient = SubResource("Gradient_rjtbf")
+fill = 1
+fill_from = Vector2(0.5, 0.52136755)
+fill_to = Vector2(0.26495728, 0.8119658)
+
+[sub_resource type="Animation" id="Animation_rjtbf"]
+resource_name = "light stuff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.15, 0.3, 0.15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.62, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.5, 0.6, 0.65, 0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.9607843, 0.93333334, 0.6901961, 1), Color(0.96, 0.94751996, 0.8352, 1), Color(0.9607843, 0.93333334, 0.6901961, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_84csc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9607843, 0.93333334, 0.6901961, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84csc"]
+_data = {
+&"RESET": SubResource("Animation_84csc"),
+&"light stuff": SubResource("Animation_rjtbf")
+}
+
 [node name="feather" type="Node2D"]
 script = ExtResource("1_rjtbf")
 
@@ -97,5 +191,15 @@ collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_zone"]
-position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_cg832")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.9607843, 0.93333334, 0.6901961, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_84csc")
+texture_scale = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PointLight2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_84csc")
+}
