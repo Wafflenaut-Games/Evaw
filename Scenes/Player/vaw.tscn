@@ -1030,7 +1030,12 @@ autoplay = "0"
 [node name="NormCol" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvlj0")
 
-[node name="ground_checker" type="RayCast2D" parent="."]
+[node name="ground_checkerL" type="RayCast2D" parent="."]
+position = Vector2(-2, 0)
+target_position = Vector2(0, 5)
+
+[node name="ground_checkerR" type="RayCast2D" parent="."]
+position = Vector2(2, 0)
 target_position = Vector2(0, 5)
 
 [node name="Hitbox" type="Area2D" parent="."]
