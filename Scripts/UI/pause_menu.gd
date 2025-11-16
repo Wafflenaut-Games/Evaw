@@ -16,6 +16,11 @@ var active = false
 
 func _process(_delta: float) -> void:
 	pausing()
+	
+	if active == true:
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
 
 
 func pausing() -> void:

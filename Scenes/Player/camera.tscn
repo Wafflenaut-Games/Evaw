@@ -64,6 +64,7 @@ _data = {
 }
 
 [node name="Camera" type="Camera2D"]
+process_mode = 3
 z_index = 10
 script = ExtResource("1_8yjwa")
 
