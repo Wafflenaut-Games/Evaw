@@ -78,9 +78,9 @@ func _physics_process(delta: float) -> void:
 		
 		# Other
 		sensor_collision()
+		restart()
 		
 		move_and_slide()
-		
 
 
 func level_begin() -> void:
@@ -360,6 +360,11 @@ func respawn() -> void:
 	inactive = true
 	ap.play("revive%s" % Global.water_lvl)
 	respawn_timer.start()
+
+
+func restart() -> void:
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 
 func handle_anims() -> void:

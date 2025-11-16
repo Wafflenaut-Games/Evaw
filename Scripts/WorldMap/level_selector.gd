@@ -44,7 +44,7 @@ func set_complete() -> void:
 
 
 func select_lvl() -> void:
-	if vaw_on() and (Input.is_action_just_pressed("sine") or Input.is_action_just_pressed("lume") or Input.is_action_just_pressed("jump")):
+	if vaw_on() and Input.is_action_just_pressed("interact"):
 		if typeof(level) == TYPE_INT and level > 0:
 			vaw.selecting = true
 			Global.is_transitioning = true
