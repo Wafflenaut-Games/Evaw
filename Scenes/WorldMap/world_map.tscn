@@ -32,6 +32,7 @@ animations = [{
 [node name="WorldMap" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("1_uwqkr")]
+visible = false
 
 [node name="WorldMapAnims" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e2gad")
@@ -182,6 +183,5 @@ v_dir = "Down"
 dir = "Up"
 
 [node name="level_display" parent="." instance=ExtResource("6_qx6hv")]
-visible = false
 z_index = 10
-position = Vector2(1, -38)
+position = Vector2(0, -40)

@@ -9,6 +9,10 @@ var water_lvl = "" # always only set to "" or "_w"
 var completed_lvls = []
 var is_transitioning = false
 
+var wm_hovering = 0
+
+var lvl_names: Array = ["Glass Bridge","idk lvl 2 or smt idk","lvl 3 is rly cool trust"]
+
 #region Feather vars
 
 @onready var feathers_collected = 0
