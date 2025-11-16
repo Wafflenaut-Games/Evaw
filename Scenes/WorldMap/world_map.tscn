@@ -32,7 +32,6 @@ animations = [{
 [node name="WorldMap" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("1_uwqkr")]
-visible = false
 
 [node name="WorldMapAnims" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e2gad")

@@ -11,26 +11,27 @@ var opened = false
 var fully_open = false
 
 
-@export var type: String = "Sine"
+@export var type: String = "sine"
 
 #endregion
 
 
-func _process(_delta: float) -> void:
-	still_anims()
-
-
-func still_anims() -> void:
-	if not opened:
-		ap.play("%sclosed" % type.to_lower() + "_")
-	elif opened and fully_open:
-		ap.play("open")
+func _ready() -> void:
+	if type == "sine":
+		ap.play("sine_closed")
+	if type == "lume":
+		ap.play("lume_closed")
 
 
 func open() -> void:
 	if not opened:
 		opened = true
-		ap.play("%sopening" % type.to_lower() + "_")
+		match type:
+			"sine":
+				ap.play("sine_opening")
+			"lume":
+				ap.play("lume_opening")
+		
 		open_timer.start()
 
 
