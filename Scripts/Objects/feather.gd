@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Global.vaw_form == "sine":
 		real_speed = start_speed * 0.6
 	if Global.vaw_form == "lume":
-		real_speed = start_speed * 1.5
+		real_speed = start_speed * 1.67
 	
 	if collecting == true:
 		if global_position.distance_to(player.global_position) < 16:
