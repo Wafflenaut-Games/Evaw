@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwinlsw3a30r3"]
+
+[ext_resource type="Texture2D" uid="uid://ctxt1o30hvaqt" path="res://Assets/Sprites/Interactables/Vaw_Radio.png" id="1_sexah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78tm"]
+size = Vector2(14, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dmk2"]
+atlas = ExtResource("1_sexah")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wag73"]
+atlas = ExtResource("1_sexah")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh5xs"]
+atlas = ExtResource("1_sexah")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjqi4"]
+atlas = ExtResource("1_sexah")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icsjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dmk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wag73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh5xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjqi4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Radio" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_c78tm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_icsjw")
