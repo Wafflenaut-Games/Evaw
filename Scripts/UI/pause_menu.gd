@@ -6,8 +6,6 @@ extends Control
 @onready var vaw: CharacterBody2D = $"../../.."
 
 
-const WM = preload("res://Scenes/WorldMap/world_map.tscn")
-
 var active = false
 
 #endregion
@@ -38,4 +36,4 @@ func _on_options_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/UI/title_screen.tscn")
