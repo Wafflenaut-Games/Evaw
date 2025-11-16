@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc14s1gwiqgon"]
+[gd_scene load_steps=7 format=3 uid="uid://dc14s1gwiqgon"]
 
 [ext_resource type="Texture2D" uid="uid://dhfts4osar8nj" path="res://Assets/Sprites/UI/textbox2.png" id="1_idunx"]
 [ext_resource type="Texture2D" uid="uid://ctwvym7b13w5q" path="res://Assets/Sprites/UI/featheroutline.png" id="1_w5mcf"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="2_ssfm0"]
 [ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Sprites/Collectibles/featherinline.png" id="4_84eer"]
+
+[sub_resource type="Animation" id="Animation_ssfm0"]
+resource_name = "fade_in"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84eer"]
+_data = {
+&"fade_in": SubResource("Animation_ssfm0")
+}
 
 [node name="level_display" type="Node2D"]
 
@@ -48,3 +56,8 @@ texture = ExtResource("1_w5mcf")
 [node name="feather_inline" type="Sprite2D" parent="."]
 position = Vector2(0, 11)
 texture = ExtResource("4_84eer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_84eer")
+}
