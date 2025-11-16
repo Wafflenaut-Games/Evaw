@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://b68prfgrpgapk"]
+[gd_scene load_steps=35 format=3 uid="uid://b68prfgrpgapk"]
 
 [ext_resource type="Texture2D" uid="uid://dk8b5s4oep0xa" path="res://Assets/Sprites/Sensors/Vaw_Lume_Door_Closed.png" id="1_5f721"]
-[ext_resource type="Script" path="res://Scripts/Objects/doors.gd" id="1_iih8a"]
+[ext_resource type="Script" uid="uid://b2wl81vnc58ii" path="res://Scripts/Objects/doors.gd" id="1_iih8a"]
 [ext_resource type="Texture2D" uid="uid://jpmbo3jntw4t" path="res://Assets/Sprites/Sensors/Vaw_Lume_Door_Opening.png" id="2_iih8a"]
 [ext_resource type="Texture2D" uid="uid://bl6xgx7pki3fc" path="res://Assets/Sprites/Sensors/Vaw_Sine_Door_Opening.png" id="3_8pkyj"]
 [ext_resource type="Texture2D" uid="uid://bragj4wrabdd0" path="res://Assets/Sprites/Sensors/Vaw_Sine_Door_Closed.png" id="4_d0edu"]
@@ -44,10 +44,6 @@ region = Rect2(112, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jx8k5"]
 atlas = ExtResource("2_iih8a")
-region = Rect2(128, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tj0g6"]
-atlas = ExtResource("3_8pkyj")
 region = Rect2(128, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4erpg"]
@@ -130,14 +126,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"lume_opening",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tj0g6")
-}],
-"loop": false,
-"name": &"open",
 "speed": 5.0
 }, {
 "frames": [{
@@ -414,82 +402,6 @@ tracks/5/keys = {
 "values": [&"lume_opening"]
 }
 
-[sub_resource type="Animation" id="Animation_8pkyj"]
-resource_name = "open"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-5.9604645e-08),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionTop:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionTop:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -16)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionBottom:shape:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CollisionBottom:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 16)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D:animation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"lume_opening"]
-}
-
 [sub_resource type="Animation" id="Animation_d0edu"]
 resource_name = "sine_closed"
 length = 0.8
@@ -647,7 +559,6 @@ _data = {
 &"RESET": SubResource("Animation_5f721"),
 &"lume_closed": SubResource("Animation_d5kaj"),
 &"lume_opening": SubResource("Animation_klwoe"),
-&"open": SubResource("Animation_8pkyj"),
 &"sine_closed": SubResource("Animation_d0edu"),
 &"sine_opening": SubResource("Animation_iih8a")
 }
@@ -662,12 +573,10 @@ sprite_frames = SubResource("SpriteFrames_r3368")
 animation = &"lume_opening"
 
 [node name="CollisionTop" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mfsm2")
 
 [node name="CollisionBottom" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_jwgmq")
 
