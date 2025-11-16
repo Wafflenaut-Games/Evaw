@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=14 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_crycw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="6_7ia4a"]
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="6_e4rng"]
+[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Lvls/shine.gdshader" id="7_k5dds"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v8kj3"]
 particle_flag_disable_z = true
@@ -46,6 +47,13 @@ shader_parameter/force = 0.056
 shader_parameter/size = 0.315
 shader_parameter/thickness = 0.1
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ora"]
+shader = ExtResource("7_k5dds")
+shader_parameter/shine_color = Color(1, 1, 1, 0.58431375)
+shader_parameter/shine_progress = 0.37999999150624
+shader_parameter/shine_size = 0.15999999642368
+shader_parameter/shine_angle = 45.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Respawn" parent="." instance=ExtResource("1_v8kj3")]
@@ -78,6 +86,7 @@ visibility_rect = Rect2(-5000, -5000, 100000, 19000)
 process_material = SubResource("ParticleProcessMaterial_2ltx7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_k5dds")
@@ -88,3 +97,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_q0ora")
+offset_left = 37.0
+offset_top = 20.0
+offset_right = 77.0
+offset_bottom = 60.0

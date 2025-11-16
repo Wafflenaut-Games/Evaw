@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=26 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_1qo6x"]
 [ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="2_6ay57"]
@@ -6,11 +6,139 @@
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_x4073"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_6ay57"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="5_8xn0a"]
+[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Lvls/shine.gdshader" id="6_8xn0a"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="6_iebl6"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
+[ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="7_sj2hf"]
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="7_x4073"]
+[ext_resource type="Shader" uid="uid://eknc8rdwr0bk" path="res://Scenes/Lvls/shine2.gdshader" id="10_iebl6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iebl6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr28i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj0wk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uee3"]
+shader = ExtResource("6_8xn0a")
+shader_parameter/shine_color = Color(1, 0, 1, 0.43137255)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.07999999821184
+shader_parameter/shine_angle = 45.000000670554
+
+[sub_resource type="Animation" id="Animation_uh0uy"]
+resource_name = "shine"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.9281716, 4.9245806),
+"update": 0,
+"values": [0.0, 0.999999977648]
+}
+
+[sub_resource type="Animation" id="Animation_4dybp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/shine_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ey41x"]
+_data = {
+&"RESET": SubResource("Animation_4dybp"),
+&"shine": SubResource("Animation_uh0uy")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ip6uw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pt1e"]
+shader = ExtResource("10_iebl6")
+shader_parameter/speed = 2.0450000971375
+shader_parameter/line_width = 0.050000002375
+shader_parameter/line_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+shader_parameter/pause_duration = 2.0
+shader_parameter/offset = 2.0
+
+[sub_resource type="Gradient" id="Gradient_hpwsk"]
+colors = PackedColorArray(0.12941177, 0.12156863, 0.12941177, 1, 0.12941177, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5gbqm"]
+gradient = SubResource("Gradient_hpwsk")
+width = 20
+
+[sub_resource type="Animation" id="Animation_duswi"]
+resource_name = "speed"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/line_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.3077863, 1, 1),
+"update": 0,
+"values": [0.050000002375, 0.150000007125, 0.050000002375]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.7320802, 0.003644664),
+"update": 0,
+"values": [0.814000038665, 1.52800007258]
+}
+
+[sub_resource type="Animation" id="Animation_2esi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/line_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.050000002375]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0450000971375]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gfh6a"]
+_data = {
+&"RESET": SubResource("Animation_2esi0"),
+&"speed": SubResource("Animation_duswi")
+}
 
 [node name="Test_Lvl" type="Node2D"]
 material = SubResource("ShaderMaterial_iebl6")
@@ -26,14 +154,33 @@ position = Vector2(57, 27)
 collision_layer = 15
 
 [node name="Background" parent="." instance=ExtResource("3_x4073")]
+material = SubResource("ShaderMaterial_fr28i")
 position = Vector2(-221.99998, 119.99999)
 
 [node name="Tileset" parent="." instance=ExtResource("4_6ay57")]
+material = SubResource("ShaderMaterial_tj0wk")
+use_parent_material = false
 tile_map_data = PackedByteArray("AAAeAPr/AAAHAAEAAAAfAPr/AAAIAAEAAAAgAPr/AAAJAAEAAAAeAPv/AAAHAAMAAAAfAPv/AAAIAAMAAAAgAPv/AAAJAAMAAAAZAPr/AAABAAIAAAAZAPv/AAABAAIAAAAZAPn/AAABAAIAAAAZAPj/AAABAAIAAAAZAPf/AAABAAIAAAAZAPb/AAABAAIAAAAZAPT/AAACAAEAAAAYAPT/AAACAAEAAAAXAPT/AAACAAEAAAAWAPT/AAACAAEAAAAVAPT/AAACAAEAAAAUAPT/AAACAAEAAAATAPT/AAACAAEAAAASAPT/AAACAAEAAAAOAPX/AAACAAEAAAAPAPX/AAACAAEAAAAQAPX/AAAFAAIAAAAQAPT/AAABAAEAAAARAPT/AAACAAEAAAAOAPb/AAABAAMAAAAPAPb/AAACAAMAAAAQAPb/AAACAAMAAAARAPb/AAADAAMAAAARAPX/AAAEAAEAAAATAPX/AAACAAMAAAASAPX/AAACAAMAAAAUAPX/AAACAAMAAAAVAPX/AAACAAMAAAAWAPX/AAACAAMAAAAXAPX/AAACAAMAAAAYAPX/AAACAAMAAAAZAPX/AAAFAAEAAAAYAPn/AAACAAEAAAAXAPn/AAACAAEAAAAWAPn/AAACAAEAAAAVAPn/AAACAAEAAAAUAPn/AAABAAEAAAAUAPr/AAABAAIAAAAUAPv/AAABAAIAAAAUAPz/AAABAAMAAAAVAPz/AAACAAMAAAAWAPz/AAACAAMAAAAXAPz/AAACAAMAAAAYAPz/AAACAAMAAAAZAPz/AAABAAIAAAAZAP3/AAABAAIAAAAZAP7/AAABAAIAAAAZAP//AAABAAIAAAAZAAAAAAABAAIAAAAZAAEAAAAFAAIAAAAYAAEAAAACAAEAAAAXAAEAAAACAAEAAAAWAAEAAAACAAEAAAAVAAEAAAACAAEAAAAUAAEAAAABAAEAAAARAPn/AAAHAAUAAAARAPr/AAAHAAYAAAARAPv/AAAHAAcAAAASAPn/AAAIAAUAAAASAPr/AAAIAAYAAAASAPv/AAAIAAcAAAATAPn/AAAJAAUAAAATAPr/AAAJAAYAAAATAPv/AAAJAAcAAAARAPz/AAAHAAUAAAARAP3/AAAHAAYAAAARAP7/AAAHAAcAAAASAPz/AAAIAAUAAAASAP3/AAAIAAYAAAASAP7/AAAIAAcAAAATAPz/AAAJAAUAAAATAP3/AAAJAAYAAAATAP7/AAAJAAcAAAARAP//AAAHAAUAAAARAAAAAAAHAAYAAAARAAEAAAAHAAcAAAASAP//AAAIAAUAAAASAAAAAAAIAAYAAAASAAEAAAAIAAcAAAATAP//AAAJAAUAAAATAAAAAAAJAAYAAAATAAEAAAAJAAcAAAARAAIAAAAHAAUAAAARAAMAAAAHAAYAAAARAAQAAAAHAAcAAAASAAIAAAAIAAUAAAASAAMAAAAIAAYAAAASAAQAAAAIAAcAAAATAAIAAAAJAAUAAAATAAMAAAAJAAYAAAATAAQAAAAJAAcAAAARAAUAAAAHAAUAAAARAAYAAAAHAAYAAAARAAcAAAAHAAcAAAASAAUAAAAIAAUAAAASAAYAAAAIAAYAAAASAAcAAAAIAAcAAAATAAUAAAAJAAUAAAATAAYAAAAJAAYAAAATAAcAAAAJAAcAAAAUAAIAAAABAAIAAAAUAAMAAAABAAIAAAAUAAQAAAABAAIAAAAUAAUAAAABAAIAAAAUAAYAAAABAAIAAAAUAAcAAAABAAIAAAAUAAgAAAABAAIAAAAUAAkAAAAFAAIAAAAQAAEAAAADAAkAAAAPAAEAAAAAAAkAAAAOAAEAAAACAAkAAAALAAEAAAAAAAkAAAANAAEAAAACAAkAAAAMAAEAAAACAAgAAAAKAAEAAAAIAAEAAAAJAAEAAAAIAAEAAAAIAAEAAAADAAEAAAAHAAEAAAACAAEAAAAGAAEAAAACAAEAAAAFAAEAAAACAAEAAAAEAAEAAAACAAEAAAADAAUAAAADAAIAAAADAAEAAAACAAEAAAADAAIAAAAMAAgAAAADAAMAAAAMAAkAAAADAAQAAAAMAAoAAAADAAYAAAADAAIAAAADAAcAAAADAAIAAAADAAgAAAADAAIAAAAIAAIAAAADAAIAAAAIAAMAAAADAAIAAAAIAAQAAAADAAIAAAAIAAUAAAABAAgAAAAIAAYAAAABAAkAAAAIAAcAAAABAAoAAAAIAAgAAAABAAgAAAAIAAsAAAACAAUAAAAIAAwAAAACAAYAAAAIAA0AAAACAAcAAAAHAAsAAAAAAAUAAAAHAAwAAAAAAAYAAAAHAA0AAAAAAAcAAAAIAAkAAAADAAEAAAAIAAoAAAADAAMAAAAHAAoAAAACAAMAAAAGAAoAAAACAAMAAAAFAAoAAAACAAMAAAAEAAoAAAACAAMAAAAHAAkAAAACAAEAAAAGAAkAAAACAAEAAAAFAAkAAAACAAEAAAAEAAkAAAACAAEAAAADAAkAAAABAAEAAAADAAsAAAABAAIAAAADAAoAAAABAAIAAAADAAwAAAABAAIAAAADAA0AAAABAAIAAAADAA4AAAACAAEAAAAEAA4AAAACAAEAAAAFAA4AAAACAAEAAAAGAA4AAAACAAEAAAAHAA4AAAACAAEAAAAIAA4AAAACAAEAAAALAAIAAAAHAAUAAAALAAMAAAAHAAYAAAALAAQAAAAHAAcAAAAMAAIAAAAIAAUAAAAMAAMAAAAIAAYAAAAMAAQAAAAIAAcAAAANAAIAAAAJAAUAAAANAAMAAAAJAAYAAAANAAQAAAAJAAcAAAALAAUAAAAHAAUAAAALAAYAAAAHAAYAAAALAAcAAAAHAAcAAAAMAAUAAAAIAAUAAAAMAAYAAAAIAAYAAAAMAAcAAAAIAAcAAAANAAUAAAAJAAUAAAANAAYAAAAJAAYAAAANAAcAAAAJAAcAAAALAAgAAAAHAAUAAAALAAkAAAAHAAYAAAALAAoAAAAHAAcAAAAMAAgAAAAIAAUAAAAMAAkAAAAIAAYAAAAMAAoAAAAIAAcAAAANAAgAAAAJAAUAAAANAAkAAAAJAAYAAAANAAoAAAAJAAcAAAACAAUAAAABAAEAAAACAAYAAAABAAMAAAACAAEAAAACAAEAAAABAAEAAAACAAEAAAAAAAEAAAACAAEAAAD//wEAAAAJAAIAAAD//wIAAAAJAAIAAAD//wMAAAAJAAIAAAD//wQAAAAJAAIAAAD//wUAAAAJAAMAAAD9/wUAAAAHAAMAAAD9/wQAAAAHAAIAAAD9/wMAAAAHAAIAAAD9/wIAAAAHAAIAAAD9/wEAAAAHAAIAAAD+/wEAAAAIAAEAAAD+/wUAAAAIAAMAAAD9/wYAAAAHAAgAAAD9/wcAAAAHAAkAAAD9/wgAAAAHAAoAAAD+/wYAAAAIAAgAAAD+/wcAAAAIAAkAAAD+/wgAAAAIAAoAAAD//wYAAAAJAAgAAAD//wcAAAAJAAkAAAD//wgAAAAJAAoAAAD+/woAAAACAAMAAAD//woAAAACAAMAAAD9/wkAAAABAAEAAAD+/wkAAAACAAEAAAD//wkAAAACAAEAAAD9/woAAAABAAMAAAD9/wsAAAABAAIAAAD9/wwAAAABAAIAAAD9/w0AAAABAAIAAAD9/w4AAAABAAIAAAD6/w4AAAADAAIAAAD6/w0AAAADAAIAAAD6/wwAAAADAAIAAAD6/wsAAAADAAIAAAD6/woAAAADAAIAAAD6/wkAAAADAAIAAAD6/wgAAAADAAIAAAD6/wcAAAADAAIAAAD6/wYAAAADAAIAAAD6/wUAAAADAAIAAAD6/wQAAAADAAIAAAD6/wMAAAADAAIAAAD6/wIAAAADAAIAAAD6/wEAAAADAAIAAAD6/wAAAAADAAIAAAD6////AAADAAIAAAD6//7/AAADAAIAAAD6//3/AAADAAIAAAD6//z/AAADAAIAAAD6//v/AAADAAIAAAD6//r/AAADAAIAAAD6//n/AAADAAIAAAD6//j/AAADAAIAAAD6//f/AAADAAIAAAD6//b/AAADAAIAAAD6//X/AAAEAAEAAAD6//T/AAACAAEAAAD7//T/AAACAAEAAAD8//T/AAACAAEAAAD9//T/AAACAAEAAAD+//T/AAACAAEAAAD///T/AAACAAEAAAAAAPT/AAACAAEAAAABAPT/AAACAAEAAAACAPT/AAACAAEAAAADAPT/AAACAAEAAAAEAPT/AAACAAEAAAAFAPT/AAACAAEAAAAGAPT/AAACAAEAAAAHAPT/AAACAAEAAAAIAPT/AAACAAEAAAAJAPT/AAACAAEAAAAKAPT/AAACAAEAAAALAPT/AAADAAEAAAALAPX/AAAEAAIAAAALAPb/AAADAAMAAAAKAPb/AAABAAMAAAAIAPX/AAACAAMAAAAJAPX/AAACAAMAAAAKAPX/AAAFAAEAAAAHAPX/AAACAAMAAAAGAPX/AAACAAMAAAAFAPX/AAACAAMAAAAEAPX/AAACAAMAAAADAPX/AAACAAMAAAACAPX/AAACAAMAAAABAPX/AAACAAMAAAAAAPX/AAACAAMAAAD///X/AAACAAMAAAD+//X/AAACAAMAAAD9//X/AAACAAMAAAD8//X/AAACAAMAAAD7//X/AAACAAMAAAD9//7/AAAHAAUAAAD9////AAAHAAYAAAD9/wAAAAAHAAcAAAD+//7/AAAIAAUAAAD+////AAAIAAYAAAD+/wAAAAAIAAcAAAD///7/AAAJAAUAAAD/////AAAJAAYAAAD//wAAAAAJAAcAAAD+//3/AAAIAAMAAAD///3/AAAJAAIAAAD///z/AAAJAAIAAAD///v/AAAJAAIAAAD///r/AAAJAAIAAAD9//3/AAAHAAIAAAD9//z/AAAHAAIAAAD9//v/AAAHAAIAAAD9//r/AAAHAAIAAAD+//n/AAAIAAEAAAD8//n/AAAIAAEAAAD9//n/AAAIAAEAAAD7//n/AAAIAAEAAAD7//z/AAAAAAUAAAD8//3/AAACAAcAAAD8//z/AAACAAUAAAD7//3/AAAAAAcAAAD///n/AAAJAAEAAAAIAAAAAAABAAkAAAAIAP//AAABAAgAAAAIAP7/AAABAAkAAAAIAP3/AAABAAgAAAAIAPz/AAACAAMAAAAHAPz/AAACAAMAAAAGAPz/AAACAAMAAAAFAPz/AAACAAMAAAAEAPz/AAACAAMAAAADAPz/AAACAAMAAAACAPz/AAACAAMAAAABAPz/AAACAAMAAAAAAPz/AAACAAMAAAAJAPz/AAACAAMAAAAKAPz/AAACAAMAAAALAPz/AAACAAMAAAAMAPz/AAACAAMAAAANAPz/AAACAAMAAAAOAPz/AAACAAMAAAAPAPz/AAACAAMAAAAQAPz/AAADAAMAAAAQAPv/AAADAAIAAAAQAPr/AAADAAIAAAAQAPn/AAADAAEAAAAPAPn/AAACAAEAAAAOAPn/AAACAAEAAAANAPn/AAACAAEAAAAMAPn/AAACAAEAAAALAPn/AAACAAEAAAAKAPn/AAACAAEAAAAJAPn/AAACAAEAAAAIAPn/AAACAAEAAAAHAPn/AAACAAEAAAAGAPn/AAACAAEAAAAFAPn/AAACAAEAAAAEAPn/AAACAAEAAAADAPn/AAACAAEAAAACAPn/AAACAAEAAAABAPn/AAACAAEAAAAAAPn/AAACAAEAAADx////AAACAAUAAADx/wAAAAACAAYAAADx/wEAAAACAAcAAADr////AAAAAAUAAADs////AAABAAUAAADs/wAAAAABAAYAAADs/wEAAAABAAcAAADt////AAABAAUAAADt/wAAAAABAAYAAADt/wEAAAABAAcAAADu////AAABAAUAAADu/wAAAAABAAYAAADu/wEAAAABAAcAAADv////AAABAAUAAADv/wAAAAABAAYAAADv/wEAAAABAAcAAADw////AAABAAUAAADw/wAAAAABAAYAAADw/wEAAAABAAcAAADr/wAAAAAAAAYAAADr/wEAAAAAAAcAAADr/wQAAAAHAAUAAADr/wUAAAAHAAYAAADr/wYAAAAHAAcAAADx/wQAAAAJAAUAAADx/wUAAAAJAAYAAADx/wYAAAAJAAcAAADs/wQAAAAIAAUAAADs/wUAAAAIAAYAAADs/wYAAAAIAAcAAADt/wQAAAAIAAUAAADt/wUAAAAIAAYAAADt/wYAAAAIAAcAAADu/wQAAAAIAAUAAADu/wUAAAAIAAYAAADu/wYAAAAIAAcAAADv/wQAAAAIAAUAAADv/wUAAAAIAAYAAADv/wYAAAAIAAcAAADw/wQAAAAIAAUAAADw/wUAAAAIAAYAAADw/wYAAAAIAAcAAAA=")
+
+[node name="ColorRect" type="ColorRect" parent="Tileset"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_4uee3")
+offset_left = -168.0
+offset_top = -8.0
+offset_right = -112.0
+offset_bottom = 16.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tileset"]
+libraries = {
+&"": SubResource("AnimationLibrary_ey41x")
+}
 
 [node name="Spikes" type="Node" parent="."]
 
 [node name="Spikes" parent="Spikes" instance=ExtResource("5_8xn0a")]
+material = SubResource("ShaderMaterial_ip6uw")
 position = Vector2(76, 20)
 direction = "r"
 
@@ -188,6 +335,85 @@ position = Vector2(-60, 123)
 
 [node name="WaterBoundary42" parent="WaterBoundaries" instance=ExtResource("7_x4073")]
 position = Vector2(-52, 123)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(148, 17.000006)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(148, 41.000008)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(148, -6.9999943)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D3"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(148, -30.999992)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D4"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(148, -54.999992)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D5"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(100, 17.000006)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D6"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node"]
+material = SubResource("ShaderMaterial_5pt1e")
+position = Vector2(100, 41.000008)
+scale = Vector2(1.1, 21.999998)
+texture = SubResource("GradientTexture1D_5gbqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/Sprite2D7"]
+libraries = {
+&"": SubResource("AnimationLibrary_gfh6a")
+}
 
 [node name="Sensors" type="Node" parent="."]
 
