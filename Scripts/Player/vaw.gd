@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var death_timer: Timer = $Timers/DeathTimer
 @onready var respawn_timer: Timer = $Timers/RespawnTimer
 @onready var transition_timer: Timer = $Timers/TransitionTimer
+@onready var ground_checker: RayCast2D = $ground_checker
 
 
 const SPEED = 3000.0
@@ -173,7 +174,7 @@ func form_collision() -> void:
 
 
 func reset_uses() -> void:
-	if is_on_floor():
+	if ground_checker.is_colliding():
 		sine_used = false
 		lume_used = false
 
