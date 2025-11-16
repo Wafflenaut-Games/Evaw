@@ -18,7 +18,7 @@ var v_moving = false
 
 func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO:
-		print("not")
+		Global.wm_hovering = 0
 	
 	move(delta)
 	handle_anims()
