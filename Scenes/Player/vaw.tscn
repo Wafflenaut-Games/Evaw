@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dl3dcji42vxrk" path="res://Assets/Sprites/Player/Vaw_Revive.png" id="12_bih53"]
 [ext_resource type="Texture2D" uid="uid://dordd4eyo5ikc" path="res://Assets/Sprites/Player/Water/Vaw_Water_Run.png" id="14_s1hrp"]
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
-[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="20_52i0t"]
+[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
@@ -1151,6 +1151,8 @@ shape = SubResource("RectangleShape2D_1d0l2")
 polygon = PackedVector2Array(-1, -2, -2, -1, -2, 1, -1, 2, 1, 2, 2, 1, 2, -1, 1, -2)
 
 [node name="NoSoftLock" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoSoftLock"]
 shape = SubResource("RectangleShape2D_3akl4")

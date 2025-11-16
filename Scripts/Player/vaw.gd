@@ -152,30 +152,22 @@ func formshift() -> void:
 				lume_used = true
 				velocity = Vector2(0, 0)
 	else:
-		if Global.vaw_form == "sine":
-			if (not Input.is_action_pressed("sine") and not moused_dir) or (not Input.is_action_pressed("sine_m") and moused_dir):
-				if soft_lock_timer_started == false:
-					soft_lock_timer.start()
-					soft_lock_timer_started = true
-		elif Global.vaw_form == "lume":
-			if (not Input.is_action_pressed("lume") and not moused_dir) or (not Input.is_action_pressed("lume_m") and moused_dir):
-				if soft_lock_timer_started == false:
-					soft_lock_timer.start()
-					soft_lock_timer_started = true
+		if Global.vaw_form == "norm":
+			if soft_lock_timer_started == false:
+				soft_lock_timer.start()
+				soft_lock_timer_started = true
 
 
 func form_collision() -> void:
 	if Global.vaw_form == "norm":
 		norm_col.disabled = false
-		no_soft_lock.collision_mask = 0b00000000
+		no_soft_lock.collision_mask = 0b00001110
 		wave_col_check.collision_mask = 0b00000000
 	elif Global.vaw_form == "sine":
-		collision_layer = 0b00001001
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00000110
 		wave_col_check.collision_mask = 0b00001001
 	elif Global.vaw_form == "lume":
-		collision_layer = 0b00000101
 		norm_col.disabled = true
 		no_soft_lock.collision_mask = 0b00001010
 		wave_col_check.collision_mask = 0b00000101
@@ -465,8 +457,9 @@ func _on_wave_col_check_body_entered(_body: Node2D) -> void:
 		wave_dia = false
 
 
-func _on_no_soft_lock_body_entered(_body: Node2D) -> void:
-	soft_lock_override = true
+func _on_no_soft_lock_body_entered(body: Node2D) -> void:
+	if body.name.to_lower() == "tileset":
+		soft_lock_override = true
 
 
 func _on_no_soft_lock_body_exited(_body: Node2D) -> void:

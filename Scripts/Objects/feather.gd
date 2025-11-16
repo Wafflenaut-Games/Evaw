@@ -13,7 +13,7 @@ var starting_pos: Vector2
 
 var collecting = false
 
-var start_speed = randf_range(15,100)
+var start_speed = randf_range(25,50)
 var real_speed = start_speed
 
 var player
