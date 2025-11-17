@@ -1008,7 +1008,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
-size = Vector2(4, 8)
+size = Vector2(4, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1d0l2"]
 size = Vector2(4, 4)
@@ -1126,6 +1126,7 @@ animation = &"0"
 autoplay = "0"
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uvlj0")
 
 [node name="ground_checkerL" type="RayCast2D" parent="."]
