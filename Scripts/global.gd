@@ -18,7 +18,7 @@ var respawning = false
 
 var wm_hovering = 0
 
-var lvl_names: Array = ["Glass Bridge","Ruined Skyline","lvl 3 is rly cool trust"]
+var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns"]
 
 #region Feather vars
 
