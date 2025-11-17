@@ -3,7 +3,7 @@ extends Control
 
 #region vars
 
-@onready var vaw: CharacterBody2D = $"../../.."
+@onready var vaw: CharacterBody2D = $"../.."
 
 
 var active = false
