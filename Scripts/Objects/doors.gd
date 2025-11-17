@@ -26,6 +26,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Reset when you die
 	if Global.respawning:
+		opened = false
+		fully_open = false
+		
 		if type == "sine":
 			ap.play("sine_closed")
 		if type == "lume":

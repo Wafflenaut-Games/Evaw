@@ -30,6 +30,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Reset when you die
+	if Global.dying:
+		collecting = false
+	
 	if Global.respawning:
 		global_position = starting_pos
 	
