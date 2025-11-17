@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="4_je6xd"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="5_s3lwy"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="6_ahjac"]
-[ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Lvls/wave effects 2.gdshader" id="7_aapyr"]
-[ext_resource type="Texture2D" uid="uid://djnkf8qo505de" path="res://Assets/Sprites/tree2.png" id="8_cxt8o"]
+[ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="7_aapyr"]
+[ext_resource type="Texture2D" uid="uid://g2b4f5h6q7cf" path="res://Assets/Sprites/Tilesets/tree.png" id="8_cxt8o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6xhjq"]
 

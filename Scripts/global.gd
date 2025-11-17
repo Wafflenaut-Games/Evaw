@@ -1,5 +1,6 @@
 extends Node
 
+
 var vaw_form : String = "norm"
 
 var world_map_dirs: Array = []
@@ -8,6 +9,9 @@ var lvl_selected = false
 var water_lvl = "" # always only set to "" or "_w"
 var completed_lvls = []
 var is_transitioning = false
+
+var mins = 0
+var secs = 0
 
 var dying = false
 var respawning = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhxrfxl1y1xdq"]
+[gd_scene load_steps=9 format=3 uid="uid://bhxrfxl1y1xdq"]
 
 [ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/pause_menu.gd" id="1_pr555"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="2_8dpcc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="4_1yf2f"]
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Sprites/Interactables/buttonhover.png" id="5_rqg0w"]
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sprites/Sensors/soundsensor.png" id="6_lsyt1"]
+[ext_resource type="PackedScene" uid="uid://cersl1fr0sii5" path="res://Scenes/UI/speedrun_timer.tscn" id="7_8dpcc"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
@@ -108,6 +109,13 @@ theme_override_icons/icon = ExtResource("6_lsyt1")
 text = "  QUIT TO TITLE"
 alignment = 0
 text_overrun_behavior = 1
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("7_8dpcc")]
+layout_mode = 1
+offset_left = -80.0
+offset_top = -60.0
+offset_right = -80.0
+offset_bottom = -60.0
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]

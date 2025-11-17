@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cersl1fr0sii5"]
+
+[ext_resource type="Script" uid="uid://de7gpqjup2o7w" path="res://Scripts/UI/speedrun_timer.gd" id="1_0xroq"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="2_sp8ea"]
+
+[node name="SpeedrunTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xroq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 128.0
+offset_top = -12.0
+offset_right = 160.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sp8ea")
+text = "0:00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
