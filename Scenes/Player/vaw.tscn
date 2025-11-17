@@ -22,6 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
+shader = ExtResource("20_52i0t")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.056
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.05
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg1s8"]
 atlas = ExtResource("11_dk2r0")
 region = Rect2(0, 0, 24, 24)
@@ -1000,13 +1007,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
-shader = ExtResource("20_52i0t")
-shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/force = 0.056
-shader_parameter/size = 0.0
-shader_parameter/thickness = 0.05
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
 size = Vector2(4, 7)
 
@@ -1024,7 +1024,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UI/ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1036,7 +1036,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/ColorRect:material:shader_parameter/thickness")
+tracks/1/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/thickness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1052,7 +1052,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UI/ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1064,7 +1064,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/ColorRect:material:shader_parameter/thickness")
+tracks/1/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/thickness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1097,22 +1097,9 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_12ev1")
-animation = &"idle"
+[node name="UI" type="Node2D" parent="Camera"]
 
-[node name="Transitions" type="AnimatedSprite2D" parent="."]
-z_index = 2
-sprite_frames = SubResource("SpriteFrames_52i0t")
-animation = &"0"
-autoplay = "0"
-
-[node name="UI" type="Node2D" parent="."]
-
-[node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="UI"]
+[node name="ColorRect" type="ColorRect" parent="Camera/UI"]
 material = SubResource("ShaderMaterial_52i0t")
 custom_minimum_size = Vector2(160, 120)
 anchors_preset = 15
@@ -1124,6 +1111,19 @@ offset_right = 80.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PauseUI" parent="Camera/UI" instance=ExtResource("4_25jie")]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_12ev1")
+animation = &"idle"
+
+[node name="Transitions" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_52i0t")
+animation = &"0"
+autoplay = "0"
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

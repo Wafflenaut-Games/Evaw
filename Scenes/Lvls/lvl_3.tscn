@@ -20,7 +20,8 @@ position = Vector2(-48, 84)
 [node name="ExitPortal" parent="." instance=ExtResource("3_d7y04")]
 position = Vector2(766, -20)
 
-[node name="Spike pit 1" type="Node" parent="."]
+[node name="Spike pit 1" type="Node2D" parent="."]
+position = Vector2(0, -24)
 
 [node name="Spikes" parent="Spike pit 1" instance=ExtResource("7_101t3")]
 position = Vector2(-4, 140)
@@ -45,7 +46,8 @@ position = Vector2(28, 156)
 [node name="Spikes7" parent="Spike pit 1" instance=ExtResource("7_101t3")]
 position = Vector2(36, 148)
 
-[node name="Spike pit 2" type="Node" parent="."]
+[node name="Spike pit 2" type="Node2D" parent="."]
+position = Vector2(368, -64)
 
 [node name="Spikes" parent="Spike pit 2" instance=ExtResource("7_101t3")]
 position = Vector2(4, 140)
@@ -87,7 +89,8 @@ direction = "l"
 position = Vector2(28, 124)
 direction = "l"
 
-[node name="Spike pit 3" type="Node" parent="."]
+[node name="Spike pit 3" type="Node2D" parent="."]
+position = Vector2(640, -136)
 
 [node name="Spikes3" parent="Spike pit 3" instance=ExtResource("7_101t3")]
 position = Vector2(4, 156)
@@ -104,7 +107,8 @@ position = Vector2(-28, 148)
 [node name="Spikes12" parent="Spike pit 3" instance=ExtResource("7_101t3")]
 position = Vector2(-20, 148)
 
-[node name="Spike teeth" type="Node" parent="."]
+[node name="Spike teeth" type="Node2D" parent="."]
+position = Vector2(202, -104)
 
 [node name="Spikes" parent="Spike teeth" instance=ExtResource("7_101t3")]
 position = Vector2(4, 124)
@@ -148,7 +152,8 @@ position = Vector2(28, 156)
 [node name="Spikes7" parent="Spike teeth" instance=ExtResource("7_101t3")]
 position = Vector2(36, 156)
 
-[node name="Spike wall" type="Node" parent="."]
+[node name="Spike wall" type="Node2D" parent="."]
+position = Vector2(258, -104)
 
 [node name="Spikes" parent="Spike wall" instance=ExtResource("7_101t3")]
 position = Vector2(34, 148)
@@ -186,7 +191,8 @@ direction = "l"
 position = Vector2(34, 156)
 direction = "l"
 
-[node name="Glass spikes" type="Node" parent="."]
+[node name="Glass spikes" type="Node2D" parent="."]
+position = Vector2(410, -176)
 
 [node name="Spikes" parent="Glass spikes" instance=ExtResource("7_101t3")]
 position = Vector2(50, 172)
@@ -238,7 +244,8 @@ position = Vector2(42, 172)
 type = "glass"
 direction = "d"
 
-[node name="Metal spikes" type="Node" parent="."]
+[node name="Metal spikes" type="Node2D" parent="."]
+position = Vector2(434, -208)
 
 [node name="Spikes" parent="Metal spikes" instance=ExtResource("7_101t3")]
 position = Vector2(50, 172)

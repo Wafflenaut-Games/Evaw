@@ -179,7 +179,6 @@ _data = {
 }
 
 [node name="feather" type="Node2D"]
-z_index = 4
 script = ExtResource("1_rjtbf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

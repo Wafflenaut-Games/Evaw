@@ -10,7 +10,8 @@ var already_out = true
 @onready var feather_inline: Sprite2D = $everything/feather_inline
 
 
-func _process(_delta: float) -> void:
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	
 	print(Global.feather_lvl_1)
 	

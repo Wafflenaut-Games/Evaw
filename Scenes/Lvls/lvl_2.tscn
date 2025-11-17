@@ -1,16 +1,16 @@
-[gd_scene load_steps=21 format=4 uid="uid://n0bm0e0fgkse"]
+[gd_scene load_steps=22 format=4 uid="uid://n0bm0e0fgkse"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_r5vvr"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_odydx"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_4heo2"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="4_je6xd"]
-[ext_resource type="Shader" uid="uid://c3pheyusy3s5w" path="res://Scenes/Shaders/sun.gdshader" id="4_s3lwy"]
+[ext_resource type="Shader" uid="uid://c3pheyusy3s5w" path="res://Scenes/Lvls/sun.gdshader" id="4_s3lwy"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="5_s3lwy"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="6_ahjac"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="7_aapyr"]
-[ext_resource type="PackedScene" uid="uid://dbc86yw1y70yd" path="res://Scenes/Tools/tree.tscn" id="9_cxt8o"]
+[ext_resource type="Texture2D" uid="uid://g2b4f5h6q7cf" path="res://Assets/Sprites/Tilesets/tree.png" id="8_cxt8o"]
 [ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="9_odydx"]
-[ext_resource type="Shader" uid="uid://dlux1itmdye0r" path="res://Scenes/Shaders/sun2.gdshader" id="11_ahjac"]
+[ext_resource type="Shader" uid="uid://dlux1itmdye0r" path="res://Scenes/Lvls/sun2.gdshader" id="11_ahjac"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="12_cxt8o"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Sprites/Backgrounds/evawbackg3.png" id="13_fsq65"]
 [ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Sprites/Backgrounds/evawbackg2.png" id="14_hhr2w"]
@@ -61,6 +61,21 @@ shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 0.5
 shader_parameter/freezeFirstHalf = false
 shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp3uf"]
+shader = ExtResource("7_aapyr")
+shader_parameter/waveAmplitude = 0.1710000081225
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 7.842000372495
+shader_parameter/verticalWave = false
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 3.9530001877675
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aapyr"]
 shader = ExtResource("11_ahjac")
@@ -170,13 +185,15 @@ tile_map_data = PackedByteArray("AAD5//f/AAAAAAYAAAD6//f/AAABAAYAAAD7//f/AAACAAY
 material = SubResource("ShaderMaterial_y0l0t")
 position = Vector2(313, 19)
 
-[node name="Trees" type="Node" parent="."]
+[node name="Tree4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tp3uf")
+position = Vector2(452, 12)
+texture = ExtResource("8_cxt8o")
 
-[node name="Tree" parent="Trees" instance=ExtResource("9_cxt8o")]
-position = Vector2(313, 18)
-
-[node name="Tree2" parent="Trees" instance=ExtResource("9_cxt8o")]
-position = Vector2(433, 10)
+[node name="Tree2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tp3uf")
+position = Vector2(313, 19)
+texture = ExtResource("8_cxt8o")
 
 [node name="ExitPortal" parent="." instance=ExtResource("9_odydx")]
 position = Vector2(480, 16)
