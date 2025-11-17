@@ -1024,7 +1024,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1036,7 +1036,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/thickness")
+tracks/1/path = NodePath("UI/ColorRect:material:shader_parameter/thickness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1052,7 +1052,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/size")
+tracks/0/path = NodePath("UI/ColorRect:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1064,7 +1064,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera/UI/ColorRect:material:shader_parameter/thickness")
+tracks/1/path = NodePath("UI/ColorRect:material:shader_parameter/thickness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1080,12 +1080,12 @@ _data = {
 &"shcokawave": SubResource("Animation_25jie")
 }
 
-[sub_resource type="Gradient" id="Gradient_rjtbf"]
+[sub_resource type="Gradient" id="Gradient_25jie"]
 offsets = PackedFloat32Array(0.003921569, 0.26666668, 1)
 colors = PackedColorArray(0.65, 0.65, 0.65, 1, 0.4, 0.4, 0.4, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_25jie"]
-gradient = SubResource("Gradient_rjtbf")
+gradient = SubResource("Gradient_25jie")
 fill = 1
 fill_from = Vector2(0.5, 0.52136755)
 fill_to = Vector2(0.1923077, 0.86752135)
@@ -1097,9 +1097,9 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
-[node name="UI" type="Node2D" parent="Camera"]
+[node name="UI" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Camera/UI"]
+[node name="ColorRect" type="ColorRect" parent="UI"]
 material = SubResource("ShaderMaterial_52i0t")
 custom_minimum_size = Vector2(160, 120)
 anchors_preset = 15
@@ -1112,7 +1112,7 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PauseUI" parent="Camera/UI" instance=ExtResource("4_25jie")]
+[node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
