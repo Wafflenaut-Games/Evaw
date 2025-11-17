@@ -16,7 +16,7 @@ position = Vector2(-298, 159.00002)
 position = Vector2(100, 65)
 
 [node name="ExitPortal" parent="." instance=ExtResource("2_5te3i")]
-position = Vector2(164, 49)
+position = Vector2(755, -60)
 
 [node name="feather" parent="." instance=ExtResource("6_ndgdw")]
 position = Vector2(508, 22)
