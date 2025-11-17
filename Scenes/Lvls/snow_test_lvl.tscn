@@ -1,12 +1,16 @@
-[gd_scene load_steps=14 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=18 format=4 uid="uid://bxith6kpuc7d5"]
 
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="1_fuhmf"]
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_crycw"]
+[ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Sprites/Backgrounds/evawbackg3.png" id="2_f4vp1"]
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="3_i2041"]
+[ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Sprites/Backgrounds/evawbackg2.png" id="3_ni0u1"]
+[ext_resource type="Texture2D" uid="uid://bdorkuovsqv6w" path="res://Assets/Sprites/Backgrounds/evawbackg1.png" id="4_p8sav"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="4_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="6_7ia4a"]
-[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Lvls/shockwave.gdshader" id="6_e4rng"]
-[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Lvls/shine.gdshader" id="7_k5dds"]
+[ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="6_e4rng"]
+[ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Shaders/shine.gdshader" id="7_k5dds"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v8kj3"]
 particle_flag_disable_z = true
@@ -56,6 +60,40 @@ shader_parameter/shine_angle = 45.0
 
 [node name="Node2D" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(42.5, 78.00006)
+scale = Vector2(3.7700002, 13.006668)
+texture = ExtResource("1_fuhmf")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(56, 0)
+texture = ExtResource("2_f4vp1")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(56, 0)
+texture = ExtResource("3_ni0u1")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(56, 0)
+texture = ExtResource("4_p8sav")
+
 [node name="Respawn" parent="." instance=ExtResource("1_v8kj3")]
 position = Vector2(48, 32)
 
@@ -63,9 +101,10 @@ position = Vector2(48, 32)
 position = Vector2(57, 27)
 
 [node name="Tileset" parent="." instance=ExtResource("4_xy4tn")]
-tile_map_data = PackedByteArray("AAD9/wUAAAAGAAwAAAD+/wUAAAAGAAwAAAD//wUAAAAGAAwAAAAAAAUAAAAGAAwAAAABAAUAAAAGAAwAAAACAAUAAAAGAAwAAAADAAUAAAAGAAwAAAAEAAUAAAAGAAwAAAAFAAUAAAAGAAwAAAAGAAUAAAAGAAwAAAAHAAUAAAAGAAwAAAAIAAUAAAAGAAwAAAAJAAUAAAAGAAwAAAAKAAUAAAAGAAwAAAALAAUAAAAGAAwAAAAMAAUAAAAGAAwAAAANAAUAAAAGAAwAAAAOAAUAAAAGAAwAAAAPAAUAAAAGAAwAAAAQAAUAAAAGAAwAAAA=")
+tile_map_data = PackedByteArray("AAD9/wUAAAAGAAwAAAD+/wUAAAAGAAwAAAD//wUAAAAGAAwAAAAAAAUAAAAGAAwAAAABAAUAAAAGAAwAAAACAAUAAAAGAAwAAAADAAUAAAAGAAwAAAAEAAUAAAAGAAwAAAAFAAUAAAAGAAwAAAAGAAUAAAAGAAwAAAAHAAUAAAAGAAwAAAAIAAUAAAAGAAwAAAAJAAUAAAAGAAwAAAAKAAUAAAAGAAwAAAALAAUAAAAGAAwAAAAMAAUAAAAGAAwAAAANAAUAAAAGAAwAAAAOAAUAAAAGAAwAAAAPAAUAAAAGAAwAAAAQAAUAAAAGAAwAAAARAAUAAAAGAAwAAAASAAUAAAAGAAwAAAATAAUAAAAGAAwAAAAUAAUAAAAGAAwAAAAVAAUAAAAGAAwAAAAWAAUAAAAGAAwAAAAXAAUAAAAGAAwAAAAYAAUAAAAGAAwAAAAZAAUAAAAGAAwAAAAaAAUAAAAGAAwAAAAbAAUAAAAGAAwAAAAcAAUAAAAGAAwAAAAdAAUAAAAGAAwAAAAeAAUAAAAGAAwAAAAfAAUAAAAGAAwAAAAgAAUAAAAGAAwAAAAhAAUAAAAGAAwAAAAiAAUAAAAGAAwAAAAjAAUAAAAGAAwAAAAkAAUAAAAGAAwAAAAlAAUAAAAGAAwAAAAmAAUAAAAGAAwAAAAnAAUAAAAGAAwAAAAoAAUAAAAGAAwAAAApAAUAAAAGAAwAAAAqAAUAAAAGAAwAAAArAAUAAAAGAAwAAAAsAAUAAAAGAAwAAAAtAAUAAAAGAAwAAAAuAAUAAAAGAAwAAAAvAAUAAAAGAAwAAAAwAAUAAAAGAAwAAAAxAAUAAAAGAAwAAAAyAAUAAAAGAAwAAAAzAAUAAAAGAAwAAAA0AAUAAAAGAAwAAAA1AAUAAAAGAAwAAAA2AAUAAAAGAAwAAAA3AAUAAAAGAAwAAAA4AAUAAAAGAAwAAAA=")
 
 [node name="Background" parent="." instance=ExtResource("3_i2041")]
+visible = false
 position = Vector2(-440, 82)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -99,6 +138,7 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
 material = SubResource("ShaderMaterial_q0ora")
