@@ -399,8 +399,8 @@ color = Color(0.24, 0.24, 0.24, 1)
 [node name="Sensors" type="Node" parent="."]
 
 [node name="sound_sensor" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("7_sj2hf")]
-position = Vector2(35, 63)
-rotation = -3.1415927
+position = Vector2(49, 19)
+rotation = -1.5707964
 connected_door = NodePath("../../Doors/Doors")
 
 [node name="Doors" type="Node" parent="."]

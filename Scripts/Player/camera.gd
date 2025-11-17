@@ -13,6 +13,8 @@ var trans_timer_started = false
 
 func _process(_delta: float) -> void:
 	fade()
+	
+	limits()
 
 
 func fade() -> void:
@@ -27,3 +29,8 @@ func _on_transition_timer_timeout() -> void:
 	ap.stop(false)
 	Global.is_transitioning = false
 	trans_timer_started = false
+
+
+func limits():
+	if Global.level == 3:
+		limit_left = -64

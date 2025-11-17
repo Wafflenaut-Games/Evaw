@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://n0bm0e0fgkse"]
+[gd_scene load_steps=15 format=4 uid="uid://n0bm0e0fgkse"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_r5vvr"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_odydx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="6_ahjac"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="7_aapyr"]
 [ext_resource type="Texture2D" uid="uid://g2b4f5h6q7cf" path="res://Assets/Sprites/Tilesets/tree.png" id="8_cxt8o"]
+[ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="9_odydx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6xhjq"]
 
@@ -150,3 +151,6 @@ texture = ExtResource("8_cxt8o")
 material = SubResource("ShaderMaterial_tp3uf")
 position = Vector2(313, 19)
 texture = ExtResource("8_cxt8o")
+
+[node name="ExitPortal" parent="." instance=ExtResource("9_odydx")]
+position = Vector2(480, 16)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=4 uid="uid://be1nt0g1q8m6y"]
+
+[ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="1_6perd"]
+[ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="2_101t3"]
+[ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="3_d7y04"]
+[ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="4_sjmwb"]
+[ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="5_is032"]
+[ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="6_kqynu"]
+
+[node name="Lvl_1" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_6perd")]
+position = Vector2(-298, 159.00002)
+
+[node name="Respawn" parent="." instance=ExtResource("2_101t3")]
+position = Vector2(100, 65)
+
+[node name="ExitPortal" parent="." instance=ExtResource("3_d7y04")]
+position = Vector2(758, -55)
+
+[node name="feather" parent="." instance=ExtResource("4_sjmwb")]
+position = Vector2(508, 22)
+
+[node name="Vaw" parent="." instance=ExtResource("5_is032")]
+position = Vector2(-48, 84)
+
+[node name="Tileset" parent="." instance=ExtResource("6_kqynu")]
+tile_map_data = PackedByteArray("AAAJAAoAAAAIAAEAAAAKAAoAAAAIAAEAAAALAAoAAAAIAAEAAAAMAAoAAAAIAAEAAAANAAoAAAAIAAEAAAAOAAoAAAAIAAEAAAAPAAoAAAAIAAEAAAAQAAoAAAAIAAEAAAARAAoAAAAIAAEAAAASAAoAAAAIAAEAAAAIAAoAAAAHAAEAAAAHAAsAAAAHAAEAAAAHAAwAAAAHAAIAAAAGAA0AAAAHAAEAAAAFAA4AAAAHAAEAAAAFAA8AAAAHAAIAAAAFABAAAAAHAAIAAAAFABEAAAAHAAIAAAAFABIAAAAHAAIAAAD+/xIAAAAJAAIAAAD+/xEAAAAJAAIAAAD//xAAAAAJAAMAAAD//w0AAAAJAAIAAAD//w4AAAAJAAIAAAD//w8AAAAJAAIAAAAAAAwAAAAJAAMAAAAAAAsAAAAJAAEAAAD//woAAAAJAAEAAAABAAIAAAAJAAMAAAACAAEAAAAIAAMAAAADAAEAAAAJAAMAAAAEAAAAAAAIAAMAAAAFAAAAAAAIAAMAAAAGAAAAAAAIAAMAAAAHAAAAAAAIAAMAAAAIAAAAAAAJAAMAAAAJAP//AAAIAAMAAAAKAP//AAAIAAMAAAALAP//AAAIAAMAAAAMAP//AAAIAAMAAAANAP//AAAIAAMAAAD+/woAAAAIAAEAAAAAAAIAAAAIAAMAAAD//wMAAAAJAAMAAAD9/wMAAAAIAAMAAAD+/wMAAAAIAAMAAAD8/wQAAAAJAAMAAAD7/wUAAAAJAAMAAAD6/wYAAAAJAAMAAAD5/wYAAAAIAAMAAAD9/woAAAAIAAEAAAD5/wsAAAAIAAEAAAD6/wsAAAAIAAEAAAD7/wsAAAAIAAEAAAD8/woAAAAHAAEAAAD3/wgAAAAJAAIAAAD3/wkAAAAJAAIAAAD4/wcAAAAJAAMAAAD4/wsAAAAIAAEAAAD3/woAAAAJAAIAAAABAAsAAAAGAAMAAAABAAwAAAAGAAMAAAD4/wgAAAAFAAQAAAD5/wcAAAALAAIAAAD6/wcAAAAJAAQAAAD8/wUAAAAJAAQAAAD7/wYAAAAIAAQAAAD5/woAAAAIAAAAAAD7/woAAAAKAAEAAAD6/woAAAAJAAAAAAD8/wkAAAAIAAAAAAD//wkAAAAIAAAAAAD9/wkAAAAHAAAAAAD+/wkAAAAJAAAAAAAAAAoAAAALAAEAAAAAAA0AAAALAAIAAAD//xEAAAALAAIAAAD9/wQAAAAFAAQAAAD4/woAAAALAAEAAAA=")
