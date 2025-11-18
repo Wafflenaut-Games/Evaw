@@ -2,24 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cq3me87k1j3vv" path="res://Scripts/Tools/exit_portal.gd" id="1_y7q4h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_erf8c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7q4h"]
 
-[sub_resource type="Gradient" id="Gradient_rjtbf"]
-offsets = PackedFloat32Array(0.003921569, 0.26666668, 1)
-colors = PackedColorArray(0.65, 0.65, 0.65, 1, 0.4, 0.4, 0.4, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_oi8sa"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y7q4h"]
-gradient = SubResource("Gradient_rjtbf")
-fill = 1
-fill_from = Vector2(0.5, 0.52136755)
-fill_to = Vector2(0.1923077, 0.86752135)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t4udw"]
+gradient = SubResource("Gradient_oi8sa")
 
 [node name="ExitPortal" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_y7q4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_erf8c")
+shape = SubResource("RectangleShape2D_y7q4h")
 
 [node name="TransitionTimer" type="Timer" parent="."]
 one_shot = true
@@ -27,7 +22,7 @@ one_shot = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 1.75
-texture = SubResource("GradientTexture2D_y7q4h")
+texture = SubResource("GradientTexture2D_t4udw")
 texture_scale = 0.37
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

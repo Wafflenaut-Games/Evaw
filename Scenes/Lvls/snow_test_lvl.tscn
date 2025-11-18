@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=29 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="1_fuhmf"]
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
@@ -12,6 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="6_7ia4a"]
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="6_e4rng"]
 [ext_resource type="Shader" uid="uid://cprby47c8f5f2" path="res://Scenes/Shaders/shine.gdshader" id="7_k5dds"]
+[ext_resource type="Texture2D" uid="uid://clm5uhdwjo67k" path="res://Assets/Sprites/Interactables/lanternonfire1-2.png" id="13_2g6y0"]
+[ext_resource type="Texture2D" uid="uid://cjhicrnmadw3h" path="res://Assets/Sprites/Interactables/lanternonfire1-3.png" id="14_jrmk8"]
+[ext_resource type="Texture2D" uid="uid://sealhb7v38rw" path="res://Assets/Sprites/Interactables/lanternonfire1-4.png" id="15_4m64i"]
+[ext_resource type="Texture2D" uid="uid://dr2iqh1int1mf" path="res://Assets/Sprites/Interactables/lanternonfire1-5.png" id="16_5xblg"]
+[ext_resource type="Texture2D" uid="uid://byh6ur5xetp6o" path="res://Assets/Sprites/Interactables/lanternonfire1-6.png" id="17_mfnqj"]
+[ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Sprites/Interactables/lanternonfire1-7.png" id="18_hcmv3"]
+[ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Sprites/Interactables/lanternonfire1-8.png" id="19_d3fqi"]
+[ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Sprites/Interactables/lanternonfire1-9.png" id="20_0jjva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p8sav"]
 shader = ExtResource("2_ni0u1")
@@ -21,7 +29,7 @@ shader_parameter/waveFrequency = 100.0
 shader_parameter/verticalWave = false
 shader_parameter/keepTransparency = true
 shader_parameter/useTime = true
-shader_parameter/waveSpeed = 1.5000000712500001
+shader_parameter/waveSpeed = 1.50000007125
 shader_parameter/progress = 0.0
 shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 1.0
@@ -60,6 +68,13 @@ turbulence_enabled = true
 turbulence_noise_scale = 1.0
 collision_use_scale = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ora"]
+shader = ExtResource("7_k5dds")
+shader_parameter/shine_color = Color(1, 1, 1, 0.58431375)
+shader_parameter/shine_progress = 0.37999999150624
+shader_parameter/shine_size = 0.15999999642368
+shader_parameter/shine_angle = 45.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5dds"]
 shader = ExtResource("6_e4rng")
 shader_parameter/center = Vector2(0.5, 0.5)
@@ -67,12 +82,37 @@ shader_parameter/force = 0.056
 shader_parameter/size = 0.315
 shader_parameter/thickness = 0.1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ora"]
-shader = ExtResource("7_k5dds")
-shader_parameter/shine_color = Color(1, 1, 1, 0.58431375)
-shader_parameter/shine_progress = 0.37999999150624
-shader_parameter/shine_size = 0.15999999642368
-shader_parameter/shine_angle = 45.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_cgtf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2g6y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jrmk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4m64i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5xblg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mfnqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hcmv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d3fqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0jjva")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -141,6 +181,16 @@ lifetime = 60.0
 visibility_rect = Rect2(-5000, -5000, 100000, 19000)
 process_material = SubResource("ParticleProcessMaterial_2ltx7")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_q0ora")
+offset_left = 37.0
+offset_top = 20.0
+offset_right = 77.0
+offset_bottom = 60.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -154,12 +204,7 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-material = SubResource("ShaderMaterial_q0ora")
-offset_left = 37.0
-offset_top = 20.0
-offset_right = 77.0
-offset_bottom = 60.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, -6)
+sprite_frames = SubResource("SpriteFrames_cgtf5")
+frame_progress = 0.38804913
