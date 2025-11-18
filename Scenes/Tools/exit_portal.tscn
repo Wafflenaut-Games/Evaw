@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bevp80kkiyk8q"]
+[gd_scene load_steps=6 format=3 uid="uid://bevp80kkiyk8q"]
 
 [ext_resource type="Script" uid="uid://cq3me87k1j3vv" path="res://Scripts/Tools/exit_portal.gd" id="1_y7q4h"]
+[ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="2_oi8sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7q4h"]
 size = Vector2(4, 20)
@@ -18,14 +19,17 @@ script = ExtResource("1_y7q4h")
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_y7q4h")
 
-[node name="TransitionTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Transitions" parent="." instance=ExtResource("2_oi8sa")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 1.75
 texture = SubResource("GradientTexture2D_t4udw")
 texture_scale = 0.37
+
+[node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

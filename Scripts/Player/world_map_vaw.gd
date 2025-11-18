@@ -4,6 +4,9 @@ extends CharacterBody2D
 #region vars
 
 @onready var ap: AnimatedSprite2D = $AnimatedSprite2D
+@onready var transitions: AnimatedSprite2D = $"../Transitions"
+@onready var level_display: Node2D = $"../level_display"
+@onready var open_timer: Timer = $"../OpenTimer"
 
 
 const SPEED = 1000.0
@@ -12,11 +15,15 @@ const V_SPD = 600.0
 var stopped = false
 var selecting = false
 var v_moving = false
+var lvl_disply_fading = false
+var inactive = true
 
 #endregion
 
 
 func _ready() -> void:
+	transitions.play("open")
+	open_timer.start()
 	Global.is_transitioning = false
 
 
@@ -24,9 +31,10 @@ func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO:
 		Global.wm_hovering = 0
 	
-	move(delta)
-	handle_anims()
-	move_and_slide()
+	if not inactive:
+		move(delta)
+		handle_anims()
+		move_and_slide()
 
 
 func move(delta) -> void:
@@ -64,3 +72,15 @@ func handle_anims() -> void:
 				ap.flip_h = false
 		else:
 			ap.play("idle")
+	
+	
+	if Global.is_transitioning:
+		transitions.play("close")
+		
+		if not lvl_disply_fading:
+			level_display.ap.play("fade_out")
+			lvl_disply_fading = true
+
+
+func _on_open_timer_timeout() -> void:
+	inactive = false

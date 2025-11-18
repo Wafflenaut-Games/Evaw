@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=144 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -19,8 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://da1fymbl8j70h" path="res://Assets/Sprites/Player/Water/Vaw_Water_Revive.png" id="12_25jie"]
 [ext_resource type="Texture2D" uid="uid://dl3dcji42vxrk" path="res://Assets/Sprites/Player/Vaw_Revive.png" id="12_bih53"]
 [ext_resource type="Texture2D" uid="uid://dordd4eyo5ikc" path="res://Assets/Sprites/Player/Water/Vaw_Water_Run.png" id="14_s1hrp"]
-[ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="19_q0ywy"]
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
+[ext_resource type="PackedScene" uid="uid://dnx10d8nr6nhf" path="res://Scenes/Tools/level_titles.tscn" id="21_25jie"]
+[ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="22_s1hrp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
@@ -882,131 +883,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0fsr"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(2240, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iv8dp"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(0, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qx6hv"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(160, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vqpy"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(320, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvxal"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(480, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mytm"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(640, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eteny"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(800, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ev1mf"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(960, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cco7p"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1120, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sk4ac"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1280, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whet8"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1440, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wba5"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1600, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ubjsr"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1760, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5afw"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(1920, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ydb8c"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(2080, 0, 160, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2k02a"]
-atlas = ExtResource("19_q0ywy")
-region = Rect2(2240, 0, 160, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_52i0t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b0fsr")
-}],
-"loop": false,
-"name": &"0",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iv8dp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qx6hv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8vqpy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvxal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6mytm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eteny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ev1mf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cco7p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sk4ac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_whet8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7wba5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ubjsr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5afw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ydb8c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2k02a")
-}],
-"loop": false,
-"name": &"1",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlj0"]
 size = Vector2(4, 7)
 
@@ -1119,11 +995,9 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"
 
-[node name="Transitions" type="AnimatedSprite2D" parent="."]
-z_index = 2
-sprite_frames = SubResource("SpriteFrames_52i0t")
-animation = &"0"
-autoplay = "0"
+[node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
+
+[node name="Transitions" parent="." instance=ExtResource("22_s1hrp")]
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -1193,9 +1067,14 @@ one_shot = true
 wait_time = 0.6
 one_shot = true
 
-[node name="TransitionTimer" type="Timer" parent="Timers"]
-wait_time = 3.0
+[node name="LevelTitleTimer" type="Timer" parent="Timers"]
+wait_time = 1.2
 one_shot = true
+
+[node name="TransitionTimer" type="Timer" parent="Timers"]
+wait_time = 1.2
+
+[node name="ExitTimer" type="Timer" parent="Timers"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1219,4 +1098,5 @@ texture_scale = 1.75
 [connection signal="timeout" from="Timers/SoftLockTimer" to="." method="_on_soft_lock_timer_timeout"]
 [connection signal="timeout" from="Timers/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Timers/RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="Timers/LevelTitleTimer" to="." method="_on_level_title_timer_timeout"]
 [connection signal="timeout" from="Timers/TransitionTimer" to="." method="_on_transition_timer_timeout"]

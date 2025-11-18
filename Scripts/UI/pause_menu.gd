@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 
 
 func pausing() -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and not Global.is_transitioning:
 		active = !active
 		reset_inactive = false
 	

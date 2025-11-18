@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var wave_col_check: Area2D = $WaveColCheck
 @onready var no_soft_lock: Area2D = $NoSoftLock
 @onready var respawn_point: Node2D = $"../Respawn"
+@onready var level_titles: AnimatedSprite2D = $LevelTitles
 @onready var transitions: AnimatedSprite2D = $Transitions
 @onready var sensor_checker: Area2D = $SensorChecker
 @onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
@@ -16,7 +17,9 @@ extends CharacterBody2D
 @onready var soft_lock_timer: Timer = $Timers/SoftLockTimer
 @onready var death_timer: Timer = $Timers/DeathTimer
 @onready var respawn_timer: Timer = $Timers/RespawnTimer
+@onready var level_title_timer: Timer = $Timers/LevelTitleTimer
 @onready var transition_timer: Timer = $Timers/TransitionTimer
+@onready var exit_timer: Timer = $Timers/ExitTimer
 @onready var ground_checker_l: RayCast2D = $ground_checkerL
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -89,8 +92,8 @@ func _physics_process(delta: float) -> void:
 
 func level_begin() -> void:
 	if level_begun == false:
-		transitions.play("%s" % Global.level)
-		transition_timer.start()
+		level_titles.play("%s" % Global.level)
+		level_title_timer.start()
 		level_begun = true
 
 
@@ -482,11 +485,6 @@ func _on_respawn_timer_timeout() -> void:
 	inactive = false
 
 
-func _on_transition_timer_timeout() -> void:
-	inactive = false
-	Global.is_transitioning = false
-
-
 func sensor_collision():
 	var areas = sensor_checker.get_overlapping_areas()
 	
@@ -510,3 +508,14 @@ func disable_raycasts():
 	else:
 		ground_checker_l.enabled = true
 		ground_checker_r.enabled = true
+
+
+func _on_level_title_timer_timeout() -> void:
+	level_titles.visible = false
+	transitions.play("open")
+	transition_timer.start()
+
+
+func _on_transition_timer_timeout() -> void:
+	inactive = false
+	Global.is_transitioning = false

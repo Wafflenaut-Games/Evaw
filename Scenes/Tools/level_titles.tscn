@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://dnx10d8nr6nhf"]
+
+[ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="1_0j6w4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0fsr"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(2240, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx6hv"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(160, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vqpy"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(320, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvxal"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(480, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mytm"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(640, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eteny"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(800, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev1mf"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(960, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cco7p"]
+atlas = ExtResource("1_0j6w4")
+region = Rect2(1120, 0, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugqag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0fsr")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx6hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vqpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvxal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mytm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eteny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev1mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cco7p")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}]
+
+[node name="LevelTitles" type="AnimatedSprite2D"]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_ugqag")
+animation = &"0"
+autoplay = "0"

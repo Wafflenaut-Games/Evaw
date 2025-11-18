@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://obniew072kmy"]
+
+[ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Sprites/Transitions/Vaw_Transition_1.png" id="1_ydvhd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npf1o"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(2240, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msakb"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(2080, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrkgm"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1920, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s152"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1760, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv8wj"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1600, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjndi"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1440, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lemfb"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1280, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydvhd"]
+atlas = ExtResource("1_ydvhd")
+region = Rect2(1280, 0, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq0f6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npf1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msakb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrkgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s152")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv8wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjndi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lemfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydvhd")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npf1o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lemfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjndi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv8wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s152")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrkgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msakb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npf1o")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Transitions" type="AnimatedSprite2D"]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_bq0f6")
+animation = &"close"
+autoplay = "default"
