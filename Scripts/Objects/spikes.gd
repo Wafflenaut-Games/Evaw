@@ -3,10 +3,10 @@ extends Node2D
 
 #region vars
 
-@onready var ap: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hitbox: Area2D = $Area2D
+@onready var aspr: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var vaw: CharacterBody2D = $"../../Vaw"
-@onready var damager: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var hitbox: CollisionShape2D = $Area2D/CollisionShape2D
 
 @export var type: String = "Clay"
 @export var direction: String = "Up"
@@ -25,17 +25,17 @@ func _process(_delta: float) -> void:
 
 func direction_change() -> void:
 	# Animations
-	ap.play(type.to_lower() + "_" + direction.to_lower())
+	aspr.play(type.to_lower() + "_" + direction.to_lower())
 	
 	# Hitbox rotation
 	if direction == "u":
-		hitbox.rotation_degrees = 0
+		ap.play("up")
 	elif direction == "d":
-		hitbox.rotation_degrees = 180
+		ap.play("down")
 	elif direction == "l":
-		hitbox.rotation_degrees = -90
+		ap.play("left")
 	elif direction == "r":
-		hitbox.rotation_degrees = 90
+		ap.play("right")
 
 
 func format_exports() -> void:
@@ -62,14 +62,14 @@ func format_exports() -> void:
 
 func active_material() -> void:
 	if type == "clay":
-		damager.disabled = false
+		hitbox.disabled = false
 	elif type == "steel":
 		if Global.vaw_form == "sine":
-			damager.disabled = true
+			hitbox.disabled = true
 		else:
-			damager.disabled = false
+			hitbox.disabled = false
 	elif type == "glass":
 		if Global.vaw_form == "lume":
-			damager.disabled = true
+			hitbox.disabled = true
 		else:
-			damager.disabled = false
+			hitbox.disabled = false

@@ -128,7 +128,6 @@ position = Vector2(43, 100)
 
 [node name="Vaw" parent="." instance=ExtResource("2_sj2hf")]
 position = Vector2(57, 27)
-collision_layer = 15
 
 [node name="Background" parent="." instance=ExtResource("3_x4073")]
 material = SubResource("ShaderMaterial_fr28i")

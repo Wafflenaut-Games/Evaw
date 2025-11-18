@@ -23,7 +23,7 @@ func _ready() -> void:
 		ap.play("lume_closed")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Reset when you die
 	if Global.respawning:
 		opened = false
