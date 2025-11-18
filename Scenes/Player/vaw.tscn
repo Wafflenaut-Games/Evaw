@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=145 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Sprites/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
 [ext_resource type="PackedScene" uid="uid://dnx10d8nr6nhf" path="res://Scenes/Tools/level_titles.tscn" id="21_25jie"]
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="22_s1hrp"]
+[ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/Sprites/AUDIO/Ground (1).mp3" id="23_vl8gu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
@@ -1087,6 +1088,10 @@ color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 1.75
 texture = SubResource("GradientTexture2D_25jie")
 texture_scale = 1.75
+
+[node name="walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_vl8gu")
+parameters/looping = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]

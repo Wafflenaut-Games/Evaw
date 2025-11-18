@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctvcqy48i1g7y"
+path="res://.godot/imported/You Have One New Message.mp3-1e0083a0d3a1594f3ec87f9e353765b5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sprites/AUDIO/You Have One New Message.mp3"
+dest_files=["res://.godot/imported/You Have One New Message.mp3-1e0083a0d3a1594f3ec87f9e353765b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

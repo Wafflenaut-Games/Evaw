@@ -1,6 +1,4 @@
 extends CharacterBody2D
-
-
 #region vars
 
 @onready var ap: AnimatedSprite2D = $AnimatedSprite2D
@@ -23,8 +21,10 @@ extends CharacterBody2D
 @onready var ground_checker_l: RayCast2D = $ground_checkerL
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var walking = $walking
 
 
+	
 const SPEED = 3000.0
 const SINE_SPD = 2400.0
 const DIA_SINE_SPD = SINE_SPD/sqrt(2)
@@ -109,6 +109,7 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
+		walking.play()
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
 		shockwave()
 		moused_dir = true
