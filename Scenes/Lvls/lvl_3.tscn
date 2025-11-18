@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://be1nt0g1q8m6y"]
+[gd_scene load_steps=25 format=4 uid="uid://be1nt0g1q8m6y"]
 
 [ext_resource type="PackedScene" uid="uid://dfs1exwbyuunj" path="res://Scenes/Tools/background.tscn" id="1_6perd"]
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="2_101t3"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Sprites/Interactables/lanternonfire1-7.png" id="18_giixp"]
 [ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Sprites/Interactables/lanternonfire1-8.png" id="19_lldma"]
 [ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Sprites/Interactables/lanternonfire1-9.png" id="20_w1p1j"]
-[ext_resource type="Script" uid="uid://dypxofyuox74h" path="res://Scenes/Lvls/animated_sprite_2d.gd" id="21_b81ne"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ucv3q"]
 animations = [{
@@ -59,11 +58,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_b81ne"]
-resource_name = "fire"
+[sub_resource type="Animation" id="Animation_urfnf"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("AnimationPlayer:root_node")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -74,11 +73,11 @@ tracks/0/keys = {
 "values": [NodePath("..")]
 }
 
-[sub_resource type="Animation" id="Animation_urfnf"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_b81ne"]
+resource_name = "fire"
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("AnimationPlayer:root_node")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -435,7 +434,7 @@ texture = ExtResource("12_vwhof")
 position = Vector2(-8, 44)
 sprite_frames = SubResource("SpriteFrames_ucv3q")
 animation = &"fire"
-script = ExtResource("21_b81ne")
+autoplay = "fire"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
