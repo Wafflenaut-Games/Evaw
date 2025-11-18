@@ -397,6 +397,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2, 0)
