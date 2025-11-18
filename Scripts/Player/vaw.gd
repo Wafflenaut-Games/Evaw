@@ -22,6 +22,7 @@ extends CharacterBody2D
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walking = $walking
+@onready var switch = $switch
 
 
 	
@@ -101,6 +102,7 @@ func formshift() -> void:
 	# Switching to waveform
 	# Mouse controls
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
+		switch.play()
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "sine"
@@ -109,8 +111,8 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
-		walking.play()
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
+		switch.play()
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "lume"
@@ -122,6 +124,7 @@ func formshift() -> void:
 	
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
+		switch.play()
 		shockwave()
 		moused_dir = false
 		Global.vaw_form = "sine"
@@ -131,6 +134,7 @@ func formshift() -> void:
 		dir_choose_timer.start()
 		transforming = true
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
+		switch.play()
 		shockwave()
 		moused_dir = false
 		Global.vaw_form = "lume"
