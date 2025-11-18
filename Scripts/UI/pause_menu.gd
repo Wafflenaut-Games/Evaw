@@ -14,6 +14,7 @@ var reset_inactive = true
 
 func _process(_delta: float) -> void:
 	pausing()
+	position = Vector2.ZERO
 
 
 func pausing() -> void:
@@ -24,10 +25,15 @@ func pausing() -> void:
 	visible = active
 	
 	if active:
-		vaw.inactive = true
+		Global.paused = true
+		if vaw.name == "Vaw":
+			vaw.inactive = true
 	elif not active and not reset_inactive:
-		vaw.inactive = false
 		reset_inactive = true
+		if vaw.name == "Vaw":
+			vaw.inactive = false
+	else:
+		Global.paused = false
 
 
 func _on_start_pressed() -> void:

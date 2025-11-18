@@ -15,6 +15,7 @@ var secs = 0
 
 var dying = false
 var respawning = false
+var paused = false
 
 var wm_hovering = 0
 

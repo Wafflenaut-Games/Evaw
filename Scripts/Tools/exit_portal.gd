@@ -8,6 +8,13 @@ extends Area2D
 #endregion
 
 
+func _process(_delta: float) -> void:
+	if not Global.is_transitioning:
+		visible = true
+	else:
+		visible = false
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.is_transitioning = true

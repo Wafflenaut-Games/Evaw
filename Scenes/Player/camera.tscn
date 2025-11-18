@@ -1,84 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4pqfioq72qfj"]
+[gd_scene load_steps=2 format=3 uid="uid://b4pqfioq72qfj"]
 
 [ext_resource type="Script" uid="uid://cg1gyjfpn4wyj" path="res://Scripts/Player/camera.gd" id="1_8yjwa"]
-
-[sub_resource type="Animation" id="Animation_8yjwa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ydlsg"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ffh2"]
-_data = {
-&"RESET": SubResource("Animation_8yjwa"),
-&"fade_in": SubResource("Animation_ydlsg")
-}
 
 [node name="Camera" type="Camera2D"]
 process_mode = 3
 z_index = 10
 script = ExtResource("1_8yjwa")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -80.0
-offset_top = -60.0
-offset_right = 81.0
-offset_bottom = 60.0
-color = Color(0.12941177, 0.12156863, 0.12941177, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2ffh2")
-}
 
 [node name="TransitionTimer" type="Timer" parent="."]
 wait_time = 0.95

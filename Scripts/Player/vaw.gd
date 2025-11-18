@@ -484,6 +484,7 @@ func _on_respawn_timer_timeout() -> void:
 
 func _on_transition_timer_timeout() -> void:
 	inactive = false
+	Global.is_transitioning = false
 
 
 func sensor_collision():

@@ -16,6 +16,10 @@ var v_moving = false
 #endregion
 
 
+func _ready() -> void:
+	Global.is_transitioning = false
+
+
 func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO:
 		Global.wm_hovering = 0

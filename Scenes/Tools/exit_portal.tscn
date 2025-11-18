@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cq3me87k1j3vv" path="res://Scripts/Tools/exit_portal.gd" id="1_y7q4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7q4h"]
+size = Vector2(4, 20)
 
 [sub_resource type="Gradient" id="Gradient_oi8sa"]
 
@@ -14,6 +15,7 @@ collision_layer = 0
 script = ExtResource("1_y7q4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_y7q4h")
 
 [node name="TransitionTimer" type="Timer" parent="."]
