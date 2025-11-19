@@ -1091,10 +1091,9 @@ energy = 1.75
 texture = SubResource("GradientTexture2D_25jie")
 texture_scale = 1.75
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Under" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_6p8ar")
 volume_db = -16.0
-pitch_scale = 2.0
 autoplay = true
 mix_target = 1
 parameters/looping = true
