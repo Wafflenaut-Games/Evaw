@@ -118,7 +118,7 @@ _data = {
 &"fire": SubResource("Animation_b81ne")
 }
 
-[node name="Lvl_1" type="Node2D"]
+[node name="Lvl_2" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("3_5te3i")]
 visible = false
@@ -190,7 +190,7 @@ theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("11_xd7rh")
 theme_override_font_sizes/font_size = 7
-text = "Press LMB or X to transform into a light wave, then hold the direction you desire to travel in"
+text = "Press RMB or X to transform into a light wave, then hold the direction you desire to travel in"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -211,10 +211,11 @@ theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("11_xd7rh")
 theme_override_font_sizes/font_size = 7
-text = "Press RMB or Z to transform into a sound wave,  which allows passage through steel"
+text = "Press LMB or Z to transform into a sound wave,  which allows passage through steel"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_lock_ = true
 
 [node name="Label3" type="Label" parent="."]
 anchors_preset = 8
