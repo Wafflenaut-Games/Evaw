@@ -437,6 +437,36 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 69.0
+offset_right = 65.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("8_d7y04")
+theme_override_font_sizes/font_size = 7
+text = "Watch out!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 43.0
+offset_top = 67.0
+offset_right = 107.0
+offset_bottom = 102.0
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("8_d7y04")
+theme_override_font_sizes/font_size = 7
+text = "-->"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
