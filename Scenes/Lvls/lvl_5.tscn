@@ -1,17 +1,17 @@
 [gd_scene load_steps=21 format=4 uid="uid://ceov68psc1yo4"]
 
-[ext_resource type="Script" uid="uid://c1nbj7s84jyf0" path="res://Scenes/Lvls/lvl_5.gd" id="1_2u54b"]
+[ext_resource type="Script" uid="uid://c1nbj7s84jyf0" path="res://Scripts/Lvls/lvl_5.gd" id="1_bivws"]
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_xhpr5"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_qr3ow"]
 [ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="3_3pli0"]
 [ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="4_a4e68"]
-[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="5_2u54b"]
-[ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Sprites/Backgrounds/evawbackg3.png" id="6_hsloc"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="5_2u54b"]
+[ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="6_hsloc"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="6_qr3ow"]
-[ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Sprites/Backgrounds/evawbackg2.png" id="7_lcjet"]
-[ext_resource type="Texture2D" uid="uid://bdorkuovsqv6w" path="res://Assets/Sprites/Backgrounds/evawbackg1.png" id="8_bivws"]
-[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Sprites/Tools/bubblebig.png" id="10_3pli0"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="12_hsloc"]
+[ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="7_lcjet"]
+[ext_resource type="Texture2D" uid="uid://bdorkuovsqv6w" path="res://Assets/Backgrounds/evawbackg1.png" id="8_bivws"]
+[ext_resource type="Texture2D" uid="uid://cpjlkpjib5dxw" path="res://Assets/Tools/bubblebig.png" id="10_3pli0"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="12_hsloc"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="13_hsloc"]
 [ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="14_bivws"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="15_snhyk"]
@@ -68,7 +68,7 @@ turbulence_noise_scale = 1.0
 collision_use_scale = true
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_2u54b")
+script = ExtResource("1_bivws")
 
 [node name="Respawn" parent="." instance=ExtResource("1_xhpr5")]
 position = Vector2(81, 61)

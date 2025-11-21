@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhxrfxl1y1xdq"]
+[gd_scene load_steps=10 format=3 uid="uid://bhxrfxl1y1xdq"]
 
 [ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/pause_menu.gd" id="1_pr555"]
-[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="2_8dpcc"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="3_qjk66"]
-[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="4_1yf2f"]
-[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Sprites/Interactables/buttonhover.png" id="5_rqg0w"]
-[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sprites/Sensors/soundsensor.png" id="6_lsyt1"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_8dpcc"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="3_qjk66"]
+[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="4_1yf2f"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_rqg0w"]
+[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="6_lsyt1"]
 [ext_resource type="PackedScene" uid="uid://cersl1fr0sii5" path="res://Scenes/UI/speedrun_timer.tscn" id="7_8dpcc"]
+[ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="8_qjk66"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
@@ -55,7 +56,7 @@ theme_override_font_sizes/font_size = 14
 text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="START" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RESUME" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
@@ -117,6 +118,10 @@ offset_top = -60.0
 offset_right = -80.0
 offset_bottom = -60.0
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
+[node name="OptionsUI" parent="." instance=ExtResource("8_qjk66")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RESUME" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
