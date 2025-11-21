@@ -50,7 +50,7 @@ scale_max = 1.5
 [sub_resource type="Gradient" id="Gradient_m0urk"]
 colors = PackedColorArray(0.23137255, 0.34509805, 0.47843137, 0.9019608, 1, 1, 1, 0.77254903)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r4ib6"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2g6y0"]
 gradient = SubResource("Gradient_m0urk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ltx7"]
@@ -63,7 +63,7 @@ initial_velocity_min = 47.27
 initial_velocity_max = 76.36
 gravity = Vector3(0, -90, 0)
 scale_min = 0.5
-color_initial_ramp = SubResource("GradientTexture1D_r4ib6")
+color_initial_ramp = SubResource("GradientTexture1D_2g6y0")
 turbulence_enabled = true
 turbulence_noise_scale = 1.0
 collision_use_scale = true
@@ -173,7 +173,6 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 process_material = SubResource("ParticleProcessMaterial_v8kj3")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
-visible = false
 position = Vector2(72, 272)
 amount = 1600
 texture = ExtResource("6_7ia4a")
