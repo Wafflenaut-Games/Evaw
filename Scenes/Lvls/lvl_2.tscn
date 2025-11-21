@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://n0bm0e0fgkse"]
+[gd_scene load_steps=36 format=4 uid="uid://n0bm0e0fgkse"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_r5vvr"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_odydx"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://byh6ur5xetp6o" path="res://Assets/Sprites/Interactables/lanternonfire1-6.png" id="21_tbflj"]
 [ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Sprites/Interactables/lanternonfire1-7.png" id="22_xv1c6"]
 [ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Sprites/Interactables/lanternonfire1-8.png" id="23_ljj4a"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="24_5u6a0"]
 [ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Sprites/Interactables/lanternonfire1-9.png" id="24_tk6vb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6xhjq"]
@@ -225,11 +226,11 @@ position = Vector2(-19, 19)
 position = Vector2(-11, 19)
 
 [node name="OneWayPlatform11" parent="ONE-WAYS" instance=ExtResource("5_s3lwy")]
-position = Vector2(133, -5)
+position = Vector2(133, 3)
 direction = "Down"
 
 [node name="OneWayPlatform10" parent="ONE-WAYS" instance=ExtResource("5_s3lwy")]
-position = Vector2(125, -5)
+position = Vector2(125, 3)
 direction = "Down"
 
 [node name="OneWayPlatform4" parent="ONE-WAYS" instance=ExtResource("5_s3lwy")]
@@ -249,7 +250,7 @@ position = Vector2(189, -45)
 direction = "Down"
 
 [node name="OneWayPlatform9" parent="ONE-WAYS" instance=ExtResource("5_s3lwy")]
-position = Vector2(117, -5)
+position = Vector2(117, 3)
 direction = "Down"
 
 [node name="OneWayPlatform21" parent="ONE-WAYS" instance=ExtResource("5_s3lwy")]
@@ -459,3 +460,26 @@ texture = SubResource("GradientTexture2D_adkrj")
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = -33.0
+offset_right = 117.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("24_5u6a0")
+theme_override_font_sizes/font_size = 7
+text = "YOU CAN GO THROUGH CHAIN LINK USING EITHER WAVEFORM
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

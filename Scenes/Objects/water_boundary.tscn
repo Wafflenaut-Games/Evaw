@@ -51,5 +51,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 188
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gwvt6")
