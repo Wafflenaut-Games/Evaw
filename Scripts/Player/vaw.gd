@@ -1,4 +1,6 @@
 extends CharacterBody2D
+
+
 #region vars
 
 @onready var ap: AnimatedSprite2D = $AnimatedSprite2D
@@ -25,7 +27,6 @@ extends CharacterBody2D
 @onready var switch = $switch
 
 
-	
 const SPEED = 3000.0
 const SINE_SPD = 2400.0
 const DIA_SINE_SPD = SINE_SPD/sqrt(2)
@@ -87,6 +88,7 @@ func _physics_process(delta: float) -> void:
 		sensor_collision()
 		disable_raycasts()
 		restart()
+		diff_dir_timer()
 		
 		move_and_slide()
 
@@ -279,6 +281,10 @@ func gravity(delta) -> void:
 		# Apply gravity
 		if not is_on_floor():
 			velocity.y += grav * delta
+
+
+func diff_dir_timer() -> void:
+	dir_choose_timer.wait_time = Global.difficulty/8
 
 
 func move(delta) -> void:

@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdi8xrpf24rrh"]
+
+[ext_resource type="Script" uid="uid://c3gbpk4ak2jlt" path="res://Scripts/UI/options_ui.gd" id="1_00m3j"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_yig7i"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="3_w2nho"]
+[ext_resource type="Texture2D" uid="uid://c6al2wgquceif" path="res://Assets/Interactables/buttonidle.png" id="4_jn4f1"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_1acnd"]
+[ext_resource type="Texture2D" uid="uid://dmp3txjud3qxw" path="res://Assets/Interactables/buttonpress.png" id="6_o7o45"]
+
+[node name="OptionsUI" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_00m3j")
+
+[node name="TentativeBackg" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.53333336, 0.4)
+texture = ExtResource("2_yig7i")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = -84.0
+offset_top = -67.0
+offset_right = -56.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "  BACK"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -55.5
+offset_right = 49.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TITLE" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 14
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="Volume" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="VOLUME" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Volume"]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "VOLUME"
+
+[node name="VolumeBar" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Volume"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_icons/grabber = ExtResource("4_jn4f1")
+theme_override_icons/grabber_highlight = ExtResource("5_1acnd")
+theme_override_icons/grabber_disabled = ExtResource("6_o7o45")
+theme_override_icons/tick = ExtResource("6_o7o45")
+max_value = 10.0
+value = 5.0
+
+[node name="Difficulty" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="DIFFICULTY" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "DIFFICULTY"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Easy" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "EASY      "
+icon = ExtResource("6_o7o45")
+
+[node name="Normal" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "NORMAL  "
+icon = ExtResource("6_o7o45")
+
+[node name="Wavemaster" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 7
+text = "WAVEMASTER"
+icon = ExtResource("6_o7o45")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/Wavemaster" to="." method="_on_wavemaster_pressed"]

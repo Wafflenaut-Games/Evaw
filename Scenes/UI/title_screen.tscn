@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://sb8tnvqip77k"]
 
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="1_wv540"]
-[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="2_e3r1x"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="3_a2t6b"]
-[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sprites/Sensors/lightsensor.png" id="4_hjk0h"]
-[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Sprites/Interactables/buttonhover.png" id="5_ogdc4"]
-[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sprites/Sensors/soundsensor.png" id="6_cbobj"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_e3r1x"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="3_a2t6b"]
+[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="4_hjk0h"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_ogdc4"]
+[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="6_cbobj"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 

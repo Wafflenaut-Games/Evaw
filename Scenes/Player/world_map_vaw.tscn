@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://8y27bmc3xa2q"]
 
-[ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
+[ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
 [ext_resource type="Script" uid="uid://bhaxa76n8j4dx" path="res://Scripts/Player/world_map_vaw.gd" id="1_ieowi"]
 [ext_resource type="PackedScene" uid="uid://bhxrfxl1y1xdq" path="res://Scenes/UI/pause_ui.tscn" id="2_b7hab"]
-[ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Select.png" id="2_ieowi"]
-[ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
-[ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk_Back.png" id="5_eqemg"]
-[ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Sprites/Player/WorldMap/Vaw_WM_Walk_Front.png" id="6_b7hab"]
+[ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Player/WorldMap/Vaw_WM_Select.png" id="2_ieowi"]
+[ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
+[ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Back.png" id="5_eqemg"]
+[ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Front.png" id="6_b7hab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grdko"]
 size = Vector2(3, 3)

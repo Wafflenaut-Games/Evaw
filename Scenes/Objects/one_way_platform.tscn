@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc1xmekoqxv55"]
 
 [ext_resource type="Script" uid="uid://bb4hpg1l1s3rc" path="res://Scripts/Objects/one_way_platform.gd" id="1_46boh"]
-[ext_resource type="Texture2D" uid="uid://nr3alo6bk6gk" path="res://Assets/Sprites/Obstacles/Vaw_One_Ways.png" id="2_46boh"]
+[ext_resource type="Texture2D" uid="uid://nr3alo6bk6gk" path="res://Assets/Obstacles/Vaw_One_Ways.png" id="2_46boh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46boh"]
 size = Vector2(8, 2)
