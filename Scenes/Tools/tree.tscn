@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://iuf2cso3xc8j"]
 
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="1_l3sbc"]
-[ext_resource type="Texture2D" uid="uid://g2b4f5h6q7cf" path="res://Assets/Sprites/Tilesets/tree.png" id="2_0uflh"]
+[ext_resource type="Texture2D" uid="uid://g2b4f5h6q7cf" path="res://Assets/Tilesets/tree.png" id="2_0uflh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l3sbc"]
 shader = ExtResource("1_l3sbc")

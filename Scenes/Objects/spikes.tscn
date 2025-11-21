@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://svren05pw2nw"]
 
 [ext_resource type="Script" uid="uid://ca8me0kh5y04l" path="res://Scripts/Objects/spikes.gd" id="1_hagkc"]
-[ext_resource type="Texture2D" uid="uid://do3li75054vjl" path="res://Assets/Sprites/Obstacles/Vaw_Clay_Spikes.png" id="1_osawo"]
-[ext_resource type="Texture2D" uid="uid://bn4bmpbh7j4bd" path="res://Assets/Sprites/Obstacles/Vaw_Steel_Spikes.png" id="2_hagkc"]
-[ext_resource type="Texture2D" uid="uid://bu0qknqam4yfs" path="res://Assets/Sprites/Obstacles/Vaw_Glass_Spikes.png" id="3_law08"]
+[ext_resource type="Texture2D" uid="uid://do3li75054vjl" path="res://Assets/Obstacles/Vaw_Clay_Spikes.png" id="1_osawo"]
+[ext_resource type="Texture2D" uid="uid://bn4bmpbh7j4bd" path="res://Assets/Obstacles/Vaw_Steel_Spikes.png" id="2_hagkc"]
+[ext_resource type="Texture2D" uid="uid://bu0qknqam4yfs" path="res://Assets/Obstacles/Vaw_Glass_Spikes.png" id="3_law08"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hagkc"]
 atlas = ExtResource("1_osawo")

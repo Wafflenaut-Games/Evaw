@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dc14s1gwiqgon"]
 
 [ext_resource type="Script" uid="uid://402i6yqtm5hw" path="res://Scripts/WorldMap/level_display.gd" id="1_84eer"]
-[ext_resource type="Texture2D" uid="uid://dhfts4osar8nj" path="res://Assets/Sprites/UI/textbox2.png" id="1_idunx"]
-[ext_resource type="Texture2D" uid="uid://ctwvym7b13w5q" path="res://Assets/Sprites/UI/featheroutline.png" id="1_w5mcf"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/Sprites/UI/5x3-font.ttf" id="2_ssfm0"]
-[ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Sprites/Collectibles/featherinline.png" id="4_84eer"]
+[ext_resource type="Texture2D" uid="uid://dhfts4osar8nj" path="res://Assets/UI/textbox2.png" id="1_idunx"]
+[ext_resource type="Texture2D" uid="uid://ctwvym7b13w5q" path="res://Assets/UI/featheroutline.png" id="1_w5mcf"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="2_ssfm0"]
+[ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Collectibles/featherinline.png" id="4_84eer"]
 
 [sub_resource type="Animation" id="Animation_84eer"]
 length = 0.4

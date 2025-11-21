@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfs1exwbyuunj"]
 
-[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Sprites/Backgrounds/tentative backg.png" id="1_lysia"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_lysia"]
 
 [node name="TentativeBackg" type="Sprite2D"]
 position = Vector2(5.5002704, 12.999977)

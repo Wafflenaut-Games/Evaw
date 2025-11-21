@@ -17,6 +17,9 @@ var dying = false
 var respawning = false
 var paused = false
 
+var vol = 7
+var difficulty: float = 2
+
 var wm_hovering = 0
 
 var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns"]

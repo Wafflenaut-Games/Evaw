@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8klvtukak5kw"]
 
-[ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Sprites/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
+[ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="1_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://8y27bmc3xa2q" path="res://Scenes/Player/world_map_vaw.tscn" id="2_e2gad"]
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="3_qx6hv"]

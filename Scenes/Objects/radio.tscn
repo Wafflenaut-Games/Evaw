@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://mrbbxnsowegr"]
 
-[ext_resource type="Texture2D" uid="uid://ctxt1o30hvaqt" path="res://Assets/Sprites/Interactables/Vaw_Radio.png" id="1_sexah"]
+[ext_resource type="Texture2D" uid="uid://ctxt1o30hvaqt" path="res://Assets/Interactables/Vaw_Radio.png" id="1_sexah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78tm"]
 size = Vector2(14, 8)

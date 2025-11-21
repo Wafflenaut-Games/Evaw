@@ -1,10 +1,10 @@
 [gd_scene load_steps=35 format=3 uid="uid://b68prfgrpgapk"]
 
-[ext_resource type="Texture2D" uid="uid://dk8b5s4oep0xa" path="res://Assets/Sprites/Sensors/Vaw_Lume_Door_Closed.png" id="1_5f721"]
+[ext_resource type="Texture2D" uid="uid://dk8b5s4oep0xa" path="res://Assets/Sensors/Vaw_Lume_Door_Closed.png" id="1_5f721"]
 [ext_resource type="Script" uid="uid://b2wl81vnc58ii" path="res://Scripts/Objects/doors.gd" id="1_iih8a"]
-[ext_resource type="Texture2D" uid="uid://jpmbo3jntw4t" path="res://Assets/Sprites/Sensors/Vaw_Lume_Door_Opening.png" id="2_iih8a"]
-[ext_resource type="Texture2D" uid="uid://bl6xgx7pki3fc" path="res://Assets/Sprites/Sensors/Vaw_Sine_Door_Opening.png" id="3_8pkyj"]
-[ext_resource type="Texture2D" uid="uid://bragj4wrabdd0" path="res://Assets/Sprites/Sensors/Vaw_Sine_Door_Closed.png" id="4_d0edu"]
+[ext_resource type="Texture2D" uid="uid://jpmbo3jntw4t" path="res://Assets/Sensors/Vaw_Lume_Door_Opening.png" id="2_iih8a"]
+[ext_resource type="Texture2D" uid="uid://bl6xgx7pki3fc" path="res://Assets/Sensors/Vaw_Sine_Door_Opening.png" id="3_8pkyj"]
+[ext_resource type="Texture2D" uid="uid://bragj4wrabdd0" path="res://Assets/Sensors/Vaw_Sine_Door_Closed.png" id="4_d0edu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5kaj"]
 atlas = ExtResource("1_5f721")
