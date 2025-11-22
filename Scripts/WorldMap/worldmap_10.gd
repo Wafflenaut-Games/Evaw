@@ -5,7 +5,7 @@ extends Sprite2D
 
 
 
-func _process(delta: float) -> void:
+func _ready() -> void:
 	playanims()
 
 
