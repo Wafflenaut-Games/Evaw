@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cribkahwgtkua"]
+[gd_scene load_steps=12 format=3 uid="uid://cbbk0gw6rmjyl"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
 [ext_resource type="Script" uid="uid://c2x0qttypx3kt" path="res://Scripts/WorldMap/worldmap_10.gd" id="2_2bjoa"]
-[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Lvls/crt2.gdshader" id="2_goadl"]
+[ext_resource type="Shader" path="res://Scenes/Lvls/crt2.gdshader" id="2_goadl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2bjoa"]
 
@@ -25,6 +25,45 @@ shader_parameter/enable_color_quantization = true
 shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.002
 shader_parameter/warble_speed = 5.0
+
+[sub_resource type="Animation" id="Animation_2bjoa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.9318717),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(114, 62)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:material:shader_parameter/barrel_distortion")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
 
 [sub_resource type="Animation" id="Animation_goadl"]
 resource_name = "zoom"
@@ -65,88 +104,10 @@ tracks/2/keys = {
 "values": [0.5, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_2bjoa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(114, 62)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2:material:shader_parameter/barrel_distortion")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.5]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pdex"]
 _data = {
 &"RESET": SubResource("Animation_2bjoa"),
 &"zoom": SubResource("Animation_goadl")
-}
-
-[sub_resource type="Animation" id="Animation_8pdex"]
-resource_name = "zoom 2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(114, 62), Vector2(80, 60)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1.9318731, 1),
-"update": 0,
-"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_hxypl"]
@@ -188,6 +149,45 @@ tracks/2/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_8pdex"]
+resource_name = "zoom 2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(114, 62), Vector2(80, 60)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.9318731, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0614"]
 _data = {
 &"RESET": SubResource("Animation_hxypl"),
@@ -199,6 +199,7 @@ _data = {
 [node name="Worldmap10" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2bjoa")
 position = Vector2(114, 62)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_cjnew")
 script = ExtResource("2_2bjoa")
 
