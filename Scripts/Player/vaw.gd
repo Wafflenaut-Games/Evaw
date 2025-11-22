@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var no_soft_lock: Area2D = $NoSoftLock
 @onready var respawn_point: Node2D = $"../Respawn"
 @onready var level_titles: AnimatedSprite2D = $LevelTitles
-@onready var transitions: AnimatedSprite2D = $Transitions
+@onready var transitions: AnimatedSprite2D = $Camera/Transitions2/Transitions
 @onready var sensor_checker: Area2D = $SensorChecker
 @onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Timers/Jump Timers/JBufferTimer"
@@ -171,15 +171,15 @@ func formshift() -> void:
 func form_collision() -> void:
 	if Global.vaw_form == "norm":
 		norm_col.disabled = false
-		#no_soft_lock.collision_mask = 0b00001110
+		no_soft_lock.collision_mask = 0b00001110
 		wave_col_check.collision_mask = 0b00000000
 	elif Global.vaw_form == "sine":
 		norm_col.disabled = true
-		#no_soft_lock.collision_mask = 0b00000110
+		no_soft_lock.collision_mask = 0b00000110
 		wave_col_check.collision_mask = 0b00001001
 	elif Global.vaw_form == "lume":
 		norm_col.disabled = true
-		#no_soft_lock.collision_mask = 0b00001010
+		no_soft_lock.collision_mask = 0b00001010
 		wave_col_check.collision_mask = 0b00000101
 
 

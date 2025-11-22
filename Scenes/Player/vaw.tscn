@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=148 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -25,6 +25,9 @@
 [ext_resource type="AudioStream" uid="uid://d3nvh71hd21fx" path="res://Assets/AUDIO/under 1.mp3" id="23_6p8ar"]
 [ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/AUDIO/Ground (1).mp3" id="23_vl8gu"]
 [ext_resource type="AudioStream" uid="uid://bs5825yqflhst" path="res://Assets/AUDIO/Wave Switch.mp3" id="24_odm3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
+size = Vector2(160, 120)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
 shader = ExtResource("20_52i0t")
@@ -976,6 +979,19 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
+[node name="Transitions2" type="CanvasLayer" parent="Camera"]
+layer = 2000
+
+[node name="Transitions" parent="Camera/Transitions2" instance=ExtResource("22_s1hrp")]
+light_mask = 64
+visibility_layer = 4
+z_index = 1025
+position = Vector2(80, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Transitions2"]
+position = Vector2(80, 60)
+shape = SubResource("RectangleShape2D_6p8ar")
+
 [node name="UI" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
@@ -999,8 +1015,6 @@ sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
-
-[node name="Transitions" parent="." instance=ExtResource("22_s1hrp")]
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

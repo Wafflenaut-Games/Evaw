@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_y7q4h")
 [node name="Transitions" parent="." instance=ExtResource("2_oi8sa")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 64
 color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 1.75
 texture = SubResource("GradientTexture2D_t4udw")
