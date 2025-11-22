@@ -1,8 +1,7 @@
 extends Sprite2D
 
 @onready var apcrt: AnimationPlayer = $apcrt
-@onready var apworld: AnimationPlayer = $"../Worldmap11/apworld"
-
+@onready var apworld: AnimationPlayer = $"../WorldMap/apworld"
 
 
 func _ready() -> void:

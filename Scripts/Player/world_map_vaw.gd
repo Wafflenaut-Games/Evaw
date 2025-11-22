@@ -22,7 +22,7 @@ var inactive = true
 
 
 func _ready() -> void:
-	transitions.play("open")
+	#transitions.play("open")
 	open_timer.start()
 	Global.is_transitioning = false
 

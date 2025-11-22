@@ -43,7 +43,7 @@ autoplay = "default"
 [node name="WorldMap_Vaw" parent="." instance=ExtResource("2_e2gad")]
 position = Vector2(-73, -13)
 
-[node name="LevelSelectors" type="Node" parent="."]
+[node name="LevelSelectors" type="Node2D" parent="."]
 
 [node name="Level_Selector" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(-73, -13)
@@ -142,7 +142,7 @@ position = Vector2(55, 36)
 directions = Array[String](["left"])
 level = 16
 
-[node name="VertMoveEnds" type="Node" parent="."]
+[node name="VertMoveEnds" type="Node2D" parent="."]
 
 [node name="VerticalWMEnds" parent="VertMoveEnds" instance=ExtResource("6_iv8dp")]
 position = Vector2(51, -45)
