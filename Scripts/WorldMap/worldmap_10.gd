@@ -10,6 +10,6 @@ func _ready() -> void:
 
 
 func playanims ():
-	apworld.play("zoom2")
+	apworld.play("zoom 2")
 	apcrt.play("zoom")
 	
