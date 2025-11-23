@@ -23,6 +23,9 @@ var difficulty: float = 2
 
 var wm_hovering = 0
 
+var interactable = false
+var interacting = true
+
 var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns"]
 
 #region Feather vars

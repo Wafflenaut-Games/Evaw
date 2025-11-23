@@ -39,7 +39,7 @@ func volume() -> void:
 	if volume_bar.value > 0:
 		Global.vol = ((volume_bar.value - 5) * 5) - 25
 	else:
-		Global.vol = -80
+		Global.vol = -INF
 
 
 func _on_easy_pressed() -> void:

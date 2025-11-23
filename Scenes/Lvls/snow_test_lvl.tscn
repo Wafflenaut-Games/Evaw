@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_fuhmf"]
-[ext_resource type="Shader" uid="uid://b0w8pius7hsv5" path="res://Scenes/Lvls/crt_filter.gdshader" id="1_jrmk8"]
+[ext_resource type="Shader" uid="uid://b0w8pius7hsv5" path="res://Scenes/Shaders/crt_filter.gdshader" id="1_jrmk8"]
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_crycw"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_f4vp1"]
