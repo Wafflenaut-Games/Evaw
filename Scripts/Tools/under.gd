@@ -7,6 +7,8 @@ extends Node
 @onready var undersine: AudioStreamPlayer = $Undersine
 @onready var underlume: AudioStreamPlayer = $Underlume
 
+const INIT_VOL = 0
+
 var vol = 0
 
 
@@ -34,4 +36,7 @@ func change_tune() -> void:
 
 
 func change_volume() -> void:
-	vol += Global.vol - 5
+	if Global.vol > 0:
+		vol = INIT_VOL + ((Global.vol - 5) * 5) - 25
+	else:
+		vol = -80
