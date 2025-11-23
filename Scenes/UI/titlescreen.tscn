@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbbk0gw6rmjyl"]
+[gd_scene load_steps=13 format=3 uid="uid://cribkahwgtkua"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
 [ext_resource type="Script" uid="uid://c2x0qttypx3kt" path="res://Scripts/WorldMap/worldmap_10.gd" id="2_2bjoa"]
-[ext_resource type="Shader" path="res://Scenes/Lvls/crt2.gdshader" id="2_goadl"]
+[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Lvls/crt2.gdshader" id="2_goadl"]
 [ext_resource type="PackedScene" uid="uid://b8klvtukak5kw" path="res://Scenes/WorldMap/world_map.tscn" id="4_36ei7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2bjoa"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sb8tnvqip77k"]
+[gd_scene load_steps=9 format=3 uid="uid://sb8tnvqip77k"]
 
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="1_wv540"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_e3r1x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="4_hjk0h"]
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_ogdc4"]
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="6_cbobj"]
+[ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="7_dsf7a"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
@@ -108,6 +109,10 @@ theme_override_icons/icon = ExtResource("6_cbobj")
 text = "  QUIT"
 alignment = 0
 text_overrun_behavior = 1
+
+[node name="OptionsUI" parent="." instance=ExtResource("7_dsf7a")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
