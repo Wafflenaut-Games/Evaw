@@ -6,6 +6,7 @@ var vaw_form : String = "norm"
 var world_map_dirs: Array = []
 var level = 0
 var lvl_selected = false
+var lvl_completed = 0
 var water_lvl = "" # always only set to "" or "_w"
 var completed_lvls = []
 var is_transitioning = false

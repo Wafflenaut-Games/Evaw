@@ -15,6 +15,10 @@ var complete = false
 
 #endregion
 
+func _ready() -> void:
+	if Global.lvl_completed == level:
+		vaw.position = position
+
 
 func _physics_process(_delta: float) -> void:
 	set_vars()

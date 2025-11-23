@@ -26,6 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 		transitions.play("close")
 		transition_timer.start()
 		body.inactive = true
+		Global.lvl_completed = Global.level
 
 
 func _on_transition_timer_timeout() -> void:
