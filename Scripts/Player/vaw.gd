@@ -23,8 +23,8 @@ extends CharacterBody2D
 @onready var ground_checker_l: RayCast2D = $ground_checkerL
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var walking = $walking
-@onready var switch = $switch
+@onready var walking: AudioStreamPlayer = $SFX/walking
+@onready var switch: AudioStreamPlayer = $SFX/switch
 
 
 const SPEED = 3000.0

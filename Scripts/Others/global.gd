@@ -18,7 +18,7 @@ var dying = false
 var respawning = false
 var paused = false
 
-var vol = 7
+var vol = 5
 var difficulty: float = 2
 
 var wm_hovering = 0

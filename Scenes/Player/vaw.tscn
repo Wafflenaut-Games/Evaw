@@ -22,8 +22,8 @@
 [ext_resource type="Shader" uid="uid://drfnhewwu5csn" path="res://Scenes/Shaders/shockwave.gdshader" id="20_52i0t"]
 [ext_resource type="PackedScene" uid="uid://dnx10d8nr6nhf" path="res://Scenes/Tools/level_titles.tscn" id="21_25jie"]
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="22_s1hrp"]
-[ext_resource type="AudioStream" uid="uid://d3nvh71hd21fx" path="res://Assets/AUDIO/under 1.mp3" id="23_6p8ar"]
-[ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/AUDIO/Ground (1).mp3" id="23_vl8gu"]
+[ext_resource type="PackedScene" uid="uid://bx0obw4e11k8j" path="res://Scenes/Tools/under.tscn" id="23_6p8ar"]
+[ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/AUDIO/Ground.mp3" id="23_vl8gu"]
 [ext_resource type="AudioStream" uid="uid://bs5825yqflhst" path="res://Assets/AUDIO/Wave Switch.mp3" id="24_odm3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
@@ -1105,18 +1105,15 @@ energy = 1.75
 texture = SubResource("GradientTexture2D_25jie")
 texture_scale = 1.75
 
-[node name="Under" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_6p8ar")
-volume_db = -16.0
-autoplay = true
-mix_target = 1
-parameters/looping = true
+[node name="SFX" type="Node" parent="."]
 
-[node name="walking" type="AudioStreamPlayer" parent="."]
+[node name="Under" parent="SFX" instance=ExtResource("23_6p8ar")]
+
+[node name="walking" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("23_vl8gu")
 parameters/looping = true
 
-[node name="switch" type="AudioStreamPlayer" parent="."]
+[node name="switch" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("24_odm3q")
 volume_db = -8.0
 
