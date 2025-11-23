@@ -58,6 +58,7 @@ var moused_dir = false
 var soft_lock_timer_started = false
 var inactive = true
 var level_begun = false
+var walking_playing
 
 #endregion
 
@@ -81,7 +82,9 @@ func _physics_process(delta: float) -> void:
 		jump_buffer()
 		coyote_time_set()
 		
-		# Animations
+		# Animations/SFX
+		sfx_vols()
+		handle_sfx()
 		handle_anims()
 		
 		# Other
@@ -383,6 +386,25 @@ func respawn() -> void:
 func restart() -> void:
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
+
+
+func sfx_vols() -> void:
+	walking.volume_db = Global.vol
+	switch.volume_db = Global.vol
+
+
+func handle_sfx() -> void:
+	if Global.vaw_form == "norm":
+		if direction:
+			if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+				if not walking.playing:
+					walking.play()
+			else:
+				walking.stop()
+		else:
+			walking.stop()
+	else:
+		walking.stop()
 
 
 func handle_anims() -> void:

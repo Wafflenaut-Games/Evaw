@@ -12,13 +12,20 @@ enum difficulty {easy = 4, normal = 2, wavemaster = 1}
 #endregion
 
 
+func _ready() -> void:
+	volume_bar.value = Global.vol
+
+
 func _process(_delta: float) -> void:
 	volume()
 	labels()
 
 
 func labels() -> void:
-	volume_label.text = "VOLUME: %s" % str(int(Global.vol))
+	if not Global.vol == -80:
+		volume_label.text = "VOLUME: %s" % str(int((float(Global.vol) + 5)/ 5 + 9))
+	else:
+		volume_label.text = "VOLUME: 0"
 	
 	if Global.difficulty == 4:
 		difficulty_label.text = "DIFFICULTY: EASY"
@@ -29,7 +36,10 @@ func labels() -> void:
 
 
 func volume() -> void:
-	Global.vol = volume_bar.value
+	if volume_bar.value > 0:
+		Global.vol = ((volume_bar.value - 5) * 5) - 25
+	else:
+		Global.vol = -80
 
 
 func _on_easy_pressed() -> void:

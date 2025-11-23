@@ -36,7 +36,4 @@ func change_tune() -> void:
 
 
 func change_volume() -> void:
-	if Global.vol > 0:
-		vol = INIT_VOL + ((Global.vol - 5) * 5) - 25
-	else:
-		vol = -80
+	vol = Global.vol

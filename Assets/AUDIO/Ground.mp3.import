@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ground.mp3-fc31ed88b443820316d5ce5ef4c9081e.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
