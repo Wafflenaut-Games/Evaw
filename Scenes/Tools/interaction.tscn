@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cipftlhvbkun6"]
+
+[ext_resource type="Texture2D" uid="uid://c6al2wgquceif" path="res://Assets/Interactables/buttonidle.png" id="1_efpva"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="2_injol"]
+[ext_resource type="Script" uid="uid://dk0s76ur4a7qj" path="res://Scripts/Tools/interaction.gd" id="3_lo8ns"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jyt3"]
+atlas = ExtResource("1_efpva")
+region = Rect2(0, 0, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37w1p"]
+atlas = ExtResource("2_injol")
+region = Rect2(0, 0, 8, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pces"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jyt3")
+}],
+"loop": true,
+"name": &"interactable",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37w1p")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 2.0
+}]
+
+[node name="Interaction" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0pces")
+animation = &"pressed"
+script = ExtResource("3_lo8ns")

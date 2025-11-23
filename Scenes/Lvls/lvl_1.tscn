@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dgwvdbnhrmm6w"]
+[gd_scene load_steps=30 format=4 uid="uid://dgwvdbnhrmm6w"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_ndgdw"]
 [ext_resource type="Script" uid="uid://c4j573rrepf7r" path="res://Scripts/Lvls/lvl_1.gd" id="1_ox11j"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Interactables/lanternonfire1-7.png" id="18_7eq51"]
 [ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Interactables/lanternonfire1-8.png" id="19_038uo"]
 [ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Interactables/lanternonfire1-9.png" id="20_omk2b"]
+[ext_resource type="PackedScene" uid="uid://mrbbxnsowegr" path="res://Scenes/Objects/radio.tscn" id="22_wb7w0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5at8g"]
 shader = ExtResource("12_p6778")
@@ -1257,3 +1258,6 @@ GOOD LUCK, EVAW :)"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Radio" parent="." instance=ExtResource("22_wb7w0")]
+position = Vector2(267, -72)
