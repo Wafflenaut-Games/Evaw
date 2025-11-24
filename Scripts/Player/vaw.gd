@@ -25,6 +25,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walking: AudioStreamPlayer = $SFX/walking
 @onready var switch: AudioStreamPlayer = $SFX/switch
+@onready var tentative_jump: AudioStreamPlayer = $SFX/Tentativejump
 
 
 const SPEED = 3000.0
@@ -311,6 +312,7 @@ func jump() -> void:
 			velocity.y = JUMP_VELOCITY
 			coyote_time = false
 			jump_buffering = false
+			tentative_jump.play()
 		
 		# Jump Cut
 		if Input.is_action_just_released("jump") and velocity.y < 0:
@@ -420,8 +422,8 @@ func sfx_vols() -> void:
 
 func handle_sfx() -> void:
 	if Global.vaw_form == "norm":
-		if direction:
-			if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+		if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+			if direction:
 				if not walking.playing:
 					walking.play()
 			else:

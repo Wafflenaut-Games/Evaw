@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=149 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bx0obw4e11k8j" path="res://Scenes/Tools/under.tscn" id="23_6p8ar"]
 [ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/AUDIO/Ground.mp3" id="23_vl8gu"]
 [ext_resource type="AudioStream" uid="uid://bs5825yqflhst" path="res://Assets/AUDIO/Wave Switch.mp3" id="24_odm3q"]
+[ext_resource type="AudioStream" uid="uid://co2du3f37ivb6" path="res://Assets/AUDIO/tentativejump.mp3" id="26_pmbmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
@@ -1116,6 +1117,9 @@ parameters/looping = true
 
 [node name="switch" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("24_odm3q")
+
+[node name="Tentativejump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("26_pmbmc")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
