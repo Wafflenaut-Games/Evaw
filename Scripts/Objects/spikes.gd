@@ -5,7 +5,6 @@ extends Node2D
 
 @onready var aspr: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
-@onready var vaw: CharacterBody2D = $"../../../Vaw"
 @onready var hitbox: CollisionShape2D = $Area2D/CollisionShape2D
 
 @export var type: String = "Clay"

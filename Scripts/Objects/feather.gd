@@ -1,10 +1,10 @@
 extends Node2D
 
-#JAMES READ THIS BASICALLY YOU GOTTA MAKE FEATHER SPEED CHANGE WITH DIFFERENT WAVE FORMS done
-#AND FINISH THE LEVEL DISPLAY IN THE WORLDMAP done AND MAKE THE FEATHERS RESET WHEN YOU DIE
+#JAMES READ THIS BASICALLY YOU GOTTA MAKE THE FEATHERS RESET WHEN YOU DIE
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $PointLight2D/AnimationPlayer
+@onready var feather_grab: AudioStreamPlayer = $FeatherGrab
 
 
 var starting_pos: Vector2
@@ -16,10 +16,12 @@ var real_speed = start_speed
 
 var player
 
+
 func random_timer():
 	await get_tree().create_timer(randf_range(1,5)).timeout
 	animation_player.play("light stuff")
 	random_timer()
+
 
 func _ready() -> void:
 	real_speed = start_speed
@@ -90,3 +92,4 @@ func _process(delta: float) -> void:
 func collect(body):
 	player = body
 	collecting = true
+	feather_grab.play()

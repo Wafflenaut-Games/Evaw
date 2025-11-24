@@ -11,7 +11,6 @@ var already_out = true
 
 
 func _process(_delta: float) -> void:
-	
 	# Animations
 	if !already_out:
 		if Global.wm_hovering == 0:
