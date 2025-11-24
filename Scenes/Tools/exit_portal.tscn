@@ -31,4 +31,5 @@ one_shot = true
 texture = SubResource("GradientTexture2D_t4udw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
