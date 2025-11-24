@@ -188,7 +188,7 @@ func form_collision() -> void:
 
 
 func reset_uses() -> void:
-	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+	if is_grounded():
 		sine_used = false
 		lume_used = false
 
@@ -345,6 +345,13 @@ func is_falling() -> bool:
 		return false
 
 
+func is_grounded() -> bool:
+	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+		return true
+	else:
+		return false
+
+
 func get_mouse_direction() -> void:
 	var direction_vector = get_global_mouse_position() - global_position
 	var angle_radians = direction_vector.angle()
@@ -422,7 +429,7 @@ func sfx_vols() -> void:
 
 func handle_sfx() -> void:
 	if Global.vaw_form == "norm":
-		if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+		if is_grounded():
 			if direction:
 				if not walking.playing:
 					walking.play()
