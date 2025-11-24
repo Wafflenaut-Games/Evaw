@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://mrbbxnsowegr"]
+[gd_scene load_steps=13 format=3 uid="uid://mrbbxnsowegr"]
 
 [ext_resource type="Script" uid="uid://cdekpkhrjcrbt" path="res://Scripts/Objects/radio.gd" id="1_c78tm"]
 [ext_resource type="Texture2D" uid="uid://ctxt1o30hvaqt" path="res://Assets/Interactables/Vaw_Radio.png" id="1_sexah"]
 [ext_resource type="PackedScene" uid="uid://cipftlhvbkun6" path="res://Scenes/Tools/interaction.tscn" id="3_3dmk2"]
 [ext_resource type="AudioStream" uid="uid://ctvcqy48i1g7y" path="res://Assets/AUDIO/You Have One New Message.mp3" id="4_wag73"]
+[ext_resource type="AudioStream" uid="uid://dvmg08w878ymr" path="res://Assets/AUDIO/Radio in the Vicinity.mp3" id="5_dh5xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78tm"]
 size = Vector2(14, 8)
@@ -44,6 +45,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dh5xs"]
+radius = 36.013885
+
 [node name="Radio" type="Area2D"]
 script = ExtResource("1_c78tm")
 
@@ -59,6 +63,15 @@ position = Vector2(0, -9)
 
 [node name="YouHaveOneNewMessage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wag73")
+
+[node name="RadioInTheVicinity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dh5xs")
+
+[node name="Vicinity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vicinity"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dh5xs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
