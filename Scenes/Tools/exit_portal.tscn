@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="2_oi8sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7q4h"]
-size = Vector2(4, 20)
+size = Vector2(8, 20)
 
 [sub_resource type="Gradient" id="Gradient_oi8sa"]
+colors = PackedColorArray(0, 0, 0, 1, 3.1849127, 2.6451812, 1.3858083, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t4udw"]
 gradient = SubResource("Gradient_oi8sa")
@@ -18,7 +19,7 @@ collision_layer = 0
 script = ExtResource("1_y7q4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_y7q4h")
 
 [node name="Transitions" parent="." instance=ExtResource("2_oi8sa")]
@@ -28,6 +29,7 @@ wait_time = 1.2
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
 texture = SubResource("GradientTexture2D_t4udw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
