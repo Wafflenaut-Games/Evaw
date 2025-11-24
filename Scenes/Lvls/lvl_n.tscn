@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="8_s13nj"]
 [ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="9_e6m6n"]
 
-[node name="lvl_n" type="Node2D"]
+[node name="Lvl_n" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

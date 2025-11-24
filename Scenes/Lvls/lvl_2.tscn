@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://caw3myhfsgo7c"]
+[gd_scene load_steps=28 format=4 uid="uid://n0bm0e0fgkse"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_r5vvr"]
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="2_odydx"]
@@ -118,7 +118,7 @@ _data = {
 &"fire": SubResource("Animation_b81ne")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Lvl_2" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

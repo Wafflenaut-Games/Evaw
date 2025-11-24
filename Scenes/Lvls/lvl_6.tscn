@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="10_m87ea"]
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="11_u57j0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Lvl_6" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false

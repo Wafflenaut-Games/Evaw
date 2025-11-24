@@ -119,7 +119,7 @@ _data = {
 &"fire": SubResource("Animation_b81ne")
 }
 
-[node name="Lvl_3" type="Node2D"]
+[node name="Lvl_5" type="Node2D"]
 script = ExtResource("1_cjpde")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
