@@ -12,7 +12,7 @@ extends Area2D
 
 
 func _process(_delta: float) -> void:
-	if not Global.is_transitioning:
+	if not Global.is_transitioning and not Global.paused:
 		light.visible = true
 	else:
 		light.visible = false
@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and body.is_grounded():
 		Global.is_transitioning = true
 		transitions.play("close")
 		transition_timer.start()
