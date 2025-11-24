@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://ss7x4usyf0en"]
+
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_npql5"]
+[ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_wbdq0"]
+[ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="3_g8q08"]
+[ext_resource type="Texture2D" uid="uid://bdorkuovsqv6w" path="res://Assets/Backgrounds/evawbackg1.png" id="4_5b2o7"]
+[ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="5_uhbd8"]
+[ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="6_bh857"]
+[ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="7_itr2d"]
+[ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="8_s13nj"]
+[ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="9_e6m6n"]
+
+[node name="lvl_n" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(42.5, 78.00006)
+scale = Vector2(3.7700002, 13.006668)
+texture = ExtResource("1_npql5")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(56, 0)
+texture = ExtResource("2_wbdq0")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(56, 0)
+texture = ExtResource("3_g8q08")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(56, 0)
+texture = ExtResource("4_5b2o7")
+
+[node name="Tileset" parent="." instance=ExtResource("5_uhbd8")]
+
+[node name="Vaw" parent="." instance=ExtResource("6_bh857")]
+
+[node name="Respawn" parent="." instance=ExtResource("7_itr2d")]
+
+[node name="ExitPortal" parent="." instance=ExtResource("8_s13nj")]
+
+[node name="Feather" parent="." instance=ExtResource("9_e6m6n")]
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="One-Ways" type="Node" parent="."]
+
+[node name="Decoration" type="Node" parent="."]
