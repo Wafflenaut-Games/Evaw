@@ -1114,13 +1114,16 @@ texture_scale = 1.75
 
 [node name="walking" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("23_vl8gu")
+volume_db = -9.0
 parameters/looping = true
 
 [node name="switch" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("24_odm3q")
+volume_db = -2.0
 
 [node name="Tentativejump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("26_pmbmc")
+volume_db = 1.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]

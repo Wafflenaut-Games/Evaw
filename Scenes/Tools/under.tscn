@@ -10,15 +10,15 @@ script = ExtResource("1_l3ads")
 
 [node name="Undermain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lvg4s")
-volume_db = -25.0
+volume_db = -10.0
 autoplay = true
 
 [node name="Undersine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nuncp")
-volume_db = -25.0
+volume_db = -10.0
 autoplay = true
 
 [node name="Underlume" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_02t0p")
-volume_db = -25.0
+volume_db = -10.0
 autoplay = true
