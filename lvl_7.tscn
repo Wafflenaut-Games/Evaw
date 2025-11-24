@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c8o15hgexbbqf"]
+[gd_scene load_steps=34 format=4 uid="uid://c8o15hgexbbqf"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_lcgbr"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_bjw57"]
@@ -16,6 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://kmhln4eb8jub" path="res://Assets/Tilesets/treesnow.png" id="15_2pk2x"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="16_2pk2x"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="16_o0bed"]
+[ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="17_0ws5e"]
+[ext_resource type="Texture2D" uid="uid://clm5uhdwjo67k" path="res://Assets/Interactables/lanternonfire1-2.png" id="18_rtd42"]
+[ext_resource type="Texture2D" uid="uid://cjhicrnmadw3h" path="res://Assets/Interactables/lanternonfire1-3.png" id="19_nlch2"]
+[ext_resource type="Texture2D" uid="uid://sealhb7v38rw" path="res://Assets/Interactables/lanternonfire1-4.png" id="20_k8y1m"]
+[ext_resource type="Texture2D" uid="uid://dr2iqh1int1mf" path="res://Assets/Interactables/lanternonfire1-5.png" id="21_xy5eq"]
+[ext_resource type="Texture2D" uid="uid://byh6ur5xetp6o" path="res://Assets/Interactables/lanternonfire1-6.png" id="22_vjf81"]
+[ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Interactables/lanternonfire1-7.png" id="23_ylcxu"]
+[ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Interactables/lanternonfire1-8.png" id="24_nicdj"]
+[ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Interactables/lanternonfire1-9.png" id="25_w6pjq"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ghqk"]
 particle_flag_disable_z = true
@@ -27,6 +36,103 @@ initial_velocity_min = 50.0
 initial_velocity_max = 75.0
 gravity = Vector3(0, 0, 0)
 scale_max = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cn0bb"]
+shader = ExtResource("17_0ws5e")
+shader_parameter/waveAmplitude = 0.29600001406
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 10.0
+shader_parameter/verticalWave = false
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 4.00000019
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = true
+shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mj2jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_rtd42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nlch2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k8y1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xy5eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vjf81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ylcxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nicdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w6pjq")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_dtph1"]
+offsets = PackedFloat32Array(0.05706522, 0.6032609)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u34dc"]
+gradient = SubResource("Gradient_dtph1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_urfnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [NodePath("..")]
+}
+
+[sub_resource type="Animation" id="Animation_b81ne"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [NodePath("..")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyjwu"]
+_data = {
+&"RESET": SubResource("Animation_urfnf"),
+&"fire": SubResource("Animation_b81ne")
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -539,3 +645,90 @@ direction = "D"
 [node name="OneWayPlatform40" parent="One-Way-" instance=ExtResource("16_2pk2x")]
 position = Vector2(321, -555)
 direction = "D"
+
+[node name="Lantern3" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cn0bb")
+position = Vector2(574, -539)
+sprite_frames = SubResource("SpriteFrames_mj2jk")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern3"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_u34dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern3"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern4" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cn0bb")
+position = Vector2(673, -428)
+sprite_frames = SubResource("SpriteFrames_mj2jk")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern4"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_u34dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern4"]
+root_node = NodePath("../../Lantern3")
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern5" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cn0bb")
+position = Vector2(420, -446)
+sprite_frames = SubResource("SpriteFrames_mj2jk")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern5"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_u34dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern5"]
+root_node = NodePath("../../Lantern3")
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern2" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cn0bb")
+position = Vector2(183, -682)
+sprite_frames = SubResource("SpriteFrames_mj2jk")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern2"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_u34dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cn0bb")
+position = Vector2(101, -427)
+sprite_frames = SubResource("SpriteFrames_mj2jk")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_u34dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
