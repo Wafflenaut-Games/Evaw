@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://be0wlssyhghrs"]
+[gd_scene load_steps=28 format=4 uid="uid://be0wlssyhghrs"]
 
 [ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="1_1qo6x"]
 [ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="2_6ay57"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="7_x4073"]
 [ext_resource type="Shader" uid="uid://eknc8rdwr0bk" path="res://Scenes/Shaders/shine2.gdshader" id="10_iebl6"]
 [ext_resource type="PackedScene" uid="uid://b68prfgrpgapk" path="res://Scenes/Objects/doors.tscn" id="12_4uee3"]
+[ext_resource type="PackedScene" uid="uid://mrbbxnsowegr" path="res://Scenes/Objects/radio.tscn" id="13_fr28i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iebl6"]
 
@@ -130,6 +131,7 @@ position = Vector2(43, 100)
 position = Vector2(57, 27)
 
 [node name="Background" parent="." instance=ExtResource("3_x4073")]
+visible = false
 material = SubResource("ShaderMaterial_fr28i")
 position = Vector2(-221.99998, 119.99999)
 
@@ -406,3 +408,6 @@ connected_door = NodePath("../../Doors/Doors")
 
 [node name="Doors" parent="Doors" instance=ExtResource("12_4uee3")]
 position = Vector2(24, 32)
+
+[node name="Radio" parent="." instance=ExtResource("13_fr28i")]
+position = Vector2(-15, -64)
