@@ -191,7 +191,6 @@ visible = false
 position = Vector2(-440, 82)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
 position = Vector2(34, -290)
 amount = 2500
 lifetime = 15.0
