@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvmg08w878ymr"
+path="res://.godot/imported/Radio in the Vicinity.mp3-80b9805827fd9619c375dcb0fbe9d333.mp3str"
+
+[deps]
+
+source_file="res://Assets/AUDIO/Radio in the Vicinity.mp3"
+dest_files=["res://.godot/imported/Radio in the Vicinity.mp3-80b9805827fd9619c375dcb0fbe9d333.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
