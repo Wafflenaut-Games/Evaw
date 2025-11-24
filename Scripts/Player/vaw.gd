@@ -388,6 +388,31 @@ func restart() -> void:
 		get_tree().reload_current_scene()
 
 
+func sensor_collision() -> void:
+	var areas = sensor_checker.get_overlapping_areas()
+	
+	for area in areas:
+		if area.is_in_group("sound_sensor") and Global.vaw_form == "sine":
+			area.get_parent().activate()
+		if area.is_in_group("light_sensor") and Global.vaw_form == "light":
+			area.get_parent().activate()
+		if area.is_in_group("feather"):
+			area.get_parent().collect(self)
+
+
+func shockwave() -> void:
+	animation_player.play("shcokawave")
+
+
+func disable_raycasts() -> void:
+	if Global.vaw_form != "norm":
+		ground_checker_l.enabled = false
+		ground_checker_r.enabled = false
+	else:
+		ground_checker_l.enabled = true
+		ground_checker_r.enabled = true
+
+
 func sfx_vols() -> void:
 	walking.volume_db = Global.vol
 	switch.volume_db = Global.vol
@@ -516,31 +541,6 @@ func _on_death_timer_timeout() -> void:
 func _on_respawn_timer_timeout() -> void:
 	Global.respawning = false
 	inactive = false
-
-
-func sensor_collision():
-	var areas = sensor_checker.get_overlapping_areas()
-	
-	for area in areas:
-		if area.is_in_group("sound_sensor") and Global.vaw_form == "sine":
-			area.get_parent().activate()
-		if area.is_in_group("light_sensor") and Global.vaw_form == "light":
-			area.get_parent().activate()
-		if area.is_in_group("feather"):
-			area.get_parent().collect(self)
-
-
-func shockwave():
-	animation_player.play("shcokawave")
-
-
-func disable_raycasts():
-	if Global.vaw_form != "norm":
-		ground_checker_l.enabled = false
-		ground_checker_r.enabled = false
-	else:
-		ground_checker_l.enabled = true
-		ground_checker_r.enabled = true
 
 
 func _on_level_title_timer_timeout() -> void:

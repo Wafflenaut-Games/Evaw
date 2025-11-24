@@ -11,7 +11,7 @@ var starting_pos: Vector2
 
 var collecting = false
 
-var start_speed = randf_range(25,50)
+var start_speed = randf_range(50, 75)
 var real_speed = start_speed
 
 var player
@@ -84,12 +84,13 @@ func _process(delta: float) -> void:
 	
 	if collecting == true:
 		if global_position.distance_to(player.global_position) < 16:
-			real_speed = lerp(real_speed,0.0,0.8)
+			real_speed = lerp(real_speed, 0.0, 0.9)
 		
 		global_position = global_position.move_toward(player.global_position, real_speed * delta)
 
 
 func collect(body):
-	player = body
-	collecting = true
-	feather_grab.play()
+	if collecting == false:
+		player = body
+		collecting = true
+		feather_grab.play()

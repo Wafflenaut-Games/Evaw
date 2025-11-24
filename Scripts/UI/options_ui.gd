@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 
 
 func labels() -> void:
-	if not Global.vol == -80:
+	if not Global.vol == -INF:
 		volume_label.text = "VOLUME: %s" % str(int((float(Global.vol) + 5)/ 5 + 9))
 	else:
 		volume_label.text = "VOLUME: 0"
