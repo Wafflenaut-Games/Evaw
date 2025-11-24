@@ -57,9 +57,11 @@ shape = SubResource("RectangleShape2D_c78tm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_icsjw")
+autoplay = "default"
 
 [node name="Interaction" parent="." instance=ExtResource("3_3dmk2")]
 position = Vector2(0, -9)
+animation = &"interactable"
 
 [node name="YouHaveOneNewMessage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wag73")
@@ -75,3 +77,5 @@ shape = SubResource("CircleShape2D_dh5xs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Vicinity" to="." method="_on_vicinity_body_entered"]
+[connection signal="body_exited" from="Vicinity" to="." method="_on_vicinity_body_exited"]

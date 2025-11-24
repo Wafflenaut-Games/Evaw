@@ -5,6 +5,7 @@ extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var you_have_one_new_message: AudioStreamPlayer = $YouHaveOneNewMessage
+@onready var radio_in_the_vicinity: AudioStreamPlayer = $RadioInTheVicinity
 
 var interactable = false
 var interacting = false
@@ -34,3 +35,13 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		interactable = false
 		interacting = false
+
+
+func _on_vicinity_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		radio_in_the_vicinity.play()
+
+
+func _on_vicinity_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		radio_in_the_vicinity.stop()
