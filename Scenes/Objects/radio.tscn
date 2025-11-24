@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://mrbbxnsowegr"]
+[gd_scene load_steps=11 format=3 uid="uid://mrbbxnsowegr"]
 
+[ext_resource type="Script" uid="uid://cdekpkhrjcrbt" path="res://Scripts/Objects/radio.gd" id="1_c78tm"]
 [ext_resource type="Texture2D" uid="uid://ctxt1o30hvaqt" path="res://Assets/Interactables/Vaw_Radio.png" id="1_sexah"]
+[ext_resource type="PackedScene" uid="uid://cipftlhvbkun6" path="res://Scenes/Tools/interaction.tscn" id="3_3dmk2"]
+[ext_resource type="AudioStream" uid="uid://ctvcqy48i1g7y" path="res://Assets/AUDIO/You Have One New Message.mp3" id="4_wag73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78tm"]
 size = Vector2(14, 8)
@@ -42,6 +45,7 @@ animations = [{
 }]
 
 [node name="Radio" type="Area2D"]
+script = ExtResource("1_c78tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -49,3 +53,12 @@ shape = SubResource("RectangleShape2D_c78tm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_icsjw")
+
+[node name="Interaction" parent="." instance=ExtResource("3_3dmk2")]
+position = Vector2(0, -9)
+
+[node name="YouHaveOneNewMessage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wag73")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://q8k2rmqdt40a"]
+[gd_scene load_steps=21 format=3 uid="uid://q8k2rmqdt40a"]
 
 [ext_resource type="Texture2D" uid="uid://c7mg3ti0ppda0" path="res://Assets/Collectibles/lost_in_the_featheroutline.png" id="1_cg832"]
 [ext_resource type="Script" uid="uid://dxl3weboigqal" path="res://Scripts/Objects/feather.gd" id="1_rjtbf"]
+[ext_resource type="AudioStream" uid="uid://c5q1b8bw1cq0g" path="res://Assets/AUDIO/Feather Grab.mp3" id="3_84csc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjtbf"]
 atlas = ExtResource("1_cg832")
@@ -204,3 +205,6 @@ texture_scale = 0.5
 libraries = {
 &"": SubResource("AnimationLibrary_84csc")
 }
+
+[node name="FeatherGrab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_84csc")
