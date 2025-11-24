@@ -14,10 +14,8 @@ var entered = false
 
 
 func _process(_delta: float) -> void:
-	if not Global.is_transitioning and not Global.paused:
-		light.visible = true
-	else:
-		light.visible = false
+	leave()
+	visibility()
 	
 	transitions.global_position = vaw.global_position
 
@@ -29,7 +27,13 @@ func leave() -> void:
 		transition_timer.start()
 		vaw.inactive = true
 		Global.lvl_completed = Global.level
-	
+
+
+func visibility() -> void:
+	if not Global.is_transitioning and not Global.paused:
+		light.visible = true
+	else:
+		light.visible = false
 
 
 func _on_body_entered(body: Node2D) -> void:
