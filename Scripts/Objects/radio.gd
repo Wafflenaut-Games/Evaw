@@ -9,12 +9,20 @@ extends Area2D
 
 var interactable = false
 var interacting = false
+var message_init_vol = 0
+var vicinity_init_vol = 0
 
 #endregion
 
 
+func _ready() -> void:
+	message_init_vol = you_have_one_new_message.volume_db
+	vicinity_init_vol = radio_in_the_vicinity.volume_db
+
+
 func _process(_delta: float) -> void:
 	set_interacting()
+	vol_set()
 
 
 func set_interacting() -> void:
@@ -24,6 +32,11 @@ func set_interacting() -> void:
 			you_have_one_new_message.play()
 		else:
 			interacting = !interacting
+
+
+func vol_set() -> void:
+	you_have_one_new_message.volume_db = message_init_vol + Global.vol
+	radio_in_the_vicinity.volume_db = vicinity_init_vol + Global.vol
 
 
 func _on_body_entered(body: Node2D) -> void:

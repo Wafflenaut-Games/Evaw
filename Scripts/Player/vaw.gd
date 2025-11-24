@@ -61,7 +61,17 @@ var inactive = true
 var level_begun = false
 var walking_playing
 
+var walk_init_vol = 0
+var switch_init_vol = 0
+var jump_init_vol = 0
+
 #endregion
+
+
+func _ready() -> void:
+	walk_init_vol = walking.volume_db
+	switch_init_vol = switch.volume_db
+	jump_init_vol = tentative_jump.volume_db
 
 
 func _physics_process(delta: float) -> void:
@@ -423,8 +433,9 @@ func disable_raycasts() -> void:
 
 
 func sfx_vols() -> void:
-	walking.volume_db = Global.vol
-	switch.volume_db = Global.vol
+	walking.volume_db = walk_init_vol + Global.vol
+	switch.volume_db = switch_init_vol + Global.vol
+	tentative_jump.volume_db = jump_init_vol + Global.vol
 
 
 func handle_sfx() -> void:

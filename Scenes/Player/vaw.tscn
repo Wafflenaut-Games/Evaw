@@ -990,6 +990,7 @@ z_index = 1025
 position = Vector2(80, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Transitions2"]
+visible = false
 position = Vector2(80, 60)
 shape = SubResource("RectangleShape2D_6p8ar")
 
