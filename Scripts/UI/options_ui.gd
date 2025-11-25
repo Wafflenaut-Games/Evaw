@@ -13,7 +13,7 @@ enum difficulty {easy = 4, normal = 2, wavemaster = 1}
 
 
 func _ready() -> void:
-	volume_bar.value = Global.vol
+	volume_bar.value = 10
 
 
 func _process(_delta: float) -> void:

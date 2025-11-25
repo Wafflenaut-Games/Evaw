@@ -172,92 +172,6 @@ visibility_layer = 3
 position = Vector2(56, 0)
 texture = ExtResource("4_ocl8u")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 606.0
-offset_top = -260.0
-offset_right = 735.0
-offset_bottom = -183.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_geikg")
-theme_override_font_sizes/font_size = 7
-text = "USE A SOUND WAVE TO ACTIVATE SOUND SENSORS AND OPEN CORRESPONDING DOORS"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Label3" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 590.0
-offset_top = -331.0
-offset_right = 719.0
-offset_bottom = -254.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_geikg")
-theme_override_font_sizes/font_size = 7
-text = "HMM"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Label2" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1067.0
-offset_top = -500.0
-offset_right = 1196.0
-offset_bottom = -423.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_geikg")
-theme_override_font_sizes/font_size = 7
-text = "WHERE ARE YOU OFF TO"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Label4" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1649.0
-offset_top = -540.0
-offset_right = 1778.0
-offset_bottom = -463.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_geikg")
-theme_override_font_sizes/font_size = 7
-text = "WELL, 
-THERE IS
- A MAN HERE"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
 [node name="Tileset" parent="." instance=ExtResource("6_rir5s")]
 visibility_layer = 3
 position = Vector2(5, 17)
@@ -275,9 +189,470 @@ position = Vector2(810, -451)
 visibility_layer = 3
 position = Vector2(89, 141)
 
+[node name="Bubbles" parent="." instance=ExtResource("12_h34hb")]
+position = Vector2(458, 1778)
+preprocess = 60.0
+
+[node name="Snow" parent="." instance=ExtResource("12_vhwgs")]
+position = Vector2(860, -1129)
+preprocess = 15.0
+
 [node name="feather" parent="." instance=ExtResource("10_m87ea")]
 visibility_layer = 3
 position = Vector2(854, -216)
+
+[node name="feather2" parent="." instance=ExtResource("10_m87ea")]
+visibility_layer = 3
+position = Vector2(90, 230)
+
+[node name="OneWays" type="Node" parent="."]
+
+[node name="OneWayPlatform26" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(497, -355)
+direction = "D"
+
+[node name="OneWayPlatform27" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(489, -355)
+direction = "D"
+
+[node name="OneWayPlatform28" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(481, -355)
+direction = "D"
+
+[node name="OneWayPlatform29" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(521, -355)
+direction = "D"
+
+[node name="OneWayPlatform32" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(529, -355)
+direction = "D"
+
+[node name="OneWayPlatform30" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(513, -355)
+direction = "D"
+
+[node name="OneWayPlatform31" parent="OneWays" instance=ExtResource("19_tyxy3")]
+position = Vector2(505, -355)
+direction = "D"
+
+[node name="KEPSIS" type="Node" parent="."]
+
+[node name="CLAY" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(785, -211)
+direction = "U"
+
+[node name="CLAY8" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(449, 149)
+direction = "U"
+
+[node name="CLAY9" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(457, 149)
+direction = "U"
+
+[node name="CLAY10" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(441, 149)
+direction = "U"
+
+[node name="CLAY11" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(505, 141)
+direction = "U"
+
+[node name="CLAY12" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(513, 141)
+direction = "U"
+
+[node name="CLAY13" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(593, 125)
+direction = "U"
+
+[node name="CLAY14" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(297, 293)
+direction = "U"
+
+[node name="CLAY15" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(305, 293)
+direction = "U"
+
+[node name="CLAY16" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(313, 293)
+direction = "U"
+
+[node name="CLAY17" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(321, 293)
+direction = "U"
+
+[node name="CLAY18" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(329, 293)
+direction = "U"
+
+[node name="CLAY67" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(689, -435)
+direction = "U"
+
+[node name="CLAY68" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(697, -435)
+direction = "U"
+
+[node name="CLAY69" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(705, -435)
+direction = "U"
+
+[node name="CLAY70" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(713, -435)
+direction = "U"
+
+[node name="CLAY71" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(721, -435)
+direction = "U"
+
+[node name="CLAY72" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(625, -426)
+direction = "U"
+
+[node name="CLAY73" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(633, -426)
+direction = "U"
+
+[node name="CLAY74" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(641, -426)
+direction = "U"
+
+[node name="CLAY75" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(649, -426)
+direction = "U"
+
+[node name="CLAY76" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(657, -426)
+direction = "U"
+
+[node name="CLAY19" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(337, 293)
+direction = "U"
+
+[node name="CLAY20" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(345, 293)
+direction = "U"
+
+[node name="CLAY21" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(353, 293)
+direction = "U"
+
+[node name="CLAY22" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(361, 293)
+direction = "U"
+
+[node name="CLAY23" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(369, 293)
+direction = "U"
+
+[node name="CLAY49" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(649, 325)
+direction = "U"
+
+[node name="CLAY50" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(657, 325)
+direction = "U"
+
+[node name="CLAY51" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(665, 325)
+direction = "U"
+
+[node name="CLAY52" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(673, 325)
+direction = "U"
+
+[node name="CLAY53" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(681, 325)
+direction = "U"
+
+[node name="CLAY54" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(689, 325)
+direction = "U"
+
+[node name="CLAY55" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(697, 333)
+direction = "U"
+
+[node name="CLAY56" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(705, 333)
+direction = "U"
+
+[node name="CLAY57" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(713, 341)
+direction = "U"
+
+[node name="CLAY58" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(721, 341)
+direction = "U"
+
+[node name="CLAY59" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(729, 341)
+direction = "U"
+
+[node name="CLAY60" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(737, 341)
+direction = "U"
+
+[node name="CLAY61" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(601, 310)
+direction = "U"
+
+[node name="CLAY62" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(609, 310)
+direction = "U"
+
+[node name="CLAY63" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(633, 318)
+direction = "U"
+
+[node name="CLAY64" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(641, 318)
+direction = "U"
+
+[node name="CLAY65" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(617, 318)
+direction = "U"
+
+[node name="CLAY66" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(625, 318)
+direction = "U"
+
+[node name="CLAY24" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(377, 285)
+direction = "U"
+
+[node name="CLAY25" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(385, 285)
+direction = "U"
+
+[node name="CLAY26" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(57, 325)
+direction = "U"
+
+[node name="CLAY27" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(65, 333)
+direction = "U"
+
+[node name="CLAY28" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(73, 333)
+direction = "U"
+
+[node name="CLAY29" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(81, 333)
+direction = "U"
+
+[node name="CLAY30" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(89, 333)
+direction = "U"
+
+[node name="CLAY31" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(97, 333)
+direction = "U"
+
+[node name="CLAY32" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(105, 333)
+direction = "U"
+
+[node name="CLAY33" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(113, 333)
+direction = "U"
+
+[node name="CLAY34" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(121, 333)
+direction = "U"
+
+[node name="CLAY38" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(-7, 309)
+direction = "U"
+
+[node name="CLAY39" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(1, 325)
+direction = "U"
+
+[node name="CLAY40" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(9, 325)
+direction = "U"
+
+[node name="CLAY41" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(17, 325)
+direction = "U"
+
+[node name="CLAY42" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(25, 325)
+direction = "U"
+
+[node name="CLAY43" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(33, 325)
+direction = "U"
+
+[node name="CLAY44" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(41, 325)
+direction = "U"
+
+[node name="CLAY45" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(49, 325)
+direction = "U"
+
+[node name="CLAY35" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(129, 333)
+direction = "U"
+
+[node name="CLAY36" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(137, 325)
+direction = "U"
+
+[node name="CLAY37" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(145, 325)
+direction = "U"
+
+[node name="CLAY46" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(153, 325)
+direction = "U"
+
+[node name="CLAY47" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(169, 317)
+direction = "U"
+
+[node name="CLAY48" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(161, 317)
+direction = "U"
+
+[node name="CLAY2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(809, -219)
+direction = "D"
+
+[node name="CLAY3" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(425, -291)
+direction = "U"
+
+[node name="CLAY4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(617, -275)
+direction = "U"
+
+[node name="CLAY5" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(561, -275)
+direction = "U"
+
+[node name="CLAY6" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(609, -299)
+direction = "D"
+
+[node name="CLAY7" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(641, -283)
+direction = "U"
+
+[node name="STEEL" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(425, -435)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL3" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(441, -435)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(433, -435)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(689, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL5" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(705, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL6" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(697, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL7" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(721, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL8" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(737, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL9" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(729, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL10" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(713, -203)
+type = "Steel"
+direction = "U"
+
+[node name="STEEL11" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(689, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL12" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(705, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL13" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(697, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL14" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(721, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL15" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(737, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL16" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(729, -195)
+type = "Steel"
+direction = "D"
+
+[node name="STEEL17" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
+position = Vector2(713, -195)
+type = "Steel"
+direction = "D"
+
+[node name="Doors0" type="Node" parent="."]
+
+[node name="Doors" parent="Doors0" instance=ExtResource("15_incma")]
+position = Vector2(765, -223)
+
+[node name="Doors2" parent="Doors0" instance=ExtResource("15_incma")]
+position = Vector2(597, -223)
+
+[node name="Doors3" parent="Doors0" instance=ExtResource("15_incma")]
+position = Vector2(565, -423)
+
+[node name="Sensors" type="Node" parent="."]
+
+[node name="sound_sensor" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
+position = Vector2(633, -244)
+rotation = -1.5707964
+connected_door = NodePath("../../Doors0/Doors2")
+
+[node name="sound_sensor2" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
+position = Vector2(665, -292)
+rotation = -1.5707964
+connected_door = NodePath("../../Doors0/Doors")
+
+[node name="sound_sensor3" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
+position = Vector2(425, -500)
+rotation = -1.5707964
+connected_door = NodePath("../../Doors0/Doors3")
 
 [node name="WaterBoundaries" type="Node" parent="."]
 
@@ -1077,639 +1452,274 @@ position = Vector2(1345, 100)
 z_index = 1
 position = Vector2(1353, 100)
 
-[node name="feather2" parent="." instance=ExtResource("10_m87ea")]
-visibility_layer = 3
-position = Vector2(90, 230)
+[node name="Decorations" type="Node" parent="."]
 
-[node name="Bubbles" parent="." instance=ExtResource("12_h34hb")]
-position = Vector2(458, 1778)
-preprocess = 60.0
-
-[node name="Snow" parent="." instance=ExtResource("12_vhwgs")]
-position = Vector2(860, -1129)
-preprocess = 15.0
-
-[node name="sound_sensor" parent="." node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
-position = Vector2(633, -244)
-rotation = -1.5707964
-connected_door = NodePath("../Doors2")
-
-[node name="sound_sensor2" parent="." node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
-position = Vector2(665, -292)
-rotation = -1.5707964
-connected_door = NodePath("../Doors")
-
-[node name="sound_sensor3" parent="." node_paths=PackedStringArray("connected_door") instance=ExtResource("14_qayjf")]
-position = Vector2(425, -500)
-rotation = -1.5707964
-connected_door = NodePath("../Doors3")
-
-[node name="Doors" parent="." instance=ExtResource("15_incma")]
-position = Vector2(765, -223)
-
-[node name="Doors2" parent="." instance=ExtResource("15_incma")]
-position = Vector2(597, -223)
-
-[node name="Doors3" parent="." instance=ExtResource("15_incma")]
-position = Vector2(565, -423)
-
-[node name="KEPSIS" type="Node" parent="."]
-
-[node name="CLAY" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(785, -211)
-direction = "U"
-
-[node name="CLAY8" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(449, 149)
-direction = "U"
-
-[node name="CLAY9" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(457, 149)
-direction = "U"
-
-[node name="CLAY10" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(441, 149)
-direction = "U"
-
-[node name="CLAY11" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(505, 141)
-direction = "U"
-
-[node name="CLAY12" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(513, 141)
-direction = "U"
-
-[node name="CLAY13" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(593, 125)
-direction = "U"
-
-[node name="CLAY14" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(297, 293)
-direction = "U"
-
-[node name="CLAY15" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(305, 293)
-direction = "U"
-
-[node name="CLAY16" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(313, 293)
-direction = "U"
-
-[node name="CLAY17" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(321, 293)
-direction = "U"
-
-[node name="CLAY18" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(329, 293)
-direction = "U"
-
-[node name="CLAY67" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(689, -435)
-direction = "U"
-
-[node name="CLAY68" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(697, -435)
-direction = "U"
-
-[node name="CLAY69" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(705, -435)
-direction = "U"
-
-[node name="CLAY70" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(713, -435)
-direction = "U"
-
-[node name="CLAY71" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(721, -435)
-direction = "U"
-
-[node name="CLAY72" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(625, -426)
-direction = "U"
-
-[node name="CLAY73" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(633, -426)
-direction = "U"
-
-[node name="CLAY74" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(641, -426)
-direction = "U"
-
-[node name="CLAY75" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(649, -426)
-direction = "U"
-
-[node name="CLAY76" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(657, -426)
-direction = "U"
-
-[node name="CLAY19" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(337, 293)
-direction = "U"
-
-[node name="CLAY20" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(345, 293)
-direction = "U"
-
-[node name="CLAY21" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(353, 293)
-direction = "U"
-
-[node name="CLAY22" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(361, 293)
-direction = "U"
-
-[node name="CLAY23" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(369, 293)
-direction = "U"
-
-[node name="CLAY49" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(649, 325)
-direction = "U"
-
-[node name="CLAY50" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(657, 325)
-direction = "U"
-
-[node name="CLAY51" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(665, 325)
-direction = "U"
-
-[node name="CLAY52" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(673, 325)
-direction = "U"
-
-[node name="CLAY53" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(681, 325)
-direction = "U"
-
-[node name="CLAY54" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(689, 325)
-direction = "U"
-
-[node name="CLAY55" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(697, 333)
-direction = "U"
-
-[node name="CLAY56" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(705, 333)
-direction = "U"
-
-[node name="CLAY57" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(713, 341)
-direction = "U"
-
-[node name="CLAY58" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(721, 341)
-direction = "U"
-
-[node name="CLAY59" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(729, 341)
-direction = "U"
-
-[node name="CLAY60" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(737, 341)
-direction = "U"
-
-[node name="CLAY61" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(601, 310)
-direction = "U"
-
-[node name="CLAY62" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(609, 310)
-direction = "U"
-
-[node name="CLAY63" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(633, 318)
-direction = "U"
-
-[node name="CLAY64" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(641, 318)
-direction = "U"
-
-[node name="CLAY65" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(617, 318)
-direction = "U"
-
-[node name="CLAY66" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(625, 318)
-direction = "U"
-
-[node name="CLAY24" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(377, 285)
-direction = "U"
-
-[node name="CLAY25" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(385, 285)
-direction = "U"
-
-[node name="CLAY26" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(57, 325)
-direction = "U"
-
-[node name="CLAY27" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(65, 333)
-direction = "U"
-
-[node name="CLAY28" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(73, 333)
-direction = "U"
-
-[node name="CLAY29" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(81, 333)
-direction = "U"
-
-[node name="CLAY30" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(89, 333)
-direction = "U"
-
-[node name="CLAY31" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(97, 333)
-direction = "U"
-
-[node name="CLAY32" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(105, 333)
-direction = "U"
-
-[node name="CLAY33" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(113, 333)
-direction = "U"
-
-[node name="CLAY34" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(121, 333)
-direction = "U"
-
-[node name="CLAY38" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(-7, 309)
-direction = "U"
-
-[node name="CLAY39" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(1, 325)
-direction = "U"
-
-[node name="CLAY40" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(9, 325)
-direction = "U"
-
-[node name="CLAY41" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(17, 325)
-direction = "U"
-
-[node name="CLAY42" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(25, 325)
-direction = "U"
-
-[node name="CLAY43" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(33, 325)
-direction = "U"
-
-[node name="CLAY44" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(41, 325)
-direction = "U"
-
-[node name="CLAY45" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(49, 325)
-direction = "U"
-
-[node name="CLAY35" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(129, 333)
-direction = "U"
-
-[node name="CLAY36" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(137, 325)
-direction = "U"
-
-[node name="CLAY37" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(145, 325)
-direction = "U"
-
-[node name="CLAY46" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(153, 325)
-direction = "U"
-
-[node name="CLAY47" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(169, 317)
-direction = "U"
-
-[node name="CLAY48" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(161, 317)
-direction = "U"
-
-[node name="CLAY2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(809, -219)
-direction = "D"
-
-[node name="CLAY3" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(425, -291)
-direction = "U"
-
-[node name="CLAY4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(617, -275)
-direction = "U"
-
-[node name="CLAY5" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(561, -275)
-direction = "U"
-
-[node name="CLAY6" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(609, -299)
-direction = "D"
-
-[node name="CLAY7" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(641, -283)
-direction = "U"
-
-[node name="STEEL" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(425, -435)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL3" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(441, -435)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(433, -435)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(689, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL5" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(705, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL6" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(697, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL7" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(721, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL8" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(737, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL9" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(729, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL10" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(713, -203)
-type = "Steel"
-direction = "U"
-
-[node name="STEEL11" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(689, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL12" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(705, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL13" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(697, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL14" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(721, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL15" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(737, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL16" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(729, -195)
-type = "Steel"
-direction = "D"
-
-[node name="STEEL17" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(713, -195)
-type = "Steel"
-direction = "D"
-
-[node name="SnowTree" parent="." instance=ExtResource("17_fq2uc")]
+[node name="SnowTree" parent="Decorations" instance=ExtResource("17_fq2uc")]
 position = Vector2(836, -227)
 
-[node name="SnowTree2" parent="." instance=ExtResource("17_fq2uc")]
+[node name="SnowTree2" parent="Decorations" instance=ExtResource("17_fq2uc")]
 position = Vector2(502, -243)
 
-[node name="Tree" parent="." instance=ExtResource("18_owjdf")]
+[node name="Tree" parent="Decorations" instance=ExtResource("18_owjdf")]
 position = Vector2(418, 133)
 
-[node name="Tree2" parent="." instance=ExtResource("18_owjdf")]
+[node name="Tree2" parent="Decorations" instance=ExtResource("18_owjdf")]
 position = Vector2(1713, -467)
 
-[node name="OneWayPlatform26" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(497, -355)
-direction = "D"
-
-[node name="OneWayPlatform27" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(489, -355)
-direction = "D"
-
-[node name="OneWayPlatform28" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(481, -355)
-direction = "D"
-
-[node name="OneWayPlatform29" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(521, -355)
-direction = "D"
-
-[node name="OneWayPlatform32" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(529, -355)
-direction = "D"
-
-[node name="OneWayPlatform30" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(513, -355)
-direction = "D"
-
-[node name="OneWayPlatform31" parent="." instance=ExtResource("19_tyxy3")]
-position = Vector2(505, -355)
-direction = "D"
-
-[node name="Lantern" type="AnimatedSprite2D" parent="."]
+[node name="Lantern" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(508, -508)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern2" type="AnimatedSprite2D" parent="."]
+[node name="Lantern2" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(736, -491)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(-319, 1)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern2" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern2" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(-284, 152)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern2"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern2"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern2"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern3" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern3" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(-140, 200)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern3"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern3"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern3"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern4" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern4" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(-87, 252)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern4"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern4"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern4"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern5" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern5" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(-117, 256)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern5"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern5"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern5"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern6" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern6" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(90, 233)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern6"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern6"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern6"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern7" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern7" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(977, -24)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern7"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern7"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern7"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern8" type="AnimatedSprite2D" parent="Lantern2"]
+[node name="Lantern8" type="AnimatedSprite2D" parent="Decorations/Lantern2"]
 material = SubResource("ShaderMaterial_qxqej")
 position = Vector2(27, 438)
 sprite_frames = SubResource("SpriteFrames_hoj4e")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2/Lantern8"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2/Lantern8"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_qt4o2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2/Lantern8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2/Lantern8"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
+
+[node name="Text" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 526.0
+offset_top = -320.0
+offset_right = 655.0
+offset_bottom = -243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_geikg")
+theme_override_font_sizes/font_size = 7
+text = "USE A SOUND WAVE TO ACTIVATE SOUND SENSORS AND OPEN CORRESPONDING DOORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 510.0
+offset_top = -391.0
+offset_right = 639.0
+offset_bottom = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_geikg")
+theme_override_font_sizes/font_size = 7
+text = "HMM"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 987.0
+offset_top = -560.0
+offset_right = 1116.0
+offset_bottom = -483.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_geikg")
+theme_override_font_sizes/font_size = 7
+text = "WHERE ARE YOU OFF TO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1569.0
+offset_top = -600.0
+offset_right = 1698.0
+offset_bottom = -523.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_geikg")
+theme_override_font_sizes/font_size = 7
+text = "WELL, 
+THERE IS
+ A MAN HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
