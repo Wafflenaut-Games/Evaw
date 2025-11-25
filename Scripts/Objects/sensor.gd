@@ -6,4 +6,3 @@ extends Node2D
 
 func activate():
 	connected_door.open()
-	print(connected_door.name)
