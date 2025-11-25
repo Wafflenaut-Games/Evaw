@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcfwffhet2nyi"
+path="res://.godot/imported/Wave Switch sound 2.mp3-d24fa1300bbc56287d89e39874076390.mp3str"
+
+[deps]
+
+source_file="res://Assets/AUDIO/Wave Switch sound 2.mp3"
+dest_files=["res://.godot/imported/Wave Switch sound 2.mp3-d24fa1300bbc56287d89e39874076390.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
