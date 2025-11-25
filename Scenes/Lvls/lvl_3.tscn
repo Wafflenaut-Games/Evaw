@@ -201,9 +201,9 @@ position = Vector2(101, -581)
 [node name="Feather" parent="." instance=ExtResource("4_sjmwb")]
 position = Vector2(58, -96)
 
-[node name="SKIPES" type="Node" parent="."]
+[node name="SPIKES" type="Node" parent="."]
 
-[node name="Spikes" parent="SKIPES" instance=ExtResource("7_101t3")]
+[node name="Spikes" parent="SPIKES" instance=ExtResource("7_101t3")]
 visible = false
 material = SubResource("ShaderMaterial_w2ukd")
 position = Vector2(199, 51)
