@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj8nu32wfb42m"]
+
+[ext_resource type="Texture2D" uid="uid://kmhln4eb8jub" path="res://Assets/Tilesets/treesnow.png" id="1_fn8g1"]
+
+[node name="SnowTree" type="Sprite2D"]
+texture = ExtResource("1_fn8g1")

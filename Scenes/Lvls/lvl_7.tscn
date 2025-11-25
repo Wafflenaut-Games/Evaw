@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c8o15hgexbbqf"]
+[gd_scene load_steps=33 format=4 uid="uid://c8o15hgexbbqf"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_lcgbr"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_bjw57"]
@@ -11,9 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="9_ccdwn"]
 [ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="10_qlg61"]
 [ext_resource type="PackedScene" uid="uid://ctkgetwx63vg2" path="res://Scenes/Objects/sound_sensor.tscn" id="12_2ghqk"]
+[ext_resource type="PackedScene" uid="uid://cmfe287ym3k2d" path="res://Scenes/Tools/snow.tscn" id="13_et28n"]
 [ext_resource type="PackedScene" uid="uid://b68prfgrpgapk" path="res://Scenes/Objects/doors.tscn" id="13_tvyyw"]
-[ext_resource type="PackedScene" uid="uid://iuf2cso3xc8j" path="res://Scenes/Tools/tree.tscn" id="14_gqb7d"]
-[ext_resource type="Texture2D" uid="uid://kmhln4eb8jub" path="res://Assets/Tilesets/treesnow.png" id="15_2pk2x"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="16_2pk2x"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="16_o0bed"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="17_0ws5e"]
@@ -24,18 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://byh6ur5xetp6o" path="res://Assets/Interactables/lanternonfire1-6.png" id="22_vjf81"]
 [ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Interactables/lanternonfire1-7.png" id="23_ylcxu"]
 [ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Interactables/lanternonfire1-8.png" id="24_nicdj"]
+[ext_resource type="PackedScene" uid="uid://cj8nu32wfb42m" path="res://Scenes/Tools/snow_tree.tscn" id="24_o8jg7"]
 [ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Interactables/lanternonfire1-9.png" id="25_w6pjq"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ghqk"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(1000, 1, 1)
-direction = Vector3(14, 35, 0)
-spread = 10.0
-initial_velocity_min = 50.0
-initial_velocity_max = 75.0
-gravity = Vector3(0, 0, 0)
-scale_max = 1.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cn0bb"]
 shader = ExtResource("17_0ws5e")
@@ -183,50 +172,6 @@ visibility_layer = 3
 position = Vector2(56, 0)
 texture = ExtResource("4_tvyyw")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 151.0
-offset_top = -510.0
-offset_right = 222.0
-offset_bottom = -359.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_gqb7d")
-theme_override_font_sizes/font_size = 7
-text = "HOLY COLD
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Label2" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 510.0
-offset_top = -771.0
-offset_right = 581.0
-offset_bottom = -620.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_constants/line_spacing = -7
-theme_override_fonts/font = ExtResource("5_gqb7d")
-theme_override_font_sizes/font_size = 7
-text = "HOLY MOLY
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
 [node name="Tileset" parent="." instance=ExtResource("6_2pk2x")]
 visibility_layer = 3
 position = Vector2(5, 17)
@@ -252,6 +197,9 @@ position = Vector2(145, -655)
 visibility_layer = 3
 position = Vector2(576, -526)
 
+[node name="Snow" parent="." instance=ExtResource("13_et28n")]
+position = Vector2(-76, -833)
+
 [node name="Sensors" type="Node" parent="."]
 
 [node name="sound_sensor" parent="Sensors" node_paths=PackedStringArray("connected_door") instance=ExtResource("12_2ghqk")]
@@ -271,24 +219,6 @@ position = Vector2(141, -423)
 
 [node name="Doors2" parent="Doors" instance=ExtResource("13_tvyyw")]
 position = Vector2(405, -439)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-76, -835)
-amount = 2500
-lifetime = 15.0
-preprocess = 15.0
-visibility_rect = Rect2(-1000, -1000, 2000, 2000)
-process_material = SubResource("ParticleProcessMaterial_2ghqk")
-
-[node name="q" parent="." instance=ExtResource("14_gqb7d")]
-material = null
-position = Vector2(221, -427)
-texture = ExtResource("15_2pk2x")
-
-[node name="q2" parent="." instance=ExtResource("14_gqb7d")]
-material = null
-position = Vector2(608, -427)
-texture = ExtResource("15_2pk2x")
 
 [node name="PIEKSS" type="Node" parent="."]
 
@@ -642,89 +572,143 @@ direction = "D"
 position = Vector2(321, -555)
 direction = "D"
 
-[node name="Lantern3" type="AnimatedSprite2D" parent="."]
+[node name="Decorations" type="Node" parent="."]
+
+[node name="Lantern3" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_cn0bb")
 position = Vector2(574, -539)
 sprite_frames = SubResource("SpriteFrames_mj2jk")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern3"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern3"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_u34dc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern3"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern4" type="AnimatedSprite2D" parent="."]
+[node name="Lantern4" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_cn0bb")
 position = Vector2(673, -428)
 sprite_frames = SubResource("SpriteFrames_mj2jk")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern4"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern4"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_u34dc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern4"]
 root_node = NodePath("../../Lantern3")
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern5" type="AnimatedSprite2D" parent="."]
+[node name="Lantern5" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_cn0bb")
 position = Vector2(420, -446)
 sprite_frames = SubResource("SpriteFrames_mj2jk")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern5"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern5"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_u34dc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern5"]
 root_node = NodePath("../../Lantern3")
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern2" type="AnimatedSprite2D" parent="."]
+[node name="Lantern2" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_cn0bb")
 position = Vector2(183, -682)
 sprite_frames = SubResource("SpriteFrames_mj2jk")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_u34dc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern" type="AnimatedSprite2D" parent="."]
+[node name="Lantern" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_cn0bb")
 position = Vector2(101, -427)
 sprite_frames = SubResource("SpriteFrames_mj2jk")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_u34dc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
+
+[node name="SnowTree" parent="Decorations" instance=ExtResource("24_o8jg7")]
+position = Vector2(221, -427)
+
+[node name="SnowTree2" parent="Decorations" instance=ExtResource("24_o8jg7")]
+position = Vector2(608, -426)
+
+[node name="Text" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 71.0
+offset_top = -570.0
+offset_right = 142.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_gqb7d")
+theme_override_font_sizes/font_size = 7
+text = "HOLY COLD
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 430.0
+offset_top = -831.0
+offset_right = 501.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_gqb7d")
+theme_override_font_sizes/font_size = 7
+text = "HOLY MOLY
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

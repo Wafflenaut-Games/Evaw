@@ -169,10 +169,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfsm2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iih8a"]
 size = Vector2(16, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwgmq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pkyj"]
 size = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_5f721"]
@@ -574,11 +574,11 @@ animation = &"lume_opening"
 
 [node name="CollisionTop" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_mfsm2")
+shape = SubResource("RectangleShape2D_iih8a")
 
 [node name="CollisionBottom" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_jwgmq")
+shape = SubResource("RectangleShape2D_8pkyj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -131,7 +131,6 @@ position = Vector2(43, 100)
 position = Vector2(57, 27)
 
 [node name="Background" parent="." instance=ExtResource("3_x4073")]
-visible = false
 material = SubResource("ShaderMaterial_fr28i")
 position = Vector2(-221.99998, 119.99999)
 
