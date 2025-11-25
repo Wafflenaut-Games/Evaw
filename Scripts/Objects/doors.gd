@@ -5,6 +5,7 @@ extends StaticBody2D
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var open_timer: Timer = $OpenTimer
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
 
 var opened = false
@@ -44,6 +45,7 @@ func open() -> void:
 			"lume":
 				ap.play("lume_opening")
 		
+		collision.disabled = true
 		open_timer.start()
 
 
