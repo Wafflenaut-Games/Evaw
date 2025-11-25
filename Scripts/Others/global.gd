@@ -48,6 +48,3 @@ var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns"]
 @onready var feather_lvl_16 = false
 
 #endregion
-
-#func _process(_delta: float) -> void:
-	#print(death_count)

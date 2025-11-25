@@ -8,7 +8,12 @@ extends Control
 #endregion
 
 
+func _ready() -> void:
+	Global.paused = true
+
+
 func _on_start_pressed() -> void:
+	Global.paused = false
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
 
 

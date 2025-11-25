@@ -29,6 +29,7 @@ func _process(_delta: float) -> void:
 	if Global.respawning:
 		opened = false
 		fully_open = false
+		collision.disabled = false
 		
 		if type == "sine":
 			ap.play("sine_closed")

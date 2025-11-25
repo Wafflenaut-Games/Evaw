@@ -386,12 +386,13 @@ func get_mouse_direction() -> void:
 
 
 func death() -> void:
-	Global.death_count += 1
-	Global.dying = true
-	inactive = true
-	ap.rotation_degrees = 0
-	ap.play("die%s" % Global.water_lvl)
-	death_timer.start()
+	if not Global.dying:
+		Global.death_count += 1
+		Global.dying = true
+		inactive = true
+		ap.rotation_degrees = 0
+		ap.play("die%s" % Global.water_lvl)
+		death_timer.start()
 
 
 func respawn() -> void:

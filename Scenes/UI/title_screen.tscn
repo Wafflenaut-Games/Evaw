@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sb8tnvqip77k"]
+[gd_scene load_steps=11 format=3 uid="uid://sb8tnvqip77k"]
 
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="1_wv540"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_e3r1x"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_ogdc4"]
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="6_cbobj"]
 [ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="7_dsf7a"]
+[ext_resource type="PackedScene" uid="uid://cersl1fr0sii5" path="res://Scenes/UI/speedrun_timer.tscn" id="8_824g0"]
+[ext_resource type="PackedScene" uid="uid://cmg3ayhqc4hdy" path="res://Scenes/UI/death_coutner.tscn" id="9_tjte5"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
@@ -113,6 +115,20 @@ text_overrun_behavior = 1
 [node name="OptionsUI" parent="." instance=ExtResource("7_dsf7a")]
 visible = false
 layout_mode = 1
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("8_824g0")]
+layout_mode = 1
+offset_left = -80.0
+offset_top = -60.0
+offset_right = -80.0
+offset_bottom = -60.0
+
+[node name="DeathCoutner" parent="." instance=ExtResource("9_tjte5")]
+layout_mode = 1
+offset_left = 51.0
+offset_top = 44.0
+offset_right = 51.0
+offset_bottom = 44.0
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
