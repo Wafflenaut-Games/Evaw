@@ -571,4 +571,5 @@ func _on_level_title_timer_timeout() -> void:
 
 func _on_transition_timer_timeout() -> void:
 	inactive = false
+	print("shbg")
 	Global.is_transitioning = false

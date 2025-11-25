@@ -126,6 +126,7 @@ position = Vector2(48, 42)
 
 [node name="ExitPortal" parent="." instance=ExtResource("2_6ay57")]
 position = Vector2(43, 100)
+rotation = -3.1415927
 
 [node name="Vaw" parent="." instance=ExtResource("2_sj2hf")]
 position = Vector2(57, 27)
