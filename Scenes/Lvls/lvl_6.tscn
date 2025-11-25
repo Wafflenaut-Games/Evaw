@@ -129,7 +129,6 @@ _data = {
 [node name="Lvl_6" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 visibility_layer = 3
@@ -142,6 +141,7 @@ scale = Vector2(3.7700002, 13.006668)
 texture = ExtResource("1_1xjb5")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 visibility_layer = 3
 motion_scale = Vector2(0.05, 0.05)
 motion_mirroring = Vector2(320, 0)
@@ -152,7 +152,6 @@ position = Vector2(56, 0)
 texture = ExtResource("2_iqfa3")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 visibility_layer = 3
 motion_scale = Vector2(0.15, 0.15)
 motion_mirroring = Vector2(320, 0)
@@ -163,6 +162,7 @@ position = Vector2(56, 0)
 texture = ExtResource("3_7o0w3")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 visibility_layer = 3
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(320, 0)
