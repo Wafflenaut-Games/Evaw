@@ -218,10 +218,7 @@ connected_door = NodePath("../../Doors/Doors2")
 position = Vector2(141, -423)
 
 [node name="Doors2" parent="Doors" instance=ExtResource("13_tvyyw")]
-position = Vector2(157, -423)
-
-[node name="Doors3" parent="Doors" instance=ExtResource("13_tvyyw")]
-position = Vector2(173, -423)
+position = Vector2(405, -439)
 
 [node name="PIEKSS" type="Node" parent="."]
 
