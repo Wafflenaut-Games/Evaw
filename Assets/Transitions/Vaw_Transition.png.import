@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfoc5billtgci"
-path="res://.godot/imported/1 whiute pixel.png-8346096a977dffe27e2fbcd94ac4e2eb.ctex"
+uid="uid://d4hcos4ayre50"
+path="res://.godot/imported/Vaw_Transition.png-43310078b1f9f91cc64609bb59c9d058.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Transitions/1 whiute pixel.png"
-dest_files=["res://.godot/imported/1 whiute pixel.png-8346096a977dffe27e2fbcd94ac4e2eb.ctex"]
+source_file="res://Assets/Transitions/Vaw_Transition.png"
+dest_files=["res://.godot/imported/Vaw_Transition.png-43310078b1f9f91cc64609bb59c9d058.ctex"]
 
 [params]
 
