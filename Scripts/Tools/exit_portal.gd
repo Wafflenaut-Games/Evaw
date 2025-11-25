@@ -26,6 +26,7 @@ func leave() -> void:
 		transitions.play("close")
 		transition_timer.start()
 		vaw.inactive = true
+		entered = false
 		Global.lvl_completed = Global.level
 
 
