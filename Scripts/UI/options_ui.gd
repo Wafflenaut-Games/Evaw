@@ -13,7 +13,7 @@ enum difficulty {easy = 4, normal = 2, wavemaster = 1}
 
 
 func _ready() -> void:
-	volume_bar.value = 10
+	volume_bar.value = int((float(Global.vol) + 5) / 5 + 9)
 
 
 func _process(_delta: float) -> void:
@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 
 func labels() -> void:
 	if not Global.vol == -INF:
-		volume_label.text = "VOLUME: %s" % str(int((float(Global.vol) + 5)/ 5 + 9))
+		volume_label.text = "VOLUME: %s" % str(int((float(Global.vol) + 5) / 5 + 9))
 	else:
 		volume_label.text = "VOLUME: 0"
 	

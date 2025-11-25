@@ -39,6 +39,7 @@ sprite_frames = SubResource("SpriteFrames_e2gad")
 autoplay = "default"
 
 [node name="Transitions" parent="." instance=ExtResource("3_qx6hv")]
+animation = &"open"
 
 [node name="WorldMap_Vaw" parent="." instance=ExtResource("2_e2gad")]
 position = Vector2(-73, -13)
