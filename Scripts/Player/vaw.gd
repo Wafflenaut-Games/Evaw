@@ -386,6 +386,7 @@ func get_mouse_direction() -> void:
 
 
 func death() -> void:
+	Global.death_count += 1
 	Global.dying = true
 	inactive = true
 	ap.rotation_degrees = 0
@@ -404,7 +405,7 @@ func respawn() -> void:
 
 func restart() -> void:
 	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+		death()
 
 
 func sensor_collision() -> void:
