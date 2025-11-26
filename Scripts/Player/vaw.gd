@@ -71,6 +71,7 @@ var rand_switch = randi_range(1, 2)
 var walk_init_vol = 0
 var switch_init_vol = 0
 var jump_init_vol = 0
+var hit_grnd_init_vol = 0
 
 #endregion
 
@@ -79,6 +80,7 @@ func _ready() -> void:
 	walk_init_vol = walking.volume_db
 	switch_init_vol = switch_lume.volume_db
 	jump_init_vol = tentative_jump.volume_db
+	hit_grnd_init_vol = hit_grnd.volume_db
 
 
 func _physics_process(delta: float) -> void:
@@ -366,7 +368,6 @@ func jump() -> void:
 			velocity.y = JUMP_VELOCITY
 			coyote_time = false
 			jump_buffering = false
-			hit_ground = false
 			tentative_jump.play()
 		
 		# Jump Cut
@@ -405,6 +406,7 @@ func is_grounded() -> bool:
 	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
 		if not hit_ground:
 			hit_grnd.play()
+			hit_ground = true
 		return true
 	else:
 		return false
@@ -490,6 +492,7 @@ func sfx_vols() -> void:
 	switch_lume.volume_db = switch_init_vol + Global.vol
 	switch_lume_2.volume_db = switch_init_vol + Global.vol
 	tentative_jump.volume_db = jump_init_vol + Global.vol
+	hit_grnd.volume_db = hit_grnd_init_vol + Global.vol
 
 
 func handle_sfx() -> void:
