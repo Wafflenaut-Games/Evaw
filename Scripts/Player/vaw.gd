@@ -312,7 +312,10 @@ func move(delta) -> void:
 
 func max_vel(delta) -> void:
 	if velocity.y >= MAX_VEL * delta:
-		velocity.y = MAX_VEL * delta
+		if not Global.difficulty == 1:
+			velocity.y = (MAX_VEL * delta)/(Global.difficulty/2)
+		else:
+			velocity.y = (MAX_VEL * delta)/(Global.difficulty/1.125)
 
 
 func jump() -> void:
