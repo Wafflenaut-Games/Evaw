@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=38 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_fuhmf"]
 [ext_resource type="Shader" uid="uid://b0w8pius7hsv5" path="res://Scenes/Shaders/crt_filter.gdshader" id="1_jrmk8"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Interactables/lanternonfire1-7.png" id="18_hcmv3"]
 [ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Interactables/lanternonfire1-8.png" id="19_d3fqi"]
 [ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Interactables/lanternonfire1-9.png" id="20_0jjva"]
+[ext_resource type="Shader" uid="uid://cyvecbpuvgk4t" path="res://Scenes/Lvls/bright.gdshader" id="22_5xblg"]
+[ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="23_mfnqj"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4m64i"]
 viewport_path = NodePath("ColorRect/SubViewport")
@@ -128,6 +130,39 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_5xblg"]
+colors = PackedColorArray(0, 0, 0, 1, 0.9618023, 0.8890683, 0.7551654, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mfnqj"]
+gradient = SubResource("Gradient_5xblg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcmv3"]
+shader = ExtResource("22_5xblg")
+shader_parameter/pixelation = Vector2(64, 64)
+shader_parameter/gradient = SubResource("GradientTexture2D_mfnqj")
+shader_parameter/spread = 0.40000000596046
+shader_parameter/size = -0.0549999551125
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 0.418000019855
+shader_parameter/ray2_density = 8.5
+shader_parameter/ray2_intensity = 0.5
+shader_parameter/core_intensity = 0.23500005866250007
+shader_parameter/hdr = false
+shader_parameter/seed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3fqi"]
+shader = ExtResource("22_5xblg")
+shader_parameter/pixelation = Vector2(64, 64)
+shader_parameter/spread = 0.33
+shader_parameter/size = -1.0
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.5
+shader_parameter/ray2_density = 8.5
+shader_parameter/ray2_intensity = 0.5
+shader_parameter/core_intensity = 2.0
+shader_parameter/hdr = false
+shader_parameter/seed = 1.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -233,3 +268,16 @@ grow_vertical = 2
 position = Vector2(14, -6)
 sprite_frames = SubResource("SpriteFrames_cgtf5")
 frame_progress = 0.38804913
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_hcmv3")
+offset_left = 104.0
+offset_top = -2.0
+offset_right = 144.0
+offset_bottom = 38.0
+
+[node name="feather" parent="." instance=ExtResource("23_mfnqj")]
+visibility_layer = 3
+material = SubResource("ShaderMaterial_d3fqi")
+position = Vector2(124, 19)
