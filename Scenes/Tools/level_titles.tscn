@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnx10d8nr6nhf"]
+[gd_scene load_steps=35 format=3 uid="uid://dnx10d8nr6nhf"]
 
 [ext_resource type="Texture2D" uid="uid://cd1igjpl320uu" path="res://Assets/Transitions/Vaw_Transition_1.png" id="1_0j6w4"]
 [ext_resource type="Texture2D" uid="uid://c875batnu044w" path="res://Assets/Transitions/Vaw_Transition_2.png" id="2_ugqag"]
+[ext_resource type="Texture2D" uid="uid://cfjahlio7xhh6" path="res://Assets/Transitions/Vaw_Transition_3.png" id="3_pjvci"]
+[ext_resource type="Texture2D" uid="uid://ctexau1oy0fvk" path="res://Assets/Transitions/Vaw_Transition_4.png" id="4_crfnu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b0fsr"]
 atlas = ExtResource("1_0j6w4")
@@ -61,6 +63,62 @@ region = Rect2(960, 0, 160, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ugdq"]
 atlas = ExtResource("2_ugqag")
+region = Rect2(1120, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir1d6"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(160, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woj1f"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(320, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqwji"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(480, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1k63"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(640, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpbkc"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(800, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bnwu"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(960, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn3te"]
+atlas = ExtResource("3_pjvci")
+region = Rect2(1120, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hgat"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(160, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka6qa"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(320, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jg0h"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(480, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j04oe"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(640, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbuw0"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(800, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnslb"]
+atlas = ExtResource("4_crfnu")
+region = Rect2(960, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n0eu"]
+atlas = ExtResource("4_crfnu")
 region = Rect2(1120, 0, 160, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ugqag"]
@@ -124,10 +182,62 @@ animations = [{
 "loop": true,
 "name": &"2",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir1d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woj1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqwji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1k63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpbkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bnwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn3te")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hgat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka6qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jg0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j04oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbuw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnslb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n0eu")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
 }]
 
 [node name="LevelTitles" type="AnimatedSprite2D"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_ugqag")
-animation = &"2"
+animation = &"4"
 autoplay = "0"
