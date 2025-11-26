@@ -24,7 +24,9 @@ var difficulty: float = 2
 
 var wm_hovering = 0
 
-var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns"]
+var f = "bro forgot to name ts lvl"
+
+var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns", f, f, f, f, f, f, f, f, f, f, f, f, f, f,]
 
 #region Feather vars
 

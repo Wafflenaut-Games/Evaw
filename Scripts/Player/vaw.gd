@@ -28,7 +28,7 @@ extends CharacterBody2D
 @onready var tentative_jump: AudioStreamPlayer = $SFX/Tentativejump
 
 
-const SPEED = 3000.0
+const SPEED = 10000.0
 const SINE_SPD = 2400.0
 const DIA_SINE_SPD = SINE_SPD/sqrt(2)
 const LUME_SPD = 5000.0
