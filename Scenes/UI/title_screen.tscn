@@ -125,10 +125,10 @@ offset_bottom = -60.0
 
 [node name="DeathCoutner" parent="." instance=ExtResource("9_tjte5")]
 layout_mode = 1
-offset_left = 51.0
-offset_top = 44.0
-offset_right = 51.0
-offset_bottom = 44.0
+offset_left = 49.0
+offset_top = 40.0
+offset_right = 49.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
