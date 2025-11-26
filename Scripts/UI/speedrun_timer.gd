@@ -3,7 +3,7 @@ extends Control
 
 #region vars
 
-@onready var label: Label = $PanelContainer/Label
+@onready var label: Label = $PanelContainer/VBoxContainer/Label
 @onready var pause_ui: Control = $".."
 
 

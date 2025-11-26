@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var label: Label = $PanelContainer/Label
+@onready var label: Label = $PanelContainer/VBoxContainer/Label
 
 
 func _process(_delta: float) -> void:
