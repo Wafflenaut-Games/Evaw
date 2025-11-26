@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=154 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -26,6 +26,11 @@
 [ext_resource type="AudioStream" uid="uid://b2v8d3ouvaxot" path="res://Assets/AUDIO/Ground.mp3" id="23_vl8gu"]
 [ext_resource type="AudioStream" uid="uid://bs5825yqflhst" path="res://Assets/AUDIO/Wave Switch.mp3" id="24_odm3q"]
 [ext_resource type="AudioStream" uid="uid://co2du3f37ivb6" path="res://Assets/AUDIO/tentativejump.mp3" id="26_pmbmc"]
+[ext_resource type="AudioStream" uid="uid://bybfuonn40l0n" path="res://Assets/AUDIO/Death.wav" id="27_kh1wn"]
+[ext_resource type="AudioStream" uid="uid://b3q0j8cf7bkis" path="res://Assets/AUDIO/Hit Ground.wav" id="28_gepi0"]
+[ext_resource type="AudioStream" uid="uid://b1qo1arymr330" path="res://Assets/AUDIO/Wave Switch - Sine.wav" id="29_s2klm"]
+[ext_resource type="AudioStream" uid="uid://drwy5041qu8el" path="res://Assets/AUDIO/Wave Switch Lume 2.wav" id="30_khic2"]
+[ext_resource type="AudioStream" uid="uid://dtidle1oni40o" path="res://Assets/AUDIO/Wave Switch Sine 2.wav" id="31_8u1j7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
@@ -1119,13 +1124,28 @@ stream = ExtResource("23_vl8gu")
 volume_db = -9.0
 parameters/looping = true
 
-[node name="switch" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("24_odm3q")
-volume_db = -2.0
-
 [node name="Tentativejump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("26_pmbmc")
 volume_db = 1.0
+
+[node name="Death" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("27_kh1wn")
+
+[node name="HitGround" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("28_gepi0")
+
+[node name="SwitchLume" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("24_odm3q")
+volume_db = -2.0
+
+[node name="SwitchSine" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("29_s2klm")
+
+[node name="SwitchLume2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("30_khic2")
+
+[node name="SwitchSine2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("31_8u1j7")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]

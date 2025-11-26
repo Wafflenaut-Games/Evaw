@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://8y27bmc3xa2q"]
+[gd_scene load_steps=25 format=3 uid="uid://8y27bmc3xa2q"]
 
 [ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
 [ext_resource type="Script" uid="uid://bhaxa76n8j4dx" path="res://Scripts/Player/world_map_vaw.gd" id="1_ieowi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
 [ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Back.png" id="5_eqemg"]
 [ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Front.png" id="6_b7hab"]
+[ext_resource type="AudioStream" uid="uid://6t84d1f32e4e" path="res://Assets/AUDIO/World Map Walking.wav" id="8_60gf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grdko"]
 size = Vector2(3, 3)
@@ -157,3 +158,6 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_46h5t")
 animation = &"walk_front"
 autoplay = "idle"
+
+[node name="WorldMapWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_60gf1")
