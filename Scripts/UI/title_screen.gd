@@ -16,6 +16,10 @@ func _ready() -> void:
 	init_vol = underlume.volume_db
 
 
+func _process(_delta: float) -> void:
+	underlume.volume_db = init_vol + Global.vol
+
+
 func _on_start_pressed() -> void:
 	Global.paused = false
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
