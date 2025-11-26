@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 	
 	if Global.respawning:
 		global_position = starting_pos
+		collecting = false
 	
 	# End level
 	if Global.is_transitioning:
