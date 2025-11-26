@@ -24,4 +24,4 @@ offset_bottom = 24.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_j3cau")
 theme_override_font_sizes/font_size = 14
-text = "   00"
+text = "000"
