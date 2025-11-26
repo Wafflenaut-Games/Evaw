@@ -27,15 +27,20 @@ func _process(_delta: float) -> void:
 
 
 func change_tune() -> void:
-	if Global.vaw_form == "norm":
-		undermain.volume_db = main_init_vol + Global.vol
-		undersine.volume_db = -80
-		underlume.volume_db = -80
-	if Global.vaw_form == "sine":
+	if Global.water_lvl == "_w":
 		undermain.volume_db = -80
 		undersine.volume_db = sine_init_vol + Global.vol
 		underlume.volume_db = -80
-	if Global.vaw_form == "lume":
-		undermain.volume_db = -80
-		undersine.volume_db = -80
-		underlume.volume_db = lume_init_vol + Global.vol
+	else:
+		if Global.vaw_form == "norm":
+			undermain.volume_db = main_init_vol + Global.vol
+			undersine.volume_db = -80
+			underlume.volume_db = -80
+		if Global.vaw_form == "sine":
+			undermain.volume_db = -80
+			undersine.volume_db = sine_init_vol + Global.vol
+			underlume.volume_db = -80
+		if Global.vaw_form == "lume":
+			undermain.volume_db = -80
+			undersine.volume_db = -80
+			underlume.volume_db = lume_init_vol + Global.vol

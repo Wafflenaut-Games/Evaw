@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=4 uid="uid://b2bgew877g6u"]
+[gd_scene load_steps=37 format=4 uid="uid://b2bgew877g6u"]
 
+[ext_resource type="Script" uid="uid://dynch2fpwoyd7" path="res://Scripts/Lvls/lvl_6.gd" id="1_0tnqr"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_1xjb5"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_iqfa3"]
 [ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="3_7o0w3"]
@@ -127,6 +128,7 @@ _data = {
 }
 
 [node name="Lvl_6" type="Node2D"]
+script = ExtResource("1_0tnqr")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
