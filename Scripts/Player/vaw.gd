@@ -24,8 +24,13 @@ extends CharacterBody2D
 @onready var ground_checker_r: RayCast2D = $ground_checkerR
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walking: AudioStreamPlayer = $SFX/walking
-@onready var switch: AudioStreamPlayer = $SFX/switch
+@onready var switch_lume: AudioStreamPlayer = $SFX/SwitchLume
+@onready var switch_sine: AudioStreamPlayer = $SFX/SwitchSine
+@onready var switch_lume_2: AudioStreamPlayer = $SFX/SwitchLume2
+@onready var switch_sine_2: AudioStreamPlayer = $SFX/SwitchSine2
 @onready var tentative_jump: AudioStreamPlayer = $SFX/Tentativejump
+@onready var death_sfx: AudioStreamPlayer = $SFX/Death
+@onready var hit_grnd: AudioStreamPlayer = $SFX/HitGround
 
 
 const SPEED = 3000.0
@@ -60,18 +65,22 @@ var soft_lock_timer_started = false
 var inactive = true
 var level_begun = false
 var walking_playing
+var hit_ground = false
+var rand_switch = randi_range(1, 2)
 
 var walk_init_vol = 0
 var switch_init_vol = 0
 var jump_init_vol = 0
+var hit_grnd_init_vol = 0
 
 #endregion
 
 
 func _ready() -> void:
 	walk_init_vol = walking.volume_db
-	switch_init_vol = switch.volume_db
+	switch_init_vol = switch_lume.volume_db
 	jump_init_vol = tentative_jump.volume_db
+	hit_grnd_init_vol = hit_grnd.volume_db
 
 
 func _physics_process(delta: float) -> void:
@@ -118,7 +127,6 @@ func formshift() -> void:
 	# Switching to waveform
 	# Mouse controls
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
-		switch.play()
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "sine"
@@ -127,8 +135,14 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
+		
+		if rand_switch == 1:
+			switch_sine.play()
+			rand_switch = randi_range(1, 2)
+		elif rand_switch == 2:
+			switch_sine_2.play()
+			rand_switch = randi_range(1, 2)
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
-		switch.play()
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "lume"
@@ -137,10 +151,15 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
+		
+		if rand_switch == 1:
+			switch_lume.play()
+			rand_switch = randi_range(1, 2)
+		elif rand_switch == 2:
+			switch_lume_2.play()
 	
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
-		switch.play()
 		shockwave()
 		moused_dir = false
 		Global.vaw_form = "sine"
@@ -149,8 +168,14 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
+		
+		if rand_switch == 1:
+			switch_sine.play()
+			rand_switch = randi_range(1, 2)
+		elif rand_switch == 2:
+			switch_sine_2.play()
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
-		switch.play()
+		switch_lume.play()
 		shockwave()
 		moused_dir = false
 		Global.vaw_form = "lume"
@@ -159,6 +184,12 @@ func formshift() -> void:
 		velocity = Vector2(0, 0)
 		dir_choose_timer.start()
 		transforming = true
+		
+		if rand_switch == 1:
+			switch_lume.play()
+			rand_switch = randi_range(1, 2)
+		elif rand_switch == 2:
+			switch_lume_2.play()
 	
 	
 	# Revert to normal or start death in soft lock buffer
@@ -365,6 +396,7 @@ func is_jumping() -> bool:
 
 func is_falling() -> bool:
 	if velocity.y > 0 and Global.vaw_form == "norm":
+		hit_ground = false
 		return true
 	else:
 		return false
@@ -372,6 +404,9 @@ func is_falling() -> bool:
 
 func is_grounded() -> bool:
 	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
+		if not hit_ground:
+			hit_grnd.play()
+			hit_ground = true
 		return true
 	else:
 		return false
@@ -407,6 +442,7 @@ func death() -> void:
 		inactive = true
 		ap.rotation_degrees = 0
 		ap.play("die%s" % Global.water_lvl)
+		death_sfx.play()
 		death_timer.start()
 
 
@@ -451,8 +487,12 @@ func disable_raycasts() -> void:
 
 func sfx_vols() -> void:
 	walking.volume_db = walk_init_vol + Global.vol
-	switch.volume_db = switch_init_vol + Global.vol
+	switch_sine.volume_db = switch_init_vol + Global.vol
+	switch_sine_2.volume_db = switch_init_vol + Global.vol
+	switch_lume.volume_db = switch_init_vol + Global.vol
+	switch_lume_2.volume_db = switch_init_vol + Global.vol
 	tentative_jump.volume_db = jump_init_vol + Global.vol
+	hit_grnd.volume_db = hit_grnd_init_vol + Global.vol
 
 
 func handle_sfx() -> void:
