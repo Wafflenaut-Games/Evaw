@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhmfry0j3clag"]
+[gd_scene load_steps=15 format=4 uid="uid://dhmfry0j3clag"]
 
+[ext_resource type="Script" uid="uid://bl213qkjmmyt3" path="res://Scripts/Lvls/lvl_8.gd" id="1_be3m6"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_eddng"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_fy1ng"]
 [ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="3_gwq1o"]
@@ -14,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://b68prfgrpgapk" path="res://Scenes/Objects/doors.tscn" id="12_7k682"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="13_fy1ng"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(1, -1)
+[node name="Lvl_8" type="Node2D"]
+script = ExtResource("1_be3m6")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -110,26 +111,32 @@ position = Vector2(141, -423)
 [node name="Doors2" parent="Doors" instance=ExtResource("12_7k682")]
 position = Vector2(405, -439)
 
-[node name="OneWayPlatform17" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWays" type="Node" parent="."]
+
+[node name="OneWayPlatform17" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(-143, -531)
 direction = "D"
 
-[node name="OneWayPlatform18" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWayPlatform18" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(-151, -531)
 direction = "D"
 
-[node name="OneWayPlatform53" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWayPlatform53" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(145, -483)
 direction = "D"
 
-[node name="OneWayPlatform54" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWayPlatform54" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(137, -483)
 direction = "D"
 
-[node name="OneWayPlatform19" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWayPlatform19" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(-159, -531)
 direction = "D"
 
-[node name="OneWayPlatform20" parent="." instance=ExtResource("13_fy1ng")]
+[node name="OneWayPlatform20" parent="OneWays" instance=ExtResource("13_fy1ng")]
 position = Vector2(-167, -531)
 direction = "D"
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="Text" type="Node" parent="."]
