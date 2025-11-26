@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctkgetwx63vg2"]
+[gd_scene load_steps=8 format=3 uid="uid://ctkgetwx63vg2"]
 
 [ext_resource type="Script" uid="uid://deia40h2vaif7" path="res://Scripts/Objects/sensor.gd" id="1_j027w"]
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="1_t0eoo"]
+[ext_resource type="Texture2D" uid="uid://drr61rsbg87fc" path="res://Assets/Sensors/sound sensor light.png" id="3_ggrx7"]
+[ext_resource type="AudioStream" uid="uid://bq8gwaalx2sqq" path="res://Assets/AUDIO/Sensor_Activate.mp3" id="4_6pqil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgv8"]
 size = Vector2(6, 6.25)
@@ -26,9 +28,14 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_3dgv8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Unlit" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
 texture = ExtResource("1_t0eoo")
+
+[node name="Lit" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+texture = ExtResource("3_ggrx7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_distance = 4096.0
@@ -38,3 +45,6 @@ color = Color(0.9607843, 0.93333334, 0.6901961, 1)
 energy = 0.4
 texture = SubResource("GradientTexture2D_j027w")
 texture_scale = 0.5
+
+[node name="SensorActivate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6pqil")
