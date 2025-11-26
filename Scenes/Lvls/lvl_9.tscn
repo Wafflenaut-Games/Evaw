@@ -1,0 +1,1313 @@
+[gd_scene load_steps=30 format=4 uid="uid://ha3k8g5wd2dg"]
+
+[ext_resource type="Script" uid="uid://c4j573rrepf7r" path="res://Scripts/Lvls/lvl_1.gd" id="1_m3e0t"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_o4xyl"]
+[ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="3_d3h4a"]
+[ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="4_5gpkm"]
+[ext_resource type="Texture2D" uid="uid://bdorkuovsqv6w" path="res://Assets/Backgrounds/evawbackg1.png" id="5_5hs0m"]
+[ext_resource type="PackedScene" uid="uid://eukl4yxl1xxa" path="res://Scenes/Tools/tileset.tscn" id="6_kvmt2"]
+[ext_resource type="PackedScene" uid="uid://bqtxkpetmr5xg" path="res://Scenes/Tools/respawn.tscn" id="7_bgm6s"]
+[ext_resource type="PackedScene" uid="uid://bevp80kkiyk8q" path="res://Scenes/Tools/exit_portal.tscn" id="8_i38tq"]
+[ext_resource type="PackedScene" uid="uid://ohaps7u6r2k0" path="res://Scenes/Player/vaw.tscn" id="9_vruww"]
+[ext_resource type="PackedScene" uid="uid://q8k2rmqdt40a" path="res://Scenes/Objects/feather.tscn" id="10_hl81l"]
+[ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="11_yo1nb"]
+[ext_resource type="Texture2D" uid="uid://clm5uhdwjo67k" path="res://Assets/Interactables/lanternonfire1-2.png" id="12_ph7ng"]
+[ext_resource type="Texture2D" uid="uid://cjhicrnmadw3h" path="res://Assets/Interactables/lanternonfire1-3.png" id="13_s6a2e"]
+[ext_resource type="Texture2D" uid="uid://sealhb7v38rw" path="res://Assets/Interactables/lanternonfire1-4.png" id="14_b0mic"]
+[ext_resource type="Texture2D" uid="uid://dr2iqh1int1mf" path="res://Assets/Interactables/lanternonfire1-5.png" id="15_10sym"]
+[ext_resource type="Texture2D" uid="uid://byh6ur5xetp6o" path="res://Assets/Interactables/lanternonfire1-6.png" id="16_yiar0"]
+[ext_resource type="Texture2D" uid="uid://h5koom6xyk20" path="res://Assets/Interactables/lanternonfire1-7.png" id="17_xsxqe"]
+[ext_resource type="Texture2D" uid="uid://b4jfr1tyjvl66" path="res://Assets/Interactables/lanternonfire1-8.png" id="18_756hb"]
+[ext_resource type="Texture2D" uid="uid://ch020mlkb42y0" path="res://Assets/Interactables/lanternonfire1-9.png" id="19_8wowo"]
+[ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="20_v62ld"]
+[ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="21_m3e0t"]
+[ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="22_o4xyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5at8g"]
+shader = ExtResource("11_yo1nb")
+shader_parameter/waveAmplitude = 0.29600001406
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 10.0
+shader_parameter/verticalWave = false
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 4.00000019
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = true
+shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptdgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ph7ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s6a2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b0mic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_10sym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yiar0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xsxqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_756hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8wowo")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_dtph1"]
+offsets = PackedFloat32Array(0.05706522, 0.6032609)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uurfc"]
+gradient = SubResource("Gradient_dtph1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_urfnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [NodePath("..")]
+}
+
+[sub_resource type="Animation" id="Animation_b81ne"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [NodePath("..")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyjwu"]
+_data = {
+&"RESET": SubResource("Animation_urfnf"),
+&"fire": SubResource("Animation_b81ne")
+}
+
+[node name="Lvl_1" type="Node2D"]
+visibility_layer = 3
+script = ExtResource("1_m3e0t")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 3
+motion_mirroring = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+visibility_layer = 3
+position = Vector2(42.5, 78.00006)
+scale = Vector2(3.7700002, 13.006668)
+texture = ExtResource("2_o4xyl")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer"]
+color = Color(0.45415282, 0.99841964, 1.179842, 1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+visibility_layer = 3
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+visibility_layer = 3
+position = Vector2(56, 0)
+texture = ExtResource("3_d3h4a")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 3
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+visibility_layer = 3
+position = Vector2(56, 0)
+texture = ExtResource("4_5gpkm")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+visibility_layer = 3
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+visibility_layer = 3
+position = Vector2(56, 0)
+texture = ExtResource("5_5hs0m")
+
+[node name="Tileset" parent="." instance=ExtResource("6_kvmt2")]
+visibility_layer = 3
+tile_map_data = PackedByteArray("AAD8/wEAAAAPAAEAAAD9/wEAAAAPAAEAAAD+/wEAAAAPAAEAAAD//wEAAAAPAAEAAAAAAAEAAAAPAAEAAAABAAEAAAAPAAEAAAACAAEAAAAPAAEAAAADAAAAAAAOAAEAAAAFAP//AAAOAAEAAAAGAP3/AAAOAAIAAAAGAP7/AAAOAAIAAAAFAPz/AAAOAAMAAAACAPv/AAAOAAMAAAADAPv/AAAPAAMAAAAEAPv/AAAPAAMAAAABAPr/AAAOAAMAAAAAAPn/AAAOAAMAAAAEAAAAAAAPAAEAAAADAAEAAAASAAIAAAAEAAEAAAAEAAgAAAAFAAEAAAAPAAIAAAAGAAEAAAAEAAgAAAAHAAEAAAAPAAIAAAAIAAEAAAAEAAgAAAAFAAAAAAASAAIAAAAGAAAAAAAEAAgAAAAHAAAAAAAEAAgAAAAIAAAAAAAEAAgAAAAGAP//AAASAAIAAAAHAP//AAAPAAIAAAAIAP//AAAEAAgAAAAHAP3/AAAEAAgAAAAHAP7/AAAEAAgAAAAIAP3/AAAEAAgAAAAIAP7/AAAEAAgAAAAGAPv/AAAEAAgAAAAGAPz/AAAEAAgAAAAHAPv/AAAEAAgAAAAHAPz/AAAPAAIAAAAIAPv/AAAEAAgAAAAIAPz/AAAEAAgAAAACAPr/AAASAAEAAAADAPr/AAAPAAIAAAAEAPr/AAAEAAgAAAAFAPr/AAAEAAgAAAAGAPr/AAAEAAgAAAAHAPr/AAAEAAgAAAAIAPr/AAAEAAgAAAAFAPv/AAASAAEAAAABAPn/AAASAAEAAAACAPn/AAAEAAgAAAADAPn/AAAEAAgAAAAEAPn/AAAEAAgAAAAFAPn/AAAEAAgAAAAGAPn/AAAPAAIAAAAHAPn/AAAEAAgAAAAIAPn/AAAEAAgAAAABAAIAAAAPAAIAAAD9/wIAAAAPAAIAAAD8/wIAAAAEAAgAAAD+/wIAAAAEAAgAAAD//wIAAAAEAAgAAAAAAAIAAAAEAAgAAAACAAIAAAAEAAgAAAADAAIAAAAEAAgAAAAEAAIAAAAEAAgAAAAFAAIAAAAEAAgAAAAGAAIAAAAEAAgAAAAHAAIAAAAEAAgAAAAIAAIAAAAEAAgAAAAAAPj/AAAOAAIAAAD+//b/AAAPAAMAAAD9//b/AAAOAAMAAAD8//X/AAAOAAMAAAD///f/AAAOAAMAAAAAAPf/AAASAAEAAAD///b/AAASAAEAAAD7/wEAAAAOAAEAAAD6/wIAAAAPAAEAAAD5/wIAAAAOAAEAAAD3/wMAAAAPAAEAAAD2/wMAAAAPAAEAAAD1/wMAAAAOAAEAAAD4/wMAAAAPAAEAAAD0/wQAAAAPAAEAAADz/wQAAAAPAAEAAAD7/wIAAAASAAIAAAD5/wMAAAASAAIAAAD1/wQAAAASAAIAAADy/wQAAAAPAAEAAADx/wQAAAAPAAEAAADw/wQAAAAPAAEAAADv/wQAAAAPAAEAAADu/wQAAAAOAAEAAADu/wUAAAAOAAIAAADt/wYAAAAOAAEAAADt/wcAAAAOAAIAAADt/wgAAAAOAAIAAADt/wkAAAAOAAIAAADu/wYAAAASAAIAAADs/woAAAAPAAEAAADr/woAAAAOAAEAAADq/wsAAAAPAAEAAADp/wsAAAAPAAEAAADo/wsAAAAPAAEAAADn/wsAAAAPAAEAAADm/wsAAAAPAAEAAADl/wsAAAAPAAEAAADk/wsAAAAPAAEAAADj/wsAAAAPAAEAAADi/wsAAAAPAAEAAADh/wsAAAAPAAEAAADg/wsAAAAPAAEAAADf/wsAAAAPAAEAAADe/wsAAAAPAAEAAADd/wsAAAAPAAEAAADc/wsAAAAPAAEAAADb/wsAAAAPAAEAAADZ/wwAAAAPAAEAAADY/wwAAAAPAAEAAADX/wwAAAAPAAEAAADW/wwAAAAPAAEAAADV/wwAAAAPAAEAAADU/wwAAAAPAAEAAADT/wwAAAAPAAEAAADa/wsAAAAOAAEAAADk/wkAAAALAAQAAADj/wgAAAAJAAUAAADj/wkAAAAHAAcAAADi/wgAAAAHAAcAAADi/wcAAAAJAAUAAADh/wYAAAAJAAUAAADg/wYAAAALAAQAAADf/wYAAAALAAQAAADh/wcAAAAHAAcAAADe/wYAAAAHAAUAAADd/wcAAAAHAAUAAADc/wgAAAAHAAUAAADc/wkAAAAKAAYAAADd/wgAAAAJAAcAAADe/wcAAAAJAAcAAADc/woAAAAKAAYAAADk/woAAAAAAAgAAADl/wkAAAAMAAQAAADN/woAAAAAAAgAAADM/woAAAAPAAEAAADL/woAAAAPAAEAAADW/woAAAACAAkAAADV/woAAAACAAgAAADU/woAAAAAAAcAAADU/wkAAAACAAUAAADT/wgAAAACAAUAAADS/wcAAAACAAUAAADR/wcAAAACAAgAAADQ/wcAAAACAAgAAADP/wcAAAAAAAUAAADT/wkAAAAAAAcAAADS/wgAAAAAAAcAAADO/wgAAAAAAAUAAADN/wkAAAAAAAUAAADP/wgAAAACAAcAAADO/wkAAAACAAcAAADS/wwAAAAPAAEAAADR/wwAAAAPAAEAAADQ/wwAAAAOAAEAAADP/wwAAAAPAAkAAADO/wwAAAANAAkAAADN/wsAAAAAAAgAAADN/wwAAAAQAAEAAADM/wsAAAAEAAgAAADM/wwAAAARAAIAAADL/wsAAAAPAAIAAADL/wwAAAAEAAgAAADV/wsAAAAMAAkAAADO/w0AAAAHAAYAAADO/w4AAAAHAAYAAADO/w8AAAAHAAYAAADO/xAAAAAHAAYAAADO/xEAAAAHAAYAAADO/xIAAAAHAAYAAADO/xMAAAAHAAYAAADO/xQAAAAHAAYAAADP/w0AAAAJAAYAAADP/w4AAAAJAAYAAADP/w8AAAAJAAYAAADP/xAAAAAJAAYAAADP/xEAAAAJAAYAAADP/xIAAAAJAAYAAADP/xMAAAAJAAYAAADP/xQAAAAJAAYAAADP/xUAAAAJAAYAAADP/xYAAAAJAAYAAADP/xcAAAAJAAYAAADP/xgAAAAJAAYAAADO/xUAAAAHAAYAAADO/xYAAAAHAAYAAADO/xcAAAAHAAYAAADO/xgAAAAHAAYAAADP/xkAAAAJAAcAAADO/xkAAAAHAAcAAADN/w0AAAAQAAIAAADN/w4AAAAQAAIAAADN/w8AAAAQAAIAAADN/xAAAAAQAAIAAADN/xEAAAAQAAIAAADN/xIAAAAQAAIAAADQ/w0AAAAOAAIAAADQ/w4AAAAOAAIAAADQ/w8AAAAOAAIAAADQ/xAAAAAOAAIAAADQ/xEAAAAOAAIAAADQ/xIAAAAOAAIAAADQ/xMAAAAOAAIAAADQ/xQAAAAOAAIAAADQ/xUAAAAOAAIAAADQ/xYAAAAOAAIAAADQ/xcAAAAOAAIAAADQ/xgAAAAOAAIAAADQ/xkAAAAOAAIAAADN/xMAAAAQAAIAAADN/xQAAAAQAAIAAADN/xUAAAAQAAIAAADN/xYAAAAQAAIAAADN/xcAAAAQAAIAAADN/xgAAAAQAAIAAADN/xkAAAAQAAIAAADN/xoAAAAQAAIAAADN/xsAAAAQAAIAAADN/xwAAAAQAAIAAADN/x0AAAAQAAIAAADQ/xoAAAAOAAIAAADQ/xsAAAAOAAIAAADQ/xwAAAAOAAIAAADQ/x0AAAAOAAIAAADQ/x4AAAAOAAIAAADQ/x8AAAAOAAIAAADQ/yAAAAAOAAIAAADQ/yEAAAAOAAIAAADQ/yIAAAAOAAIAAADQ/yMAAAAOAAIAAADN/x4AAAAQAAIAAADN/x8AAAAQAAIAAADN/yAAAAAQAAIAAADN/yEAAAAQAAIAAADN/yIAAAAQAAIAAADN/yMAAAAQAAIAAADQ/yQAAAAOAAMAAADN/yQAAAAQAAMAAADM/yQAAAAPAAMAAADL/yUAAAAQAAIAAADL/yYAAAAQAAIAAADL/ycAAAAQAAIAAADL/ygAAAAQAAIAAADM/ykAAAAPAAEAAADN/ykAAAAPAAEAAADO/ykAAAAPAAEAAADP/ykAAAAPAAEAAADQ/ykAAAAPAAEAAADL/yQAAAARAAEAAADL/ykAAAARAAIAAADR/ykAAAAPAAEAAADS/ykAAAAPAAEAAADT/ykAAAAPAAEAAADU/ykAAAAPAAEAAADR/yQAAAAPAAMAAADS/yQAAAAPAAMAAADT/yQAAAAPAAMAAADU/yQAAAAPAAMAAADS/ygAAAAMAAoAAADS/yYAAAAMAAkAAADS/ycAAAAMAAkAAADS/yUAAAAMAAgAAADV/yUAAAAOAAMAAADW/yYAAAAOAAMAAADX/ycAAAAOAAMAAADV/ykAAAAPAAEAAADW/ykAAAAPAAEAAADX/ykAAAAPAAEAAADY/ykAAAAPAAEAAADZ/ykAAAAQAAEAAADY/ycAAAAPAAMAAADZ/ycAAAAQAAMAAADN/ygAAAACAAUAAADM/ygAAAAAAAUAAADZ/yYAAAAQAAEAAADY/yYAAAAPAAEAAADX/yMAAAAQAAIAAADX/yQAAAAQAAIAAADX/yUAAAAQAAIAAADY/yIAAAAPAAMAAADZ/yIAAAAPAAMAAADa/yIAAAAPAAMAAADZ/yoAAAAQAAIAAADZ/ysAAAAQAAIAAADZ/ywAAAAQAAIAAADd/yYAAAAOAAEAAADe/yYAAAAPAAEAAADf/yYAAAAPAAEAAADg/yYAAAAPAAEAAADd/ycAAAAOAAIAAADd/ygAAAAOAAMAAADZ/y0AAAAQAAIAAADZ/y4AAAAQAAIAAADZ/y8AAAAQAAIAAADZ/zAAAAAQAAIAAADd/y4AAAAOAAEAAADd/y8AAAAOAAIAAADd/zAAAAAOAAIAAADe/y4AAAAPAAEAAADf/y4AAAAPAAEAAADg/y4AAAAPAAEAAADh/y4AAAAPAAEAAADi/y4AAAAPAAEAAADj/y4AAAAPAAEAAADk/y4AAAAPAAEAAADl/y4AAAAPAAEAAADm/y4AAAAPAAEAAADe/ygAAAAPAAMAAADf/ygAAAAPAAMAAADg/ygAAAAPAAMAAADh/ygAAAAPAAMAAADi/ygAAAAPAAMAAADj/ygAAAAPAAMAAADk/ygAAAAPAAMAAADl/ygAAAAPAAMAAADm/ygAAAAPAAMAAADn/ygAAAAPAAMAAADo/ygAAAAPAAMAAADn/y4AAAAPAAEAAADo/y4AAAAPAAEAAADg/ykAAAAMAAgAAADg/yoAAAAMAAkAAADg/ysAAAAMAAkAAADg/ywAAAAMAAoAAADm/ykAAAAKAAUAAADm/yoAAAAKAAYAAADm/ysAAAAKAAYAAADm/ywAAAAKAAcAAADp/y4AAAAPAAEAAADq/y4AAAAPAAEAAADr/y4AAAAPAAEAAADs/y4AAAAPAAEAAADp/ygAAAAPAAMAAADq/ykAAAAOAAIAAADq/yoAAAAOAAMAAADr/ykAAAAPAAIAAADr/yoAAAAPAAMAAADs/ykAAAAQAAIAAADs/yoAAAAQAAMAAADq/ygAAAASAAEAAADs/ygAAAARAAEAAADr/ysAAAAAAAUAAADs/ysAAAACAAUAAADr/ywAAAAAAAcAAADs/ywAAAACAAcAAADt/y4AAAAPAAEAAADu/y4AAAAPAAEAAADv/y4AAAAPAAEAAADw/y4AAAAPAAEAAAA=")
+
+[node name="Respawn" parent="." instance=ExtResource("7_bgm6s")]
+visibility_layer = 3
+
+[node name="ExitPortal" parent="." instance=ExtResource("8_i38tq")]
+visibility_layer = 3
+position = Vector2(1332, -44)
+
+[node name="Vaw" parent="." instance=ExtResource("9_vruww")]
+visibility_layer = 3
+
+[node name="feather" parent="." instance=ExtResource("10_hl81l")]
+visibility_layer = 3
+position = Vector2(-312, 296)
+
+[node name="Decorations" type="Node2D" parent="."]
+visible = false
+
+[node name="Lantern" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(213, 43)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern4" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(927, -53)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern4"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern4"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern5" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(1035, -84)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern5"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern5"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern6" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(1323, -85)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern6"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern6"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern7" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(1286, -94)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern7"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern7"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern2" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(273, 12)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="Lantern3" type="AnimatedSprite2D" parent="Decorations"]
+material = SubResource("ShaderMaterial_5at8g")
+position = Vector2(294, -94)
+sprite_frames = SubResource("SpriteFrames_ptdgh")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern3"]
+color = Color(1, 0.40000004, 0, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_uurfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern3"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyjwu")
+}
+
+[node name="WaterBoundaries" type="Node2D" parent="."]
+visible = false
+
+[node name="WaterBoundary" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(353, 100)
+
+[node name="WaterBoundary2" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(361, 100)
+
+[node name="WaterBoundary3" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(369, 100)
+
+[node name="WaterBoundary4" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(377, 100)
+
+[node name="WaterBoundary5" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(385, 100)
+
+[node name="WaterBoundary6" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(393, 100)
+
+[node name="WaterBoundary7" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(401, 100)
+
+[node name="WaterBoundary8" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(409, 100)
+
+[node name="WaterBoundary9" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(417, 100)
+
+[node name="WaterBoundary10" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(425, 100)
+
+[node name="WaterBoundary11" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(433, 100)
+
+[node name="WaterBoundary12" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(441, 100)
+
+[node name="WaterBoundary13" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(449, 100)
+
+[node name="WaterBoundary14" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(457, 100)
+
+[node name="WaterBoundary15" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(465, 100)
+
+[node name="WaterBoundary16" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(473, 100)
+
+[node name="WaterBoundary17" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(481, 100)
+
+[node name="WaterBoundary18" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(489, 100)
+
+[node name="WaterBoundary19" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(497, 100)
+
+[node name="WaterBoundary20" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(505, 100)
+
+[node name="WaterBoundary21" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(513, 100)
+
+[node name="WaterBoundary22" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(521, 100)
+
+[node name="WaterBoundary23" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(529, 100)
+
+[node name="WaterBoundary24" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(537, 100)
+
+[node name="WaterBoundary25" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(545, 100)
+
+[node name="WaterBoundary26" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(553, 100)
+
+[node name="WaterBoundary27" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(561, 100)
+
+[node name="WaterBoundary28" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(569, 100)
+
+[node name="WaterBoundary29" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(577, 100)
+
+[node name="WaterBoundary30" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(585, 100)
+
+[node name="WaterBoundary31" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(593, 100)
+
+[node name="WaterBoundary32" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(601, 100)
+
+[node name="WaterBoundary33" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(609, 100)
+
+[node name="WaterBoundary34" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(617, 100)
+
+[node name="WaterBoundary35" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(625, 100)
+
+[node name="WaterBoundary36" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(633, 100)
+
+[node name="WaterBoundary37" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(305, 100)
+
+[node name="WaterBoundary38" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(313, 100)
+
+[node name="WaterBoundary39" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(321, 100)
+
+[node name="WaterBoundary40" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(329, 100)
+
+[node name="WaterBoundary41" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(337, 100)
+
+[node name="WaterBoundary42" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(345, 100)
+
+[node name="WaterBoundary43" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(17, 100)
+
+[node name="WaterBoundary44" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(25, 100)
+
+[node name="WaterBoundary45" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(33, 100)
+
+[node name="WaterBoundary46" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(41, 100)
+
+[node name="WaterBoundary47" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(49, 100)
+
+[node name="WaterBoundary48" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(57, 100)
+
+[node name="WaterBoundary49" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(65, 100)
+
+[node name="WaterBoundary50" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(73, 100)
+
+[node name="WaterBoundary51" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(81, 100)
+
+[node name="WaterBoundary52" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(89, 100)
+
+[node name="WaterBoundary53" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(97, 100)
+
+[node name="WaterBoundary54" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(105, 100)
+
+[node name="WaterBoundary55" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(113, 100)
+
+[node name="WaterBoundary56" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(121, 100)
+
+[node name="WaterBoundary57" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(129, 100)
+
+[node name="WaterBoundary58" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(137, 100)
+
+[node name="WaterBoundary59" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(145, 100)
+
+[node name="WaterBoundary60" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(153, 100)
+
+[node name="WaterBoundary61" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(161, 100)
+
+[node name="WaterBoundary62" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(169, 100)
+
+[node name="WaterBoundary63" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(177, 100)
+
+[node name="WaterBoundary64" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(185, 100)
+
+[node name="WaterBoundary65" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(193, 100)
+
+[node name="WaterBoundary66" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(201, 100)
+
+[node name="WaterBoundary67" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(209, 100)
+
+[node name="WaterBoundary68" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(217, 100)
+
+[node name="WaterBoundary69" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(225, 100)
+
+[node name="WaterBoundary70" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(233, 100)
+
+[node name="WaterBoundary71" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(241, 100)
+
+[node name="WaterBoundary72" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(249, 100)
+
+[node name="WaterBoundary73" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(257, 100)
+
+[node name="WaterBoundary74" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(265, 100)
+
+[node name="WaterBoundary75" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(273, 100)
+
+[node name="WaterBoundary76" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(281, 100)
+
+[node name="WaterBoundary77" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(289, 100)
+
+[node name="WaterBoundary78" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(297, 100)
+
+[node name="WaterBoundary79" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(-31, 100)
+
+[node name="WaterBoundary80" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(-23, 100)
+
+[node name="WaterBoundary81" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(-15, 100)
+
+[node name="WaterBoundary82" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(-7, 100)
+
+[node name="WaterBoundary83" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1, 100)
+
+[node name="WaterBoundary84" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(9, 100)
+
+[node name="WaterBoundary85" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(689, 100)
+
+[node name="WaterBoundary86" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(697, 100)
+
+[node name="WaterBoundary87" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(705, 100)
+
+[node name="WaterBoundary88" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(713, 100)
+
+[node name="WaterBoundary89" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(721, 100)
+
+[node name="WaterBoundary90" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(729, 100)
+
+[node name="WaterBoundary91" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(737, 100)
+
+[node name="WaterBoundary92" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(745, 100)
+
+[node name="WaterBoundary93" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(753, 100)
+
+[node name="WaterBoundary94" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(761, 100)
+
+[node name="WaterBoundary95" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(769, 100)
+
+[node name="WaterBoundary96" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(777, 100)
+
+[node name="WaterBoundary97" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(785, 100)
+
+[node name="WaterBoundary98" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(793, 100)
+
+[node name="WaterBoundary99" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(801, 100)
+
+[node name="WaterBoundary100" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(809, 100)
+
+[node name="WaterBoundary101" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(817, 100)
+
+[node name="WaterBoundary102" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(825, 100)
+
+[node name="WaterBoundary103" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(833, 100)
+
+[node name="WaterBoundary104" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(841, 100)
+
+[node name="WaterBoundary105" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(849, 100)
+
+[node name="WaterBoundary106" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(857, 100)
+
+[node name="WaterBoundary107" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(865, 100)
+
+[node name="WaterBoundary108" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(873, 100)
+
+[node name="WaterBoundary109" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(881, 100)
+
+[node name="WaterBoundary110" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(889, 100)
+
+[node name="WaterBoundary111" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(897, 100)
+
+[node name="WaterBoundary112" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(905, 100)
+
+[node name="WaterBoundary113" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(913, 100)
+
+[node name="WaterBoundary114" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(921, 100)
+
+[node name="WaterBoundary115" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(929, 100)
+
+[node name="WaterBoundary116" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(937, 100)
+
+[node name="WaterBoundary117" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(945, 100)
+
+[node name="WaterBoundary118" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(953, 100)
+
+[node name="WaterBoundary119" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(961, 100)
+
+[node name="WaterBoundary120" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(969, 100)
+
+[node name="WaterBoundary121" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(641, 100)
+
+[node name="WaterBoundary122" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(649, 100)
+
+[node name="WaterBoundary123" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(657, 100)
+
+[node name="WaterBoundary124" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(665, 100)
+
+[node name="WaterBoundary125" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(673, 100)
+
+[node name="WaterBoundary126" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(681, 100)
+
+[node name="WaterBoundary127" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1025, 100)
+
+[node name="WaterBoundary128" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1033, 100)
+
+[node name="WaterBoundary129" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1041, 100)
+
+[node name="WaterBoundary130" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1049, 100)
+
+[node name="WaterBoundary131" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1057, 100)
+
+[node name="WaterBoundary132" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1065, 100)
+
+[node name="WaterBoundary133" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1073, 100)
+
+[node name="WaterBoundary134" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1081, 100)
+
+[node name="WaterBoundary135" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1089, 100)
+
+[node name="WaterBoundary136" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1097, 100)
+
+[node name="WaterBoundary137" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1105, 100)
+
+[node name="WaterBoundary138" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1113, 100)
+
+[node name="WaterBoundary139" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1121, 100)
+
+[node name="WaterBoundary140" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1129, 100)
+
+[node name="WaterBoundary141" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1137, 100)
+
+[node name="WaterBoundary142" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1145, 100)
+
+[node name="WaterBoundary143" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1153, 100)
+
+[node name="WaterBoundary144" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1161, 100)
+
+[node name="WaterBoundary145" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1169, 100)
+
+[node name="WaterBoundary146" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1177, 100)
+
+[node name="WaterBoundary147" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1185, 100)
+
+[node name="WaterBoundary148" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1193, 100)
+
+[node name="WaterBoundary149" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1201, 100)
+
+[node name="WaterBoundary150" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1209, 100)
+
+[node name="WaterBoundary151" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1217, 100)
+
+[node name="WaterBoundary152" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1225, 100)
+
+[node name="WaterBoundary153" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1233, 100)
+
+[node name="WaterBoundary154" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1241, 100)
+
+[node name="WaterBoundary155" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1249, 100)
+
+[node name="WaterBoundary156" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1257, 100)
+
+[node name="WaterBoundary157" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1265, 100)
+
+[node name="WaterBoundary158" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1273, 100)
+
+[node name="WaterBoundary159" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1281, 100)
+
+[node name="WaterBoundary160" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1289, 100)
+
+[node name="WaterBoundary161" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1297, 100)
+
+[node name="WaterBoundary162" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1305, 100)
+
+[node name="WaterBoundary163" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(977, 100)
+
+[node name="WaterBoundary164" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(985, 100)
+
+[node name="WaterBoundary165" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(993, 100)
+
+[node name="WaterBoundary166" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1001, 100)
+
+[node name="WaterBoundary167" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1009, 100)
+
+[node name="WaterBoundary168" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1017, 100)
+
+[node name="WaterBoundary169" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1361, 100)
+
+[node name="WaterBoundary170" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1369, 100)
+
+[node name="WaterBoundary171" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1377, 100)
+
+[node name="WaterBoundary172" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1385, 100)
+
+[node name="WaterBoundary173" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1393, 100)
+
+[node name="WaterBoundary174" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1401, 100)
+
+[node name="WaterBoundary175" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1409, 100)
+
+[node name="WaterBoundary176" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1417, 100)
+
+[node name="WaterBoundary177" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1425, 100)
+
+[node name="WaterBoundary178" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1433, 100)
+
+[node name="WaterBoundary179" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1441, 100)
+
+[node name="WaterBoundary180" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1449, 100)
+
+[node name="WaterBoundary181" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1457, 100)
+
+[node name="WaterBoundary182" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1465, 100)
+
+[node name="WaterBoundary183" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1473, 100)
+
+[node name="WaterBoundary184" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1481, 100)
+
+[node name="WaterBoundary185" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1489, 100)
+
+[node name="WaterBoundary186" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1497, 100)
+
+[node name="WaterBoundary187" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1505, 100)
+
+[node name="WaterBoundary188" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1513, 100)
+
+[node name="WaterBoundary189" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1521, 100)
+
+[node name="WaterBoundary190" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1529, 100)
+
+[node name="WaterBoundary191" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1537, 100)
+
+[node name="WaterBoundary192" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1545, 100)
+
+[node name="WaterBoundary193" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1553, 100)
+
+[node name="WaterBoundary194" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1561, 100)
+
+[node name="WaterBoundary195" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1569, 100)
+
+[node name="WaterBoundary196" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1577, 100)
+
+[node name="WaterBoundary197" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1585, 100)
+
+[node name="WaterBoundary198" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1593, 100)
+
+[node name="WaterBoundary199" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1601, 100)
+
+[node name="WaterBoundary200" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1609, 100)
+
+[node name="WaterBoundary201" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1617, 100)
+
+[node name="WaterBoundary202" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1625, 100)
+
+[node name="WaterBoundary203" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1633, 100)
+
+[node name="WaterBoundary204" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1641, 100)
+
+[node name="WaterBoundary205" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1313, 100)
+
+[node name="WaterBoundary206" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1321, 100)
+
+[node name="WaterBoundary207" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1329, 100)
+
+[node name="WaterBoundary208" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1337, 100)
+
+[node name="WaterBoundary209" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1345, 100)
+
+[node name="WaterBoundary210" parent="WaterBoundaries" instance=ExtResource("20_v62ld")]
+z_index = 1
+position = Vector2(1353, 100)
+
+[node name="SEKIPS" type="Node2D" parent="."]
+
+[node name="Galss" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-396, 284)
+type = "glass"
+direction = "U"
+
+[node name="Galss2" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-388, 284)
+type = "glass"
+direction = "U"
+
+[node name="Galss3" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-396, 292)
+type = "glass"
+direction = "D"
+
+[node name="Galss4" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-388, 292)
+type = "glass"
+direction = "D"
+
+[node name="Clay" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-300, 388)
+type = "clay"
+direction = "U"
+
+[node name="Clay2" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-292, 388)
+type = "clay"
+direction = "U"
+
+[node name="Clay3" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-284, 388)
+type = "clay"
+direction = "U"
+
+[node name="Clay4" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-276, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay5" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-268, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay6" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-260, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay7" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-252, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay8" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-244, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay9" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-236, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay10" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-228, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay11" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-220, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay12" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-212, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay13" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-204, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay14" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-196, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay15" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-188, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay16" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-180, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay17" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-172, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay18" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-164, 365)
+type = "clay"
+direction = "U"
+
+[node name="Clay19" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-156, 365)
+type = "clay"
+direction = "U"
+
+[node name="Steel" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-228, 357)
+type = "steel"
+direction = "L"
+
+[node name="Steel2" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-228, 349)
+type = "steel"
+direction = "L"
+
+[node name="Steel3" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-228, 341)
+type = "steel"
+direction = "L"
+
+[node name="Steel4" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-172, 348)
+type = "steel"
+direction = "L"
+
+[node name="Steel5" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-172, 356)
+type = "steel"
+direction = "L"
+
+[node name="Glass5" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
+position = Vector2(-228, 333)
+type = "Glass"
+direction = "L"
+
+[node name="One wayisie" type="Node2D" parent="."]
+
+[node name="OneWayPlatform" parent="One wayisie" instance=ExtResource("22_o4xyl")]
+position = Vector2(-300, 308)
+
+[node name="OneWayPlatform2" parent="One wayisie" instance=ExtResource("22_o4xyl")]
+position = Vector2(-292, 308)
+
+[node name="OneWayPlatform3" parent="One wayisie" instance=ExtResource("22_o4xyl")]
+position = Vector2(-284, 308)
