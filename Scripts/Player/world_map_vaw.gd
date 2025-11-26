@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var transitions: AnimatedSprite2D = $"../Transitions"
 @onready var level_display: Node2D = $"../level_display"
 @onready var open_timer: Timer = $"../OpenTimer"
+@onready var walking: AudioStreamPlayer = $WorldMapWalking
 
 
 const SPEED = 1000.0
@@ -42,15 +43,19 @@ func move(delta) -> void:
 		if Input.is_action_just_pressed("up") and Global.world_map_dirs.has("up"):
 			velocity.y = -SPEED * delta
 			Global.world_map_dirs = []
+			walking.play()
 		elif Input.is_action_just_pressed("down") and Global.world_map_dirs.has("down"):
 			velocity.y = SPEED * delta
 			Global.world_map_dirs = []
+			walking.play()
 		elif Input.is_action_just_pressed("left") and Global.world_map_dirs.has("left"):
 			velocity.x = -SPEED * delta
 			Global.world_map_dirs = []
+			walking.play()
 		elif Input.is_action_just_pressed("right") and Global.world_map_dirs.has("right"):
 			velocity.x = SPEED * delta
 			Global.world_map_dirs = []
+			walking.play()
 
 
 func handle_anims() -> void:

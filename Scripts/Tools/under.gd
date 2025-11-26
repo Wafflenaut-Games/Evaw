@@ -6,12 +6,18 @@ extends Node
 @onready var undermain: AudioStreamPlayer = $Undermain
 @onready var undersine: AudioStreamPlayer = $Undersine
 @onready var underlume: AudioStreamPlayer = $Underlume
+@onready var icemain: AudioStreamPlayer = $Icemain
+@onready var icesine: AudioStreamPlayer = $Icesine
+@onready var icelume: AudioStreamPlayer = $Icelume
 
 const INIT_VOL = 0
 
 var main_init_vol = 0
 var sine_init_vol = 0
 var lume_init_vol = 0
+var ice_main_init_vol = 0
+var ice_sine_init_vol = 0
+var ice_lume_init_vol = 0
 
 #endregion
 
@@ -20,6 +26,9 @@ func _ready() -> void:
 	main_init_vol = undermain.volume_db
 	sine_init_vol = undersine.volume_db
 	lume_init_vol = underlume.volume_db
+	ice_main_init_vol = icemain.volume_db
+	ice_sine_init_vol = icesine.volume_db
+	ice_lume_init_vol = icelume.volume_db
 
 
 func _process(_delta: float) -> void:
@@ -31,6 +40,19 @@ func change_tune() -> void:
 		undermain.volume_db = -80
 		undersine.volume_db = sine_init_vol + Global.vol
 		underlume.volume_db = -80
+	elif Global.ice_lvl:
+		if Global.vaw_form == "norm":
+			icemain.volume_db = ice_main_init_vol + Global.vol
+			icesine.volume_db = -80
+			icelume.volume_db = -80
+		if Global.vaw_form == "sine":
+			icemain.volume_db = -80
+			icesine.volume_db = ice_sine_init_vol + Global.vol
+			icelume.volume_db = -80
+		if Global.vaw_form == "lume":
+			icemain.volume_db = -80
+			icesine.volume_db = -80
+			icelume.volume_db = ice_lume_init_vol + Global.vol
 	else:
 		if Global.vaw_form == "norm":
 			undermain.volume_db = main_init_vol + Global.vol
