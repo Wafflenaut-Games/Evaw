@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhxrfxl1y1xdq"]
+[gd_scene load_steps=12 format=3 uid="uid://bhxrfxl1y1xdq"]
 
 [ext_resource type="Script" uid="uid://ccp4rutk43hj6" path="res://Scripts/UI/pause_menu.gd" id="1_pr555"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_8dpcc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cmg3ayhqc4hdy" path="res://Scenes/UI/death_coutner.tscn" id="7_1yf2f"]
 [ext_resource type="PackedScene" uid="uid://cersl1fr0sii5" path="res://Scenes/UI/speedrun_timer.tscn" id="7_8dpcc"]
 [ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="8_qjk66"]
+[ext_resource type="AudioStream" uid="uid://cw5qmcv2p3kqi" path="res://Assets/AUDIO/Underlume.wav" id="10_rqg0w"]
 
 [sub_resource type="Theme" id="Theme_r5twg"]
 
@@ -129,6 +130,9 @@ offset_bottom = -60.0
 [node name="OptionsUI" parent="." instance=ExtResource("8_qjk66")]
 visible = false
 layout_mode = 1
+
+[node name="Underlume" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rqg0w")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RESUME" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
