@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drwy5041qu8el"
+path="res://.godot/imported/Wave Switch Lume 2.wav-2a22dd9e77e899aadf49fd81b765caf0.sample"
+
+[deps]
+
+source_file="res://Assets/AUDIO/Wave Switch Lume 2.wav"
+dest_files=["res://.godot/imported/Wave Switch Lume 2.wav-2a22dd9e77e899aadf49fd81b765caf0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

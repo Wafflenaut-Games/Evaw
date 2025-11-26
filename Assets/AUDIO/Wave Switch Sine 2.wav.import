@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtidle1oni40o"
+path="res://.godot/imported/Wave Switch Sine 2.wav-db748ecfae9ce1a24c51a5a873f8ca78.sample"
+
+[deps]
+
+source_file="res://Assets/AUDIO/Wave Switch Sine 2.wav"
+dest_files=["res://.godot/imported/Wave Switch Sine 2.wav-db748ecfae9ce1a24c51a5a873f8ca78.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
