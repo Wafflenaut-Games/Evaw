@@ -1137,12 +1137,15 @@ volume_db = -2.0
 
 [node name="SwitchSine" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("29_s2klm")
+volume_db = -2.0
 
 [node name="SwitchLume2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("30_khic2")
+volume_db = -2.0
 
 [node name="SwitchSine2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("31_8u1j7")
+volume_db = -2.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
