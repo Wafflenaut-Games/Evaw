@@ -27,7 +27,8 @@ func _on_transition_timer_timeout() -> void:
 
 
 func limits():
-	if Global.level == 3:
-		limit_left = -64
-	if Global.level == 2:
-		limit_left = -55
+	pass
+#	if Global.level == 3:
+#		limit_left = -64
+#	if Global.level == 2:
+#		limit_left = -55
