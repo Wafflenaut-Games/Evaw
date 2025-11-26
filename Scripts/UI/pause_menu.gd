@@ -5,17 +5,24 @@ extends Control
 
 @onready var vaw: CharacterBody2D = $"../.."
 @onready var options_ui: Control = $OptionsUI
+@onready var underlume: AudioStreamPlayer = $Underlume
 
 
 var active = false
 var reset_inactive = true
+var init_vol = 0
 
 #endregion
+
+
+func _ready() -> void:
+	init_vol = underlume.volume_db
 
 
 func _process(_delta: float) -> void:
 	pausing()
 	position = Vector2.ZERO
+	underlume.volume_db = init_vol + Global.vol
 
 
 func pausing() -> void:

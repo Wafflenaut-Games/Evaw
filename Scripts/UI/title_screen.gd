@@ -4,12 +4,20 @@ extends Control
 #region vars
 
 @onready var options_ui: Control = $OptionsUI
+@onready var underlume: AudioStreamPlayer = $Underlume
+
+var init_vol = 0
 
 #endregion
 
 
 func _ready() -> void:
 	Global.paused = true
+	init_vol = underlume.volume_db
+
+
+func _process(_delta: float) -> void:
+	underlume.volume_db = init_vol + Global.vol
 
 
 func _on_start_pressed() -> void:

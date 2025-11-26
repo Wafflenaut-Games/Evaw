@@ -11,4 +11,3 @@ func _ready() -> void:
 func playanims ():
 	apworld.play("zoom 2")
 	apcrt.play("zoom")
-	
