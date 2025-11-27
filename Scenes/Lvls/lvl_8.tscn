@@ -457,23 +457,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern4" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_lhf7l")
-position = Vector2(161, -708)
-sprite_frames = SubResource("SpriteFrames_6l18s")
-animation = &"fire"
-autoplay = "fire"
-
-[node name="PointLight2D" type="PointLight2D" parent="Lantern4"]
-color = Color(1, 0.40000004, 0, 1)
-energy = 0.7
-texture = SubResource("GradientTexture2D_ufqmx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern4"]
-libraries = {
-&"": SubResource("AnimationLibrary_tyjwu")
-}
-
 [node name="Lantern5" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(291, -668)
