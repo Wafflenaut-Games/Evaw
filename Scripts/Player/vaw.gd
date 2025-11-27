@@ -84,6 +84,7 @@ func _ready() -> void:
 	switch_init_vol = switch_lume.volume_db - 24
 	jump_init_vol = tentative_jump.volume_db - 24
 	hit_grnd_init_vol = hit_grnd.volume_db - 24
+	level_titles.visible = true
 
 
 func _physics_process(delta: float) -> void:

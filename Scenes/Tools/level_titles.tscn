@@ -237,6 +237,7 @@ animations = [{
 }]
 
 [node name="LevelTitles" type="AnimatedSprite2D"]
+visible = false
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_ugqag")
 animation = &"4"
