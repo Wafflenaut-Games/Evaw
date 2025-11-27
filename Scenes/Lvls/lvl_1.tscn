@@ -1152,22 +1152,67 @@ position = Vector2(1353, 100)
 [node name="TutorialText" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="TutorialText"]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 606.0
-offset_top = -198.0
-offset_right = 677.0
-offset_bottom = -71.0
+offset_left = 600.0
+offset_top = -165.0
+offset_right = 671.0
+offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("11_xd7rh")
 theme_override_font_sizes/font_size = 7
-text = "PRESS AND HOLD RMB OR X TO TRANSFORM INTO A LIGHT WAVE, THEN HOLD THE DIRECTION YOU DESIRE TO TRAVEL IN"
+text = "HOLD RMB OR X TO TRANSFORM INTO A LIGHT WAVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="TutorialText"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 617.0
+offset_top = -139.0
+offset_right = 690.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("11_xd7rh")
+theme_override_font_sizes/font_size = 7
+text = "FOR MOUSE, POINT CURSOR IN THE DIRECTION YOU WANT TO TRAVEL AND CLICK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="TutorialText"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 607.0
+offset_top = -102.0
+offset_right = 694.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("11_xd7rh")
+theme_override_font_sizes/font_size = 7
+text = "FOR KEYBOARD, FIRST POINT IN DESIRED DIRECTION THEN PRESS X"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

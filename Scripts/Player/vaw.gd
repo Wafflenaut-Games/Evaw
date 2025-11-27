@@ -127,6 +127,7 @@ func formshift() -> void:
 	# Switching to waveform
 	# Mouse controls
 	if Input.is_action_just_pressed("sine_m") and sine_used == false:
+		$Camera.shake = true
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "sine"
@@ -143,6 +144,7 @@ func formshift() -> void:
 			switch_sine_2.play()
 			rand_switch = randi_range(1, 2)
 	if Input.is_action_just_pressed("lume_m") and lume_used == false:
+		$Camera.shake = true
 		shockwave()
 		moused_dir = true
 		Global.vaw_form = "lume"
@@ -160,6 +162,7 @@ func formshift() -> void:
 	
 	# Keyboard controls
 	if Input.is_action_just_pressed("sine") and sine_used == false:
+		$Camera.shake = true
 		shockwave()
 		moused_dir = false
 		Global.vaw_form = "sine"
@@ -175,6 +178,7 @@ func formshift() -> void:
 		elif rand_switch == 2:
 			switch_sine_2.play()
 	elif Input.is_action_just_pressed("lume") and lume_used == false:
+		$Camera.shake = true
 		switch_lume.play()
 		shockwave()
 		moused_dir = false
