@@ -26,7 +26,8 @@ func _process(_delta: float) -> void:
 
 
 func activate():
-	connected_door.open()
-	unlit.visible = false
-	lit.visible = true
-	sensor_activate.play()
+	if unlit.visible:
+		connected_door.open()
+		unlit.visible = false
+		lit.visible = true
+		sensor_activate.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b2ildrkw5sldx"]
+[gd_scene load_steps=16 format=4 uid="uid://baihkgn7x8jkr"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_eddng"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_fy1ng"]
@@ -81,7 +81,6 @@ visibility_layer = 3
 position = Vector2(552, -668)
 
 [node name="Vaw" parent="." instance=ExtResource("8_5esod")]
-visible = false
 visibility_layer = 3
 position = Vector2(-148, -500)
 

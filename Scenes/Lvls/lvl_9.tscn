@@ -178,6 +178,7 @@ tile_map_data = PackedByteArray("AADN/xQAAAAQAAEAAADN/xUAAAAQAAIAAADN/xYAAAAQAAI
 
 [node name="Respawn" parent="." instance=ExtResource("7_bgm6s")]
 visibility_layer = 3
+position = Vector2(0, 64)
 
 [node name="ExitPortal" parent="." instance=ExtResource("8_i38tq")]
 visibility_layer = 3
@@ -185,6 +186,7 @@ position = Vector2(1332, -44)
 
 [node name="Vaw" parent="." instance=ExtResource("9_vruww")]
 visibility_layer = 3
+position = Vector2(0, 64)
 
 [node name="feather" parent="." instance=ExtResource("10_hl81l")]
 visibility_layer = 3
@@ -1273,22 +1275,22 @@ type = "clay"
 direction = "U"
 
 [node name="Clay20" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-132, 316)
+position = Vector2(-132, 315)
 type = "clay"
 direction = "U"
 
 [node name="Clay21" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-140, 316)
+position = Vector2(-140, 315)
 type = "clay"
 direction = "U"
 
 [node name="Clay22" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-140, 236)
+position = Vector2(-140, 235)
 type = "clay"
 direction = "D"
 
 [node name="Clay23" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-148, 236)
+position = Vector2(-148, 235)
 type = "clay"
 direction = "D"
 
