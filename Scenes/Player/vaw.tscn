@@ -1051,7 +1051,6 @@ sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
-visible = false
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -1157,7 +1156,6 @@ volume_db = 24.0
 
 [node name="Death" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_kh1wn")
-volume_db = 15.0
 
 [node name="HitGround" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_s2klm")

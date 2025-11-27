@@ -237,7 +237,7 @@ func form_collision() -> void:
 
 
 func reset_uses() -> void:
-	if is_grounded():
+	if is_grounded() and Global.vaw_form == "norm":
 		sine_used = false
 		lume_used = false
 
