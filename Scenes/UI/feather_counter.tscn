@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyefr0parhhbo"]
+
+[ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Collectibles/featherinline.png" id="1_24fy0"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="2_7laqe"]
+[ext_resource type="Script" uid="uid://du11hqjddffat" path="res://Scripts/UI/feather_counter.gd" id="3_od4nt"]
+
+[node name="FeatherCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Feather" type="Sprite2D" parent="."]
+position = Vector2(6, 6)
+texture = ExtResource("1_24fy0")
+
+[node name="feather_counter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_right = 51.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("2_7laqe")
+theme_override_font_sizes/font_size = 7
+text = "x0"
+script = ExtResource("3_od4nt")

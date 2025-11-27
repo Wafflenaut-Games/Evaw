@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sb8tnvqip77k"]
+[gd_scene load_steps=14 format=3 uid="uid://sb8tnvqip77k"]
 
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="1_wv540"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_e3r1x"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="6_cbobj"]
 [ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="7_dsf7a"]
 [ext_resource type="PackedScene" uid="uid://cersl1fr0sii5" path="res://Scenes/UI/speedrun_timer.tscn" id="8_824g0"]
+[ext_resource type="PackedScene" uid="uid://dyefr0parhhbo" path="res://Scenes/UI/feather_counter.tscn" id="9_3txao"]
 [ext_resource type="PackedScene" uid="uid://cmg3ayhqc4hdy" path="res://Scenes/UI/death_coutner.tscn" id="9_tjte5"]
 [ext_resource type="AudioStream" uid="uid://cw5qmcv2p3kqi" path="res://Assets/AUDIO/Underlume.wav" id="10_uv4ns"]
 [ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="11_nd20k"]
@@ -124,6 +125,13 @@ offset_left = -80.0
 offset_top = -60.0
 offset_right = -80.0
 offset_bottom = -60.0
+
+[node name="FeatherCounter" parent="." instance=ExtResource("9_3txao")]
+layout_mode = 1
+offset_left = 59.0
+offset_top = -6.0
+offset_right = 59.0
+offset_bottom = -6.0
 
 [node name="DeathCoutner" parent="." instance=ExtResource("9_tjte5")]
 layout_mode = 1

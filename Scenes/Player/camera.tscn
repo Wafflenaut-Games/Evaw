@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4pqfioq72qfj"]
+[gd_scene load_steps=3 format=3 uid="uid://b4pqfioq72qfj"]
 
 [ext_resource type="Script" uid="uid://cg1gyjfpn4wyj" path="res://Scripts/Player/camera.gd" id="1_8yjwa"]
-[ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Collectibles/featherinline.png" id="2_2ffh2"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="3_up0k1"]
-[ext_resource type="Script" uid="uid://du11hqjddffat" path="res://Scripts/UI/feather_counter.gd" id="4_lb7yt"]
+[ext_resource type="PackedScene" uid="uid://dyefr0parhhbo" path="res://Scenes/UI/feather_counter.tscn" id="2_2ffh2"]
 
 [node name="Camera" type="Camera2D"]
 process_mode = 3
@@ -14,23 +12,14 @@ script = ExtResource("1_8yjwa")
 wait_time = 0.95
 one_shot = true
 
-[node name="Feather" type="Sprite2D" parent="."]
-position = Vector2(-74, -54)
-texture = ExtResource("2_2ffh2")
-
-[node name="feather_counter" type="Label" parent="."]
-offset_left = -69.0
-offset_top = -60.0
-offset_right = -29.0
-offset_bottom = -37.0
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_fonts/font = ExtResource("3_up0k1")
-theme_override_font_sizes/font_size = 7
-text = "x0"
-script = ExtResource("4_lb7yt")
-
 [node name="shake_timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="FeatherCounter" parent="." instance=ExtResource("2_2ffh2")]
+offset_left = -80.0
+offset_top = -60.0
+offset_right = -80.0
+offset_bottom = -60.0
 
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
 [connection signal="timeout" from="shake_timer" to="." method="_on_shake_timer_timeout"]
