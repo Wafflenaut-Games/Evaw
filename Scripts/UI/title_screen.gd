@@ -8,6 +8,7 @@ extends Control
 @onready var beginnings: AudioStreamPlayer = $TitleScreenBeginnings
 
 var init_vol = 0
+var init_click_vol = 0
 
 #endregion
 
@@ -15,11 +16,12 @@ var init_vol = 0
 func _ready() -> void:
 	Global.paused = true
 	init_vol = beginnings.volume_db - 24
+	init_click_vol = click.volume_db - 24
 
 
 func _process(_delta: float) -> void:
 	beginnings.volume_db = init_vol + Global.vol
-	click.volume_db = Global.vol
+	click.volume_db = init_click_vol + Global.vol
 
 
 func _on_start_pressed() -> void:

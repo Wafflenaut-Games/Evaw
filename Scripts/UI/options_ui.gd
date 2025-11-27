@@ -10,10 +10,14 @@ extends Control
 
 enum difficulty {easy = 4, normal = 2, wavemaster = 1}
 
+
+var init_vol = 0
+
 #endregion
 
 
 func _ready() -> void:
+	init_vol = click.volume_db - 24
 	volume_bar.value = int((float(Global.vol) + 5) / 5 + 9)
 
 
@@ -42,7 +46,7 @@ func volume() -> void:
 	else:
 		Global.vol = -INF
 	
-	click.volume_db = Global.vol
+	click.volume_db = init_vol + Global.vol
 
 
 func _on_easy_pressed() -> void:

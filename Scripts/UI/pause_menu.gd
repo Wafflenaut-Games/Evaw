@@ -10,14 +10,19 @@ extends Control
 
 var active = false
 var reset_inactive = true
+var init_vol = 0
 
 #endregion
+
+
+func _ready() -> void:
+	init_vol = click.volume_db - 24
 
 
 func _process(_delta: float) -> void:
 	pausing()
 	position = Vector2.ZERO
-	click.volume_db = Global.vol
+	click.volume_db = init_vol + Global.vol
 
 
 func pausing() -> void:
