@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdi8xrpf24rrh"]
+[gd_scene load_steps=8 format=3 uid="uid://bdi8xrpf24rrh"]
 
 [ext_resource type="Script" uid="uid://c3gbpk4ak2jlt" path="res://Scripts/UI/options_ui.gd" id="1_00m3j"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_yig7i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6al2wgquceif" path="res://Assets/Interactables/buttonidle.png" id="4_jn4f1"]
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_1acnd"]
 [ext_resource type="Texture2D" uid="uid://dmp3txjud3qxw" path="res://Assets/Interactables/buttonpress.png" id="6_o7o45"]
+[ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="7_6cfgu"]
 
 [node name="OptionsUI" type="Control"]
 z_index = 10
@@ -120,7 +121,12 @@ theme_override_font_sizes/font_size = 7
 text = "WAVEMASTER"
 icon = ExtResource("6_o7o45")
 
+[node name="UiMouseClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6cfgu")
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/Volume/VolumeBar" to="." method="_on_volume_bar_drag_ended"]
+[connection signal="drag_started" from="PanelContainer/MarginContainer/VBoxContainer/Volume/VolumeBar" to="." method="_on_volume_bar_drag_started"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/Wavemaster" to="." method="_on_wavemaster_pressed"]

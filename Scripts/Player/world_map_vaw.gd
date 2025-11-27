@@ -18,6 +18,7 @@ var selecting = false
 var v_moving = false
 var lvl_disply_fading = false
 var inactive = true
+var walking_init_vol
 
 #endregion
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	transitions.play("open")
 	open_timer.start()
 	Global.is_transitioning = false
+	walking_init_vol = walking.volume_db
 
 
 func _physics_process(delta: float) -> void:
@@ -34,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not inactive:
 		move(delta)
+		sfx_vol()
 		handle_anims()
 		move_and_slide()
 
@@ -56,6 +59,10 @@ func move(delta) -> void:
 			velocity.x = SPEED * delta
 			Global.world_map_dirs = []
 			walking.play()
+
+
+func sfx_vol() -> void:
+	walking.volume_db = walking_init_vol + Global.vol
 
 
 func handle_anims() -> void:

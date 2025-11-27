@@ -6,6 +6,7 @@ extends Control
 @onready var vaw: CharacterBody2D = $"../.."
 @onready var options_ui: Control = $OptionsUI
 @onready var underlume: AudioStreamPlayer = $Underlume
+@onready var click: AudioStreamPlayer = $UiMouseClick
 
 
 var active = false
@@ -23,6 +24,7 @@ func _process(_delta: float) -> void:
 	pausing()
 	position = Vector2.ZERO
 	underlume.volume_db = init_vol + Global.vol
+	click.volume_db = Global.vol
 
 
 func pausing() -> void:
@@ -45,12 +47,15 @@ func pausing() -> void:
 
 
 func _on_start_pressed() -> void:
+	click.play()
 	active = false
 
 
 func _on_options_pressed() -> void:
+	click.play()
 	options_ui.visible = true
 
 
 func _on_quit_pressed() -> void:
+	click.play()
 	get_tree().change_scene_to_file("res://Scenes/UI/title_screen.tscn")

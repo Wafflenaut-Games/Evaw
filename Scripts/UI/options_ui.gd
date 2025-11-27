@@ -5,6 +5,7 @@ extends Control
 @onready var difficulty_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Difficulty/DIFFICULTY
 @onready var volume_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Volume/VOLUME
 @onready var volume_bar: HSlider = $PanelContainer/MarginContainer/VBoxContainer/Volume/VolumeBar
+@onready var click: AudioStreamPlayer = $UiMouseClick
 
 
 enum difficulty {easy = 4, normal = 2, wavemaster = 1}
@@ -40,19 +41,33 @@ func volume() -> void:
 		Global.vol = ((volume_bar.value - 5) * 5) - 25
 	else:
 		Global.vol = -INF
+	
+	click.volume_db = Global.vol
 
 
 func _on_easy_pressed() -> void:
+	click.play()
 	Global.difficulty = difficulty.easy
 
 
 func _on_normal_pressed() -> void:
+	click.play()
 	Global.difficulty = difficulty.normal
 
 
 func _on_wavemaster_pressed() -> void:
+	click.play()
 	Global.difficulty = difficulty.wavemaster
 
 
 func _on_back_pressed() -> void:
+	click.play()
 	visible = false
+
+
+func _on_volume_bar_drag_started() -> void:
+	click.play()
+
+
+func _on_volume_bar_drag_ended(_value_changed: bool) -> void:
+	click.play()

@@ -6,8 +6,10 @@ extends Area2D
 @onready var ap: AnimatedSprite2D = $AnimatedSprite2D
 @onready var transition_timer: Timer = $TransitionTimer
 @onready var camera: Camera2D = $"../../Camera"
+@onready var level_start: AudioStreamPlayer = $LevelStart
 
 var complete = false
+var init_vol
 
 @export var directions: Array[String]
 @export var blocked_dirs: Array[String]
@@ -16,6 +18,8 @@ var complete = false
 #endregion
 
 func _ready() -> void:
+	init_vol = level_start.volume_db
+	
 	if Global.lvl_completed == level:
 		vaw.position = position
 
@@ -23,6 +27,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	set_vars()
 	select_lvl()
+	volume_set()
 	handle_anims()
 	set_complete()
 
@@ -56,6 +61,10 @@ func select_lvl() -> void:
 				vaw.selecting = true
 				Global.is_transitioning = true
 				transition_timer.start()
+
+
+func volume_set() -> void:
+	level_start.volume_db = init_vol + Global.vol
 
 
 func handle_anims() -> void:
