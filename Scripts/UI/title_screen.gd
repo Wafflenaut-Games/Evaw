@@ -4,8 +4,8 @@ extends Control
 #region vars
 
 @onready var options_ui: Control = $OptionsUI
-@onready var underlume: AudioStreamPlayer = $Underlume
 @onready var click: AudioStreamPlayer = $UiMouseClick
+@onready var beginnings: AudioStreamPlayer = $TitleScreenBeginnings
 
 var init_vol = 0
 
@@ -14,11 +14,11 @@ var init_vol = 0
 
 func _ready() -> void:
 	Global.paused = true
-	init_vol = underlume.volume_db
+	init_vol = beginnings.volume_db
 
 
 func _process(_delta: float) -> void:
-	underlume.volume_db = init_vol + Global.vol
+	beginnings.volume_db = init_vol + Global.vol
 	click.volume_db = Global.vol
 
 

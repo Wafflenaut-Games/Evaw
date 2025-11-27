@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8klvtukak5kw"]
+[gd_scene load_steps=13 format=3 uid="uid://b8klvtukak5kw"]
 
 [ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Backgrounds/Vaw_WM_Sheet.png" id="1_fso2m"]
+[ext_resource type="Script" uid="uid://cq7ts1exfiq78" path="res://Scripts/WorldMap/world_map.gd" id="1_qvxal"]
 [ext_resource type="PackedScene" uid="uid://b4pqfioq72qfj" path="res://Scenes/Player/camera.tscn" id="1_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://8y27bmc3xa2q" path="res://Scenes/Player/world_map_vaw.tscn" id="2_e2gad"]
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="3_qx6hv"]
 [ext_resource type="PackedScene" uid="uid://duscro0qotpwl" path="res://Scenes/WorldMap/level_selector.tscn" id="3_uwqkr"]
 [ext_resource type="PackedScene" uid="uid://dkjp126re2mij" path="res://Scenes/WorldMap/vertical_wm_ends.tscn" id="6_iv8dp"]
 [ext_resource type="PackedScene" uid="uid://dc14s1gwiqgon" path="res://Scenes/WorldMap/level_display.tscn" id="6_qx6hv"]
+[ext_resource type="AudioStream" uid="uid://bm0dv64r50vqb" path="res://Assets/AUDIO/World Map.wav" id="8_8vqpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fso2m"]
 atlas = ExtResource("1_fso2m")
@@ -31,6 +33,7 @@ animations = [{
 }]
 
 [node name="WorldMap" type="Node2D"]
+script = ExtResource("1_qvxal")
 
 [node name="Camera" parent="." instance=ExtResource("1_uwqkr")]
 
@@ -190,5 +193,9 @@ position = Vector2(0, 44)
 
 [node name="OpenTimer" type="Timer" parent="."]
 wait_time = 1.2
+
+[node name="WorldMap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8vqpy")
+autoplay = true
 
 [connection signal="timeout" from="OpenTimer" to="WorldMap_Vaw" method="_on_open_timer_timeout"]

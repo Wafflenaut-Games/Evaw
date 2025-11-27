@@ -67,7 +67,3 @@ func _on_back_pressed() -> void:
 
 func _on_volume_bar_drag_started() -> void:
 	click.play()
-
-
-func _on_volume_bar_drag_ended(_value_changed: bool) -> void:
-	click.play()

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Title Screen Beginnings.mp3-c8ac5a355f9be92f9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

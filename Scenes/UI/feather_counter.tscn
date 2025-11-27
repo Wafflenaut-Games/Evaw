@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyefr0parhhbo"]
+[gd_scene load_steps=5 format=3 uid="uid://dyefr0parhhbo"]
 
+[ext_resource type="Script" uid="uid://bk1quvpk7q8sc" path="res://Scripts/UI/feather_counter.gd" id="1_7laqe"]
 [ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Collectibles/featherinline.png" id="1_24fy0"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="2_7laqe"]
-[ext_resource type="Script" uid="uid://du11hqjddffat" path="res://Scripts/UI/feather_counter.gd" id="3_od4nt"]
+
+[sub_resource type="GDScript" id="GDScript_24fy0"]
+script/source = "extends Label
+
+
+func _process(_delta: float) -> void:
+	text = \"x\" + str(Global.feathers_collected)
+"
 
 [node name="FeatherCounter" type="Control"]
 layout_mode = 3
@@ -11,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7laqe")
 
 [node name="Feather" type="Sprite2D" parent="."]
 position = Vector2(6, 6)
@@ -25,4 +34,4 @@ theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_fonts/font = ExtResource("2_7laqe")
 theme_override_font_sizes/font_size = 7
 text = "x0"
-script = ExtResource("3_od4nt")
+script = SubResource("GDScript_24fy0")
