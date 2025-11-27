@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bq8gwaalx2sqq" path="res://Assets/AUDIO/Sensor_Activate.mp3" id="4_44akk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgv8"]
-size = Vector2(6, 6.25)
+size = Vector2(6, 6)
 
 [sub_resource type="Gradient" id="Gradient_xlkdb"]
 offsets = PackedFloat32Array(0.003921569, 1)
@@ -33,6 +33,7 @@ position = Vector2(-1, 0)
 texture = ExtResource("2_xlkdb")
 
 [node name="Lit" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 texture = ExtResource("3_d4kya")
 

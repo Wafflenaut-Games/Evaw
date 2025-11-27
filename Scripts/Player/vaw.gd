@@ -470,7 +470,7 @@ func sensor_collision() -> void:
 	for area in areas:
 		if area.is_in_group("sound_sensor") and Global.vaw_form == "sine":
 			area.get_parent().activate()
-		if area.is_in_group("light_sensor") and Global.vaw_form == "light":
+		if area.is_in_group("light_sensor") and Global.vaw_form == "lume":
 			area.get_parent().activate()
 		if area.is_in_group("feather"):
 			area.get_parent().collect(self)
