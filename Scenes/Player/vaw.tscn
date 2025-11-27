@@ -1187,13 +1187,16 @@ collision_base_size = 1.1
 process_material = SubResource("ParticleProcessMaterial_s2klm")
 
 [node name="hitgroundparticle" type="GPUParticles2D" parent="."]
-position = Vector2(39, 39)
+position = Vector2(0, 3)
 emitting = false
 amount = 20
 lifetime = 0.6
-one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_khic2")
+
+[node name="groundhittimer" type="Timer" parent="hitgroundparticle"]
+wait_time = 0.3
+one_shot = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
@@ -1207,3 +1210,4 @@ process_material = SubResource("ParticleProcessMaterial_khic2")
 [connection signal="timeout" from="Timers/RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="Timers/LevelTitleTimer" to="." method="_on_level_title_timer_timeout"]
 [connection signal="timeout" from="Timers/TransitionTimer" to="." method="_on_transition_timer_timeout"]
+[connection signal="timeout" from="hitgroundparticle/groundhittimer" to="." method="_on_groundhittimer_timeout"]

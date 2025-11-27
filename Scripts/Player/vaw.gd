@@ -32,6 +32,8 @@ extends CharacterBody2D
 @onready var death_sfx: AudioStreamPlayer = $SFX/Death
 @onready var hit_grnd: AudioStreamPlayer = $SFX/HitGround
 @onready var walking_particle: GPUParticles2D = $WalkingParticle
+@onready var hitgroundparticle: GPUParticles2D = $hitgroundparticle
+@onready var groundhittimer: Timer = $hitgroundparticle/groundhittimer
 
 
 const SPEED = 3000.0
@@ -412,6 +414,8 @@ func is_grounded() -> bool:
 	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
 		if not hit_ground:
 			hit_grnd.play()
+			hitgroundparticle.emitting = true
+			groundhittimer.start()
 			#easy find eeeeee
 			hit_ground = true
 		return true
@@ -643,3 +647,7 @@ func _on_level_title_timer_timeout() -> void:
 func _on_transition_timer_timeout() -> void:
 	inactive = false
 	Global.is_transitioning = false
+
+
+func _on_groundhittimer_timeout() -> void:
+	hitgroundparticle.emitting = false
