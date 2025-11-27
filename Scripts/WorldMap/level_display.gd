@@ -96,10 +96,20 @@ func _process(_delta: float) -> void:
 			else:
 				feather_inline.visible = false
 		9:
-			if Global.feather_lvl_9:
-				feather_inline.visible = true
+			if Global.feather_lvl_9_1:
+				triple_feather_inline_1.visible = true
 			else:
-				feather_inline.visible = false
+				triple_feather_inline_1.visible = false
+				
+			if Global.feather_lvl_9_2:
+				triple_feather_inline_2.visible = true
+			else:
+				triple_feather_inline_2.visible = false
+			
+			if Global.feather_lvl_9_3:
+				triple_feather_inline_3.visible = true
+			else:
+				triple_feather_inline_3.visible = false
 		10:
 			if Global.feather_lvl_10:
 				feather_inline.visible = true

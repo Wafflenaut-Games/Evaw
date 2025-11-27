@@ -72,7 +72,13 @@ func _process(delta: float) -> void:
 				8:
 					Global.feather_lvl_8 = true
 				9:
-					Global.feather_lvl_9 = true
+					match triple_num:
+						1:
+							Global.feather_lvl_9_1 = true
+						2:
+							Global.feather_lvl_9_2 = true
+						3:
+							Global.feather_lvl_9_3 = true
 				10:
 					Global.feather_lvl_10 = true
 				11:
