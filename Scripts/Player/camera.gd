@@ -13,6 +13,7 @@ var trans_timer_started = false
 func _process(_delta: float) -> void:
 	fade()
 	limits()
+	shake(delta)
 	
 	if Global.level == 0:
 		$Feather.visible = true
@@ -31,7 +32,17 @@ func fade() -> void:
 
 func _on_transition_timer_timeout() -> void:
 	trans_timer_started = false
-
+	
+func shake(delta) -> void:
+	# On death
+	if Global.death == 1:
+		shake_strength = randomShakeStrength
+		if death_timer_started == false:
+			death_timer.start()
+			death_timer_started = true
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shakeFade * delta)
+		camera_2d.offset = Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength)
 
 func limits():
 	pass

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cg1gyjfpn4wyj" path="res://Scripts/Player/camera.gd" id="1_8yjwa"]
 [ext_resource type="Texture2D" uid="uid://842mfd0i0tcb" path="res://Assets/Collectibles/featherinline.png" id="2_2ffh2"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="3_up0k1"]
-[ext_resource type="Script" uid="uid://du11hqjddffat" path="res://Scripts/UI/feather_counter.gd" id="4_lb7yt"]
+[ext_resource type="Script" path="res://Scripts/UI/feather_counter.gd" id="4_lb7yt"]
 
 [node name="Camera" type="Camera2D"]
 process_mode = 3
