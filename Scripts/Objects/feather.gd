@@ -32,6 +32,8 @@ func _ready() -> void:
 	starting_pos = global_position
 	animated_sprite_2d.frame = randi_range(0,9)
 	random_timer()
+	
+	check_for_spawn()
 
 
 func _process(delta: float) -> void:
@@ -116,3 +118,13 @@ func collect(body):
 func _on_level_end():
 	if collecting == true:
 		Global.feathers_collected += 1
+
+
+func check_for_spawn():
+	match Global.level:
+		1:
+			if Global.feather_lvl_1:
+				queue_free()
+		2:
+			if Global.feather_lvl_2:
+				queue_free()
