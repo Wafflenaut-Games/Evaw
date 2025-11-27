@@ -1157,7 +1157,6 @@ volume_db = 24.0
 
 [node name="Death" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_kh1wn")
-volume_db = 15.0
 
 [node name="HitGround" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_s2klm")
