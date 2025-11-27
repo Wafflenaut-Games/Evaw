@@ -23,12 +23,12 @@ var ice_lume_init_vol = 0
 
 
 func _ready() -> void:
-	main_init_vol = undermain.volume_db
-	sine_init_vol = undersine.volume_db
-	lume_init_vol = underlume.volume_db
-	ice_main_init_vol = icemain.volume_db
-	ice_sine_init_vol = icesine.volume_db
-	ice_lume_init_vol = icelume.volume_db
+	main_init_vol = undermain.volume_db - 24
+	sine_init_vol = undersine.volume_db - 24
+	lume_init_vol = underlume.volume_db - 24
+	ice_main_init_vol = icemain.volume_db - 24
+	ice_sine_init_vol = icesine.volume_db - 24
+	ice_lume_init_vol = icelume.volume_db - 24
 
 
 func _process(_delta: float) -> void:

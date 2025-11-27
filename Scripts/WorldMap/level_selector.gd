@@ -18,7 +18,7 @@ var init_vol
 #endregion
 
 func _ready() -> void:
-	init_vol = level_start.volume_db
+	init_vol = level_start.volume_db - 24
 	
 	if Global.lvl_completed == level:
 		vaw.position = position

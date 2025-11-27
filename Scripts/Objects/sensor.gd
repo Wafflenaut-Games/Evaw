@@ -14,7 +14,7 @@ var init_vol = 0
 
 
 func _ready() -> void:
-	init_vol = sensor_activate.volume_db
+	init_vol = sensor_activate.volume_db - 24
 
 
 func _process(_delta: float) -> void:

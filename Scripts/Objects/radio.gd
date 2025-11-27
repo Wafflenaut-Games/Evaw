@@ -16,8 +16,8 @@ var vicinity_init_vol = 0
 
 
 func _ready() -> void:
-	message_init_vol = you_have_one_new_message.volume_db
-	vicinity_init_vol = radio_in_the_vicinity.volume_db
+	message_init_vol = you_have_one_new_message.volume_db - 24
+	vicinity_init_vol = radio_in_the_vicinity.volume_db - 24
 
 
 func _process(_delta: float) -> void:

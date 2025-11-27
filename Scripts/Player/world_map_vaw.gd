@@ -27,7 +27,7 @@ func _ready() -> void:
 	transitions.play("open")
 	open_timer.start()
 	Global.is_transitioning = false
-	walking_init_vol = walking.volume_db
+	walking_init_vol = walking.volume_db - 24
 
 
 func _physics_process(delta: float) -> void:

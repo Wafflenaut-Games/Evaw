@@ -14,7 +14,7 @@ var init_vol = 0
 
 func _ready() -> void:
 	Global.paused = true
-	init_vol = beginnings.volume_db
+	init_vol = beginnings.volume_db - 24
 
 
 func _process(_delta: float) -> void:

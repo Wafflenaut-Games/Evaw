@@ -77,10 +77,10 @@ var hit_grnd_init_vol = 0
 
 
 func _ready() -> void:
-	walk_init_vol = walking.volume_db
-	switch_init_vol = switch_lume.volume_db
-	jump_init_vol = tentative_jump.volume_db
-	hit_grnd_init_vol = hit_grnd.volume_db
+	walk_init_vol = walking.volume_db - 24
+	switch_init_vol = switch_lume.volume_db - 24
+	jump_init_vol = tentative_jump.volume_db - 24
+	hit_grnd_init_vol = hit_grnd.volume_db - 24
 
 
 func _physics_process(delta: float) -> void:
