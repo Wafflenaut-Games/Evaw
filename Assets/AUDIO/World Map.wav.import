@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm0dv64r50vqb"
+path="res://.godot/imported/World Map.wav-33f8ff8f0fb8d3f44d9d091845a6ac21.sample"
+
+[deps]
+
+source_file="res://Assets/AUDIO/World Map.wav"
+dest_files=["res://.godot/imported/World Map.wav-33f8ff8f0fb8d3f44d9d091845a6ac21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
