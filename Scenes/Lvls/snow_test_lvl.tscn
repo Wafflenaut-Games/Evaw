@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bxith6kpuc7d5"]
+[gd_scene load_steps=37 format=4 uid="uid://bxith6kpuc7d5"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_fuhmf"]
 [ext_resource type="Shader" uid="uid://b0w8pius7hsv5" path="res://Scenes/Shaders/crt_filter.gdshader" id="1_jrmk8"]
@@ -136,6 +136,19 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3fqi"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4m64i"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(1, -10000, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 250, 0)
+scale_max = 3.0
+color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.2
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -258,3 +271,9 @@ offset_bottom = 38.0
 visibility_layer = 3
 material = SubResource("ShaderMaterial_d3fqi")
 position = Vector2(124, 19)
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+position = Vector2(39, 39)
+amount = 20
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_4m64i")

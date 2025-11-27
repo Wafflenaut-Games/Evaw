@@ -412,6 +412,7 @@ func is_grounded() -> bool:
 	if ground_checker_l.is_colliding() or ground_checker_r.is_colliding():
 		if not hit_ground:
 			hit_grnd.play()
+			#easy find eeeeee
 			hit_ground = true
 		return true
 	else:
