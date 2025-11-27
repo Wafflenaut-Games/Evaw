@@ -60,6 +60,7 @@ func select_lvl() -> void:
 				Global.wm_hovering = level
 				vaw.selecting = true
 				Global.is_transitioning = true
+				level_start.play()
 				transition_timer.start()
 
 
