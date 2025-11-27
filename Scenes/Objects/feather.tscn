@@ -208,4 +208,3 @@ libraries = {
 
 [node name="FeatherGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_84csc")
-volume_db = -25.0
