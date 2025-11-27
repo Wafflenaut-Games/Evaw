@@ -1051,7 +1051,6 @@ sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"idle"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
-visible = false
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
