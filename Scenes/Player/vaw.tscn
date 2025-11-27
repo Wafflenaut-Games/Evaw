@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://bs5825yqflhst" path="res://Assets/AUDIO/Wave Switch.mp3" id="24_odm3q"]
 [ext_resource type="AudioStream" uid="uid://co2du3f37ivb6" path="res://Assets/AUDIO/tentativejump.mp3" id="26_pmbmc"]
 [ext_resource type="AudioStream" uid="uid://bybfuonn40l0n" path="res://Assets/AUDIO/Death.wav" id="27_kh1wn"]
-[ext_resource type="AudioStream" uid="uid://b3q0j8cf7bkis" path="res://Assets/AUDIO/Hit Ground.wav" id="28_gepi0"]
+[ext_resource type="AudioStream" uid="uid://hoxvjyksui7l" path="res://Assets/AUDIO/Hit Ground better.mp3" id="27_s2klm"]
 [ext_resource type="AudioStream" uid="uid://b1qo1arymr330" path="res://Assets/AUDIO/Wave Switch - Sine.wav" id="29_s2klm"]
 [ext_resource type="AudioStream" uid="uid://drwy5041qu8el" path="res://Assets/AUDIO/Wave Switch Lume 2.wav" id="30_khic2"]
 [ext_resource type="AudioStream" uid="uid://dtidle1oni40o" path="res://Assets/AUDIO/Wave Switch Sine 2.wav" id="31_8u1j7"]
@@ -1147,8 +1147,8 @@ stream = ExtResource("27_kh1wn")
 volume_db = 15.0
 
 [node name="HitGround" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("28_gepi0")
-volume_db = 16.0
+stream = ExtResource("27_s2klm")
+volume_db = -5.0
 
 [node name="SwitchLume" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("24_odm3q")
@@ -1166,7 +1166,7 @@ volume_db = 21.0
 stream = ExtResource("31_8u1j7")
 volume_db = 21.0
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+[node name="WalkingParticle" type="GPUParticles2D" parent="."]
 position = Vector2(0, 3)
 amount = 6
 lifetime = 0.3

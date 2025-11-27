@@ -13,27 +13,21 @@ script = ExtResource("1_l3ads")
 
 [node name="Undermain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lvg4s")
-volume_db = 13.0
 autoplay = true
 
 [node name="Undersine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nuncp")
-volume_db = 13.0
 autoplay = true
 
 [node name="Underlume" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_02t0p")
-volume_db = 13.0
 autoplay = true
 
 [node name="Icemain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_02t0p")
-volume_db = 13.0
 
 [node name="Icesine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5j3tf")
-volume_db = 13.0
 
 [node name="Icelume" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5vbuy")
-volume_db = 13.0

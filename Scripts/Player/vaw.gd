@@ -31,6 +31,7 @@ extends CharacterBody2D
 @onready var tentative_jump: AudioStreamPlayer = $SFX/Tentativejump
 @onready var death_sfx: AudioStreamPlayer = $SFX/Death
 @onready var hit_grnd: AudioStreamPlayer = $SFX/HitGround
+@onready var walking_particle: GPUParticles2D = $WalkingParticle
 
 
 const SPEED = 3000.0
@@ -106,6 +107,7 @@ func _physics_process(delta: float) -> void:
 		sfx_vols()
 		handle_sfx()
 		handle_anims()
+		walking_particles()
 		
 		# Other
 		sensor_collision()
@@ -497,6 +499,13 @@ func sfx_vols() -> void:
 	switch_lume_2.volume_db = switch_init_vol + Global.vol
 	tentative_jump.volume_db = jump_init_vol + Global.vol
 	hit_grnd.volume_db = hit_grnd_init_vol + Global.vol
+
+
+func walking_particles() -> void:
+	if is_on_floor() and velocity.x != 0:
+		walking_particle.emitting = true
+	else:
+		walking_particle.emitting = false
 
 
 func handle_sfx() -> void:
