@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://ha3k8g5wd2dg"]
+[gd_scene load_steps=31 format=4 uid="uid://ha3k8g5wd2dg"]
 
 [ext_resource type="Script" uid="uid://c4j573rrepf7r" path="res://Scripts/Lvls/lvl_1.gd" id="1_m3e0t"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_o4xyl"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="20_v62ld"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="21_m3e0t"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="22_o4xyl"]
+[ext_resource type="PackedScene" uid="uid://cmfe287ym3k2d" path="res://Scenes/Tools/snow.tscn" id="23_d3h4a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5at8g"]
 shader = ExtResource("11_yo1nb")
@@ -1377,3 +1378,7 @@ direction = "Down"
 [node name="OneWayPlatform3" parent="One wayisie" instance=ExtResource("22_o4xyl")]
 position = Vector2(-284, 308)
 direction = "Down"
+
+[node name="Snow" parent="." instance=ExtResource("23_d3h4a")]
+position = Vector2(-76, -449)
+preprocess = 11.1

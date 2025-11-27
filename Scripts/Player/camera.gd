@@ -13,6 +13,13 @@ var trans_timer_started = false
 func _process(_delta: float) -> void:
 	fade()
 	limits()
+	
+	if Global.level == 0:
+		$Feather.visible = true
+		$feather_counter.visible = true
+	else:
+		$Feather.visible = false
+		$feather_counter.visible = false
 
 
 func fade() -> void:

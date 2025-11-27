@@ -1,6 +1,9 @@
 extends Node
 
 
+signal level_end()
+
+
 var vaw_form : String = "norm"
 
 var world_map_dirs: Array = []
@@ -32,6 +35,8 @@ var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns", f, f
 #region Feather vars
 
 @onready var feathers_collected = 0
+
+@onready var feathers_holding = 0
 
 @onready var feather_lvl_1 = false
 @onready var feather_lvl_2 = false

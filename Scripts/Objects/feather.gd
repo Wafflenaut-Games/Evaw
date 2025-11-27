@@ -24,6 +24,8 @@ func random_timer():
 
 
 func _ready() -> void:
+	Global.connect("level_end", Callable(self,"_on_level_end"))
+	
 	real_speed = start_speed
 	starting_pos = global_position
 	animated_sprite_2d.frame = randi_range(0,9)
@@ -42,6 +44,7 @@ func _process(delta: float) -> void:
 	# End level
 	if Global.is_transitioning:
 		if collecting == true:
+			
 			match Global.level:
 				1:
 					Global.feather_lvl_1 = true
@@ -95,3 +98,6 @@ func collect(body):
 		player = body
 		collecting = true
 		feather_grab.play()
+
+func _on_level_end():
+	Global.feathers_collected += 1
