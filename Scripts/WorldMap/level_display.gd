@@ -7,7 +7,8 @@ var already_out = true
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var level_number: Label = $everything/level_number
 @onready var level_name: Label = $everything/level_name
-@onready var feather_inline: Sprite2D = $everything/feather_inline
+@onready var feather_inline: Sprite2D = $"everything/single feather/feather_inline"
+
 
 
 func _process(_delta: float) -> void:
@@ -32,6 +33,14 @@ func _process(_delta: float) -> void:
 		level_name.text = str(Global.lvl_names[Global.wm_hovering - 1])
 	
 	#region Feather
+	
+	if Global.wm_hovering != 4 and Global.wm_hovering != 9:
+		$"everything/triple feather".visible = false
+		$"everything/single feather".visible = true
+	elif Global.wm_hovering == 4 or Global.wm_hovering == 9:
+		$"everything/triple feather".visible = true
+		$"everything/single feather".visible = false
+	
 	match Global.wm_hovering:
 		1:
 			if Global.feather_lvl_1:

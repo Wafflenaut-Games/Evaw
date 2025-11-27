@@ -98,9 +98,9 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 12)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="everything"]
-offset_left = -27.0
+offset_left = -29.0
 offset_top = -16.0
-offset_right = 27.0
+offset_right = 29.0
 offset_bottom = 15.0
 texture = ExtResource("1_idunx")
 patch_margin_left = 1
@@ -109,9 +109,9 @@ patch_margin_right = 1
 patch_margin_bottom = 1
 
 [node name="level_number" type="Label" parent="everything"]
-offset_left = -32.0
+offset_left = -34.0
 offset_top = -19.0
-offset_right = 8.0
+offset_right = 6.0
 offset_bottom = -4.0
 theme_override_fonts/font = ExtResource("2_ssfm0")
 theme_override_font_sizes/font_size = 7
@@ -132,12 +132,41 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="feather_outline" type="Sprite2D" parent="everything"]
-position = Vector2(19, -9)
+[node name="single feather" type="Node2D" parent="everything"]
+
+[node name="feather_outline" type="Sprite2D" parent="everything/single feather"]
+position = Vector2(20, -9)
 texture = ExtResource("1_w5mcf")
 
-[node name="feather_inline" type="Sprite2D" parent="everything"]
-position = Vector2(19, -9)
+[node name="feather_inline" type="Sprite2D" parent="everything/single feather"]
+position = Vector2(20, -9)
+texture = ExtResource("4_84eer")
+
+[node name="triple feather" type="Node2D" parent="everything"]
+visible = false
+
+[node name="feather_outline" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(2, -9)
+texture = ExtResource("1_w5mcf")
+
+[node name="feather_inline" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(2, -9)
+texture = ExtResource("4_84eer")
+
+[node name="feather_outline2" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(12, -9)
+texture = ExtResource("1_w5mcf")
+
+[node name="feather_inline2" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(12, -9)
+texture = ExtResource("4_84eer")
+
+[node name="feather_outline3" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(22, -9)
+texture = ExtResource("1_w5mcf")
+
+[node name="feather_inline3" type="Sprite2D" parent="everything/triple feather"]
+position = Vector2(22, -9)
 texture = ExtResource("4_84eer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

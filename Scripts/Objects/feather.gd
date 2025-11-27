@@ -6,6 +6,9 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $PointLight2D/AnimationPlayer
 @onready var feather_grab: AudioStreamPlayer = $FeatherGrab
 
+@export var is_triple = false
+@export var triple_num = 1
+
 
 var starting_pos: Vector2
 
