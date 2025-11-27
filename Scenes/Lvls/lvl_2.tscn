@@ -209,7 +209,7 @@ visibility_layer = 3
 position = Vector2(185, -152)
 
 [node name="WaterBoundaries" type="Node2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -16)
 
 [node name="WaterBoundary" parent="WaterBoundaries" instance=ExtResource("11_p0s4s")]
 z_index = 1
