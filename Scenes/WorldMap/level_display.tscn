@@ -149,7 +149,7 @@ visible = false
 position = Vector2(2, -9)
 texture = ExtResource("1_w5mcf")
 
-[node name="feather_inline" type="Sprite2D" parent="everything/triple feather"]
+[node name="triple_feather_inline" type="Sprite2D" parent="everything/triple feather"]
 position = Vector2(2, -9)
 texture = ExtResource("4_84eer")
 
@@ -157,7 +157,7 @@ texture = ExtResource("4_84eer")
 position = Vector2(12, -9)
 texture = ExtResource("1_w5mcf")
 
-[node name="feather_inline2" type="Sprite2D" parent="everything/triple feather"]
+[node name="triple_feather_inline2" type="Sprite2D" parent="everything/triple feather"]
 position = Vector2(12, -9)
 texture = ExtResource("4_84eer")
 
@@ -165,7 +165,7 @@ texture = ExtResource("4_84eer")
 position = Vector2(22, -9)
 texture = ExtResource("1_w5mcf")
 
-[node name="feather_inline3" type="Sprite2D" parent="everything/triple feather"]
+[node name="triple_feather_inline3" type="Sprite2D" parent="everything/triple feather"]
 position = Vector2(22, -9)
 texture = ExtResource("4_84eer")
 

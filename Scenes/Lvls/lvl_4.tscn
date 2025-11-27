@@ -104,14 +104,14 @@ collision_layer = 15
 [node name="Respawn" parent="." instance=ExtResource("9_pw6bk")]
 position = Vector2(81, 61)
 
-[node name="ExitPortal" parent="." instance=ExtResource("10_y74lp")]
-position = Vector2(598, -165)
-
 [node name="Feather" parent="." instance=ExtResource("14_8drc5")]
 position = Vector2(346, 79)
+is_triple = true
 
 [node name="Feather2" parent="." instance=ExtResource("14_8drc5")]
-position = Vector2(562, -178)
+position = Vector2(562, -177)
+is_triple = true
+triple_num = 2
 
 [node name="SEKIPS" type="Node" parent="."]
 
@@ -458,3 +458,6 @@ text = "<--
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="ExitPortal" parent="." instance=ExtResource("10_y74lp")]
+position = Vector2(598, -165)

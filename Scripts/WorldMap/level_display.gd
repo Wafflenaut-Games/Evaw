@@ -8,6 +8,9 @@ var already_out = true
 @onready var level_number: Label = $everything/level_number
 @onready var level_name: Label = $everything/level_name
 @onready var feather_inline: Sprite2D = $"everything/single feather/feather_inline"
+@onready var triple_feather_inline_1: Sprite2D = $"everything/triple feather/triple_feather_inline"
+@onready var triple_feather_inline_2: Sprite2D = $"everything/triple feather/triple_feather_inline2"
+@onready var triple_feather_inline_3: Sprite2D = $"everything/triple feather/triple_feather_inline3"
 
 
 
@@ -58,10 +61,20 @@ func _process(_delta: float) -> void:
 			else:
 				feather_inline.visible = false
 		4:
-			if Global.feather_lvl_4:
-				feather_inline.visible = true
+			if Global.feather_lvl_4_1:
+				triple_feather_inline_1.visible = true
 			else:
-				feather_inline.visible = false
+				triple_feather_inline_1.visible = false
+				
+			if Global.feather_lvl_4_2:
+				triple_feather_inline_2.visible = true
+			else:
+				triple_feather_inline_2.visible = false
+			
+			if Global.feather_lvl_4_3:
+				triple_feather_inline_3.visible = true
+			else:
+				triple_feather_inline_3.visible = false
 		5:
 			if Global.feather_lvl_5:
 				feather_inline.visible = true

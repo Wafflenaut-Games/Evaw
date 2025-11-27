@@ -56,7 +56,13 @@ func _process(delta: float) -> void:
 				3:
 					Global.feather_lvl_3 = true
 				4:
-					Global.feather_lvl_4 = true
+					match triple_num:
+						1:
+							Global.feather_lvl_4_1 = true
+						2:
+							Global.feather_lvl_4_2 = true
+						3:
+							Global.feather_lvl_4_3 = true
 				5:
 					Global.feather_lvl_5 = true
 				6:
@@ -103,4 +109,5 @@ func collect(body):
 		feather_grab.play()
 
 func _on_level_end():
-	Global.feathers_collected += 1
+	if collecting == true:
+		Global.feathers_collected += 1

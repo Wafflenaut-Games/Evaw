@@ -18,6 +18,9 @@ func _process(_delta: float) -> void:
 	visibility()
 	
 	transitions.global_position = vaw.global_position
+	
+	if Input.is_action_just_pressed("cheat"):
+		entered = true
 
 
 func leave() -> void:
