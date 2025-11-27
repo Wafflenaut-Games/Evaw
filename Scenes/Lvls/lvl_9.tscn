@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://ha3k8g5wd2dg"]
+[gd_scene load_steps=31 format=4 uid="uid://ha3k8g5wd2dg"]
 
 [ext_resource type="Script" uid="uid://c4j573rrepf7r" path="res://Scripts/Lvls/lvl_1.gd" id="1_m3e0t"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_o4xyl"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c57qokokvchkc" path="res://Scenes/Objects/water_boundary.tscn" id="20_v62ld"]
 [ext_resource type="PackedScene" uid="uid://svren05pw2nw" path="res://Scenes/Objects/spikes.tscn" id="21_m3e0t"]
 [ext_resource type="PackedScene" uid="uid://cc1xmekoqxv55" path="res://Scenes/Objects/one_way_platform.tscn" id="22_o4xyl"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="23_d3h4a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5at8g"]
 shader = ExtResource("11_yo1nb")
@@ -1311,3 +1312,25 @@ position = Vector2(-292, 308)
 
 [node name="OneWayPlatform3" parent="One wayisie" instance=ExtResource("22_o4xyl")]
 position = Vector2(-284, 308)
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = 3.0
+offset_right = -219.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("23_d3h4a")
+theme_override_font_sizes/font_size = 7
+text = "THIS IS AN 
+IGLOO TRUST"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
