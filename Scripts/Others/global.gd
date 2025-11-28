@@ -30,7 +30,7 @@ var wm_hovering = 0
 
 var f = "bro forgot to name ts lvl"
 
-var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Jungle of Thorns", f, f, f, f, f, f, f, f, f, f, f, f, f, f,]
+var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Old Concrete", "Floodgate", "Jungle of Thorns", "Mountain Pass", "Celeste 2", "Door in the Mountains", "Jagged Peaks", "AMONG US", "Holy Moly", "Fallen Down", "Celeste 3", ":despair:", "radio Station", "level 15", "Weezer",]
 
 #region Feather vars
 
