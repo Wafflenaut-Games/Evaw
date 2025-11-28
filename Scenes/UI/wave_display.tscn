@@ -18,11 +18,11 @@ text = "WAVE INDICATOR:"
 
 [node name="checkbox" type="Button" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_51obp")
 theme_override_font_sizes/font_size = 7
 text = "SHOW"
 icon = ExtResource("2_hxmnu")
-flat = true
 script = ExtResource("3_hxmnu")
 
 [connection signal="pressed" from="checkbox" to="." method="_on_checkbox_pressed"]

@@ -23,7 +23,14 @@ var death_count = 0
 var respawning = false
 var paused = false
 
-var vol = 10
+var main_vol = 10
+var music_vol = 10
+var sfx_vol = 10
+
+var main_bus = AudioServer.get_bus_index("Master")
+var music_bus = AudioServer.get_bus_index("Music")
+var sfx_bus = AudioServer.get_bus_index("SFX")
+
 var difficulty: float = 2
 
 var wave_indicator = false
@@ -62,3 +69,7 @@ var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Old Concrete", "Floodga
 @onready var feather_lvl_16 = false
 
 #endregion
+
+
+func _process(delta: float) -> void:
+	
