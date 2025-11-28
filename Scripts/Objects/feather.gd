@@ -41,7 +41,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Volume
-	feather_grab.volume_db = init_vol + Global.vol
+	feather_grab.volume_db = init_vol + Global.music_vol
 	
 	# Reset when you die
 	if Global.dying:

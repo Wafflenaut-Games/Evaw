@@ -1156,35 +1156,43 @@ texture_scale = 1.75
 [node name="walking" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("23_vl8gu")
 volume_db = 16.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="Tentativejump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("26_pmbmc")
 volume_db = 24.0
+bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_kh1wn")
 volume_db = 15.0
+bus = &"SFX"
 
 [node name="HitGround" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("27_s2klm")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="SwitchLume" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("24_odm3q")
 volume_db = 21.0
+bus = &"SFX"
 
 [node name="SwitchSine" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("29_s2klm")
 volume_db = 21.0
+bus = &"SFX"
 
 [node name="SwitchLume2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("30_khic2")
 volume_db = 21.0
+bus = &"SFX"
 
 [node name="SwitchSine2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("31_8u1j7")
 volume_db = 21.0
+bus = &"SFX"
 
 [node name="WalkingParticle" type="GPUParticles2D" parent="."]
 position = Vector2(0, 3)

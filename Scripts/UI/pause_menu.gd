@@ -22,7 +22,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pausing()
 	position = Vector2.ZERO
-	click.volume_db = init_vol + Global.vol
+	#click.volume_db = init_vol + Global.vol
 
 
 func pausing() -> void:

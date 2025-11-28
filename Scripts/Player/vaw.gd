@@ -120,7 +120,6 @@ func _physics_process(delta: float) -> void:
 		diff_dir_timer()
 		
 		# Animations/SFX
-		sfx_vols()
 		handle_sfx()
 		handle_anims()
 		walking_particles()
@@ -495,16 +494,6 @@ func disable_raycasts() -> void:
 		ground_checker_l.enabled = true
 		ground_checker_r.enabled = true
 
-
-func sfx_vols() -> void:
-	walking.volume_db = walk_init_vol + Global.vol
-	switch_sine.volume_db = switch_init_vol + Global.vol
-	switch_sine_2.volume_db = switch_init_vol + Global.vol
-	switch_lume.volume_db = switch_init_vol + Global.vol
-	switch_lume_2.volume_db = switch_init_vol + Global.vol
-	tentative_jump.volume_db = jump_init_vol + Global.vol
-	hit_grnd.volume_db = hit_grnd_init_vol + Global.vol
-	death_sfx.volume_db = death_init_vol + Global.vol
 
 
 func walking_particles() -> void:

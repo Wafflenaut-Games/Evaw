@@ -72,4 +72,6 @@ var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Old Concrete", "Floodga
 
 
 func _process(delta: float) -> void:
-	
+	AudioServer.set_bus_volume_db(main_bus, main_vol)
+	AudioServer.set_bus_volume_db(music_bus, music_vol)
+	AudioServer.set_bus_volume_db(sfx_bus, sfx_vol)

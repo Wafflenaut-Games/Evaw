@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 func change_tune() -> void:
 	if Global.water_lvl == "_w":
 		undermain.volume_db = -INF
-		undersine.volume_db = sine_init_vol + Global.vol
+		undersine.volume_db = sine_init_vol + Global.music_vol
 		underlume.volume_db = -INF
 		icemain.volume_db = -INF
 		icesine.volume_db = -INF
@@ -52,13 +52,13 @@ func change_tune() -> void:
 			undersine.volume_db = -INF
 			underlume.volume_db = -INF
 			icemain.volume_db = -INF
-			icesine.volume_db = ice_sine_init_vol + Global.vol
+			icesine.volume_db = ice_sine_init_vol + Global.music_vol
 			icelume.volume_db = -INF
 		elif Global.vaw_form == "norm":
 			undermain.volume_db = -INF
 			undersine.volume_db = -INF
 			underlume.volume_db = -INF
-			icemain.volume_db = ice_main_init_vol + Global.vol
+			icemain.volume_db = ice_main_init_vol + Global.music_vol
 			icesine.volume_db = -INF
 			icelume.volume_db = -INF
 		elif Global.vaw_form == "lume":
@@ -67,17 +67,17 @@ func change_tune() -> void:
 			underlume.volume_db = -INF
 			icemain.volume_db = -INF
 			icesine.volume_db = -INF
-			icelume.volume_db = ice_lume_init_vol + Global.vol
+			icelume.volume_db = ice_lume_init_vol + Global.music_vol
 	else:
 		if Global.vaw_form == "sine" or Global.paused:
 			undermain.volume_db = -INF
-			undersine.volume_db = sine_init_vol + Global.vol
+			undersine.volume_db = sine_init_vol + Global.music_vol
 			underlume.volume_db = -INF
 			icemain.volume_db = -INF
 			icesine.volume_db = -INF
 			icelume.volume_db = -INF
 		elif Global.vaw_form == "norm":
-			undermain.volume_db = main_init_vol + Global.vol
+			undermain.volume_db = main_init_vol + Global.music_vol
 			undersine.volume_db = -INF
 			underlume.volume_db = -INF
 			icemain.volume_db = -INF
@@ -86,7 +86,7 @@ func change_tune() -> void:
 		elif Global.vaw_form == "lume":
 			undermain.volume_db = -INF
 			undersine.volume_db = -INF
-			underlume.volume_db = lume_init_vol + Global.vol
+			underlume.volume_db = lume_init_vol + Global.music_vol
 			icemain.volume_db = -INF
 			icesine.volume_db = -INF
 			icelume.volume_db = -INF

@@ -2,7 +2,7 @@ extends Control
 
 
 #region vars
-@onready var difficulty_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Difficulty/DIFFICULTY
+@onready var difficulty_label: Label = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/DIFFICULTY
 @onready var volume_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Volume/VOLUME
 @onready var click: AudioStreamPlayer = $UiMouseClick
 @onready var main: VSlider = $PanelContainer/MarginContainer/HBoxContainer/Volume/Volume/HBoxContainer/Main/Main
@@ -20,9 +20,9 @@ var init_vol = 0
 
 func _ready() -> void:
 	init_vol = click.volume_db - 24
-	main.value = int((float(Global.vol) + 5) / 5 + 9)
-	music.value = int((float(Global.vol) + 5) / 5 + 9)
-	sfx.value = int((float(Global.vol) + 5) / 5 + 9)
+	main.value = int((float(Global.main_vol) + 5) / 5 + 9)
+	music.value = int((float(Global.music_vol) + 5) / 5 + 9)
+	sfx.value = int((float(Global.sfx_vol) + 5) / 5 + 9)
 
 
 func _process(_delta: float) -> void:
@@ -46,7 +46,17 @@ func volume() -> void:
 	else:
 		Global.main_vol = -INF
 	
-	click.volume_db = init_vol + Global.vol
+	if music.value > 0:
+		Global.music_vol = ((music.value - 5) * 5) - 25
+	else:
+		Global.music_vol = -INF
+	
+	if sfx.value > 0:
+		Global.sfx_vol = ((sfx.value - 5) * 5) - 50
+	else:
+		Global.sfx_vol = -INF
+	
+	#click.volume_db = init_vol + Global.vol
 
 
 func _on_easy_pressed() -> void:
