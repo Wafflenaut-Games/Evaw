@@ -31,21 +31,26 @@ func start() -> void:
 
 
 func _on_start_pressed() -> void:
-	click.play()
-	apcrt.play("zoom")
-	apworld.play("zoom 2")
+	if not Global.is_transitioning:
+		click.play()
+		apcrt.play("zoom")
+		apworld.play("zoom 2")
+		Global.is_transitioning = true
 
 
 func _on_options_pressed() -> void:
-	options_ui.visible = true
-	click.play()
+	if not Global.is_transitioning:
+		options_ui.visible = true
+		click.play()
 
 
 func _on_quit_pressed() -> void:
-	click.play()
-	get_tree().quit()
+	if not Global.is_transitioning:
+		click.play()
+		get_tree().quit()
 
 
-func _on_apworld_animation_finished(anim_name: StringName) -> void:
+func _on_apworld_animation_finished(_anim_name: StringName) -> void:
 	Global.paused = false
+	Global.is_transitioning = false
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
