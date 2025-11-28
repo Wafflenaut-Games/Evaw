@@ -3,11 +3,13 @@ extends Control
 
 #region vars
 @onready var difficulty_label: Label = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/DIFFICULTY
-@onready var volume_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Volume/VOLUME
 @onready var click: AudioStreamPlayer = $UiMouseClick
 @onready var main: VSlider = $PanelContainer/MarginContainer/HBoxContainer/Volume/Volume/HBoxContainer/Main/Main
 @onready var music: VSlider = $PanelContainer/MarginContainer/HBoxContainer/Volume/Volume/HBoxContainer/Music/Music
 @onready var sfx: VSlider = $PanelContainer/MarginContainer/HBoxContainer/Volume/Volume/HBoxContainer/SFX/sfx
+@onready var easy: Button = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/HBoxContainer/Easy
+@onready var normal: Button = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/HBoxContainer/Normal
+@onready var wavemaster: Button = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/Wavemaster
 
 
 enum difficulty {easy = 4, normal = 2, wavemaster = 1}
@@ -28,6 +30,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	volume()
 	labels()
+	difficulty_icons()
 
 
 func labels() -> void:
@@ -57,6 +60,21 @@ func volume() -> void:
 		Global.sfx_vol = -INF
 	
 	#click.volume_db = init_vol + Global.vol
+
+
+func difficulty_icons() -> void:
+	if Global.difficulty == difficulty.easy:
+		easy.icon = load("res://Assets/Interactables/buttonpress-export.png")
+		normal.icon = load("res://Assets/Interactables/buttonpress.png")
+		wavemaster.icon = load("res://Assets/Interactables/buttonpress.png")
+	if Global.difficulty == difficulty.normal:
+		easy.icon = load("res://Assets/Interactables/buttonpress.png")
+		normal.icon = load("res://Assets/Interactables/buttonpress-export.png")
+		wavemaster.icon = load("res://Assets/Interactables/buttonpress.png")
+	if Global.difficulty == difficulty.wavemaster:
+		easy.icon = load("res://Assets/Interactables/buttonpress.png")
+		normal.icon = load("res://Assets/Interactables/buttonpress.png")
+		wavemaster.icon = load("res://Assets/Interactables/buttonpress-export.png")
 
 
 func _on_easy_pressed() -> void:
