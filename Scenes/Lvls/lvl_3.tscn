@@ -405,7 +405,7 @@ libraries = {
 
 [node name="Lantern5" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_5u6a0")
-position = Vector2(31, -261)
+position = Vector2(30, -261)
 sprite_frames = SubResource("SpriteFrames_78poa")
 animation = &"fire"
 autoplay = "fire"
@@ -423,7 +423,7 @@ libraries = {
 
 [node name="Lantern6" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_5u6a0")
-position = Vector2(87, -261)
+position = Vector2(86, -261)
 sprite_frames = SubResource("SpriteFrames_78poa")
 animation = &"fire"
 autoplay = "fire"
