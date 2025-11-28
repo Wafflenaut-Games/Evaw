@@ -429,22 +429,14 @@ func get_mouse_direction() -> void:
 	var angle_radians = direction_vector.angle()
 	var angle_degrees = rad_to_deg(angle_radians)
 	
-	if angle_degrees > -22.5 and angle_degrees < 22.5:
+	if angle_degrees > -45 and angle_degrees < 45:
 		wave_dir = "r"
-	elif abs(angle_degrees) > 157.5:
-		wave_dir = "l"
-	elif angle_degrees > -112.5 and angle_degrees < -67.5:
+	elif angle_degrees < -45 and angle_degrees > -135:
 		wave_dir = "u"
-	elif angle_degrees > 67.5 and angle_degrees < 112.5:
+	elif angle_degrees > 45 and angle_degrees < 135:
 		wave_dir = "d"
-	elif angle_degrees > -67.5 and angle_degrees < -22.5:
-		wave_dir = "ur"
-	elif angle_degrees > -157.5 and angle_degrees < -112.5:
-		wave_dir = "ul"
-	elif angle_degrees > 22.5 and angle_degrees < 67.5:
-		wave_dir = "dr"
-	elif angle_degrees > 112.5 and angle_degrees < 157.5:
-		wave_dir = "dl"
+	else:
+		wave_dir = "l"
 
 
 func death() -> void:

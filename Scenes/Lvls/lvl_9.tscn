@@ -262,6 +262,7 @@ position = Vector2(-76, -449)
 preprocess = 11.1
 
 [node name="SEKIPS" type="Node2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="Sleet" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
 position = Vector2(-396, 284)
