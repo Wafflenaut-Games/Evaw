@@ -301,15 +301,15 @@ position = Vector2(177, -627)
 direction = "U"
 
 [node name="CLAY17" parent="PIEKSS" instance=ExtResource("16_o0bed")]
-position = Vector2(121, -636)
+position = Vector2(121, -635)
 direction = "U"
 
 [node name="CLAY18" parent="PIEKSS" instance=ExtResource("16_o0bed")]
-position = Vector2(113, -636)
+position = Vector2(113, -635)
 direction = "U"
 
 [node name="CLAY19" parent="PIEKSS" instance=ExtResource("16_o0bed")]
-position = Vector2(105, -636)
+position = Vector2(105, -635)
 direction = "U"
 
 [node name="CLAY16" parent="PIEKSS" instance=ExtResource("16_o0bed")]
