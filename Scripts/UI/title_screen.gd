@@ -9,6 +9,7 @@ extends Control
 
 var init_vol = 0
 var init_click_vol = 0
+var music_started = false
 
 #endregion
 
@@ -20,8 +21,19 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	start()
+	vols()
+
+
+func vols() -> void:
 	beginnings.volume_db = init_vol + Global.vol
 	click.volume_db = init_click_vol + Global.vol
+
+
+func start() -> void:
+	if not music_started:
+		beginnings.play()
+		music_started = true
 
 
 func _on_start_pressed() -> void:

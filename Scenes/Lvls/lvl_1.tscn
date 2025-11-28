@@ -199,7 +199,6 @@ visibility_layer = 3
 position = Vector2(100, 65)
 
 [node name="ExitPortal" parent="." instance=ExtResource("2_5te3i")]
-visible = false
 visibility_layer = 3
 position = Vector2(1332, -44)
 

@@ -1015,17 +1015,17 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
-[node name="Transitions2" type="CanvasLayer" parent="Camera"]
+[node name="TransitionsLayer" type="CanvasLayer" parent="Camera"]
 layer = 2000
 visible = false
 
-[node name="Transitions" parent="Camera/Transitions2" instance=ExtResource("22_s1hrp")]
+[node name="Transitions" parent="Camera/TransitionsLayer" instance=ExtResource("22_s1hrp")]
 light_mask = 64
 visibility_layer = 4
 z_index = 1025
 position = Vector2(80, 60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Transitions2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/TransitionsLayer"]
 visible = false
 position = Vector2(80, 60)
 shape = SubResource("RectangleShape2D_6p8ar")
@@ -1046,7 +1046,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
-visible = false
 
 [node name="SineIndicator" parent="UI" instance=ExtResource("6_8u1j7")]
 position = Vector2(-3, -8)
@@ -1187,6 +1186,7 @@ volume_db = 21.0
 
 [node name="WalkingParticle" type="GPUParticles2D" parent="."]
 position = Vector2(0, 3)
+emitting = false
 amount = 6
 lifetime = 0.3
 collision_base_size = 1.1

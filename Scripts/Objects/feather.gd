@@ -18,6 +18,8 @@ var real_speed = start_speed
 
 var player
 
+var init_vol = 0
+
 
 func random_timer():
 	await get_tree().create_timer(randf_range(1,5)).timeout
@@ -29,6 +31,7 @@ func _ready() -> void:
 	Global.connect("level_end", Callable(self,"_on_level_end"))
 	
 	real_speed = start_speed
+	init_vol = feather_grab.volume_db - 24
 	starting_pos = global_position
 	animated_sprite_2d.frame = randi_range(0,9)
 	random_timer()
@@ -37,6 +40,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# Volume
+	feather_grab.volume_db = init_vol + Global.vol
+	
 	# Reset when you die
 	if Global.dying:
 		collecting = false

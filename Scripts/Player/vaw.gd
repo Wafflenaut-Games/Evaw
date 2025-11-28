@@ -9,7 +9,8 @@ extends CharacterBody2D
 @onready var no_soft_lock: Area2D = $NoSoftLock
 @onready var respawn_point: Node2D = $"../Respawn"
 @onready var level_titles: AnimatedSprite2D = $LevelTitles
-@onready var transitions: AnimatedSprite2D = $Camera/Transitions2/Transitions
+@onready var transitions_layer: CanvasLayer = $Camera/TransitionsLayer
+@onready var transitions: AnimatedSprite2D = $Camera/TransitionsLayer/Transitions
 @onready var sensor_checker: Area2D = $SensorChecker
 @onready var coyote_timer: Timer = $"Timers/Jump Timers/CoyoteTimer"
 @onready var j_buffer_timer: Timer = $"Timers/Jump Timers/JBufferTimer"
@@ -75,6 +76,7 @@ var walk_init_vol = 0
 var switch_init_vol = 0
 var jump_init_vol = 0
 var hit_grnd_init_vol = 0
+var death_init_vol = 0
 
 #endregion
 
@@ -84,12 +86,17 @@ func _ready() -> void:
 	switch_init_vol = switch_lume.volume_db - 24
 	jump_init_vol = tentative_jump.volume_db - 24
 	hit_grnd_init_vol = hit_grnd.volume_db - 24
+	death_init_vol = death_sfx.volume_db - 24
 	level_titles.visible = true
 
 
 func _physics_process(delta: float) -> void:
+	# Always run
 	level_begin()
+	stop_sfx()
 	
+	
+	# Only while active
 	if not inactive:
 		# Waveforms
 		formshift()
@@ -106,17 +113,17 @@ func _physics_process(delta: float) -> void:
 		jump_buffer()
 		coyote_time_set()
 		
-		# Animations/SFX
-		sfx_vols()
-		handle_sfx()
-		handle_anims()
-		walking_particles()
-		
 		# Other
 		sensor_collision()
 		disable_raycasts()
 		restart()
 		diff_dir_timer()
+		
+		# Animations/SFX
+		sfx_vols()
+		handle_sfx()
+		handle_anims()
+		walking_particles()
 		
 		move_and_slide()
 
@@ -497,6 +504,7 @@ func sfx_vols() -> void:
 	switch_lume_2.volume_db = switch_init_vol + Global.vol
 	tentative_jump.volume_db = jump_init_vol + Global.vol
 	hit_grnd.volume_db = hit_grnd_init_vol + Global.vol
+	death_sfx.volume_db = death_init_vol + Global.vol
 
 
 func walking_particles() -> void:
@@ -506,16 +514,15 @@ func walking_particles() -> void:
 		walking_particle.emitting = false
 
 
+func stop_sfx() -> void:
+	if Global.paused:
+		walking.stop()
+
+
 func handle_sfx() -> void:
-	if Global.vaw_form == "norm":
-		if is_grounded():
-			if direction:
-				if not walking.playing:
-					walking.play()
-			else:
-				walking.stop()
-		else:
-			walking.stop()
+	if Global.vaw_form == "norm" and is_grounded() and direction:
+		if not walking.playing:
+			walking.play()
 	else:
 		walking.stop()
 
@@ -633,6 +640,7 @@ func _on_respawn_timer_timeout() -> void:
 
 func _on_level_title_timer_timeout() -> void:
 	level_titles.visible = false
+	transitions_layer.visible = true
 	transitions.play("open")
 	transition_timer.start()
 

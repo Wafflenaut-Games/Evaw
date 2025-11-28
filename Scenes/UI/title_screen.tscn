@@ -146,7 +146,6 @@ stream = ExtResource("11_nd20k")
 [node name="TitleScreenBeginnings" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_28uqs")
 volume_db = 15.0
-autoplay = true
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]

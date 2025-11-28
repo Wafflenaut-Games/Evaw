@@ -31,17 +31,15 @@ func pausing() -> void:
 		reset_inactive = false
 	
 	visible = active
+	Global.paused = active
 	
 	if active:
-		Global.paused = true
 		if vaw.name == "Vaw":
 			vaw.inactive = true
 	elif not active and not reset_inactive:
 		reset_inactive = true
 		if vaw.name == "Vaw":
 			vaw.inactive = false
-	else:
-		Global.paused = false
 
 
 func _on_start_pressed() -> void:

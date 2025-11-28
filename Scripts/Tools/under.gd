@@ -10,7 +10,7 @@ extends Node
 @onready var icesine: AudioStreamPlayer = $Icesine
 @onready var icelume: AudioStreamPlayer = $Icelume
 
-const INIT_VOL = 0
+#const INIT_VOL = 0
 
 var main_init_vol = 0
 var sine_init_vol = 0
@@ -18,6 +18,8 @@ var lume_init_vol = 0
 var ice_main_init_vol = 0
 var ice_sine_init_vol = 0
 var ice_lume_init_vol = 0
+
+var music_started = false
 
 #endregion
 
@@ -32,6 +34,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	start()
 	change_tune()
 
 
@@ -87,3 +90,14 @@ func change_tune() -> void:
 			icemain.volume_db = -INF
 			icesine.volume_db = -INF
 			icelume.volume_db = -INF
+
+
+func start() -> void:
+	if not music_started:
+		undermain.play()
+		undersine.play()
+		underlume.play()
+		icemain.play()
+		icesine.play()
+		icelume.play()
+		music_started = true
