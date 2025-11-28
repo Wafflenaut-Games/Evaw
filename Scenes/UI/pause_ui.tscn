@@ -110,7 +110,8 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_qjk66")
 theme_override_font_sizes/font_size = 7
 theme_override_icons/icon = ExtResource("6_lsyt1")
-text = "  QUIT TO TITLE"
+text = "  QUIT TO WORLD MAP
+"
 alignment = 0
 text_overrun_behavior = 1
 

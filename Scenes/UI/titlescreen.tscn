@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cribkahwgtkua"]
+[gd_scene load_steps=25 format=3 uid="uid://cribkahwgtkua"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
-[ext_resource type="Texture2D" uid="uid://1u1hxdhrn33s" path="res://Assets/UI/evawscreen.png" id="1_gcudb"]
 [ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
 [ext_resource type="PackedScene" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="5_oi8xr"]
@@ -10,8 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="9_hcsug"]
 [ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="10_8pip5"]
 [ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="11_ubo53"]
+[ext_resource type="Texture2D" uid="uid://dnafbg1ijc2ov" path="res://Assets/UI/evawscreen2.png" id="12_lvn24"]
+[ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="13_1nyvd"]
+[ext_resource type="Texture2D" uid="uid://wpmcty81gb50" path="res://Assets/UI/smke.png" id="14_oi8xr"]
 [ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="15_qc0kr"]
 [ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="16_0l5st"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekuop"]
+shader = ExtResource("13_1nyvd")
+shader_parameter/waveAmplitude = 0.25
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 29.6690014092775
+shader_parameter/verticalWave = false
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 5.59200026562
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2bjoa"]
 
@@ -209,7 +226,12 @@ _data = {
 
 [node name="Evawscreen" type="Sprite2D" parent="."]
 position = Vector2(80, 60)
-texture = ExtResource("1_gcudb")
+texture = ExtResource("12_lvn24")
+
+[node name="Smke" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ekuop")
+position = Vector2(53, 44)
+texture = ExtResource("14_oi8xr")
 
 [node name="Worldmap10" type="Sprite2D" parent="."]
 z_index = 9
