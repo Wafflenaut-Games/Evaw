@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://b2bgew877g6u"]
+[gd_scene load_steps=43 format=4 uid="uid://b2bgew877g6u"]
 
 [ext_resource type="Script" uid="uid://dynch2fpwoyd7" path="res://Scripts/Lvls/lvl_6.gd" id="1_0tnqr"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_1xjb5"]
@@ -126,6 +126,24 @@ _data = {
 &"RESET": SubResource("Animation_urfnf"),
 &"fire": SubResource("Animation_b81ne")
 }
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j06xe"]
+polygon = PackedVector2Array(1741, -447, 1173, -447, 1173, -391, 1165, -391, 1166, -223, 1157, -223, 1157, -212, 1253, -210, 1414, -248)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_muw4e"]
+polygon = PackedVector2Array(685, -206, 685, -207, 573, -207, 573, -215, 534, -215, 533, -215, 533, -223, 469, -223, 469, -287, 421, -287, 421, -351, 477, -351, 477, -357, 533, -357, 533, -351, 541, -351, 541, -367, 533, -367, 533, -359, 477, -359, 477, -367, 421, -367, 421, -383, 453, -383, 453, -399, 421, -399, 421, -447, 413, -447, 413, -503, 437, -503, 437, -495, 445, -495, 445, -479, 453, -479, 453, -447, 445, -447, 445, -422, 469, -422, 469, -446, 468, -533, 378, -518, 367, -253, 427, -185, 528, -178, 667, -172)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xgdio"]
+polygon = PackedVector2Array(741, -207, 741, -136, 781, -136, 781, -143, 789, -143, 789, -151, 797, -151, 797, -182, 797, -183, 805, -183, 805, -191, 869, -191, 869, -207)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ffuwg"]
+polygon = PackedVector2Array(541, -365, 541, -407, 581, -407, 581, -415, 621, -415, 621, -423, 685, -423, 685, -431, 789, -431, 789, -438, 789, -439, 821, -439, 820, -476, 830, -476, 832, -428, 685, -335)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kpo3k"]
+polygon = PackedVector2Array(36, 257, 37, 257, 37, 153, 141, 153, 141, 256, 141, 257, 101, 257, 101, 209, 77, 209, 77, 257)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0tnqr"]
+polygon = PackedVector2Array(-27, 137, -19, 137, -19, 217, -12, 217, -11, 217, -11, 313, -3, 313, -3, 329, 61, 329, 61, 337, 133, 337, 133, 329, 157, 329, 157, 321, 173, 321, 173, 137, 229, 137, 229, 153, 293, 153, 293, 296, 293, 298, 293, 297, 373, 297, 373, 289, 389, 289, 390, 209, 381, 209, 381, 169, 373, 169, 373, 153, 477, 153, 477, 145, 525, 145, 525, 137, 573, 137, 573, 129, 621, 129, 621, 161, 613, 161, 613, 233, 605, 233, 605, 289, 598, 289, 596, 289, 597, 289, 597, 313, 613, 313, 613, 321, 645, 321, 645, 329, 693, 329, 693, 337, 709, 337, 709, 345, 741, 345, 741, 152, 685, 153, 685, 145, 741, 145, 742, 133, 755, 140, 753, 366, 441, 361, -108, 395, -225, 118, -106, 85)
 
 [node name="Lvl_6" type="Node2D"]
 script = ExtResource("1_0tnqr")
@@ -522,10 +540,6 @@ direction = "U"
 [node name="CLAY2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(809, -219)
 direction = "D"
-
-[node name="CLAY3" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(425, -291)
-direction = "U"
 
 [node name="CLAY4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(617, -275)
@@ -1638,6 +1652,27 @@ texture = SubResource("GradientTexture2D_qt4o2")
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_j06xe")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_j06xe")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_muw4e")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_xgdio")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ffuwg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_kpo3k")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_0tnqr")
 
 [node name="Text" type="Node2D" parent="."]
 position = Vector2(80, 60)
