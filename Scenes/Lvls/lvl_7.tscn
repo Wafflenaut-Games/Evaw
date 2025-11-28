@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c8o15hgexbbqf"]
+[gd_scene load_steps=39 format=4 uid="uid://c8o15hgexbbqf"]
 
 [ext_resource type="Script" uid="uid://b5hv3xvy4s277" path="res://Scripts/Lvls/lvl_7.gd" id="1_et28n"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_lcgbr"]
@@ -124,6 +124,21 @@ _data = {
 &"fire": SubResource("Animation_b81ne")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_et28n"]
+polygon = PackedVector2Array(349, -479, 333, -479, 332, -463, 349, -463)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lcbdu"]
+polygon = PackedVector2Array(85, -711, 93, -711, 94, -679, 101, -678, 101, -631, 125, -631, 125, -647, 165, -647, 165, -623, 198, -623, 197, -647, 245, -647, 245, -591, 269, -591, 269, -575, 245, -575, 245, -528, 245, -527, 237, -527, 237, -519, 333, -519, 333, -527, 381, -527, 381, -557, 285, -557, 285, -543, 268, -543, 268, -559, 381, -559, 381, -606, 381, -607, 341, -607, 341, -615, 317, -615, 317, -631, 472, -631, 418, -518, 344, -523, 341, -527, 333, -527, 333, -517, 178, -517, 77, -633, 34, -728)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g37a3"]
+polygon = PackedVector2Array(333, -519, 237, -519, 238, -517, 333, -516)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_moc42"]
+polygon = PackedVector2Array(501, -527, 461, -527, 461, -551, 454, -552, 451, -504, 454, -478, 477, -479, 501, -479)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_phaee"]
+polygon = PackedVector2Array(69, -439, 69, -407, 285, -407, 285, -439, 309, -438, 285, -439, 309, -439, 309, -415, 341, -415, 341, -423, 445, -423, 445, -311, 461, -311, 461, -399, 485, -399, 485, -343, 469, -343, 469, -335, 493, -335, 493, -319, 500, -319, 501, -319, 501, -439, 525, -438, 501, -439, 525, -439, 525, -319, 565, -319, 565, -407, 717, -407, 717, -439, 669, -439, 669, -447, 637, -447, 637, -455, 621, -455, 621, -469, 605, -469, 605, -464, 605, -463, 589, -463, 589, -470, 589, -471, 581, -471, 581, -480, 581, -479, 565, -479, 565, -488, 565, -487, 517, -487, 517, -503, 541, -503, 541, -519, 605, -519, 605, -472, 605, -471, 621, -471, 621, -535, 613, -535, 613, -543, 589, -543, 589, -551, 709, -596, 817, -343, 116, -191, -9, -306, 45, -506)
+
 [node name="Lvl_7" type="Node2D"]
 script = ExtResource("1_et28n")
 
@@ -184,6 +199,7 @@ visibility_layer = 3
 position = Vector2(92, -417)
 
 [node name="ExitPortal" parent="." instance=ExtResource("8_y46f6")]
+visible = false
 visibility_layer = 3
 position = Vector2(705, -419)
 
@@ -714,3 +730,18 @@ text = "HOLY MOLY
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_et28n")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_lcbdu")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_g37a3")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_moc42")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_phaee")
