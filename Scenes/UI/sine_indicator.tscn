@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh7anbejaok3n"]
+
+[ext_resource type="Texture2D" uid="uid://bimjp8chwbvlh" path="res://Assets/UI/Vaw_Sine_Indi.png" id="1_bsuwd"]
+[ext_resource type="Texture2D" uid="uid://bpk71g8fa5ktl" path="res://Assets/UI/Vaw_Empty_Indi.png" id="2_juwu8"]
+[ext_resource type="Script" uid="uid://chfs5chwa6m7x" path="res://Scripts/UI/sine_indicator.gd" id="3_fglk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kelgk"]
+atlas = ExtResource("1_bsuwd")
+region = Rect2(0, 0, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jjf"]
+atlas = ExtResource("2_juwu8")
+region = Rect2(0, 0, 3, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsex5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kelgk")
+}],
+"loop": true,
+"name": &"unused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0jjf")
+}],
+"loop": true,
+"name": &"used",
+"speed": 5.0
+}]
+
+[node name="SineIndicator" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hsex5")
+animation = &"unused"
+script = ExtResource("3_fglk7")
+type = null

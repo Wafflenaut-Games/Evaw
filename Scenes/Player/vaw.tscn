@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=158 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bhxrfxl1y1xdq" path="res://Scenes/UI/pause_ui.tscn" id="4_25jie"]
 [ext_resource type="Texture2D" uid="uid://d2oghv12ydsjf" path="res://Assets/Player/Water/Vaw_Water_Die.png" id="4_w850c"]
 [ext_resource type="Texture2D" uid="uid://dfp6pm5bxk85r" path="res://Assets/Player/Vaw_Idle.png" id="5_bih53"]
+[ext_resource type="PackedScene" uid="uid://bh7anbejaok3n" path="res://Scenes/UI/sine_indicator.tscn" id="6_8u1j7"]
 [ext_resource type="Texture2D" uid="uid://dq7qgu61k72om" path="res://Assets/Player/Water/Vaw_Water_Fall.png" id="6_q0ywy"]
 [ext_resource type="Texture2D" uid="uid://bphadb2i0h4fs" path="res://Assets/Player/Vaw_Lume_Dia.png" id="6_snyf7"]
+[ext_resource type="PackedScene" uid="uid://b17trd2yiis3x" path="res://Scenes/UI/lume_indicator.tscn" id="7_5s3mi"]
 [ext_resource type="Texture2D" uid="uid://unyac6scchjk" path="res://Assets/Player/Vaw_Sine_Dia.png" id="7_ssfky"]
 [ext_resource type="Texture2D" uid="uid://xrafh4v8ruop" path="res://Assets/Player/Water/Vaw_Water_Idle.png" id="8_52i0t"]
 [ext_resource type="Texture2D" uid="uid://dsy6f7oy1m553" path="res://Assets/Player/Vaw_Fall.png" id="8_nfhue"]
@@ -1045,6 +1047,12 @@ grow_vertical = 2
 
 [node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
 visible = false
+
+[node name="SineIndicator" parent="UI" instance=ExtResource("6_8u1j7")]
+position = Vector2(-3, -8)
+
+[node name="Lume_Indicator" parent="UI" instance=ExtResource("7_5s3mi")]
+position = Vector2(2, -8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")

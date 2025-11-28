@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b17trd2yiis3x"]
+
+[ext_resource type="Texture2D" uid="uid://2foxna8hxdvf" path="res://Assets/UI/Vaw_Lume_Indi.png" id="1_men53"]
+[ext_resource type="Texture2D" uid="uid://bpk71g8fa5ktl" path="res://Assets/UI/Vaw_Empty_Indi.png" id="2_lpbl5"]
+[ext_resource type="Script" uid="uid://c5vjsnnnrja23" path="res://Scripts/UI/lume_indicator.gd" id="3_xntfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ghni"]
+atlas = ExtResource("1_men53")
+region = Rect2(0, 0, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd0jm"]
+atlas = ExtResource("2_lpbl5")
+region = Rect2(0, 0, 3, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hskvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ghni")
+}],
+"loop": true,
+"name": &"unused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd0jm")
+}],
+"loop": true,
+"name": &"used",
+"speed": 5.0
+}]
+
+[node name="Lume_Indicator" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hskvo")
+animation = &"unused"
+script = ExtResource("3_xntfk")
