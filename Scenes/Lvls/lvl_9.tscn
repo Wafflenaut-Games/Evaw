@@ -470,52 +470,52 @@ type = "glass"
 direction = "R"
 
 [node name="Glass3" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-540, 219)
+position = Vector2(-540, 220)
 type = "steel"
 direction = "R"
 
 [node name="Glass4" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-540, 227)
+position = Vector2(-540, 228)
 type = "steel"
 direction = "R"
 
 [node name="Glass8" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-604, 251)
+position = Vector2(-604, 252)
 type = "clay"
 direction = "U"
 
 [node name="Glass9" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-612, 251)
+position = Vector2(-612, 252)
 type = "clay"
 direction = "U"
 
 [node name="Glass10" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-740, -13)
+position = Vector2(-740, -12)
 type = "steel"
 direction = "D"
 
 [node name="Glass11" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-748, -13)
+position = Vector2(-748, -12)
 type = "steel"
 direction = "D"
 
 [node name="Glass12" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-604, -61)
+position = Vector2(-604, -60)
 type = "glass"
 direction = "U"
 
 [node name="Glass13" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-612, -61)
+position = Vector2(-612, -60)
 type = "glass"
 direction = "U"
 
 [node name="Glass14" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-620, -61)
+position = Vector2(-620, -60)
 type = "glass"
 direction = "U"
 
 [node name="Glass7" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-540, 211)
+position = Vector2(-540, 212)
 type = "steel"
 direction = "R"
 

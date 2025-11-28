@@ -302,21 +302,21 @@ func wave_direction() -> void:
 	if awaiting_dir:
 		if Input.is_action_pressed("up"):
 			awaiting_dir = false
-			wave_dir += "u"
+			wave_dir = "u"
 			no_y_wdir = false
 		elif Input.is_action_pressed("down"):
 			awaiting_dir = false
-			wave_dir += "d"
+			wave_dir = "d"
 			no_y_wdir = false
 		else:
 			no_y_wdir = true
 		if Input.is_action_pressed("left"):
 			awaiting_dir = false
-			wave_dir += "l"
+			wave_dir = "l"
 			no_x_wdir = false
 		elif Input.is_action_pressed("right"):
 			awaiting_dir = false
-			wave_dir += "r"
+			wave_dir = "r"
 			no_x_wdir = false
 		else:
 			no_x_wdir = true
