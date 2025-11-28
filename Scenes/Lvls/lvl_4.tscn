@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ceov68psc1yo4"]
+[gd_scene load_steps=20 format=4 uid="uid://ceov68psc1yo4"]
 
 [ext_resource type="Script" uid="uid://c1nbj7s84jyf0" path="res://Scripts/Lvls/lvl_4.gd" id="1_iv1r1"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_ubclh"]
@@ -45,6 +45,12 @@ shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 0.5
 shader_parameter/freezeFirstHalf = false
 shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iv1r1"]
+polygon = PackedVector2Array(-92, -36, -84, -36, -84, -52, -140, -52, -140, 4, -172, 4, -172, -42, -239, -53, -240, -53, -238, -53, -240, -52, -239, -52, -238, -53, -241, -50, -172, -36, -180, -36, -180, -28, -228, -28, -228, 12, -180, 12, -180, 27, -180, 28, -213, 28, -283, 23, -278, -78, -62, -161, -52, -33, -80, -20, -92, -20)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ubclh"]
+polygon = PackedVector2Array(18, 71, 146, 71, 146, 103, 282, 103, 282, -9, 298, -9, 298, 95, 306, 95, 306, 87, 314, 87, 314, 15, 346, 15, 346, 31, 338, 31, 338, 95, 346, 95, 346, 87, 354, 87, 354, -65, 338, -65, 338, -79, 330, -79, 330, -57, 346, -57, 346, 7, 314, 7, 314, -33, 306, -33, 306, -49, 314, -49, 314, -81, 378, -81, 378, -65, 402, -65, 402, -105, 394, -105, 394, -129, 418, -129, 418, -73, 426, -73, 426, -65, 450, -65, 450, -137, 426, -137, 426, -153, 615, -153, 619, -45, 274, 218, -82, 161, -107, -27, 9, -72, 18, -32, 18, -10, 18, -9, 10, -9, 10, 31, 18, 31, 18, 70)
 
 [node name="Lvl_4" type="Node2D"]
 script = ExtResource("1_iv1r1")
@@ -461,3 +467,10 @@ autowrap_mode = 3
 
 [node name="ExitPortal" parent="." instance=ExtResource("10_y74lp")]
 position = Vector2(598, -165)
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(598, -165)
+occluder = SubResource("OccluderPolygon2D_iv1r1")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ubclh")
