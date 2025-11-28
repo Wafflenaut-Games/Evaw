@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://5qituq6ajtd5"]
+[gd_scene load_steps=32 format=4 uid="uid://5qituq6ajtd5"]
 
 [ext_resource type="Script" path="res://Scripts/Lvls/lvl_5.gd" id="1_cjpde"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_0t5gq"]
@@ -118,6 +118,15 @@ _data = {
 &"RESET": SubResource("Animation_urfnf"),
 &"fire": SubResource("Animation_b81ne")
 }
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0t5gq"]
+polygon = PackedVector2Array(448, -180, 448, -200, 416, -200, 416, -224, 400, -224, 384, -142)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c0ikn"]
+polygon = PackedVector2Array(608, -335, 608, -336, 616, -336, 616, -328, 656, -328, 656, -334, 662, -334, 666, -318, 618, -305, 607, -333)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cjpde"]
+polygon = PackedVector2Array(-64, 64, -64, 88, -32, 88, -32, 80, 8, 80, 8, 96, 0, 96, 0, 112, -8, 112, -8, 128, 0, 128, 0, 136, 32, 136, 32, 129, 32, 128, 40, 128, 40, 105, 40, 104, 48, 104, 48, 95, 48, 96, 56, 96, 56, 80, 112, 80, 112, 24, 128, 24, 128, 80, 151, 80, 152, 80, 152, 72, 160, 72, 160, 64, 168, 64, 168, 56, 256, 56, 256, 64, 264, 64, 264, 72, 271, 72, 272, 72, 272, 80, 320, 80, 320, 71, 320, 72, 328, 72, 328, 64, 336, 64, 336, 56, 368, 56, 368, 96, 400, 96, 400, 48, 480, 48, 480, -16, 536, -16, 536, -8, 560, -8, 560, 0, 584, 0, 584, -24, 600, -24, 600, 8, 608, 8, 608, 16, 624, 16, 624, -64, 639, -64, 640, -64, 640, 24, 656, 24, 656, 16, 680, 16, 680, 8, 696, 8, 696, 1, 696, 0, 704, 0, 704, -8, 776, -8, 776, -48, 878, 37, 659, 200, 284, 256, -72, 196, -225, 84, -162, -154, -69, -116)
 
 [node name="Lvl_5" type="Node2D"]
 script = ExtResource("1_cjpde")
@@ -635,3 +644,12 @@ text = "-->"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_0t5gq")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_c0ikn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_cjpde")
