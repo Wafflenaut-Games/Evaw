@@ -71,3 +71,7 @@ func _on_back_pressed() -> void:
 
 func _on_volume_bar_drag_started() -> void:
 	click.play()
+
+
+func _on_wave_display_clicked() -> void:
+	click.play()

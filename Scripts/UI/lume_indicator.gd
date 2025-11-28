@@ -5,7 +5,7 @@ extends AnimatedSprite2D
 
 
 func _process(_delta: float) -> void:
-	if Global.difficulty == 4:
+	if Global.wave_indicator:
 		visible = true
 	else:
 		visible = false

@@ -26,6 +26,8 @@ var paused = false
 var vol = 10
 var difficulty: float = 2
 
+var wave_indicator = false
+
 var wm_hovering = 0
 
 var f = "bro forgot to name ts lvl"

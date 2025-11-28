@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdi8xrpf24rrh"]
+[gd_scene load_steps=9 format=3 uid="uid://bdi8xrpf24rrh"]
 
 [ext_resource type="Script" uid="uid://c3gbpk4ak2jlt" path="res://Scripts/UI/options_ui.gd" id="1_00m3j"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_yig7i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="5_1acnd"]
 [ext_resource type="Texture2D" uid="uid://dmp3txjud3qxw" path="res://Assets/Interactables/buttonpress.png" id="6_o7o45"]
 [ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="7_6cfgu"]
+[ext_resource type="PackedScene" uid="uid://da4hoqo8mcf1m" path="res://Scenes/UI/wave_display.tscn" id="7_yig7i"]
 
 [node name="OptionsUI" type="Control"]
 z_index = 10
@@ -35,6 +36,18 @@ theme_override_fonts/font = ExtResource("3_w2nho")
 theme_override_font_sizes/font_size = 7
 text = "  BACK"
 
+[node name="TITLE" type="Label" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -69.0
+offset_right = 26.0
+offset_bottom = -39.0
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("3_w2nho")
+theme_override_font_sizes/font_size = 14
+text = "OPTIONS"
+horizontal_alignment = 1
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -42,10 +55,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -55.5
-offset_right = 49.0
-offset_bottom = 55.5
+offset_left = -50.0
+offset_top = -43.0
+offset_right = 50.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -54,19 +67,11 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="TITLE" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
-theme_override_fonts/font = ExtResource("3_w2nho")
-theme_override_font_sizes/font_size = 14
-text = "OPTIONS"
-horizontal_alignment = 1
+theme_override_constants/separation = -2
 
 [node name="Volume" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = -1
+theme_override_constants/separation = -2
 
 [node name="VOLUME" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Volume"]
 layout_mode = 2
@@ -121,6 +126,9 @@ theme_override_font_sizes/font_size = 7
 text = "WAVEMASTER"
 icon = ExtResource("6_o7o45")
 
+[node name="WaveDisplay" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_yig7i")]
+layout_mode = 2
+
 [node name="UiMouseClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6cfgu")
 
@@ -130,3 +138,4 @@ stream = ExtResource("7_6cfgu")
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/HBoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/Wavemaster" to="." method="_on_wavemaster_pressed"]
+[connection signal="clicked" from="PanelContainer/MarginContainer/VBoxContainer/WaveDisplay" to="." method="_on_wave_display_clicked"]
