@@ -35,6 +35,8 @@ var difficulty: float = 2
 
 var wave_indicator = false
 
+var from_titlescreen = false
+
 var wm_hovering = 0
 
 var f = "bro forgot to name ts lvl"
@@ -71,7 +73,10 @@ var lvl_names: Array = ["Glass Bridge","Ruined Skyline","Old Concrete", "Floodga
 #endregion
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	AudioServer.set_bus_volume_db(main_bus, main_vol)
 	AudioServer.set_bus_volume_db(music_bus, music_vol)
 	AudioServer.set_bus_volume_db(sfx_bus, sfx_vol)
+	
+	if get_tree().root.name == "Titlescreen":
+		from_titlescreen = true

@@ -17,6 +17,7 @@ var music_started = false
 
 func _ready() -> void:
 	Global.paused = true
+	Global.from_titlescreen = true
 
 
 func _process(_delta: float) -> void:
