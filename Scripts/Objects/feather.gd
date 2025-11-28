@@ -134,3 +134,61 @@ func check_for_spawn():
 		2:
 			if Global.feather_lvl_2:
 				queue_free()
+		3:
+			if Global.feather_lvl_3:
+				queue_free()
+		4:
+			match triple_num:
+				1:
+					if Global.feather_lvl_4_1:
+						queue_free()
+				2:
+					if Global.feather_lvl_4_2:
+						queue_free()
+				3:
+					if Global.feather_lvl_4_3:
+						queue_free()
+		5:
+			if Global.feather_lvl_5:
+				queue_free()
+		6:
+			if Global.feather_lvl_6:
+				queue_free()
+		7:
+			if Global.feather_lvl_7:
+				queue_free()
+		8:
+			if Global.feather_lvl_8:
+				queue_free()
+		9:
+			match triple_num:
+				1:
+					if Global.feather_lvl_9_1:
+						queue_free()
+				2:
+					if Global.feather_lvl_9_2:
+						queue_free()
+				3:
+					if Global.feather_lvl_9_3:
+						queue_free()
+		10:
+			if Global.feather_lvl_10:
+				queue_free()
+		11:
+			if Global.feather_lvl_11:
+				queue_free()
+		12:
+			if Global.feather_lvl_12:
+				queue_free()
+		13:
+			if Global.feather_lvl_13:
+				queue_free()
+		14:
+			if Global.feather_lvl_14:
+				queue_free()
+		15:
+			if Global.feather_lvl_15:
+				queue_free()
+		16:
+			if Global.feather_lvl_16:
+				queue_free()
