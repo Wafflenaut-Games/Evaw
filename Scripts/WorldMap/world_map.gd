@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	start()
-	world_map.volume_db = init_vol + Global.vol
+	#world_map.volume_db = init_vol + Global.vol
 
 
 func start() -> void:

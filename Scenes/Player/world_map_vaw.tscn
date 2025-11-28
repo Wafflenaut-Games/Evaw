@@ -146,7 +146,6 @@ script = ExtResource("1_ieowi")
 [node name="UI" type="Node" parent="."]
 
 [node name="PauseUI" parent="UI" instance=ExtResource("2_b7hab")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
@@ -162,3 +161,4 @@ autoplay = "idle"
 [node name="WorldMapWalking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_60gf1")
 volume_db = 20.0
+bus = &"SFX"

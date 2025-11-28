@@ -27,7 +27,7 @@ func _ready() -> void:
 	transitions.play("open")
 	open_timer.start()
 	Global.is_transitioning = false
-	walking_init_vol = walking.volume_db - 24
+	walking_init_vol = walking.volume_db + 40
 
 
 func _physics_process(delta: float) -> void:
@@ -46,23 +46,24 @@ func move(delta) -> void:
 		if Input.is_action_just_pressed("up") and Global.world_map_dirs.has("up"):
 			velocity.y = -SPEED * delta
 			Global.world_map_dirs = []
-			walking.play()
+			walking.playing = true
 		elif Input.is_action_just_pressed("down") and Global.world_map_dirs.has("down"):
 			velocity.y = SPEED * delta
 			Global.world_map_dirs = []
-			walking.play()
+			walking.playing = true
 		elif Input.is_action_just_pressed("left") and Global.world_map_dirs.has("left"):
 			velocity.x = -SPEED * delta
 			Global.world_map_dirs = []
-			walking.play()
+			walking.playing = true
 		elif Input.is_action_just_pressed("right") and Global.world_map_dirs.has("right"):
 			velocity.x = SPEED * delta
 			Global.world_map_dirs = []
-			walking.play()
+			walking.playing = true
 
 
 func sfx_vol() -> void:
-	walking.volume_db = walking_init_vol + Global.vol
+	walking.volume_db = walking_init_vol #+ Global.sfx_vol
+	pass
 
 
 func handle_anims() -> void:

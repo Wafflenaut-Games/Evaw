@@ -18,7 +18,7 @@ var init_vol
 #endregion
 
 func _ready() -> void:
-	init_vol = level_start.volume_db - 24
+	init_vol = level_start.volume_db + 120
 	
 	if Global.lvl_completed == level:
 		vaw.position = position
@@ -65,7 +65,7 @@ func select_lvl() -> void:
 
 
 func volume_set() -> void:
-	level_start.volume_db = init_vol + Global.vol
+	level_start.volume_db = init_vol + Global.sfx_vol
 
 
 func handle_anims() -> void:

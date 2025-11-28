@@ -26,8 +26,9 @@ func _process(_delta: float) -> void:
 
 
 func vols() -> void:
-	beginnings.volume_db = init_vol + Global.vol
-	click.volume_db = init_click_vol + Global.vol
+	#beginnings.volume_db = init_vol + Global.vol
+	#click.volume_db = init_click_vol + Global.vol
+	pass
 
 
 func start() -> void:

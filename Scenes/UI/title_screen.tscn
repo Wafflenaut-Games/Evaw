@@ -142,10 +142,11 @@ offset_bottom = 40.0
 
 [node name="UiMouseClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_nd20k")
+bus = &"SFX"
 
 [node name="TitleScreenBeginnings" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_28uqs")
-volume_db = 15.0
+bus = &"Music"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
