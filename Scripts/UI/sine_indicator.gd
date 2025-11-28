@@ -6,6 +6,6 @@ extends AnimatedSprite2D
 
 func _process(_delta: float) -> void:
 	if not vaw.sine_used:
-		play("sine")
+		play("unused")
 	else:
 		play("used")
