@@ -54,4 +54,4 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	click.play()
-	get_tree().change_scene_to_file("res://Scenes/UI/title_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/titlescreen.tscn")

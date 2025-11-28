@@ -17,15 +17,20 @@ var stopped = false
 var selecting = false
 var v_moving = false
 var lvl_disply_fading = false
-var inactive = true
+var inactive = false
 var walking_init_vol
 
 #endregion
 
 
 func _ready() -> void:
-	transitions.play("open")
-	open_timer.start()
+	if not Global.from_titlescreen:
+		print("asdlkhgbadkjbgadkrg")
+		inactive = true
+		transitions.play("open")
+		open_timer.start()
+	
+	Global.from_titlescreen = false
 	Global.is_transitioning = false
 	walking_init_vol = walking.volume_db + 40
 
@@ -97,3 +102,4 @@ func handle_anims() -> void:
 
 func _on_open_timer_timeout() -> void:
 	inactive = false
+	

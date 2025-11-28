@@ -325,18 +325,6 @@ direction = "U"
 position = Vector2(721, -435)
 direction = "U"
 
-[node name="CLAY72" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(625, -426)
-direction = "U"
-
-[node name="CLAY73" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(633, -426)
-direction = "U"
-
-[node name="CLAY74" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(641, -426)
-direction = "U"
-
 [node name="CLAY75" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(649, -426)
 direction = "U"
@@ -537,25 +525,13 @@ direction = "U"
 position = Vector2(161, 317)
 direction = "U"
 
-[node name="CLAY2" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(809, -219)
-direction = "D"
-
 [node name="CLAY4" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(617, -275)
-direction = "U"
-
-[node name="CLAY5" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(561, -275)
 direction = "U"
 
 [node name="CLAY6" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(609, -299)
 direction = "D"
-
-[node name="CLAY7" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
-position = Vector2(641, -283)
-direction = "U"
 
 [node name="STEEL" parent="KEPSIS" instance=ExtResource("16_fq2uc")]
 position = Vector2(425, -435)
