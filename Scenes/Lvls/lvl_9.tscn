@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://ha3k8g5wd2dg"]
 
-[ext_resource type="Script" path="res://Scripts/Lvls/lvl_9.gd" id="1_5hs0m"]
+[ext_resource type="Script" uid="uid://cmita2oug1wip" path="res://Scripts/Lvls/lvl_9.gd" id="1_5hs0m"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_o4xyl"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="3_d3h4a"]
 [ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="4_5gpkm"]
@@ -193,14 +193,19 @@ position = Vector2(0, 64)
 [node name="feather" parent="." instance=ExtResource("10_hl81l")]
 visibility_layer = 3
 position = Vector2(-312, 288)
+is_triple = true
 
 [node name="feather2" parent="." instance=ExtResource("10_hl81l")]
 visibility_layer = 3
 position = Vector2(-648, 248)
+is_triple = true
+triple_num = 2
 
 [node name="feather3" parent="." instance=ExtResource("10_hl81l")]
 visibility_layer = 3
 position = Vector2(-744, -89)
+is_triple = true
+triple_num = 3
 
 [node name="Decorations" type="Node2D" parent="."]
 

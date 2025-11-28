@@ -5,7 +5,8 @@ extends AnimatedSprite2D
 
 
 func _process(_delta: float) -> void:
-	if not vaw.lume_used:
-		play("unused")
-	else:
-		play("used")
+	if Global.difficulty == 0:
+		if not vaw.lume_used:
+			play("unused")
+		else:
+			play("used")
