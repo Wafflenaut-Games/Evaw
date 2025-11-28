@@ -160,4 +160,5 @@ autoplay = "idle"
 
 [node name="WorldMapWalking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_60gf1")
+volume_db = 15.0
 bus = &"SFX"
