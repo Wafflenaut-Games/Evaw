@@ -1,74 +1,91 @@
-[gd_scene load_steps=25 format=3 uid="uid://8y27bmc3xa2q"]
+[gd_scene load_steps=25 format=3 uid="uid://bxbvimb1ese2v"]
 
-[ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Player/WorldMap/Vaw_WM_Idle.png" id="1_grdko"]
-[ext_resource type="Script" uid="uid://bhaxa76n8j4dx" path="res://Scripts/Player/world_map_vaw.gd" id="1_ieowi"]
-[ext_resource type="PackedScene" uid="uid://bhxrfxl1y1xdq" path="res://Scenes/UI/pause_ui.tscn" id="2_b7hab"]
-[ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Player/WorldMap/Vaw_WM_Select.png" id="2_ieowi"]
-[ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Player/WorldMap/Vaw_WM_Walk.png" id="3_qyhwb"]
-[ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Back.png" id="5_eqemg"]
-[ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Front.png" id="6_b7hab"]
-[ext_resource type="AudioStream" uid="uid://6t84d1f32e4e" path="res://Assets/AUDIO/World Map Walking.wav" id="8_60gf1"]
+[ext_resource type="Texture2D" uid="uid://bnc7j0v4yvb7y" path="res://Assets/Backgrounds/Vaw_WM_Sheet.png" id="3_awu0u"]
+[ext_resource type="Texture2D" uid="uid://7p6jsjjqb6cj" path="res://Assets/Player/WorldMap/Vaw_WM_Idle.png" id="5_awu0u"]
+[ext_resource type="Texture2D" uid="uid://dkv7yb2rpwlcc" path="res://Assets/Player/WorldMap/Vaw_WM_Select.png" id="6_25w53"]
+[ext_resource type="Texture2D" uid="uid://bdo4x8n750lev" path="res://Assets/Player/WorldMap/Vaw_WM_Walk.png" id="7_nbhvh"]
+[ext_resource type="Texture2D" uid="uid://cmmcxel3kp4l1" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Back.png" id="8_rj1fk"]
+[ext_resource type="Texture2D" uid="uid://y7huy6euunef" path="res://Assets/Player/WorldMap/Vaw_WM_Walk_Front.png" id="9_25jah"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_grdko"]
-size = Vector2(3, 3)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fso2m"]
+atlas = ExtResource("3_awu0u")
+region = Rect2(0, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whvw3"]
+atlas = ExtResource("3_awu0u")
+region = Rect2(160, 0, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2gad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fso2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whvw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqemg"]
-atlas = ExtResource("1_grdko")
+atlas = ExtResource("5_awu0u")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7hab"]
-atlas = ExtResource("1_grdko")
+atlas = ExtResource("5_awu0u")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60gf1"]
-atlas = ExtResource("2_ieowi")
+atlas = ExtResource("6_25w53")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjsvn"]
-atlas = ExtResource("2_ieowi")
+atlas = ExtResource("6_25w53")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af2u1"]
-atlas = ExtResource("3_qyhwb")
+atlas = ExtResource("7_nbhvh")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsog5"]
-atlas = ExtResource("3_qyhwb")
+atlas = ExtResource("7_nbhvh")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46h5t"]
-atlas = ExtResource("5_eqemg")
+atlas = ExtResource("8_rj1fk")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yqqq"]
-atlas = ExtResource("5_eqemg")
+atlas = ExtResource("8_rj1fk")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sgkt"]
-atlas = ExtResource("5_eqemg")
+atlas = ExtResource("8_rj1fk")
 region = Rect2(18, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtw8b"]
-atlas = ExtResource("5_eqemg")
+atlas = ExtResource("8_rj1fk")
 region = Rect2(27, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4fl4"]
-atlas = ExtResource("6_b7hab")
+atlas = ExtResource("9_25jah")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63mug"]
-atlas = ExtResource("6_b7hab")
+atlas = ExtResource("9_25jah")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aimp4"]
-atlas = ExtResource("6_b7hab")
+atlas = ExtResource("9_25jah")
 region = Rect2(18, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtflq"]
-atlas = ExtResource("6_b7hab")
+atlas = ExtResource("9_25jah")
 region = Rect2(27, 0, 9, 9)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_46h5t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_apdtj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -138,26 +155,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="WorldMap_Vaw" type="CharacterBody2D"]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("1_ieowi")
+[node name="WorldMap" type="Node2D"]
 
-[node name="UI" type="Node" parent="."]
+[node name="WorldMapAnims" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e2gad")
+autoplay = "default"
 
-[node name="PauseUI" parent="UI" instance=ExtResource("2_b7hab")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_grdko")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="fakevaw" type="AnimatedSprite2D" parent="."]
 z_index = 5
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_46h5t")
+position = Vector2(-73, -14)
+sprite_frames = SubResource("SpriteFrames_apdtj")
 animation = &"walk_front"
 autoplay = "idle"
 
-[node name="WorldMapWalking" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_60gf1")
-bus = &"SFX"
+[node name="OpenTimer" type="Timer" parent="."]
+wait_time = 1.2

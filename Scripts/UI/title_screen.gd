@@ -6,9 +6,10 @@ extends Control
 @onready var options_ui: Control = $OptionsUI
 @onready var click: AudioStreamPlayer = $UiMouseClick
 @onready var beginnings: AudioStreamPlayer = $TitleScreenBeginnings
+@onready var color_rect_2: ColorRect = $"../Worldmap10/ColorRect2"
+@onready var apcrt: AnimationPlayer = $"../Worldmap10/apcrt"
+@onready var apworld: AnimationPlayer = $"../WorldMap/apworld"
 
-var init_vol = 0
-var init_click_vol = 0
 var music_started = false
 
 #endregion
@@ -16,19 +17,10 @@ var music_started = false
 
 func _ready() -> void:
 	Global.paused = true
-	init_vol = beginnings.volume_db - 24
-	init_click_vol = click.volume_db - 24
 
 
 func _process(_delta: float) -> void:
 	start()
-	vols()
-
-
-func vols() -> void:
-	#beginnings.volume_db = init_vol + Global.vol
-	#click.volume_db = init_click_vol + Global.vol
-	pass
 
 
 func start() -> void:
@@ -38,9 +30,9 @@ func start() -> void:
 
 
 func _on_start_pressed() -> void:
-	Global.paused = false
 	click.play()
-	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
+	apcrt.play("zoom")
+	apworld.play("zoom 2")
 
 
 func _on_options_pressed() -> void:
@@ -51,3 +43,8 @@ func _on_options_pressed() -> void:
 func _on_quit_pressed() -> void:
 	click.play()
 	get_tree().quit()
+
+
+func _on_apworld_animation_finished(anim_name: StringName) -> void:
+	Global.paused = false
+	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")

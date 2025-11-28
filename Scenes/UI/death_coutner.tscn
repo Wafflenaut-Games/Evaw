@@ -26,12 +26,14 @@ theme_override_constants/separation = -6
 
 [node name="LabelTitle" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_fonts/font = ExtResource("2_j3cau")
 theme_override_font_sizes/font_size = 7
 text = "DEATHS:"
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_fonts/font = ExtResource("2_j3cau")
 theme_override_font_sizes/font_size = 7
 text = "000"

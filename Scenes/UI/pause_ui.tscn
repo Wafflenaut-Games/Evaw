@@ -15,7 +15,6 @@
 [sub_resource type="Theme" id="Theme_r5twg"]
 
 [node name="PauseUI" type="Control"]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 8

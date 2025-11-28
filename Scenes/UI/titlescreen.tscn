@@ -1,9 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cribkahwgtkua"]
+[gd_scene load_steps=22 format=3 uid="uid://cribkahwgtkua"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
-[ext_resource type="Script" uid="uid://c2x0qttypx3kt" path="res://Scripts/WorldMap/worldmap_10.gd" id="2_2bjoa"]
-[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
-[ext_resource type="PackedScene" uid="uid://b8klvtukak5kw" path="res://Scenes/WorldMap/world_map.tscn" id="4_36ei7"]
+[ext_resource type="Texture2D" uid="uid://1u1hxdhrn33s" path="res://Assets/UI/evawscreen.png" id="1_gcudb"]
+[ext_resource type="Shader" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
+[ext_resource type="PackedScene" uid="uid://bxbvimb1ese2v" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
+[ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="5_oi8xr"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="7_wmek2"]
+[ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="8_asc3k"]
+[ext_resource type="Texture2D" uid="uid://cosxd33s3hx08" path="res://Assets/Interactables/buttonhover.png" id="9_hcsug"]
+[ext_resource type="Texture2D" uid="uid://d2660infndgfa" path="res://Assets/Sensors/soundsensor.png" id="10_8pip5"]
+[ext_resource type="PackedScene" uid="uid://bdi8xrpf24rrh" path="res://Scenes/UI/options_ui.tscn" id="11_ubo53"]
+[ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="15_qc0kr"]
+[ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="16_0l5st"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2bjoa"]
 
@@ -17,7 +25,7 @@ shader_parameter/vignette_darkness = 0.5
 shader_parameter/vignette_outer_radius = 0.7
 shader_parameter/vignette_inner_radius = 0.2
 shader_parameter/scanline_intensity = 0.2
-shader_parameter/barrel_distortion = 0.5
+shader_parameter/barrel_distortion = 0.0
 shader_parameter/chromatic_aberration = 0.005
 shader_parameter/crt_vignette_power = 2.0
 shader_parameter/pixel_resolution_x = 320
@@ -51,7 +59,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(114, 62)]
+"values": [Vector2(112, 61)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -63,7 +71,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.5]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_goadl"]
@@ -102,7 +110,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.5, 0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pdex"]
@@ -116,38 +124,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("../WorldMap:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(114, 62)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
+tracks/1/path = NodePath("../WorldMap:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.4, 0.4)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
+tracks/2/path = NodePath("../WorldMap:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(114, 62)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_8pdex"]
@@ -155,7 +163,7 @@ resource_name = "zoom 2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("../WorldMap:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -167,7 +175,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("../WorldMap:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -179,46 +187,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath("../WorldMap:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1.9318731, 1),
-"update": 0,
-"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../WorldMap:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../WorldMap:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(114, 62), Vector2(80, 60)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../WorldMap:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1.9318731, 1),
 "update": 0,
@@ -231,14 +203,20 @@ _data = {
 &"zoom 2": SubResource("Animation_8pdex")
 }
 
+[sub_resource type="Theme" id="Theme_gntsg"]
+
 [node name="Node2D" type="Node2D"]
 
+[node name="Evawscreen" type="Sprite2D" parent="."]
+position = Vector2(80, 60)
+texture = ExtResource("1_gcudb")
+
 [node name="Worldmap10" type="Sprite2D" parent="."]
+z_index = 9
 material = SubResource("ShaderMaterial_2bjoa")
-position = Vector2(114, 62)
+position = Vector2(112, 61)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_cjnew")
-script = ExtResource("2_2bjoa")
 
 [node name="ColorRect2" type="ColorRect" parent="Worldmap10"]
 material = SubResource("ShaderMaterial_8pdex")
@@ -259,17 +237,137 @@ libraries = {
 
 [node name="WorldMap" parent="." instance=ExtResource("4_36ei7")]
 modulate = Color(1, 1, 1, 0)
+z_index = 10
 position = Vector2(114, 62)
 scale = Vector2(0.4, 0.4)
 
 [node name="apworld" type="AnimationPlayer" parent="WorldMap"]
-root_node = NodePath("../../Worldmap11")
+root_node = NodePath("../../Worldmap10")
 libraries = {
 &"": SubResource("AnimationLibrary_o0614")
 }
 
-[node name="Worldmap11" type="Sprite2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+process_mode = 3
+z_index = 10
+position = Vector2(80, 60)
+
+[node name="TitleScreen" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = 60.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_oi8xr")
+
+[node name="PanelContainer" type="PanelContainer" parent="TitleScreen"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -59.5
+offset_right = -28.0
+offset_bottom = 51.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleScreen/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TITLE" type="Label" parent="TitleScreen/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("7_wmek2")
+theme_override_font_sizes/font_size = 14
+text = "Evaw"
+horizontal_alignment = 1
+
+[node name="START" type="Button" parent="TitleScreen/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5019608, 0.47843137, 0.5019608, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = -1
+theme_override_fonts/font = ExtResource("7_wmek2")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("8_asc3k")
+button_mask = 5
+text = "  START"
+alignment = 0
+
+[node name="OPTIONS" type="Button" parent="TitleScreen/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_gntsg")
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5019608, 0.47843137, 0.5019608, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = -1
+theme_override_fonts/font = ExtResource("7_wmek2")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("9_hcsug")
+text = "  OPTIONS"
+alignment = 0
+
+[node name="QUIT" type="Button" parent="TitleScreen/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.7490196, 0.38039216, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5411765, 0.34509805, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.27058825, 0.16862746, 0.24705882, 1)
+theme_override_colors/icon_normal_color = Color(0.5004912, 0.47686583, 0.5004912, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = -1
+theme_override_fonts/font = ExtResource("7_wmek2")
+theme_override_font_sizes/font_size = 7
+theme_override_icons/icon = ExtResource("10_8pip5")
+text = "  QUIT"
+alignment = 0
+text_overrun_behavior = 1
+
+[node name="OptionsUI" parent="TitleScreen" instance=ExtResource("11_ubo53")]
 visible = false
-modulate = Color(1, 1, 1, 0)
-position = Vector2(114, 62)
-texture = ExtResource("1_cjnew")
+layout_mode = 1
+
+[node name="UiMouseClick" type="AudioStreamPlayer" parent="TitleScreen"]
+stream = ExtResource("15_qc0kr")
+bus = &"SFX"
+
+[node name="TitleScreenBeginnings" type="AudioStreamPlayer" parent="TitleScreen"]
+stream = ExtResource("16_0l5st")
+bus = &"Music"
+
+[connection signal="animation_finished" from="WorldMap/apworld" to="TitleScreen" method="_on_apworld_animation_finished"]
+[connection signal="pressed" from="TitleScreen/PanelContainer/MarginContainer/VBoxContainer/START" to="TitleScreen" method="_on_start_pressed"]
+[connection signal="pressed" from="TitleScreen/PanelContainer/MarginContainer/VBoxContainer/OPTIONS" to="TitleScreen" method="_on_options_pressed"]
+[connection signal="pressed" from="TitleScreen/PanelContainer/MarginContainer/VBoxContainer/QUIT" to="TitleScreen" method="_on_quit_pressed"]
