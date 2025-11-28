@@ -124,9 +124,6 @@ _data = {
 &"fire": SubResource("Animation_b81ne")
 }
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_moc42"]
-polygon = PackedVector2Array(501, -527, 461, -527, 461, -551, 454, -552, 451, -504, 454, -478, 477, -479, 501, -479)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_et28n"]
 polygon = PackedVector2Array(349, -479, 333, -479, 332, -463, 349, -463)
 
@@ -135,6 +132,9 @@ polygon = PackedVector2Array(85, -711, 93, -711, 94, -679, 101, -678, 101, -631,
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g37a3"]
 polygon = PackedVector2Array(333, -519, 237, -519, 238, -517, 333, -516)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_moc42"]
+polygon = PackedVector2Array(501, -527, 461, -527, 461, -551, 454, -552, 451, -504, 454, -478, 477, -479, 501, -479)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_phaee"]
 polygon = PackedVector2Array(69, -439, 69, -407, 285, -407, 285, -439, 309, -438, 285, -439, 309, -439, 309, -415, 341, -415, 341, -423, 445, -423, 445, -311, 461, -311, 461, -399, 485, -399, 485, -343, 469, -343, 469, -335, 493, -335, 493, -319, 500, -319, 501, -319, 501, -439, 525, -438, 501, -439, 525, -439, 525, -319, 565, -319, 565, -407, 717, -407, 717, -439, 669, -439, 669, -447, 637, -447, 637, -455, 621, -455, 621, -469, 605, -469, 605, -464, 605, -463, 589, -463, 589, -470, 589, -471, 581, -471, 581, -480, 581, -479, 565, -479, 565, -488, 565, -487, 517, -487, 517, -503, 541, -503, 541, -519, 605, -519, 605, -472, 605, -471, 621, -471, 621, -535, 613, -535, 613, -543, 589, -543, 589, -551, 709, -596, 817, -343, 116, -191, -9, -306, 45, -506)
@@ -731,9 +731,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_moc42")
-
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_et28n")
 
@@ -742,6 +739,9 @@ occluder = SubResource("OccluderPolygon2D_lcbdu")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_g37a3")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_moc42")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_phaee")
