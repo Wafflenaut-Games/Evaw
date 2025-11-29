@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Vaw"
-run/main_scene="uid://cribkahwgtkua"
+run/main_scene="uid://d2lhfqecghvay"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://b1830s62tifh2"
+boot_splash/image="uid://l2fwckipq5p5"
 
 [autoload]
 

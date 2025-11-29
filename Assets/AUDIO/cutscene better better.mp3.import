@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfd1tl6l473f4"
+path="res://.godot/imported/cutscene better better.mp3-57e5084464ed125690a0f36593a2a565.mp3str"
+
+[deps]
+
+source_file="res://Assets/AUDIO/cutscene better better.mp3"
+dest_files=["res://.godot/imported/cutscene better better.mp3-57e5084464ed125690a0f36593a2a565.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

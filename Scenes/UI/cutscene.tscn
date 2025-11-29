@@ -1,8 +1,94 @@
-[gd_scene format=3 uid="uid://d2lhfqecghvay"]
+[gd_scene load_steps=12 format=3 uid="uid://d2lhfqecghvay"]
+
+[ext_resource type="Texture2D" uid="uid://do7otk1tcccv8" path="res://Assets/UI/worldechoes-Sheet.png" id="1_n5seo"]
+[ext_resource type="Script" uid="uid://b530y7omqow0" path="res://Scripts/UI/cutscene.gd" id="1_r3us5"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="2_ivuwl"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="3_f8k66"]
+[ext_resource type="AudioStream" uid="uid://dfd1tl6l473f4" path="res://Assets/AUDIO/cutscene better better.mp3" id="5_uf2hu"]
+[ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="6_434hb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf2hu"]
+atlas = ExtResource("1_n5seo")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3us5"]
+atlas = ExtResource("1_n5seo")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8k66"]
+atlas = ExtResource("1_n5seo")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivuwl"]
+atlas = ExtResource("1_n5seo")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_434hb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf2hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3us5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8k66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivuwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Cutscene" type="Node2D"]
+script = ExtResource("1_r3us5")
+
+[node name="TentativeBackg" type="Sprite2D" parent="."]
+position = Vector2(80, 60)
+texture = ExtResource("3_f8k66")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(80, 60)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(80, 48)
+sprite_frames = SubResource("SpriteFrames_434hb")
+
+[node name="text" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 87.0
+offset_right = 156.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.9607843, 0.93333334, 0.6901961, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("2_ivuwl")
+theme_override_font_sizes/font_size = 7
+text = "long ago deez nutz"
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="texttimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uf2hu")
+autoplay = true
+
+[node name="Transitions" parent="." instance=ExtResource("6_434hb")]
+visible = false
+position = Vector2(80, 60)
+autoplay = ""
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="texttimer" to="." method="_on_texttimer_timeout"]
+[connection signal="animation_finished" from="Transitions" to="." method="_on_transitions_animation_finished"]
