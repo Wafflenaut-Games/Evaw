@@ -1,7 +1,7 @@
 extends Node
 
 
-signal level_end()
+signal level_end
 
 
 var vaw_form : String = "norm"

@@ -1,7 +1,7 @@
 extends Button
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match Global.wave_indicator:
 		false:
 			icon = load("res://Assets/Interactables/buttonpress.png")
