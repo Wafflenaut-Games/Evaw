@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
 [ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
-[ext_resource type="PackedScene" uid="uid://bxbvimb1ese2v" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
+[ext_resource type="PackedScene" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="5_oi8xr"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="7_wmek2"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="8_asc3k"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dnafbg1ijc2ov" path="res://Assets/UI/evawscreen2.png" id="12_lvn24"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="13_1nyvd"]
 [ext_resource type="Texture2D" uid="uid://wpmcty81gb50" path="res://Assets/UI/smke.png" id="14_oi8xr"]
-[ext_resource type="Shader" uid="uid://dbv2thwu8k5qr" path="res://Scenes/UI/vignette.gdshader" id="15_1nyvd"]
+[ext_resource type="Shader" path="res://Scenes/UI/vignette.gdshader" id="15_1nyvd"]
 [ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="15_qc0kr"]
 [ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="16_0l5st"]
 [ext_resource type="Texture2D" uid="uid://05mkbtjps47t" path="res://Assets/UI/eeeeeevaw.png" id="16_oi8xr"]
@@ -224,8 +224,6 @@ _data = {
 &"zoom 2": SubResource("Animation_8pdex")
 }
 
-[sub_resource type="Theme" id="Theme_gntsg"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oi8xr"]
 shader = ExtResource("15_1nyvd")
 shader_parameter/radius = 0.82000003895
@@ -233,6 +231,8 @@ shader_parameter/softness = 0.7270000345325
 shader_parameter/intensity = 2.1150001004625
 shader_parameter/contrast = 2.2
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_gntsg"]
 
 [node name="Titlescreen" type="Node2D"]
 
@@ -286,6 +286,11 @@ libraries = {
 process_mode = 3
 z_index = 10
 position = Vector2(80, 60)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_oi8xr")
+offset_right = 160.0
+offset_bottom = 121.0
 
 [node name="TitleScreen" type="Control" parent="."]
 process_mode = 3
@@ -402,11 +407,6 @@ bus = &"SFX"
 stream = ExtResource("16_0l5st")
 volume_db = -10.0
 bus = &"Music"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_oi8xr")
-offset_right = 160.0
-offset_bottom = 121.0
 
 [node name="Eeeeeevaw" type="Sprite2D" parent="."]
 position = Vector2(28, 23)
