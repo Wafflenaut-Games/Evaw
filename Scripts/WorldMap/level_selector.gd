@@ -9,7 +9,6 @@ extends Area2D
 @onready var level_start: AudioStreamPlayer = $LevelStart
 
 var complete = false
-var init_vol
 
 @export var directions: Array[String]
 @export var blocked_dirs: Array[String]
@@ -18,7 +17,6 @@ var init_vol
 #endregion
 
 func _ready() -> void:
-	init_vol = level_start.volume_db + 120
 	
 	if Global.lvl_completed == level:
 		vaw.position = position
@@ -27,7 +25,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	set_vars()
 	select_lvl()
-	volume_set()
 	handle_anims()
 	set_complete()
 
@@ -62,10 +59,6 @@ func select_lvl() -> void:
 				Global.is_transitioning = true
 				level_start.play()
 				transition_timer.start()
-
-
-func volume_set() -> void:
-	level_start.volume_db = init_vol + Global.sfx_vol
 
 
 func handle_anims() -> void:

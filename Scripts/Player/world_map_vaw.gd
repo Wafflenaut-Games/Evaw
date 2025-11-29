@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 	
 	if not inactive:
 		move(delta)
-		sfx_vol()
 		handle_anims()
 		move_and_slide()
 
@@ -64,11 +63,6 @@ func move(delta) -> void:
 			velocity.x = SPEED * delta
 			Global.world_map_dirs = []
 			walking.playing = true
-
-
-func sfx_vol() -> void:
-	walking.volume_db = walking_init_vol #+ Global.sfx_vol
-	pass
 
 
 func handle_anims() -> void:

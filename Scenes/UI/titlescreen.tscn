@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
 [ext_resource type="Texture2D" uid="uid://1u1hxdhrn33s" path="res://Assets/UI/evawscreen.png" id="1_gcudb"]
-[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
-[ext_resource type="PackedScene" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
+[ext_resource type="Shader" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
+[ext_resource type="PackedScene" uid="uid://bxbvimb1ese2v" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="5_oi8xr"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="7_wmek2"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="8_asc3k"]
@@ -361,10 +361,12 @@ layout_mode = 1
 
 [node name="UiMouseClick" type="AudioStreamPlayer" parent="TitleScreen"]
 stream = ExtResource("15_qc0kr")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="TitleScreenBeginnings" type="AudioStreamPlayer" parent="TitleScreen"]
 stream = ExtResource("16_0l5st")
+volume_db = -10.0
 bus = &"Music"
 
 [connection signal="animation_finished" from="WorldMap/apworld" to="TitleScreen" method="_on_apworld_animation_finished"]
