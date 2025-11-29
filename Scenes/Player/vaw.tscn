@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=159 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -33,6 +33,9 @@
 [ext_resource type="AudioStream" uid="uid://b1qo1arymr330" path="res://Assets/AUDIO/Wave Switch - Sine.wav" id="29_s2klm"]
 [ext_resource type="AudioStream" uid="uid://drwy5041qu8el" path="res://Assets/AUDIO/Wave Switch Lume 2.wav" id="30_khic2"]
 [ext_resource type="AudioStream" uid="uid://dtidle1oni40o" path="res://Assets/AUDIO/Wave Switch Sine 2.wav" id="31_8u1j7"]
+[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="34_5s3mi"]
+[ext_resource type="Script" uid="uid://boi8fdwhobga3" path="res://Scenes/Player/loading.gd" id="34_imby6"]
+[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="35_wkk6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
@@ -1031,7 +1034,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
-visible = false
 
 [node name="SineIndicator" parent="UI" instance=ExtResource("6_8u1j7")]
 position = Vector2(-3, -8)
@@ -1197,6 +1199,27 @@ process_material = SubResource("ParticleProcessMaterial_khic2")
 [node name="groundhittimer" type="Timer" parent="hitgroundparticle"]
 wait_time = 0.3
 one_shot = true
+
+[node name="Loading" type="CanvasLayer" parent="."]
+layer = 2001
+script = ExtResource("34_imby6")
+
+[node name="Background" type="Sprite2D" parent="Loading"]
+z_index = 200
+position = Vector2(79, 62)
+texture = ExtResource("34_5s3mi")
+
+[node name="Label" type="Label" parent="Loading"]
+z_index = 4096
+offset_left = 46.0
+offset_top = 44.0
+offset_right = 114.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("35_wkk6w")
+theme_override_font_sizes/font_size = 14
+text = "LOADING..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
