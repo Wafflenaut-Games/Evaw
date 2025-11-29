@@ -414,3 +414,4 @@ position = Vector2(24, 32)
 
 [node name="Radio" parent="." instance=ExtResource("13_fr28i")]
 position = Vector2(-15, -64)
+number = 1

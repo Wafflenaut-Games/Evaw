@@ -1032,6 +1032,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseUI" parent="UI" instance=ExtResource("4_25jie")]
+visible = false
 
 [node name="SineIndicator" parent="UI" instance=ExtResource("6_8u1j7")]
 position = Vector2(-3, -8)

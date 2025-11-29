@@ -1,28 +1,24 @@
 extends Area2D
 
 
-#region var
+#region vars
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var you_have_one_new_message: AudioStreamPlayer = $YouHaveOneNewMessage
 @onready var radio_in_the_vicinity: AudioStreamPlayer = $RadioInTheVicinity
+@onready var radio_text: Label = $"../Vaw/RadioText"
 
 var interactable = false
 var interacting = false
-var message_init_vol = 0
-var vicinity_init_vol = 0
+
+@export var number: int
 
 #endregion
 
 
-func _ready() -> void:
-	message_init_vol = you_have_one_new_message.volume_db - 24
-	vicinity_init_vol = radio_in_the_vicinity.volume_db - 24
-
-
 func _process(_delta: float) -> void:
 	set_interacting()
-	vol_set()
+	text()
 
 
 func set_interacting() -> void:
@@ -34,14 +30,50 @@ func set_interacting() -> void:
 			interacting = !interacting
 
 
-func vol_set() -> void:
-	you_have_one_new_message.volume_db = message_init_vol + Global.vol
-	radio_in_the_vicinity.volume_db = vicinity_init_vol + Global.vol
-
-
 func text() -> void:
-	#match:
-	pass
+	if interacting:
+		match number:
+			1:
+				radio_text.text = "In a world filled with echoes and light
+								A power produced; impending blight
+								The nation's death born from a crave
+								As the final wielder exits the cave".to_upper()
+			
+			2:
+				radio_text.text = "The shift was made so carelessly
+								As frequency met frequency
+								Cities shattered; earth in pain
+								Now fate was set; escape in vain".to_upper()
+			
+			3:
+				radio_text.text = "The lights went out as power stopped
+								The flames of self from color sought
+								Corrupted by a selfish whim
+								As lives around his own went dim".to_upper()
+			
+			4:
+				radio_text.text = "Waves
+								Waves enslaved in horror
+								Waves surpassed the requirements
+								From reckless testing persistence
+								The Last Wave tore the world apart
+								As some were sent back to the start
+								The remaining survivors tried to defend
+								This last attempt had sealed the end".to_upper()
+			
+			5:
+				radio_text.text = "They pleaded and renounced their creed
+								Their civilization about to bleed
+								But the revenge was not of man to man
+								Simple science destroyed the land".to_upper()
+			
+			6:
+				radio_text.text = "ONE
+								THERE WAS ONE WHO FLED
+								REMAINS SO CLOSE
+								THE NEARING END ".to_upper()
+	else:
+		radio_text.text = ""
 
 
 func _on_body_entered(body: Node2D) -> void:
