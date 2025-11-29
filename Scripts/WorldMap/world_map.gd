@@ -8,6 +8,7 @@ var music_started = false
 
 
 func _ready() -> void:
+	Global.level = 0
 	init_vol = world_map.volume_db - 24
 
 

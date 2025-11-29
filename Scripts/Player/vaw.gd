@@ -38,17 +38,17 @@ extends CharacterBody2D
 
 
 const SPEED = 3000.0
-const SINE_SPD_1 = 2400.0
-const DIA_SINE_SPD_1 = SINE_SPD_1/sqrt(2)
+const SINE_SPD_1 = 2200.0
 const SINE_SPD_2 = 2400.0
-const DIA_SINE_SPD_2 = SINE_SPD_2/sqrt(2)
-const SINE_SPD_3 = 2400.0
-const DIA_SINE_SPD_3 = SINE_SPD_3/sqrt(2)
-const LUME_SPD_1 = 5000.0
-const DIA_LUME_SPD_1 = LUME_SPD_1/sqrt(2)
+const SINE_SPD_3 = 3500.0
+const LUME_SPD_1 = 4000.0
 const LUME_SPD_2 = 5000.0
+const LUME_SPD_3 = 6000.0
+const DIA_SINE_SPD_1 = SINE_SPD_1/sqrt(2)
+const DIA_SINE_SPD_2 = SINE_SPD_2/sqrt(2)
+const DIA_SINE_SPD_3 = SINE_SPD_3/sqrt(2)
+const DIA_LUME_SPD_1 = LUME_SPD_1/sqrt(2)
 const DIA_LUME_SPD_2 = LUME_SPD_2/sqrt(2)
-const LUME_SPD_3 = 5000.0
 const DIA_LUME_SPD_3 = LUME_SPD_3/sqrt(2)
 const JUMP_VELOCITY = -160.0
 const GRAV = 500.0

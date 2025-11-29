@@ -6,6 +6,7 @@ extends Control
 @onready var vaw: CharacterBody2D = $"../.."
 @onready var options_ui: Control = $OptionsUI
 @onready var click: AudioStreamPlayer = $UiMouseClick
+@onready var quit: Button = $PanelContainer/MarginContainer/VBoxContainer/QUIT
 
 
 var active = false
@@ -22,6 +23,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pausing()
 	position = Vector2.ZERO
+	
+	# Change quit button text
+	if not Global.level == 0:
+		quit.text = "QUIT TO WORLD MAP"
+	else:
+		quit.text = "QUIT TO TITLE"
+	
 	#click.volume_db = init_vol + Global.vol
 
 
@@ -54,4 +62,7 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	click.play()
-	get_tree().change_scene_to_file("res://Scenes/UI/titlescreen.tscn")
+	if not Global.level == 0:
+		get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/UI/titlescreen.tscn")
