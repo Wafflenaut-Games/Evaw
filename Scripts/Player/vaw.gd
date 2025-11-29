@@ -259,23 +259,23 @@ func wave_spds(delta) -> void:
 	# Set speeds
 	if Global.vaw_form == "sine":
 		if not wave_dia:
-			if not Global.difficulty == 1:
+			if not Global.difficulty == 3:
 				spd = SINE_SPD
 			else:
 				spd = SINE_SPD/(Global.difficulty/2)
 		else:
-			if not Global.difficulty == 1:
+			if not Global.difficulty == 3:
 				spd = DIA_SINE_SPD
 			else:
 				spd = DIA_SINE_SPD/(Global.difficulty/2)
 	elif Global.vaw_form == "lume":
 		if not wave_dia:
-			if not Global.difficulty == 4:
+			if not Global.difficulty == 1:
 				spd = LUME_SPD
 			else:
 				spd = LUME_SPD/(Global.difficulty/3)
 		else:
-			if not Global.difficulty == 4:
+			if not Global.difficulty == 1:
 				spd = DIA_LUME_SPD
 			else:
 				spd = DIA_LUME_SPD/(Global.difficulty/3)
@@ -370,7 +370,7 @@ func move(delta) -> void:
 
 func max_vel(delta) -> void:
 	if velocity.y >= MAX_VEL * delta:
-		if not Global.difficulty == 1:
+		if not Global.difficulty == 3:
 			velocity.y = (MAX_VEL * delta)/(Global.difficulty/2)
 		else:
 			velocity.y = (MAX_VEL * delta)/(Global.difficulty/1.125)

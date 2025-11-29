@@ -12,7 +12,7 @@ extends Control
 @onready var wavemaster: Button = $PanelContainer/MarginContainer/HBoxContainer/Preferences/Difficulty/Wavemaster
 
 
-enum difficulty {easy = 4, normal = 2, wavemaster = 1}
+enum difficulty {easy = 1, normal = 2, wavemaster = 3}
 
 
 var init_vol = 0
@@ -35,11 +35,11 @@ func _process(_delta: float) -> void:
 
 func labels() -> void:
 	
-	if Global.difficulty == 4:
+	if Global.difficulty == 1:
 		difficulty_label.text = "DIFFICULTY: EASY"
 	elif Global.difficulty == 2:
 		difficulty_label.text = "DIFFICULTY: NORMAL"
-	elif Global.difficulty == 1:
+	elif Global.difficulty == 3:
 		difficulty_label.text = "DIFFICULTY: WAVEMASTER"
 
 
@@ -55,7 +55,7 @@ func volume() -> void:
 		Global.music_vol = -INF
 	
 	if sfx.value > 0:
-		Global.sfx_vol = ((sfx.value - 5) * 5) - 50
+		Global.sfx_vol = ((sfx.value - 5) * 5) - 25
 	else:
 		Global.sfx_vol = -INF
 	
