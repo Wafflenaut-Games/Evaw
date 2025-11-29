@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=156 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -456,10 +456,6 @@ region = Rect2(72, 0, 24, 24)
 atlas = ExtResource("9_3akl4")
 region = Rect2(96, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_paef7"]
-atlas = ExtResource("9_3akl4")
-region = Rect2(120, 0, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_au0mp"]
 atlas = ExtResource("8_ssfky")
 region = Rect2(0, 0, 24, 24)
@@ -479,10 +475,6 @@ region = Rect2(72, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rqdr"]
 atlas = ExtResource("8_ssfky")
 region = Rect2(96, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4m2y"]
-atlas = ExtResource("8_ssfky")
-region = Rect2(120, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_12ev1"]
 animations = [{
@@ -865,9 +857,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_knrae")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_paef7")
 }],
 "loop": false,
 "name": &"to_lume",
@@ -888,9 +877,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8rqdr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r4m2y")
 }],
 "loop": true,
 "name": &"to_sine",
@@ -1055,7 +1041,7 @@ position = Vector2(2, -8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
-animation = &"idle"
+animation = &"to_sine"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
 
