@@ -13,6 +13,7 @@ config_version=5
 config/name="Vaw"
 run/main_scene="uid://cribkahwgtkua"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://b1830s62tifh2"
 
 [autoload]
 

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2lhfqecghvay"]
+
+[node name="Cutscene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(80, 60)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

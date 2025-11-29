@@ -1003,7 +1003,6 @@ script = ExtResource("1_hy5rl")
 
 [node name="TransitionsLayer" type="CanvasLayer" parent="Camera"]
 layer = 2000
-visible = false
 
 [node name="Transitions" parent="Camera/TransitionsLayer" instance=ExtResource("22_s1hrp")]
 light_mask = 64
@@ -1045,6 +1044,7 @@ sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"to_sine"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
+visible = true
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
