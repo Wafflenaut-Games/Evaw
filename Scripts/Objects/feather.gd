@@ -100,13 +100,9 @@ func _process(delta: float) -> void:
 					Global.feather_lvl_15 = true
 				16:
 					Global.feather_lvl_16 = true
+	if collecting:
+		real_speed = player.spd / start_speed
 	
-	if Global.vaw_form == "norm":
-		real_speed = start_speed
-	if Global.vaw_form == "sine":
-		real_speed = start_speed * 0.6
-	if Global.vaw_form == "lume":
-		real_speed = start_speed * 1.67
 	
 	if collecting == true:
 		if global_position.distance_to(player.global_position) < 16:
