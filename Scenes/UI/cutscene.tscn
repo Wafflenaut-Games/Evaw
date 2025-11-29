@@ -54,15 +54,15 @@ shader_parameter/vignette_darkness = 0.5
 shader_parameter/vignette_outer_radius = 0.7
 shader_parameter/vignette_inner_radius = 0.2
 shader_parameter/scanline_intensity = 0.2
-shader_parameter/barrel_distortion = 0.15
-shader_parameter/chromatic_aberration = 0.005
+shader_parameter/barrel_distortion = 0.0
+shader_parameter/chromatic_aberration = 0.0010000000475
 shader_parameter/crt_vignette_power = 2.0
 shader_parameter/pixel_resolution_x = 640
 shader_parameter/pixel_resolution_y = 480
 shader_parameter/enable_color_quantization = true
 shader_parameter/color_quant_steps = 32.0
-shader_parameter/warble_amount = 0.002
-shader_parameter/warble_speed = 5.0
+shader_parameter/warble_amount = 0.0
+shader_parameter/warble_speed = 2.70400012844
 
 [node name="Cutscene" type="Node2D"]
 script = ExtResource("1_r3us5")
@@ -92,7 +92,6 @@ autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7lvp1")
-offset_left = 1.0
 offset_right = 160.0
 offset_bottom = 120.0
 
