@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d05snj5lcmp7t"]
+
+[node name="RadioText" type="Label"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
