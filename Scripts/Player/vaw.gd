@@ -38,10 +38,18 @@ extends CharacterBody2D
 
 
 const SPEED = 3000.0
-const SINE_SPD = 2400.0
-const DIA_SINE_SPD = SINE_SPD/sqrt(2)
-const LUME_SPD = 5000.0
-const DIA_LUME_SPD = LUME_SPD/sqrt(2)
+const SINE_SPD_1 = 2400.0
+const DIA_SINE_SPD_1 = SINE_SPD_1/sqrt(2)
+const SINE_SPD_2 = 2400.0
+const DIA_SINE_SPD_2 = SINE_SPD_2/sqrt(2)
+const SINE_SPD_3 = 2400.0
+const DIA_SINE_SPD_3 = SINE_SPD_3/sqrt(2)
+const LUME_SPD_1 = 5000.0
+const DIA_LUME_SPD_1 = LUME_SPD_1/sqrt(2)
+const LUME_SPD_2 = 5000.0
+const DIA_LUME_SPD_2 = LUME_SPD_2/sqrt(2)
+const LUME_SPD_3 = 5000.0
+const DIA_LUME_SPD_3 = LUME_SPD_3/sqrt(2)
 const JUMP_VELOCITY = -160.0
 const GRAV = 500.0
 const W_GRAV = 300.0 # Underwater gravity
@@ -259,26 +267,34 @@ func wave_spds(delta) -> void:
 	# Set speeds
 	if Global.vaw_form == "sine":
 		if not wave_dia:
-			if not Global.difficulty == 3:
-				spd = SINE_SPD
-			else:
-				spd = SINE_SPD/(Global.difficulty/2)
+			if Global.difficulty == 1:
+				spd = SINE_SPD_1
+			elif Global.difficulty == 2:
+				spd = SINE_SPD_2
+			elif Global.difficulty == 3:
+				spd = SINE_SPD_3
 		else:
-			if not Global.difficulty == 3:
-				spd = DIA_SINE_SPD
-			else:
-				spd = DIA_SINE_SPD/(Global.difficulty/2)
+			if Global.difficulty == 1:
+				spd = DIA_SINE_SPD_1
+			elif Global.difficulty == 2:
+				spd = DIA_SINE_SPD_2
+			elif Global.difficulty == 3:
+				spd = DIA_SINE_SPD_3
 	elif Global.vaw_form == "lume":
 		if not wave_dia:
-			if not Global.difficulty == 1:
-				spd = LUME_SPD
-			else:
-				spd = LUME_SPD/(Global.difficulty/3)
+			if Global.difficulty == 1:
+				spd = LUME_SPD_1
+			elif Global.difficulty == 2:
+				spd = LUME_SPD_2
+			elif Global.difficulty == 3:
+				spd = LUME_SPD_3
 		else:
-			if not Global.difficulty == 1:
-				spd = DIA_LUME_SPD
-			else:
-				spd = DIA_LUME_SPD/(Global.difficulty/3)
+			if Global.difficulty == 1:
+				spd = DIA_LUME_SPD_1
+			elif Global.difficulty == 2:
+				spd = DIA_LUME_SPD_2
+			elif Global.difficulty == 3:
+				spd = DIA_LUME_SPD_3
 	
 	# Apply speed
 	if not Global.vaw_form == "norm":
@@ -356,7 +372,12 @@ func gravity(delta) -> void:
 
 
 func diff_dir_timer() -> void:
-	dir_choose_timer.wait_time = Global.difficulty/8
+	if Global.difficulty == 1:
+		dir_choose_timer.wait_time = 0.5
+	elif Global.difficulty == 2:
+		dir_choose_timer.wait_time = 0.25
+	elif Global.difficulty == 3:
+		dir_choose_timer.wait_time = 0.125
 
 
 func move(delta) -> void:
@@ -370,10 +391,12 @@ func move(delta) -> void:
 
 func max_vel(delta) -> void:
 	if velocity.y >= MAX_VEL * delta:
-		if not Global.difficulty == 3:
-			velocity.y = (MAX_VEL * delta)/(Global.difficulty/2)
-		else:
-			velocity.y = (MAX_VEL * delta)/(Global.difficulty/1.125)
+		if Global.difficulty == 1:
+			velocity.y = MAX_VEL * delta #*
+		elif Global.difficulty == 2:
+			velocity.y = MAX_VEL * delta #*
+		elif Global.difficulty == 3:
+			velocity.y = MAX_VEL * delta #*
 
 
 func jump() -> void:
