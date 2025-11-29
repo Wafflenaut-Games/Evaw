@@ -70,7 +70,7 @@ one_shot = true
 
 [node name="LevelStart" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_olb76")
-volume_db = 15.0
+volume_db = 7.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

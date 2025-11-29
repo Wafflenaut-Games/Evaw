@@ -196,6 +196,7 @@ wait_time = 1.2
 
 [node name="WorldMap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8vqpy")
+volume_db = -7.0
 bus = &"Music"
 
 [connection signal="timeout" from="OpenTimer" to="WorldMap_Vaw" method="_on_open_timer_timeout"]
