@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 		unlit.visible = true
 		lit.visible = false
 	
-	sensor_activate.volume_db = init_vol + Global.vol
+	#sensor_activate.volume_db = init_vol + Global.vol
 
 
 func activate():

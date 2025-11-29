@@ -38,17 +38,17 @@ extends CharacterBody2D
 
 
 const SPEED = 3000.0
-const SINE_SPD_1 = 2400.0
-const DIA_SINE_SPD_1 = SINE_SPD_1/sqrt(2)
+const SINE_SPD_1 = 2200.0
 const SINE_SPD_2 = 2400.0
-const DIA_SINE_SPD_2 = SINE_SPD_2/sqrt(2)
-const SINE_SPD_3 = 2400.0
-const DIA_SINE_SPD_3 = SINE_SPD_3/sqrt(2)
-const LUME_SPD_1 = 5000.0
-const DIA_LUME_SPD_1 = LUME_SPD_1/sqrt(2)
+const SINE_SPD_3 = 3500.0
+const LUME_SPD_1 = 4000.0
 const LUME_SPD_2 = 5000.0
+const LUME_SPD_3 = 6000.0
+const DIA_SINE_SPD_1 = SINE_SPD_1/sqrt(2)
+const DIA_SINE_SPD_2 = SINE_SPD_2/sqrt(2)
+const DIA_SINE_SPD_3 = SINE_SPD_3/sqrt(2)
+const DIA_LUME_SPD_1 = LUME_SPD_1/sqrt(2)
 const DIA_LUME_SPD_2 = LUME_SPD_2/sqrt(2)
-const LUME_SPD_3 = 5000.0
 const DIA_LUME_SPD_3 = LUME_SPD_3/sqrt(2)
 const JUMP_VELOCITY = -160.0
 const GRAV = 500.0
@@ -392,11 +392,11 @@ func move(delta) -> void:
 func max_vel(delta) -> void:
 	if velocity.y >= MAX_VEL * delta:
 		if Global.difficulty == 1:
-			velocity.y = MAX_VEL * delta #*
+			velocity.y = MAX_VEL * delta * 0.75
 		elif Global.difficulty == 2:
-			velocity.y = MAX_VEL * delta #*
+			velocity.y = MAX_VEL * delta * 1
 		elif Global.difficulty == 3:
-			velocity.y = MAX_VEL * delta #*
+			velocity.y = MAX_VEL * delta * 1.33
 
 
 func jump() -> void:
