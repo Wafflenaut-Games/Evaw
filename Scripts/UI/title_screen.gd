@@ -10,6 +10,9 @@ extends Control
 @onready var apcrt: AnimationPlayer = $"../Worldmap10/apcrt"
 @onready var apworld: AnimationPlayer = $"../WorldMap/apworld"
 @onready var apevaw = $"../Evawscreen/AnimationPlayer"
+@onready var apui = $AnimationPlayer
+@onready var apevaw2 = $"../Eeeeeevaw/AnimationPlayer"
+@onready var apsmoke = $"../Smke/AnimationPlayer"
 
 var music_started = false
 
@@ -36,6 +39,10 @@ func _on_start_pressed() -> void:
 		click.play()
 		apcrt.play("zoom")
 		apworld.play("zoom 2")
+		apevaw.play("zoom")
+		apui.play("zoom")
+		apevaw2.play("gtout")
+		apsmoke.play("getout")
 		Global.is_transitioning = true
 
 

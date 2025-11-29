@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cribkahwgtkua"]
+[gd_scene load_steps=41 format=3 uid="uid://cribkahwgtkua"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
 [ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
@@ -18,33 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://05mkbtjps47t" path="res://Assets/UI/eeeeeevaw.png" id="16_oi8xr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lvn24"]
-
-[sub_resource type="Animation" id="Animation_oi8xr"]
-resource_name = "zoom"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(2.5, 2.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(80, 60), Vector2(7.987022e-06, 57.000004)]
-}
 
 [sub_resource type="Animation" id="Animation_ekuop"]
 length = 0.001
@@ -73,6 +46,33 @@ tracks/1/keys = {
 "values": [Vector2(80, 60)]
 }
 
+[sub_resource type="Animation" id="Animation_oi8xr"]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.9318736, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.5, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.4640862, 1),
+"update": 0,
+"values": [Vector2(80, 60), Vector2(7.987022e-06, 57.000004)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmek2"]
 _data = {
 &"RESET": SubResource("Animation_ekuop"),
@@ -93,6 +93,42 @@ shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 0.5
 shader_parameter/freezeFirstHalf = false
 shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="Animation" id="Animation_ubo53"]
+resource_name = "getout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, 44), Vector2(-35, 47)]
+}
+
+[sub_resource type="Animation" id="Animation_2vjgt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(53, 44)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ngkt"]
+_data = {
+&"RESET": SubResource("Animation_2vjgt"),
+&"getout": SubResource("Animation_ubo53")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2bjoa"]
 
@@ -294,6 +330,78 @@ shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_gntsg"]
 
+[sub_resource type="Animation" id="Animation_wmek2"]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.81225157, 1),
+"update": 0,
+"values": [Vector2(80, 60), Vector2(0, 60)]
+}
+
+[sub_resource type="Animation" id="Animation_asc3k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcsug"]
+_data = {
+&"RESET": SubResource("Animation_asc3k"),
+&"zoom": SubResource("Animation_wmek2")
+}
+
+[sub_resource type="Animation" id="Animation_hcsug"]
+resource_name = "gtout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.53588676),
+"update": 0,
+"values": [Vector2(28, 23), Vector2(-40, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_8pip5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, 23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubo53"]
+_data = {
+&"RESET": SubResource("Animation_8pip5"),
+&"gtout": SubResource("Animation_hcsug")
+}
+
 [node name="Titlescreen" type="Node2D"]
 
 [node name="Evawscreen" type="Sprite2D" parent="."]
@@ -310,6 +418,11 @@ libraries = {
 material = SubResource("ShaderMaterial_ekuop")
 position = Vector2(53, 44)
 texture = ExtResource("14_oi8xr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Smke"]
+libraries = {
+&"": SubResource("AnimationLibrary_6ngkt")
+}
 
 [node name="Worldmap10" type="Sprite2D" parent="."]
 z_index = 9
@@ -473,9 +586,19 @@ stream = ExtResource("16_0l5st")
 volume_db = -10.0
 bus = &"Music"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_hcsug")
+}
+
 [node name="Eeeeeevaw" type="Sprite2D" parent="."]
 position = Vector2(28, 23)
 texture = ExtResource("16_oi8xr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Eeeeeevaw"]
+libraries = {
+&"": SubResource("AnimationLibrary_ubo53")
+}
 
 [connection signal="animation_finished" from="WorldMap/apworld" to="TitleScreen" method="_on_apworld_animation_finished"]
 [connection signal="pressed" from="TitleScreen/PanelContainer/MarginContainer/VBoxContainer/START" to="TitleScreen" method="_on_start_pressed"]
