@@ -9,6 +9,7 @@ extends Control
 @onready var color_rect_2: ColorRect = $"../Worldmap10/ColorRect2"
 @onready var apcrt: AnimationPlayer = $"../Worldmap10/apcrt"
 @onready var apworld: AnimationPlayer = $"../WorldMap/apworld"
+@onready var apevaw = $"../Evawscreen/AnimationPlayer"
 
 var music_started = false
 
