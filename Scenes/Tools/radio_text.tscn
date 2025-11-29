@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d05snj5lcmp7t"]
+[gd_scene load_steps=0 format=3 uid="uid://d05snj5lcmp7t"]
 
 [node name="RadioText" type="Label"]
 visible = false

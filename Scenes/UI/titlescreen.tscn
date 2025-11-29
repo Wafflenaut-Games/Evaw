@@ -1,8 +1,8 @@
 [gd_scene load_steps=41 format=3 uid="uid://cribkahwgtkua"]
 
 [ext_resource type="Texture2D" uid="uid://br7mk15c1kr5n" path="res://Assets/Backgrounds/worldmap10.png" id="1_cjnew"]
-[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
-[ext_resource type="PackedScene" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
+[ext_resource type="Shader" path="res://Scenes/Shaders/crt2.gdshader" id="2_goadl"]
+[ext_resource type="PackedScene" uid="uid://bxbvimb1ese2v" path="res://Scenes/WorldMap/fake_world_map.tscn" id="4_36ei7"]
 [ext_resource type="Script" uid="uid://4t4vn676f6j8" path="res://Scripts/UI/title_screen.gd" id="5_oi8xr"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="7_wmek2"]
 [ext_resource type="Texture2D" uid="uid://ddmu0fky1k5qq" path="res://Assets/Sensors/lightsensor.png" id="8_asc3k"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dnafbg1ijc2ov" path="res://Assets/UI/evawscreen2.png" id="12_lvn24"]
 [ext_resource type="Shader" uid="uid://ceeveo7etdq63" path="res://Scenes/Shaders/wave effects 2.gdshader" id="13_1nyvd"]
 [ext_resource type="Texture2D" uid="uid://wpmcty81gb50" path="res://Assets/UI/smke.png" id="14_oi8xr"]
-[ext_resource type="Shader" uid="uid://dbv2thwu8k5qr" path="res://Scenes/Shaders/vignette.gdshader" id="15_1nyvd"]
+[ext_resource type="Shader" path="res://Scenes/Shaders/vignette.gdshader" id="15_1nyvd"]
 [ext_resource type="AudioStream" uid="uid://b2nf05it16fb0" path="res://Assets/AUDIO/UI Mouse Click.wav" id="15_qc0kr"]
 [ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="16_0l5st"]
 [ext_resource type="Texture2D" uid="uid://05mkbtjps47t" path="res://Assets/UI/eeeeeevaw.png" id="16_oi8xr"]
@@ -81,33 +81,18 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ekuop"]
 shader = ExtResource("13_1nyvd")
-shader_parameter/waveAmplitude = 0.25
+shader_parameter/waveAmplitude = 0.2000000095
 shader_parameter/correctVertex = true
-shader_parameter/waveFrequency = 29.6690014092775
+shader_parameter/waveFrequency = 20.00000095
 shader_parameter/verticalWave = false
 shader_parameter/keepTransparency = true
 shader_parameter/useTime = true
-shader_parameter/waveSpeed = 5.59200026562
+shader_parameter/waveSpeed = 3.0000001425
 shader_parameter/progress = 0.0
 shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 0.5
 shader_parameter/freezeFirstHalf = false
 shader_parameter/freezeSecondHalf = false
-
-[sub_resource type="Animation" id="Animation_ubo53"]
-resource_name = "getout"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(53, 44), Vector2(-35, 47)]
-}
 
 [sub_resource type="Animation" id="Animation_2vjgt"]
 length = 0.001
@@ -122,6 +107,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(53, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_ubo53"]
+resource_name = "getout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, 44), Vector2(-35, 47)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ngkt"]
@@ -330,21 +330,6 @@ shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_gntsg"]
 
-[sub_resource type="Animation" id="Animation_wmek2"]
-resource_name = "zoom"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.81225157, 1),
-"update": 0,
-"values": [Vector2(80, 60), Vector2(0, 60)]
-}
-
 [sub_resource type="Animation" id="Animation_asc3k"]
 length = 0.001
 tracks/0/type = "value"
@@ -360,14 +345,8 @@ tracks/0/keys = {
 "values": [Vector2(80, 60)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcsug"]
-_data = {
-&"RESET": SubResource("Animation_asc3k"),
-&"zoom": SubResource("Animation_wmek2")
-}
-
-[sub_resource type="Animation" id="Animation_hcsug"]
-resource_name = "gtout"
+[sub_resource type="Animation" id="Animation_wmek2"]
+resource_name = "zoom"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -376,9 +355,15 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 0.53588676),
+"transitions": PackedFloat32Array(0.81225157, 1),
 "update": 0,
-"values": [Vector2(28, 23), Vector2(-40, 23)]
+"values": [Vector2(80, 60), Vector2(0, 60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcsug"]
+_data = {
+&"RESET": SubResource("Animation_asc3k"),
+&"zoom": SubResource("Animation_wmek2")
 }
 
 [sub_resource type="Animation" id="Animation_8pip5"]
@@ -394,6 +379,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(28, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_hcsug"]
+resource_name = "gtout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.53588676),
+"update": 0,
+"values": [Vector2(28, 23), Vector2(-40, 23)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ubo53"]
