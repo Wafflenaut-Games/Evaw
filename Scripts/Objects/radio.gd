@@ -39,6 +39,11 @@ func vol_set() -> void:
 	radio_in_the_vicinity.volume_db = vicinity_init_vol + Global.vol
 
 
+func text() -> void:
+	#match:
+	pass
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		interactable = true

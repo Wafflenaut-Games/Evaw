@@ -25,7 +25,6 @@ var walking_init_vol
 
 func _ready() -> void:
 	if not Global.from_titlescreen:
-		print("asdlkhgbadkjbgadkrg")
 		inactive = true
 		transitions.play("open")
 		open_timer.start()
