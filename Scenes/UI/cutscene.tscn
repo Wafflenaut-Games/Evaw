@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2lhfqecghvay"]
+[gd_scene load_steps=14 format=3 uid="uid://cwse4nthoxo88"]
 
 [ext_resource type="Texture2D" uid="uid://do7otk1tcccv8" path="res://Assets/UI/worldechoes-Sheet.png" id="1_n5seo"]
 [ext_resource type="Script" uid="uid://b530y7omqow0" path="res://Scripts/UI/cutscene.gd" id="1_r3us5"]
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="2_ivuwl"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="3_f8k66"]
 [ext_resource type="AudioStream" uid="uid://dfd1tl6l473f4" path="res://Assets/AUDIO/cutscene better better.mp3" id="5_uf2hu"]
+[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="6_7lvp1"]
 [ext_resource type="PackedScene" uid="uid://obniew072kmy" path="res://Scenes/Tools/transitions.tscn" id="6_434hb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf2hu"]
@@ -43,6 +44,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lvp1"]
+shader = ExtResource("6_7lvp1")
+shader_parameter/grain_intensity = 0.1
+shader_parameter/min_lum = 0.0
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.5
+shader_parameter/vignette_outer_radius = 0.7
+shader_parameter/vignette_inner_radius = 0.2
+shader_parameter/scanline_intensity = 0.2
+shader_parameter/barrel_distortion = 0.15
+shader_parameter/chromatic_aberration = 0.005
+shader_parameter/crt_vignette_power = 2.0
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
+shader_parameter/enable_color_quantization = true
+shader_parameter/color_quant_steps = 32.0
+shader_parameter/warble_amount = 0.002
+shader_parameter/warble_speed = 5.0
+
 [node name="Cutscene" type="Node2D"]
 script = ExtResource("1_r3us5")
 
@@ -56,6 +77,35 @@ position = Vector2(80, 60)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(80, 48)
 sprite_frames = SubResource("SpriteFrames_434hb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="texttimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uf2hu")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7lvp1")
+offset_left = 1.0
+offset_right = 160.0
+offset_bottom = 120.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7lvp1")
+offset_left = 1.0
+offset_right = 160.0
+offset_bottom = 120.0
+
+[node name="Transitions" parent="." instance=ExtResource("6_434hb")]
+visible = false
+position = Vector2(80, 60)
+autoplay = ""
 
 [node name="text" type="Label" parent="."]
 offset_left = 4.0
@@ -71,23 +121,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
-autostart = true
-
-[node name="texttimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
-[node name="song" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_uf2hu")
-autoplay = true
-
-[node name="Transitions" parent="." instance=ExtResource("6_434hb")]
-visible = false
-position = Vector2(80, 60)
-autoplay = ""
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="texttimer" to="." method="_on_texttimer_timeout"]

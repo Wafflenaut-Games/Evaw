@@ -1,9 +1,9 @@
 extends Node2D
 
-var lines: Array = ["In a world filled with echoes and light",
-"A power produced, impending blight",
-"The nation's death born from a crave",
-"As the final wielder exits the cave"]
+var lines: Array = ["IN A WORLD FILLED WITH ECHOES AND LIGHT",
+"A POWER PRODUCED, IMPENDING BLIGHT",
+"THE NATION'S DEATH, BORN FROM A CRAVE",
+"AS THE FINAL WIELDER EXITS THE CAVE"]
 
 var current_line = 0
 
