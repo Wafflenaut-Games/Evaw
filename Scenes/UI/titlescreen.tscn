@@ -584,7 +584,7 @@ bus = &"SFX"
 
 [node name="TitleScreenBeginnings" type="AudioStreamPlayer" parent="TitleScreen"]
 stream = ExtResource("16_0l5st")
-volume_db = -10.0
+volume_db = -7.0
 bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen"]
