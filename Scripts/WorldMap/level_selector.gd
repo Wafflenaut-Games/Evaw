@@ -61,7 +61,7 @@ func select_lvl() -> void:
 					level_start.play()
 					transition_timer.start()
 			else:
-				print("CANNOT CONTINUE") # Credits and message here
+				print("CANNOT CONTINUE")
 
 
 func handle_anims() -> void:

@@ -109,13 +109,13 @@ level = 9
 position = Vector2(36, -45)
 directions = Array[String](["left"])
 blocked_dirs = Array[String](["right"])
-level = -1
+level = 10
 
 [node name="Level_Selector10" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -56)
 directions = Array[String](["left"])
 blocked_dirs = Array[String](["down"])
-level = 11
+level = -1
 
 [node name="Level_Selector11" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -19)
