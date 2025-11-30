@@ -1201,7 +1201,6 @@ one_shot = true
 
 [node name="Loading" type="CanvasLayer" parent="."]
 layer = 2001
-visible = false
 script = ExtResource("34_imby6")
 
 [node name="Background" type="Sprite2D" parent="Loading"]
