@@ -287,7 +287,9 @@ libraries = {
 }
 
 [node name="Snow" parent="Decorations" instance=ExtResource("23_d3h4a")]
-position = Vector2(-76, -449)
+position = Vector2(-124, -110)
+amount = 800
+lifetime = 8.0
 preprocess = 11.1
 
 [node name="SEKIPS" type="Node2D" parent="."]

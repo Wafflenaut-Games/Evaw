@@ -210,14 +210,14 @@ visibility_layer = 3
 position = Vector2(89, 141)
 
 [node name="Bubbles" parent="." instance=ExtResource("12_h34hb")]
-position = Vector2(458, 538)
-amount = 400
-lifetime = 15.0
+position = Vector2(458, 465)
+amount = 300
+lifetime = 13.5
 preprocess = 60.0
 
 [node name="Snow" parent="." instance=ExtResource("12_vhwgs")]
 position = Vector2(859, -595)
-amount = 900
+amount = 600
 lifetime = 7.5
 preprocess = 15.0
 

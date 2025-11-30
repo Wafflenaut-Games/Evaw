@@ -203,6 +203,8 @@ position = Vector2(-255, -502)
 
 [node name="Snow" parent="." instance=ExtResource("10_ph1jf")]
 position = Vector2(-76, -833)
+amount = 600
+lifetime = 6.0
 preprocess = 11.1
 
 [node name="Sensors" type="Node" parent="."]

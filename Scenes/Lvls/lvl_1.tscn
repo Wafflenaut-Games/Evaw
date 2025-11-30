@@ -645,22 +645,6 @@ position = Vector2(289, 100)
 z_index = 1
 position = Vector2(297, 100)
 
-[node name="WaterBoundary79" parent="WaterBoundaries" instance=ExtResource("6_ox11j")]
-z_index = 1
-position = Vector2(-31, 100)
-
-[node name="WaterBoundary80" parent="WaterBoundaries" instance=ExtResource("6_ox11j")]
-z_index = 1
-position = Vector2(-23, 100)
-
-[node name="WaterBoundary81" parent="WaterBoundaries" instance=ExtResource("6_ox11j")]
-z_index = 1
-position = Vector2(-15, 100)
-
-[node name="WaterBoundary82" parent="WaterBoundaries" instance=ExtResource("6_ox11j")]
-z_index = 1
-position = Vector2(-7, 100)
-
 [node name="WaterBoundary83" parent="WaterBoundaries" instance=ExtResource("6_ox11j")]
 z_index = 1
 position = Vector2(1, 100)
