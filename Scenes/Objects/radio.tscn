@@ -65,10 +65,12 @@ animation = &"interactable"
 
 [node name="YouHaveOneNewMessage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wag73")
+volume_db = 7.0
 bus = &"SFX"
 
 [node name="RadioInTheVicinity" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_dh5xs")
+volume_db = 7.0
 bus = &"SFX"
 
 [node name="Vicinity" type="Area2D" parent="."]
