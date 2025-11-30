@@ -35,7 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://dtidle1oni40o" path="res://Assets/AUDIO/Wave Switch Sine 2.wav" id="31_8u1j7"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="34_5s3mi"]
 [ext_resource type="Script" uid="uid://boi8fdwhobga3" path="res://Scenes/Player/loading.gd" id="34_imby6"]
-[ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="35_wkk6w"]
+[ext_resource type="Texture2D" uid="uid://d1djkelwgf55d" path="res://Assets/UI/loading.png" id="36_imby6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
@@ -1201,6 +1201,7 @@ one_shot = true
 
 [node name="Loading" type="CanvasLayer" parent="."]
 layer = 2001
+visible = false
 script = ExtResource("34_imby6")
 
 [node name="Background" type="Sprite2D" parent="Loading"]
@@ -1208,17 +1209,10 @@ z_index = 200
 position = Vector2(79, 62)
 texture = ExtResource("34_5s3mi")
 
-[node name="Label" type="Label" parent="Loading"]
-z_index = 4096
-offset_left = 46.0
-offset_top = 44.0
-offset_right = 114.0
-offset_bottom = 74.0
-theme_override_fonts/font = ExtResource("35_wkk6w")
-theme_override_font_sizes/font_size = 14
-text = "LOADING..."
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="loading" type="Sprite2D" parent="Loading"]
+z_index = 1978
+position = Vector2(80, 60)
+texture = ExtResource("36_imby6")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="WaveColCheck" to="." method="_on_wave_col_check_body_entered"]
