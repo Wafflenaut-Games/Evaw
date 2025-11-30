@@ -88,6 +88,7 @@ autostart = true
 
 [node name="song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_uf2hu")
+volume_db = -15.0
 autoplay = true
 
 [node name="text" type="Label" parent="."]
