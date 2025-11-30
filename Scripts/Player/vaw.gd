@@ -502,7 +502,6 @@ func sensor_collision() -> void:
 		if area.is_in_group("light_sensor") and Global.vaw_form == "lume":
 			area.get_parent().activate()
 		if area.is_in_group("feather"):
-			print("dfsiugb")
 			area.get_parent().collect(self)
 
 
@@ -517,7 +516,6 @@ func disable_raycasts() -> void:
 	else:
 		ground_checker_l.enabled = true
 		ground_checker_r.enabled = true
-
 
 
 func walking_particles() -> void:
