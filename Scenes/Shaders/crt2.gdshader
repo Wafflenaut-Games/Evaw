@@ -46,6 +46,8 @@ vec3 quantize_color(vec3 color, float steps) {
 void fragment() {
     vec2 uv = SCREEN_UV;
     vec2 screen_size = 1.0 / SCREEN_PIXEL_SIZE;
+	
+	vec4 base = texture(TEXTURE, UV);
     
     vec2 pixel_uv = floor(uv * vec2(float(pixel_resolution_x), float(pixel_resolution_y))) 
                   / vec2(float(pixel_resolution_x), float(pixel_resolution_y));
@@ -112,8 +114,8 @@ void fragment() {
         processed_color *= scanline_alpha;
 
         float crt_vignette = pow(1.0 - r2, crt_vignette_power);
-        processed_color *= crt_vignette;
+		processed_color *= crt_vignette;
 
-        COLOR = vec4(processed_color, 1.0);
+		COLOR = vec4(processed_color * base.rgb, base.a);
     }
 }

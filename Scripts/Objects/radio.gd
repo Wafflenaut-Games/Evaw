@@ -7,6 +7,8 @@ extends Area2D
 @onready var you_have_one_new_message: AudioStreamPlayer = $YouHaveOneNewMessage
 @onready var radio_in_the_vicinity: AudioStreamPlayer = $RadioInTheVicinity
 @onready var radio_text: Label = $"../Vaw/RadioText"
+@onready var typingtimer: Timer = $typingtimer
+
 
 var interactable = false
 var interacting = false
@@ -50,6 +52,9 @@ var dialogue: Array = [
 func _process(_delta: float) -> void:
 	set_interacting()
 	text()
+	
+	if radio_text.visible == false:
+		radio_text.visible_characters = 0
 
 
 func set_interacting() -> void:
@@ -90,3 +95,8 @@ func _on_vicinity_body_entered(body: Node2D) -> void:
 func _on_vicinity_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		radio_in_the_vicinity.stop()
+
+
+func _on_typingtimer_timeout() -> void:
+	if radio_text.visible == true:
+		radio_text.visible_characters += 1

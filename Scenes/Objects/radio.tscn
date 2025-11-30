@@ -77,7 +77,12 @@ bus = &"SFX"
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_dh5xs")
 
+[node name="typingtimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="body_entered" from="Vicinity" to="." method="_on_vicinity_body_entered"]
 [connection signal="body_exited" from="Vicinity" to="." method="_on_vicinity_body_exited"]
+[connection signal="timeout" from="typingtimer" to="." method="_on_typingtimer_timeout"]
