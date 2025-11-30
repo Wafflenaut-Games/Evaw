@@ -11,7 +11,7 @@ gradient = SubResource("Gradient_vp1d2")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_prkqm"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(1000, 1, 1)
+emission_box_extents = Vector3(500, 1, 1)
 direction = Vector3(0, -100, 0)
 spread = 0.0
 initial_velocity_min = 47.27

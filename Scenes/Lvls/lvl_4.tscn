@@ -97,7 +97,9 @@ texture = ExtResource("6_foxgw")
 color = Color(0.6599514, 1.1259938, 1.2954637, 1)
 
 [node name="Bubbles" parent="." instance=ExtResource("15_iv1r1")]
-position = Vector2(140, 157)
+position = Vector2(449, 138)
+amount = 250
+lifetime = 15.0
 
 [node name="Tileset" parent="." instance=ExtResource("7_5v72a")]
 position = Vector2(394, 231)
