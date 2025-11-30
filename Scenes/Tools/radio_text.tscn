@@ -10,7 +10,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -71.0
-offset_top = 21.0
+offset_top = 19.0
 offset_right = 71.0
 offset_bottom = 51.0
 grow_horizontal = 2
@@ -20,6 +20,6 @@ theme_override_fonts/font = ExtResource("1_lawb8")
 theme_override_font_sizes/font_size = 7
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]
-position = Vector2(72, 15.000004)
-scale = Vector2(0.49999997, 0.12)
+position = Vector2(72, 16)
+scale = Vector2(0.49999997, 0.14)
 texture = ExtResource("2_bjnhc")

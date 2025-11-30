@@ -218,6 +218,12 @@ position = Vector2(576, -526)
 is_triple = true
 triple_num = 2
 
+[node name="feather3" parent="." instance=ExtResource("10_qlg61")]
+visibility_layer = 3
+position = Vector2(192, -422)
+is_triple = true
+triple_num = 3
+
 [node name="Snow" parent="." instance=ExtResource("13_et28n")]
 position = Vector2(-76, -833)
 

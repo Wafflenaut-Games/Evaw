@@ -13,6 +13,37 @@ var interacting = false
 
 @export var number: int
 
+var dialogue: Array = [
+	"In a world filled with echoes and light
+	A power produced; impending blight
+	The nation's death born from a crave
+	As the final wielder exits the cave".to_upper(),
+	
+	"The shift was made so carelessly
+	As frequency met frequency
+	Cities shattered; earth in pain
+	Now fate was set; escape in vain".to_upper(),
+	
+	"The lights went out as power stopped
+	The flames of self from color sought
+	Corrupted by a selfish whim
+	As lives around his own went dim".to_upper(),
+	
+	"Waves
+	Waves enslaved in horror
+	Waves surpassed the requirements
+	From reckless testing persistence
+	The Last Wave tore the world apart
+	As some were sent back to the start
+	The remaining survivors tried to defend
+	This last attempt had sealed the end".to_upper(),
+	
+	"ONE
+	THERE WAS ONE WHO FLED
+	REMAINS SO CLOSE
+	THE NEARING END ".to_upper()
+]
+
 #endregion
 
 
@@ -32,48 +63,12 @@ func set_interacting() -> void:
 
 func text() -> void:
 	if interacting:
-		match number:
-			1:
-				radio_text.text = "In a world filled with echoes and light
-								A power produced; impending blight
-								The nation's death born from a crave
-								As the final wielder exits the cave".to_upper()
-			
-			2:
-				radio_text.text = "The shift was made so carelessly
-								As frequency met frequency
-								Cities shattered; earth in pain
-								Now fate was set; escape in vain".to_upper()
-			
-			3:
-				radio_text.text = "The lights went out as power stopped
-								The flames of self from color sought
-								Corrupted by a selfish whim
-								As lives around his own went dim".to_upper()
-			
-			4:
-				radio_text.text = "Waves
-								Waves enslaved in horror
-								Waves surpassed the requirements
-								From reckless testing persistence
-								The Last Wave tore the world apart
-								As some were sent back to the start
-								The remaining survivors tried to defend
-								This last attempt had sealed the end".to_upper()
-			
-			5:
-				radio_text.text = "They pleaded and renounced their creed
-								Their civilization about to bleed
-								But the revenge was not of man to man
-								Simple science destroyed the land".to_upper()
-			
-			6:
-				radio_text.text = "ONE
-								THERE WAS ONE WHO FLED
-								REMAINS SO CLOSE
-								THE NEARING END ".to_upper()
+		radio_text.visible = true
+		
+		radio_text.text = dialogue[number - 1]
 	else:
 		radio_text.text = ""
+		radio_text.visible = false
 
 
 func _on_body_entered(body: Node2D) -> void:
