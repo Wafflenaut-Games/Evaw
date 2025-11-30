@@ -38,13 +38,13 @@ offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.47058824, 0.7607843, 0.8392157, 1)
+theme_override_colors/font_outline_color = Color(0.12941177, 0.12156863, 0.12941177, 1)
 theme_override_constants/line_spacing = -7
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_lawb8")
 theme_override_font_sizes/font_size = 7
 text = "dayz nutz yuh"
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]
 z_index = -6
