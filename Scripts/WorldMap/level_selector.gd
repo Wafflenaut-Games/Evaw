@@ -44,7 +44,7 @@ func set_vars() -> void:
 
 
 func set_complete() -> void:
-	if Global.completed_lvls.has(level):
+	if Global.completed_lvls.has(level) or Input.is_action_just_pressed("cheat"):
 		complete = true
 		directions.append_array(blocked_dirs)
 
