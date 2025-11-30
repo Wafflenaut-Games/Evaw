@@ -23,7 +23,6 @@ position = Vector2(9, 0)
 shape = SubResource("RectangleShape2D_y7q4h")
 
 [node name="Transitions" parent="." instance=ExtResource("2_oi8sa")]
-visible = false
 
 [node name="TransitionTimer" type="Timer" parent="."]
 wait_time = 1.2
