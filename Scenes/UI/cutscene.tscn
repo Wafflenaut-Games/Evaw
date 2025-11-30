@@ -90,6 +90,21 @@ autostart = true
 stream = ExtResource("5_uf2hu")
 autoplay = true
 
+[node name="text" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 87.0
+offset_right = 156.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.9607843, 0.93333334, 0.6901961, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("2_ivuwl")
+theme_override_font_sizes/font_size = 7
+text = "long ago deez nutz"
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7lvp1")
 offset_right = 160.0
@@ -105,21 +120,6 @@ offset_bottom = 120.0
 visible = false
 position = Vector2(80, 60)
 autoplay = ""
-
-[node name="text" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 87.0
-offset_right = 156.0
-offset_bottom = 116.0
-theme_override_colors/font_color = Color(0.9607843, 0.93333334, 0.6901961, 1)
-theme_override_constants/line_spacing = -6
-theme_override_fonts/font = ExtResource("2_ivuwl")
-theme_override_font_sizes/font_size = 7
-text = "long ago deez nutz"
-horizontal_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="texttimer" to="." method="_on_texttimer_timeout"]
