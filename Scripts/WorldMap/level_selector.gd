@@ -53,16 +53,12 @@ func select_lvl() -> void:
 	if vaw_on():
 		Global.wm_hovering = level
 		if Input.is_action_just_pressed("wm_int") and not Global.is_transitioning:
-			if not level == -1:
-				if typeof(level) == TYPE_INT and level > 0:
-					Global.wm_hovering = level
-					vaw.selecting = true
-					Global.is_transitioning = true
-					level_start.play()
-					transition_timer.start()
-			else:
-				# STOP EVERYTHING HERE AND REMEMBER TO LIMIT DIRS FOR DEMO
-				vaw.inactive = true
+			if typeof(level) == TYPE_INT and level > 0:
+				Global.wm_hovering = level
+				vaw.selecting = true
+				Global.is_transitioning = true
+				level_start.play()
+				transition_timer.start()
 
 
 func handle_anims() -> void:

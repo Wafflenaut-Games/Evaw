@@ -125,11 +125,10 @@ offset_bottom = -60.0
 
 [node name="FeatherCounter" parent="." instance=ExtResource("8_j4q0y")]
 layout_mode = 1
-offset_left = 57.0
+offset_left = 59.0
 offset_top = 46.0
-offset_right = 57.0
+offset_right = 59.0
 offset_bottom = 46.0
-script = null
 
 [node name="SpeedrunTimer" parent="." instance=ExtResource("7_8dpcc")]
 layout_mode = 1

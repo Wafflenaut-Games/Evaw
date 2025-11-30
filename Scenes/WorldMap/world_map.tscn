@@ -42,7 +42,6 @@ sprite_frames = SubResource("SpriteFrames_e2gad")
 autoplay = "default"
 
 [node name="Transitions" parent="." instance=ExtResource("3_qx6hv")]
-animation = &"close"
 
 [node name="WorldMap_Vaw" parent="." instance=ExtResource("2_e2gad")]
 position = Vector2(-73, -13)
@@ -109,7 +108,7 @@ level = 9
 position = Vector2(36, -45)
 directions = Array[String](["left"])
 blocked_dirs = Array[String](["right"])
-level = -1
+level = 10
 
 [node name="Level_Selector10" parent="LevelSelectors" instance=ExtResource("3_uwqkr")]
 position = Vector2(64, -56)
