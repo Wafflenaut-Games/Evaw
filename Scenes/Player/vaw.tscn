@@ -1052,6 +1052,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uvlj0")
 
 [node name="ground_checkerL" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 target_position = Vector2(0, 5)
 collision_mask = 255
@@ -1201,6 +1202,7 @@ one_shot = true
 
 [node name="Loading" type="CanvasLayer" parent="."]
 layer = 2001
+visible = false
 script = ExtResource("34_imby6")
 
 [node name="Background" type="Sprite2D" parent="Loading"]
