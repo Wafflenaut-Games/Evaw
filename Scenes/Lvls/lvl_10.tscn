@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://168r017sg0j3"]
+[gd_scene load_steps=30 format=4 uid="uid://ss7x4usyf0en"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_egroo"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_6c480"]
@@ -317,7 +317,7 @@ theme_override_colors/font_color = Color(0.8784314, 0.827451, 0.78431374, 1)
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("10_6c480")
 theme_override_font_sizes/font_size = 7
-text = "TEO ON:"
+text = "MATEO  ON:"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
