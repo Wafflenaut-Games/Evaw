@@ -1,25 +1,123 @@
-[gd_scene load_steps=3 format=3 uid="uid://d05snj5lcmp7t"]
+[gd_scene load_steps=5 format=3 uid="uid://d05snj5lcmp7t"]
 
 [ext_resource type="FontFile" uid="uid://dwrfjr0f0fujg" path="res://Assets/UI/5x3-font.ttf" id="1_lawb8"]
-[ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_bjnhc"]
+[ext_resource type="Texture2D" uid="uid://c4e0qj20eymso" path="res://Assets/UI/top0textbox.png" id="2_iu63x"]
+[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="3_iu63x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftdol"]
+shader = ExtResource("3_iu63x")
+shader_parameter/grain_intensity = 0.1
+shader_parameter/min_lum = 0.0
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.5
+shader_parameter/vignette_outer_radius = 0.7
+shader_parameter/vignette_inner_radius = 0.2
+shader_parameter/scanline_intensity = 0.2
+shader_parameter/barrel_distortion = 0.0
+shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/crt_vignette_power = 2.0
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
+shader_parameter/enable_color_quantization = true
+shader_parameter/color_quant_steps = 32.0
+shader_parameter/warble_amount = 0.0
+shader_parameter/warble_speed = 2.70400012844
 
 [node name="RadioText" type="Label"]
+z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = 19.0
-offset_right = 71.0
-offset_bottom = 51.0
+offset_left = -75.0
+offset_top = 8.0
+offset_right = 75.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.47058824, 0.7607843, 0.8392157, 1)
 theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("1_lawb8")
 theme_override_font_sizes/font_size = 7
+text = "dayz nutz yuh"
+horizontal_alignment = 1
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]
-position = Vector2(72, 16)
-scale = Vector2(0.49999997, 0.14)
-texture = ExtResource("2_bjnhc")
+z_index = -6
+position = Vector2(75, 20)
+texture = ExtResource("2_iu63x")
+
+[node name="ColorRect2" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = -77.0
+offset_top = -20.0
+offset_right = 77.0
+offset_bottom = 31.0
+
+[node name="ColorRect3" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = -3.0
+offset_top = -21.0
+offset_right = 4.0
+offset_bottom = -20.0
+
+[node name="ColorRect4" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = -2.0
+offset_top = -22.0
+offset_right = 3.0
+offset_bottom = -21.0
+
+[node name="ColorRect5" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = -1.0
+offset_top = -23.0
+offset_right = 3.0
+offset_bottom = -22.0
+
+[node name="ColorRect6" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_top = -24.0
+offset_right = 4.0
+offset_bottom = -23.0
+
+[node name="ColorRect7" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 3.0
+offset_bottom = -24.0
+
+[node name="ColorRect8" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_top = -26.0
+offset_right = 2.0
+offset_bottom = -25.0
+
+[node name="ColorRect9" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = -1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -26.0
+
+[node name="ColorRect10" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_top = -28.0
+offset_right = 2.0
+offset_bottom = -27.0
+
+[node name="ColorRect11" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_left = 1.0
+offset_top = -29.0
+offset_right = 2.0
+offset_bottom = -28.0
+
+[node name="ColorRect12" type="ColorRect" parent="TentativeBackg"]
+material = SubResource("ShaderMaterial_ftdol")
+offset_top = -30.0
+offset_right = 1.0
+offset_bottom = -29.0

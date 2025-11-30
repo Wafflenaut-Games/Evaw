@@ -37,10 +37,10 @@ func _process(_delta: float) -> void:
 	
 	#region Feather
 	
-	if Global.wm_hovering != 4 and Global.wm_hovering != 9:
+	if Global.wm_hovering != 4 and Global.wm_hovering != 9 and Global.wm_hovering != 7:
 		$"everything/triple feather".visible = false
 		$"everything/single feather".visible = true
-	elif Global.wm_hovering == 4 or Global.wm_hovering == 9:
+	elif Global.wm_hovering == 4 or Global.wm_hovering == 9 or Global.wm_hovering == 7:
 		$"everything/triple feather".visible = true
 		$"everything/single feather".visible = false
 	
@@ -86,10 +86,20 @@ func _process(_delta: float) -> void:
 			else:
 				feather_inline.visible = false
 		7:
-			if Global.feather_lvl_7:
-				feather_inline.visible = true
+			if Global.feather_lvl_7_1:
+				triple_feather_inline_1.visible = true
 			else:
-				feather_inline.visible = false
+				triple_feather_inline_1.visible = false
+				
+			if Global.feather_lvl_7_2:
+				triple_feather_inline_2.visible = true
+			else:
+				triple_feather_inline_2.visible = false
+			
+			if Global.feather_lvl_7_3:
+				triple_feather_inline_3.visible = true
+			else:
+				triple_feather_inline_3.visible = false
 		8:
 			if Global.feather_lvl_8:
 				feather_inline.visible = true

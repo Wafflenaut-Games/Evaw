@@ -15,14 +15,14 @@ var interacting = false
 
 var dialogue: Array = [
 	"In a world filled with echoes and light
-	A power produced; impending blight
+	A power produced, impending blight
 	The nation's death born from a crave
 	As the final wielder exits the cave".to_upper(),
 	
 	"The shift was made so carelessly
 	As frequency met frequency
-	Cities shattered; earth in pain
-	Now fate was set; escape in vain".to_upper(),
+	Cities shattered, earth in pain
+	Now fate was set, escape in vain".to_upper(),
 	
 	"The lights went out as power stopped
 	The flames of self from color sought
