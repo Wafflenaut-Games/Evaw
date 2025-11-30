@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=4 uid="uid://ha3k8g5wd2dg"]
 
-[ext_resource type="Script" path="res://Scripts/Lvls/lvl_9.gd" id="1_5hs0m"]
+[ext_resource type="Script" uid="uid://cmita2oug1wip" path="res://Scripts/Lvls/lvl_9.gd" id="1_5hs0m"]
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="2_o4xyl"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="3_d3h4a"]
 [ext_resource type="Texture2D" uid="uid://dplxmkbajmm0n" path="res://Assets/Backgrounds/evawbackg2.png" id="4_5gpkm"]
@@ -419,22 +419,22 @@ type = "clay"
 direction = "U"
 
 [node name="Clay20" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-132, 315)
+position = Vector2(-132, 316)
 type = "clay"
 direction = "U"
 
 [node name="Clay21" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-140, 315)
+position = Vector2(-140, 316)
 type = "clay"
 direction = "U"
 
 [node name="Clay22" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-140, 235)
+position = Vector2(-140, 236)
 type = "clay"
 direction = "D"
 
 [node name="Clay23" parent="SEKIPS" instance=ExtResource("21_m3e0t")]
-position = Vector2(-148, 235)
+position = Vector2(-148, 236)
 type = "clay"
 direction = "D"
 
