@@ -13,7 +13,6 @@ var already_out = true
 @onready var triple_feather_inline_3: Sprite2D = $"everything/triple feather/triple_feather_inline3"
 
 
-
 func _process(_delta: float) -> void:
 	# Animations
 	if !already_out:

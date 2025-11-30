@@ -15,7 +15,7 @@ shader_parameter/vignette_outer_radius = 0.7
 shader_parameter/vignette_inner_radius = 0.2
 shader_parameter/scanline_intensity = 0.2
 shader_parameter/barrel_distortion = 0.0
-shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/chromatic_aberration = 0.0
 shader_parameter/crt_vignette_power = 2.0
 shader_parameter/pixel_resolution_x = 640
 shader_parameter/pixel_resolution_y = 480
@@ -43,6 +43,8 @@ theme_override_fonts/font = ExtResource("1_lawb8")
 theme_override_font_sizes/font_size = 7
 text = "dayz nutz yuh"
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]
 z_index = -6
