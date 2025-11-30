@@ -701,7 +701,7 @@ animations = [{
 }]
 
 [node name="LevelTitles" type="AnimatedSprite2D"]
-z_index = 2
+z_index = 15
 sprite_frames = SubResource("SpriteFrames_ugqag")
 animation = &"9"
 autoplay = "0"
