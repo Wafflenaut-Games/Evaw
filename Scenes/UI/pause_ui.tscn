@@ -25,6 +25,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_pr555")
 
 [node name="TentativeBackg" type="Sprite2D" parent="."]

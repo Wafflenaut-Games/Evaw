@@ -226,6 +226,8 @@ triple_num = 3
 
 [node name="Snow" parent="." instance=ExtResource("13_et28n")]
 position = Vector2(178, -928)
+amount = 800
+lifetime = 9.0
 
 [node name="Sensors" type="Node" parent="."]
 
