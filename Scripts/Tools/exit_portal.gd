@@ -14,6 +14,7 @@ var entered = false
 
 
 func _process(_delta: float) -> void:
+	
 	leave()
 	visibility()
 	
@@ -47,9 +48,16 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_transition_timer_timeout() -> void:
 	Global.completed_lvls.append(Global.level)
+	var last_level = Global.level
 	Global.level = 0
 	Global.emit_signal("level_end")
-	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
+	if last_level == 10:
+		get_tree().change_scene_to_file("res://Scenes/UI/titlescreen.tscn")
+		print("10")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
+		print("not 10")
+	
 
 
 func _on_body_exited(body: Node2D) -> void:
