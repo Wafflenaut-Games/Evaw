@@ -31,17 +31,12 @@ var dialogue: Array = [
 	Corrupted by a selfish whim
 	As lives around his own went dim".to_upper(),
 	
-	"Waves
-	Waves enslaved in horror
-	Waves surpassed the requirements
-	From reckless testing persistence
-	The Last Wave tore the world apart
+	"The Last Wave tore the world apart
 	As some were sent back to the start
 	The remaining survivors tried to defend
 	This last attempt had sealed the end".to_upper(),
 	
-	"ONE
-	THERE WAS ONE WHO FLED
+	"THERE WAS ONE WHO FLED
 	REMAINS SO CLOSE
 	THE NEARING END ".to_upper()
 ]
