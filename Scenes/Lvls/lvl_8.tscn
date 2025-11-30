@@ -543,15 +543,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Decorations"]
-occluder = SubResource("OccluderPolygon2D_ne2y6")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Decorations"]
-occluder = SubResource("OccluderPolygon2D_um243")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Decorations"]
-occluder = SubResource("OccluderPolygon2D_xvoik")
-
 [node name="Radio" parent="." instance=ExtResource("26_5y0jl")]
 position = Vector2(382, -656)
 number = 4
+
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
+occluder = SubResource("OccluderPolygon2D_ne2y6")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
+occluder = SubResource("OccluderPolygon2D_um243")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
+occluder = SubResource("OccluderPolygon2D_xvoik")

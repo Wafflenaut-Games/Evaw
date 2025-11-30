@@ -835,38 +835,40 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(57, 26)
 occluder = SubResource("OccluderPolygon2D_ox11j")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(185, 26)
 occluder = SubResource("OccluderPolygon2D_wb7w0")
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(273, 2)
 occluder = SubResource("OccluderPolygon2D_qj1av")
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(345, 2)
 occluder = SubResource("OccluderPolygon2D_c8f57")
 
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(401, -14)
 occluder = SubResource("OccluderPolygon2D_038uo")
 
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(681, -70)
 occluder = SubResource("OccluderPolygon2D_0euax")
 
-[node name="LightOccluder2D8" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(817, -30)
 occluder = SubResource("OccluderPolygon2D_omk2b")
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(857, -46)
 occluder = SubResource("OccluderPolygon2D_omk2b")
 
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(457, -22)
 occluder = SubResource("OccluderPolygon2D_7eq51")

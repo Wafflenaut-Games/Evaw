@@ -495,9 +495,11 @@ autowrap_mode = 3
 [node name="ExitPortal" parent="." instance=ExtResource("10_y74lp")]
 position = Vector2(598, -165)
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(598, -165)
 occluder = SubResource("OccluderPolygon2D_iv1r1")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
 occluder = SubResource("OccluderPolygon2D_ubclh")

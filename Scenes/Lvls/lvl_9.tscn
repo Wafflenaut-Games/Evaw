@@ -661,61 +661,65 @@ direction = "Down"
 
 [node name="light_sensor" parent="Sensors" node_paths=PackedStringArray("connected_door") groups=["light_sensor"] instance=ExtResource("23_5hs0m")]
 position = Vector2(-587, 203)
-connected_door = NodePath("../../Doors")
+connected_door = NodePath("../../DoorContatiner/Doors")
 
 [node name="light_sensor3" parent="Sensors" node_paths=PackedStringArray("connected_door") groups=["light_sensor"] instance=ExtResource("23_5hs0m")]
 position = Vector2(-316, -14)
 rotation = -1.5707964
-connected_door = NodePath("../../Doors3")
+connected_door = NodePath("../../DoorContatiner/Doors3")
 
 [node name="light_sensor2" parent="Sensors" node_paths=PackedStringArray("connected_door") groups=["light_sensor"] instance=ExtResource("23_5hs0m")]
 position = Vector2(-603, -69)
-connected_door = NodePath("../../Doors2")
+connected_door = NodePath("../../DoorContatiner/Doors2")
 
-[node name="Doors" parent="." instance=ExtResource("23_5gpkm")]
+[node name="DoorContatiner" type="Node2D" parent="."]
+
+[node name="Doors" parent="DoorContatiner" instance=ExtResource("23_5gpkm")]
 position = Vector2(-624, 239)
 type = "lume"
 
-[node name="Doors2" parent="." instance=ExtResource("23_5gpkm")]
+[node name="Doors2" parent="DoorContatiner" instance=ExtResource("23_5gpkm")]
 position = Vector2(-584, -33)
 type = "lume"
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="."]
+[node name="Doors3" parent="DoorContatiner" instance=ExtResource("23_5gpkm")]
+position = Vector2(-304, -45)
+type = "lume"
+
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-572, 251)
 occluder = SubResource("OccluderPolygon2D_bgm6s")
 
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-572, 251)
 occluder = SubResource("OccluderPolygon2D_i38tq")
 
-[node name="LightOccluder2D8" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-572, 251)
 occluder = SubResource("OccluderPolygon2D_vruww")
 
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-572, 251)
 occluder = SubResource("OccluderPolygon2D_hl81l")
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-120, 7)
 occluder = SubResource("OccluderPolygon2D_5gpkm")
 
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(-572, 251)
 occluder = SubResource("OccluderPolygon2D_yo1nb")
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(0, -1)
 occluder = SubResource("OccluderPolygon2D_5gpkm")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(0, -1)
 occluder = SubResource("OccluderPolygon2D_5hs0m")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
 position = Vector2(0, -1)
 occluder = SubResource("OccluderPolygon2D_kvmt2")
-
-[node name="Doors3" parent="." instance=ExtResource("23_5gpkm")]
-position = Vector2(-304, -45)
-type = "lume"

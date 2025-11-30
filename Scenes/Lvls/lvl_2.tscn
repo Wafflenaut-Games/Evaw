@@ -336,167 +336,171 @@ position = Vector2(673, 100)
 z_index = 1
 position = Vector2(681, 100)
 
-[node name="Lantern" type="AnimatedSprite2D" parent="."]
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Lantern" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(107, -91)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern2" type="AnimatedSprite2D" parent="."]
+[node name="Lantern2" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(169, -160)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern2"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern2"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern2"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern3" type="AnimatedSprite2D" parent="."]
+[node name="Lantern3" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(205, -155)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern3"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern3"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern3"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern4" type="AnimatedSprite2D" parent="."]
+[node name="Lantern4" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(484, -212)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern4"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern4"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern4"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern5" type="AnimatedSprite2D" parent="."]
+[node name="Lantern5" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(526, -35)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern5"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern5"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern5"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern6" type="AnimatedSprite2D" parent="."]
+[node name="Lantern6" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(481, -21)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern6"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern6"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern6"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern8" type="AnimatedSprite2D" parent="."]
+[node name="Lantern8" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(715, -85)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern8"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern8"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern8"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern7" type="AnimatedSprite2D" parent="."]
+[node name="Lantern7" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(601, -31)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern7"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern7"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern7"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
-position = Vector2(715, -85)
-occluder = SubResource("OccluderPolygon2D_p0s4s")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(679, -213)
-occluder = SubResource("OccluderPolygon2D_5ssvv")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(679, -213)
-occluder = SubResource("OccluderPolygon2D_2v4uk")
-
-[node name="Lantern9" type="AnimatedSprite2D" parent="."]
+[node name="Lantern9" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_jmsap")
 position = Vector2(679, -213)
 sprite_frames = SubResource("SpriteFrames_gd850")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern9"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern9"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_m675t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern9"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern9"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
+
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(715, -85)
+occluder = SubResource("OccluderPolygon2D_p0s4s")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(679, -213)
+occluder = SubResource("OccluderPolygon2D_5ssvv")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(679, -213)
+occluder = SubResource("OccluderPolygon2D_2v4uk")
