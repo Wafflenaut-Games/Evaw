@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Global.dying:
+	if Global.respawning:
 		unlit.visible = true
 		lit.visible = false
 	elif connected_door.opened:
