@@ -1,6 +1,6 @@
 extends CanvasLayer
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $"../LevelTitles".visible == true:
 		visible = false

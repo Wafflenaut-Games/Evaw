@@ -131,8 +131,7 @@ polygon = PackedVector2Array(13, -567, 70, -567, 69, -567, 69, -543, 37, -543, 3
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xvoik"]
 polygon = PackedVector2Array(-267, -551, -267, -495, -243, -495, -243, -527, -219, -527, -219, -495, -211, -495, -211, -487, -59, -487, -59, -479, -36, -479, -36, -487, -27, -487, -27, -495, -67, -495, -66, -511, -67, -495, -67, -511, 37, -511, 37, -519, 52, -519, 53, -519, 53, -527, 117, -527, 117, -535, 125, -535, 125, -543, 165, -543, 165, -519, 189, -519, 189, -607, 317, -607, 317, -615, 341, -615, 341, -607, 397, -607, 397, -527, 453, -527, 453, -631, 445, -631, 444, -655, 444, -631, 445, -631, 444, -655, 565, -655, 565, -695, 485, -695, 485, -687, 429, -687, 430, -631, 341, -631, 341, -639, 309, -639, 309, -655, 365, -655, 365, -648, 365, -647, 389, -647, 389, -655, 396, -655, 397, -655, 397, -690, 486, -750, 615, -789, 682, -528, 486, -425, 159, -356, -26, -376, -249, -377, -339, -443, -359, -582, -281, -693, -249, -632)
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(1, -1)
+[node name="Lvl_8" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -247,66 +246,6 @@ position = Vector2(198, -624)
 
 [node name="Doors5" parent="Doors" instance=ExtResource("12_7k682")]
 position = Vector2(454, -672)
-
-[node name="OneWayPlatform17" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-143, -531)
-direction = "D"
-
-[node name="OneWayPlatform22" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(1, -611)
-direction = "D"
-
-[node name="OneWayPlatform23" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-7, -611)
-direction = "D"
-
-[node name="OneWayPlatform24" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-15, -611)
-direction = "D"
-
-[node name="OneWayPlatform25" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-23, -611)
-direction = "D"
-
-[node name="OneWayPlatform26" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-31, -611)
-direction = "D"
-
-[node name="OneWayPlatform18" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-151, -531)
-direction = "D"
-
-[node name="OneWayPlatform53" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(145, -483)
-direction = "D"
-
-[node name="OneWayPlatform21" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(393, -611)
-direction = "R"
-
-[node name="OneWayPlatform30" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(393, -619)
-direction = "R"
-
-[node name="OneWayPlatform31" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(393, -627)
-direction = "R"
-
-[node name="OneWayPlatform32" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-175, -491)
-direction = "R"
-
-[node name="OneWayPlatform54" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(137, -483)
-direction = "D"
-
-[node name="OneWayPlatform19" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-159, -531)
-direction = "D"
-
-[node name="OneWayPlatform20" parent="." instance=ExtResource("13_fy1ng")]
-position = Vector2(-167, -531)
-direction = "D"
 
 [node name="Node" type="Node" parent="."]
 
@@ -443,102 +382,166 @@ direction = "U"
 position = Vector2(-38, -484)
 direction = "U"
 
-[node name="SnowTree" parent="." instance=ExtResource("15_ahh1n")]
+[node name="Oneways" type="Node2D" parent="."]
+
+[node name="OneWayPlatform17" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-143, -531)
+direction = "D"
+
+[node name="OneWayPlatform22" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(1, -611)
+direction = "D"
+
+[node name="OneWayPlatform23" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-7, -611)
+direction = "D"
+
+[node name="OneWayPlatform24" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-15, -611)
+direction = "D"
+
+[node name="OneWayPlatform25" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-23, -611)
+direction = "D"
+
+[node name="OneWayPlatform26" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-31, -611)
+direction = "D"
+
+[node name="OneWayPlatform18" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-151, -531)
+direction = "D"
+
+[node name="OneWayPlatform53" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(145, -483)
+direction = "D"
+
+[node name="OneWayPlatform21" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(393, -611)
+direction = "R"
+
+[node name="OneWayPlatform30" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(393, -619)
+direction = "R"
+
+[node name="OneWayPlatform31" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(393, -627)
+direction = "R"
+
+[node name="OneWayPlatform32" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-175, -491)
+direction = "R"
+
+[node name="OneWayPlatform54" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(137, -483)
+direction = "D"
+
+[node name="OneWayPlatform19" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-159, -531)
+direction = "D"
+
+[node name="OneWayPlatform20" parent="Oneways" instance=ExtResource("13_fy1ng")]
+position = Vector2(-167, -531)
+direction = "D"
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="SnowTree" parent="Decorations" instance=ExtResource("15_ahh1n")]
 position = Vector2(-123, -507)
 
-[node name="SnowTree2" parent="." instance=ExtResource("15_ahh1n")]
+[node name="SnowTree2" parent="Decorations" instance=ExtResource("15_ahh1n")]
 position = Vector2(41, -587)
 
-[node name="Lantern3" type="AnimatedSprite2D" parent="."]
+[node name="Lantern3" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(43, -667)
 sprite_frames = SubResource("SpriteFrames_6l18s")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern3"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern3"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_ufqmx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern3"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern5" type="AnimatedSprite2D" parent="."]
+[node name="Lantern5" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(291, -668)
 sprite_frames = SubResource("SpriteFrames_6l18s")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern5"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern5"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_ufqmx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern5"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern6" type="AnimatedSprite2D" parent="."]
+[node name="Lantern6" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(21, -539)
 sprite_frames = SubResource("SpriteFrames_6l18s")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern6"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern6"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_ufqmx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern6"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern7" type="AnimatedSprite2D" parent="."]
+[node name="Lantern7" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(417, -620)
 sprite_frames = SubResource("SpriteFrames_6l18s")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern7"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern7"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_ufqmx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern7"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="Lantern8" type="AnimatedSprite2D" parent="."]
+[node name="Lantern8" type="AnimatedSprite2D" parent="Decorations"]
 material = SubResource("ShaderMaterial_lhf7l")
 position = Vector2(436, -677)
 sprite_frames = SubResource("SpriteFrames_6l18s")
 animation = &"fire"
 autoplay = "fire"
 
-[node name="PointLight2D" type="PointLight2D" parent="Lantern8"]
+[node name="PointLight2D" type="PointLight2D" parent="Decorations/Lantern8"]
 color = Color(1, 0.40000004, 0, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_ufqmx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decorations/Lantern8"]
 libraries = {
 &"": SubResource("AnimationLibrary_tyjwu")
 }
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Decorations"]
 occluder = SubResource("OccluderPolygon2D_ne2y6")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Decorations"]
 occluder = SubResource("OccluderPolygon2D_um243")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Decorations"]
 occluder = SubResource("OccluderPolygon2D_xvoik")

@@ -18,15 +18,16 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Global.dying:
+	if Global.respawning:
 		unlit.visible = true
 		lit.visible = false
-	
-	#sensor_activate.volume_db = init_vol + Global.vol
+	elif connected_door.opened:
+		unlit.visible = false
+		lit.visible = true
 
 
 func activate():
-	if unlit.visible:
+	if unlit.visible and not connected_door.opened:
 		connected_door.open()
 		unlit.visible = false
 		lit.visible = true
