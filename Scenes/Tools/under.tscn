@@ -1,23 +1,23 @@
 [gd_scene load_steps=8 format=3 uid="uid://bx0obw4e11k8j"]
 
 [ext_resource type="Script" uid="uid://bw0d03feswt6i" path="res://Scripts/Tools/under.gd" id="1_l3ads"]
-[ext_resource type="AudioStream" uid="uid://dk45sgm6or56h" path="res://Assets/AUDIO/Undermain.wav" id="2_lvg4s"]
-[ext_resource type="AudioStream" uid="uid://misq06fajcw0" path="res://Assets/AUDIO/Undersine.wav" id="3_nuncp"]
-[ext_resource type="AudioStream" uid="uid://cw5qmcv2p3kqi" path="res://Assets/AUDIO/Underlume.wav" id="4_02t0p"]
-[ext_resource type="AudioStream" uid="uid://dd11io8fgtpu" path="res://Assets/AUDIO/Icemain.wav" id="5_02t0p"]
-[ext_resource type="AudioStream" uid="uid://b8y2vk6umxx75" path="res://Assets/AUDIO/Icesine.wav" id="6_5j3tf"]
-[ext_resource type="AudioStream" uid="uid://ccgvmshk1b8bf" path="res://Assets/AUDIO/Icelume.wav" id="7_5vbuy"]
+[ext_resource type="AudioStream" uid="uid://dvgxjbbvxkak5" path="res://Assets/AUDIO/Undermain.mp3" id="2_02t0p"]
+[ext_resource type="AudioStream" uid="uid://b55e6jgfv26tw" path="res://Assets/AUDIO/Undersine.mp3" id="3_02t0p"]
+[ext_resource type="AudioStream" uid="uid://detpn74l4blp4" path="res://Assets/AUDIO/Underlume.mp3" id="4_02t0p"]
+[ext_resource type="AudioStream" uid="uid://be3nuja8nsfmg" path="res://Assets/AUDIO/Icemain.mp3" id="5_02t0p"]
+[ext_resource type="AudioStream" uid="uid://nyui7gq85e2n" path="res://Assets/AUDIO/Icesine.mp3" id="6_5j3tf"]
+[ext_resource type="AudioStream" uid="uid://cvijuedn6k05e" path="res://Assets/AUDIO/Icelume.mp3" id="7_5vbuy"]
 
 [node name="Under" type="Node"]
 script = ExtResource("1_l3ads")
 
 [node name="Undermain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_lvg4s")
+stream = ExtResource("2_02t0p")
 volume_db = 13.0
 bus = &"Music"
 
 [node name="Undersine" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_nuncp")
+stream = ExtResource("3_02t0p")
 volume_db = 13.0
 bus = &"Music"
 
