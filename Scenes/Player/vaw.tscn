@@ -1006,7 +1006,6 @@ script = ExtResource("1_hy5rl")
 
 [node name="TransitionsLayer" type="CanvasLayer" parent="Camera"]
 layer = 2000
-visible = false
 
 [node name="Transitions" parent="Camera/TransitionsLayer" instance=ExtResource("22_s1hrp")]
 light_mask = 64
@@ -1202,7 +1201,6 @@ one_shot = true
 
 [node name="Loading" type="CanvasLayer" parent="."]
 layer = 2001
-visible = false
 script = ExtResource("34_imby6")
 
 [node name="Background" type="Sprite2D" parent="Loading"]
