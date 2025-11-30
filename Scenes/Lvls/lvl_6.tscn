@@ -226,6 +226,7 @@ visibility_layer = 3
 position = Vector2(854, -216)
 
 [node name="feather2" parent="." instance=ExtResource("10_m87ea")]
+visible = false
 visibility_layer = 3
 position = Vector2(90, 230)
 
