@@ -124,7 +124,7 @@ triple_num = 2
 [node name="Feather3" parent="." instance=ExtResource("14_8drc5")]
 position = Vector2(514, -113)
 is_triple = true
-triple_num = 2
+triple_num = 3
 
 [node name="SEKIPS" type="Node" parent="."]
 
