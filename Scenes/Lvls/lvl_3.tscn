@@ -505,4 +505,4 @@ position = Vector2(313, 19)
 
 [node name="Radio" parent="." instance=ExtResource("25_lldma")]
 position = Vector2(9, -577)
-number = 3
+number = 2
