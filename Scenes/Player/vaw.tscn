@@ -1046,7 +1046,6 @@ sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"to_sine"
 
 [node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
-visible = true
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -1117,7 +1116,7 @@ wait_time = 0.6
 one_shot = true
 
 [node name="LevelTitleTimer" type="Timer" parent="Timers"]
-wait_time = 1.2
+wait_time = 2.0
 one_shot = true
 
 [node name="TransitionTimer" type="Timer" parent="Timers"]
