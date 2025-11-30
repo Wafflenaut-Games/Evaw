@@ -75,7 +75,13 @@ func _process(delta: float) -> void:
 				6:
 					Global.feather_lvl_6 = true
 				7:
-					Global.feather_lvl_7 = true
+					match triple_num:
+						1:
+							Global.feather_lvl_7_1 = true
+						2:
+							Global.feather_lvl_7_2 = true
+						3:
+							Global.feather_lvl_7_3 = true
 				8:
 					Global.feather_lvl_8 = true
 				9:
@@ -151,8 +157,16 @@ func check_for_spawn():
 			if Global.feather_lvl_6:
 				queue_free()
 		7:
-			if Global.feather_lvl_7:
-				queue_free()
+			match triple_num:
+				1:
+					if Global.feather_lvl_7_1:
+						queue_free()
+				2:
+					if Global.feather_lvl_7_2:
+						queue_free()
+				3:
+					if Global.feather_lvl_7_3:
+						queue_free()
 		8:
 			if Global.feather_lvl_8:
 				queue_free()
