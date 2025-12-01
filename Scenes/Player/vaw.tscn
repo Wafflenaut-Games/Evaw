@@ -896,7 +896,7 @@ size = Vector2(4, 4)
 size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w850c"]
-size = Vector2(6, 6)
+size = Vector2(4, 6)
 
 [sub_resource type="Animation" id="Animation_s1hrp"]
 length = 0.001
@@ -1088,6 +1088,13 @@ collision_layer = 0
 collision_mask = 76
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SensorChecker"]
+shape = SubResource("RectangleShape2D_w850c")
+
+[node name="MusicPlayer" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicPlayer"]
 shape = SubResource("RectangleShape2D_w850c")
 
 [node name="Timers" type="Node" parent="."]

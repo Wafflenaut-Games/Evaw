@@ -47,20 +47,20 @@ bus = &"Music"
 
 [node name="james" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5j3tf")
-volume_db = -80.0
+volume_db = -20.0
 bus = &"Music"
 
 [node name="gwyn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_35ow0")
-volume_db = -80.0
+volume_db = -20.0
 bus = &"Music"
 
 [node name="teo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ppaps")
-volume_db = -80.0
+volume_db = -20.0
 bus = &"Music"
 
 [node name="roman" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_rqaqw")
-volume_db = -80.0
+volume_db = -20.0
 bus = &"Music"

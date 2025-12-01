@@ -38,7 +38,6 @@ extends CharacterBody2D
 @onready var under: Node2D = $SFX/Under
 
 
-
 const SPEED = 3000.0
 const SINE_SPD_1 = 2200.0
 const SINE_SPD_2 = 2400.0
@@ -139,6 +138,7 @@ func _physics_process(delta: float) -> void:
 		handle_sfx()
 		handle_anims()
 		walking_particles()
+		credits_music()
 		
 		move_and_slide()
 
@@ -675,7 +675,7 @@ func _on_groundhittimer_timeout() -> void:
 
 func credits_music():
 	if Global.level == 10:
-		var areas = $Hitbox.get_overlapping_areas()
+		var areas = $MusicPlayer.get_overlapping_areas()
 		
 		for area in areas:
 			if area.is_in_group("james"):
@@ -700,5 +700,38 @@ func credits_music():
 				mateo_music = false
 	
 	if james_music:
-		pass
+		if !under.james.playing:
+			under.james.playing = true
+		if under.james.volume_db < 0:
+			under.james.volume_db += 0.1
+	else:
+		if under.james.volume_db > -20:
+			under.james.volume_db -= 0.5
+	
+	if gwyn_music:
+		if !under.gwyn.playing:
+			under.gwyn.playing = true
+		if under.gwyn.volume_db < 0:
+			under.gwyn.volume_db += 0.1
+	else:
+		if under.gwyn.volume_db > -20:
+			under.gwyn.volume_db -= 0.5
+	
+	if mateo_music:
+		if !under.teo.playing:
+			under.teo.playing = true
+		if under.teo.volume_db < 0:
+			under.teo.volume_db += 0.1
+	else:
+		if under.teo.volume_db > -20:
+			under.teo.volume_db -= 0.5
+	
+	if roman_music:
+		if !under.roman.playing:
+			under.roman.playing = true
+		if under.roman.volume_db < 0:
+			under.roman.volume_db += 0.1
+	else:
+		if under.roman.volume_db > -20:
+			under.roman.volume_db -= 0.5
 	
