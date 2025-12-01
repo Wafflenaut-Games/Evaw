@@ -46,5 +46,5 @@ func update_label() -> void:
 
 
 func _on_timer_timeout() -> void:
-	if not Global.paused and not Global.is_transitioning:
+	if not Global.paused and not Global.is_transitioning and not Global.level == 0:
 		secs += 1
