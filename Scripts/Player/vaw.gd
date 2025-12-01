@@ -705,7 +705,7 @@ func credits_music():
 		if under.james.volume_db < 0:
 			under.james.volume_db += 0.05
 	else:
-		if under.james.volume_db > -50:
+		if under.james.volume_db > -20:
 			under.james.volume_db -= 0.1
 	
 	if gwyn_music:
@@ -715,7 +715,7 @@ func credits_music():
 		if under.gwyn.volume_db < 0:
 			under.gwyn.volume_db += 0.05
 	else:
-		if under.gwyn.volume_db > -50:
+		if under.gwyn.volume_db > -20:
 			under.gwyn.volume_db -= 0.2
 	
 	if mateo_music:
@@ -725,7 +725,7 @@ func credits_music():
 		if under.teo.volume_db < 0:
 			under.teo.volume_db += 0.05
 	else:
-		if under.teo.volume_db > -50:
+		if under.teo.volume_db > -20:
 			under.teo.volume_db -= 0.1
 	
 	if roman_music:
@@ -735,6 +735,6 @@ func credits_music():
 		if under.roman.volume_db < 0:
 			under.roman.volume_db += 0.05
 	else:
-		if under.roman.volume_db > -50:
+		if under.roman.volume_db > -20:
 			under.roman.volume_db -= 0.1
 	
