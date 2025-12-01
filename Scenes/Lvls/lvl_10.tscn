@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://168r017sg0j3"]
+[gd_scene load_steps=36 format=4 uid="uid://ss7x4usyf0en"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_egroo"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_6c480"]
@@ -199,7 +199,7 @@ position = Vector2(-356, -96)
 position = Vector2(1630, -146)
 
 [node name="Feather" parent="." instance=ExtResource("9_2qkvr")]
-position = Vector2(878, 57)
+position = Vector2(879, 130)
 
 [node name="Doors_Sensors" type="Node2D" parent="."]
 
