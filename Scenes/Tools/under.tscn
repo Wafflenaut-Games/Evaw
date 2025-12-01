@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://be3nuja8nsfmg" path="res://Assets/AUDIO/Icemain.mp3" id="5_02t0p"]
 [ext_resource type="AudioStream" uid="uid://nyui7gq85e2n" path="res://Assets/AUDIO/Icesine.mp3" id="6_5j3tf"]
 [ext_resource type="AudioStream" uid="uid://cvijuedn6k05e" path="res://Assets/AUDIO/Icelume.mp3" id="7_5vbuy"]
-[ext_resource type="AudioStream" uid="uid://bm0dv64r50vqb" path="res://Assets/AUDIO/World Map.wav" id="8_5j3tf"]
-[ext_resource type="AudioStream" uid="uid://dfd1tl6l473f4" path="res://Assets/AUDIO/cutscene better better.mp3" id="9_35ow0"]
-[ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="10_ppaps"]
-[ext_resource type="AudioStream" uid="uid://ccgvmshk1b8bf" path="res://Assets/AUDIO/Icelume.wav" id="11_rqaqw"]
+[ext_resource type="AudioStream" uid="uid://bb7nxndk6ruhi" path="res://Assets/AUDIO/semaJ fire.mp3" id="8_35ow0"]
+[ext_resource type="AudioStream" uid="uid://c53yhatnw1syv" path="res://Assets/AUDIO/Gwyn.mp3" id="9_ppaps"]
+[ext_resource type="AudioStream" uid="uid://k5eusyhv3i28" path="res://Assets/AUDIO/TED.mp3" id="10_rqaqw"]
+[ext_resource type="AudioStream" uid="uid://bux8kyyl5lqnh" path="res://Assets/AUDIO/Roman.mp3" id="11_r73hu"]
 
 [node name="Under" type="Node2D"]
 script = ExtResource("1_l3ads")
@@ -46,21 +46,21 @@ volume_db = 13.0
 bus = &"Music"
 
 [node name="james" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_5j3tf")
+stream = ExtResource("8_35ow0")
 volume_db = -20.0
 bus = &"Music"
 
 [node name="gwyn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_35ow0")
+stream = ExtResource("9_ppaps")
 volume_db = -20.0
 bus = &"Music"
 
 [node name="teo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_ppaps")
+stream = ExtResource("10_rqaqw")
 volume_db = -20.0
 bus = &"Music"
 
 [node name="roman" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_rqaqw")
+stream = ExtResource("11_r73hu")
 volume_db = -20.0
 bus = &"Music"
