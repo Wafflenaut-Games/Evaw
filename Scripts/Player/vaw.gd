@@ -702,7 +702,7 @@ func credits_music():
 	if james_music:
 		if !under.james.playing:
 			under.james.playing = true
-		if under.james.volume_db < 0:
+		if under.james.volume_db < -10:
 			under.james.volume_db += 0.05
 	else:
 		if under.james.volume_db > -20:
@@ -712,7 +712,7 @@ func credits_music():
 		under.james.volume_db -= 0.1
 		if !under.gwyn.playing:
 			under.gwyn.playing = true
-		if under.gwyn.volume_db < 0:
+		if under.gwyn.volume_db < -10:
 			under.gwyn.volume_db += 0.05
 	else:
 		if under.gwyn.volume_db > -20:
@@ -722,7 +722,7 @@ func credits_music():
 		under.gwyn.volume_db -= 0.1
 		if !under.teo.playing:
 			under.teo.playing = true
-		if under.teo.volume_db < 0:
+		if under.teo.volume_db < -10:
 			under.teo.volume_db += 0.05
 	else:
 		if under.teo.volume_db > -20:
@@ -732,7 +732,7 @@ func credits_music():
 		under.teo.volume_db -= 0.1
 		if !under.roman.playing:
 			under.roman.playing = true
-		if under.roman.volume_db < 0:
+		if under.roman.volume_db < -10:
 			under.roman.volume_db += 0.05
 	else:
 		if under.roman.volume_db > -20:
