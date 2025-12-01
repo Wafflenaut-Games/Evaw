@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Gwyn.mp3-236c20b4d8253ffc47cfde618f09398a.mp3
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

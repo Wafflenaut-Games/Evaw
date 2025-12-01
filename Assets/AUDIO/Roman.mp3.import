@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Roman.mp3-bac7ce8953b32a5c8749ba0de15e3846.mp
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
