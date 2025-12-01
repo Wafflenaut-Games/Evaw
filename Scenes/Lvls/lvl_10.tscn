@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://168r017sg0j3"]
+[gd_scene load_steps=34 format=4 uid="uid://ss7x4usyf0en"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_egroo"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_6c480"]
@@ -131,12 +131,6 @@ size = Vector2(24, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ego"]
 size = Vector2(8, 16)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wyh53"]
-polygon = PackedVector2Array(-1133, 124, -1117, 124, -1117, 140, -1133, 140)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7xnkn"]
-polygon = PackedVector2Array(8, -72, 96, -72, 96, -56, 136, -56, 136, -96, 336, -96, 336, 7, 336, 8, 344, 9, 344, 32, 352, 32, 352, 40, 424, 40, 424, 32, 448, 32, 448, 40, 464, 40, 464, 48, 544, 48, 545, 32, 552, 32, 553, -20, 515, -65, 509, -113, 474, -193, 474, -202, 480, -200, 528, -200, 528, -192, 576, -192, 576, -200, 592, -200, 592, -208, 656, -208, 656, -215, 656, -216, 720, -216, 720, -248, 808, -248, 808, -216, 816, -216, 816, -192, 824, -192, 824, -176, 864, -176, 864, -184, 936, -184, 936, -192, 992, -192, 992, -200, 1256, -200, 716, 163, 79, 215)
 
 [node name="Lvl_10" type="Node2D"]
 
@@ -698,25 +692,3 @@ text = "DANGER:                                    FEATHER"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="LightOccluders" type="Node2D" parent="."]
-visible = false
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
-position = Vector2(1245, -212)
-occluder = SubResource("OccluderPolygon2D_wyh53")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
-position = Vector2(1613, -108)
-occluder = SubResource("OccluderPolygon2D_wyh53")
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightOccluders"]
-position = Vector2(1637, -140)
-occluder = SubResource("OccluderPolygon2D_wyh53")
-
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightOccluders"]
-position = Vector2(1821, -372)
-occluder = SubResource("OccluderPolygon2D_wyh53")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
-occluder = SubResource("OccluderPolygon2D_7xnkn")
