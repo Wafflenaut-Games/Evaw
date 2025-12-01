@@ -1,27 +1,27 @@
 [gd_scene load_steps=25 format=3 uid="uid://svren05pw2nw"]
 
 [ext_resource type="Script" uid="uid://ca8me0kh5y04l" path="res://Scripts/Objects/spikes.gd" id="1_hagkc"]
-[ext_resource type="Texture2D" uid="uid://do3li75054vjl" path="res://Assets/Obstacles/Vaw_Clay_Spikes.png" id="1_osawo"]
 [ext_resource type="Texture2D" uid="uid://bn4bmpbh7j4bd" path="res://Assets/Obstacles/Vaw_Steel_Spikes.png" id="2_hagkc"]
+[ext_resource type="Texture2D" uid="uid://do64lia1bchm6" path="res://Assets/Obstacles/clayspike2s.png" id="2_law08"]
 [ext_resource type="Texture2D" uid="uid://bu0qknqam4yfs" path="res://Assets/Obstacles/Vaw_Glass_Spikes.png" id="3_law08"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hagkc"]
-atlas = ExtResource("1_osawo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebgvn"]
+atlas = ExtResource("2_law08")
 region = Rect2(8, 8, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_law08"]
-atlas = ExtResource("1_osawo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhv15"]
+atlas = ExtResource("2_law08")
 region = Rect2(0, 8, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebgvn"]
-atlas = ExtResource("1_osawo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7bgg"]
+atlas = ExtResource("2_law08")
 region = Rect2(8, 0, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xhv15"]
-atlas = ExtResource("1_osawo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ybjx"]
+atlas = ExtResource("2_law08")
 region = Rect2(0, 0, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7bgg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hagkc"]
 atlas = ExtResource("3_law08")
 region = Rect2(8, 8, 8, 8)
 
@@ -57,7 +57,7 @@ region = Rect2(0, 0, 8, 8)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hagkc")
+"texture": SubResource("AtlasTexture_ebgvn")
 }],
 "loop": true,
 "name": &"clay_d",
@@ -65,7 +65,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_law08")
+"texture": SubResource("AtlasTexture_xhv15")
 }],
 "loop": true,
 "name": &"clay_l",
@@ -73,7 +73,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebgvn")
+"texture": SubResource("AtlasTexture_o7bgg")
 }],
 "loop": true,
 "name": &"clay_r",
@@ -81,7 +81,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xhv15")
+"texture": SubResource("AtlasTexture_7ybjx")
 }],
 "loop": true,
 "name": &"clay_u",
@@ -89,7 +89,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o7bgg")
+"texture": SubResource("AtlasTexture_hagkc")
 }],
 "loop": true,
 "name": &"glass_d",
@@ -305,7 +305,7 @@ script = ExtResource("1_hagkc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7ybjx")
-animation = &"glass_l"
+animation = &"glass_d"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

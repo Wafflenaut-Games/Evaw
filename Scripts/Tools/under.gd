@@ -9,6 +9,10 @@ extends Node
 @onready var icemain: AudioStreamPlayer = $Icemain
 @onready var icesine: AudioStreamPlayer = $Icesine
 @onready var icelume: AudioStreamPlayer = $Icelume
+@onready var james: AudioStreamPlayer = $james
+@onready var gwyn: AudioStreamPlayer = $gwyn
+@onready var teo: AudioStreamPlayer = $teo
+@onready var roman: AudioStreamPlayer = $roman
 
 #const INIT_VOL = 0
 
@@ -34,8 +38,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	start()
-	change_tune()
+	if Global.level != 10:
+		start()
+		change_tune()
 
 
 func change_tune() -> void:

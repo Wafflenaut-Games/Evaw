@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://ss7x4usyf0en"]
+[gd_scene load_steps=34 format=4 uid="uid://ss7x4usyf0en"]
 
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="1_egroo"]
 [ext_resource type="Texture2D" uid="uid://cjs3wt6k51g5n" path="res://Assets/Backgrounds/evawbackg3.png" id="2_6c480"]
@@ -122,7 +122,19 @@ _data = {
 polygon = PackedVector2Array(-1133, 124, -1117, 124, -1117, 140, -1133, 140)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7xnkn"]
-polygon = PackedVector2Array(8, -72, 96, -72, 96, -56, 136, -56, 136, -96, 336, -96, 336, 7, 336, 8, 344, 9, 344, 32, 352, 32, 352, 40, 424, 40, 424, 32, 448, 32, 448, 40, 464, 40, 464, 48, 544, 48, 545, 32, 552, 32, 553, -20, 515, -65, 509, -113, 474, -193, 474, -202, 480, -200, 528, -200, 528, -192, 576, -192, 576, -200, 592, -200, 592, -208, 656, -208, 656, -215, 656, -216, 720, -216, 720, -248, 808, -249, 808, -216, 816, -216, 816, -192, 824, -192, 824, -176, 864, -176, 864, -184, 936, -184, 936, -192, 992, -192, 992, -200, 1256, -200, 716, 163, 79, 215)
+polygon = PackedVector2Array(8, -72, 96, -72, 96, -56, 136, -56, 136, -96, 336, -96, 336, 7, 336, 8, 344, 9, 344, 32, 352, 32, 352, 40, 424, 40, 424, 32, 448, 32, 448, 40, 464, 40, 464, 48, 544, 48, 545, 32, 552, 32, 553, -20, 515, -65, 509, -113, 474, -193, 474, -202, 480, -200, 528, -200, 528, -192, 576, -192, 576, -200, 592, -200, 592, -208, 656, -208, 656, -215, 656, -216, 720, -216, 720, -248, 808, -248, 808, -216, 816, -216, 816, -192, 824, -192, 824, -176, 864, -176, 864, -184, 936, -184, 936, -192, 992, -192, 992, -200, 1256, -200, 716, 163, 79, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xnkn"]
+size = Vector2(8, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyh53"]
+size = Vector2(8, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfl4h"]
+size = Vector2(24, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ego"]
+size = Vector2(8, 16)
 
 [node name="Lvl_n" type="Node2D"]
 
@@ -628,3 +640,39 @@ occluder = SubResource("OccluderPolygon2D_wyh53")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_7xnkn")
+
+[node name="song_switcher" type="Area2D" parent="." groups=["james"]]
+z_index = 1
+position = Vector2(140, -111)
+collision_layer = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="song_switcher"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7xnkn")
+
+[node name="song_switcher2" type="Area2D" parent="." groups=["gwyn"]]
+z_index = 1
+position = Vector2(412, 21)
+collision_layer = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="song_switcher2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wyh53")
+
+[node name="song_switcher3" type="Area2D" parent="." groups=["teo"]]
+z_index = 1
+position = Vector2(492, -167)
+collision_layer = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="song_switcher3"]
+position = Vector2(0, -29)
+shape = SubResource("RectangleShape2D_tfl4h")
+
+[node name="song_switcher4" type="Area2D" parent="." groups=["roman"]]
+z_index = 1
+position = Vector2(140, -111)
+collision_layer = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="song_switcher4"]
+position = Vector2(664, -145)
+shape = SubResource("RectangleShape2D_j1ego")

@@ -35,6 +35,8 @@ extends CharacterBody2D
 @onready var walking_particle: GPUParticles2D = $WalkingParticle
 @onready var hitgroundparticle: GPUParticles2D = $hitgroundparticle
 @onready var groundhittimer: Timer = $hitgroundparticle/groundhittimer
+@onready var under: Node2D = $SFX/Under
+
 
 
 const SPEED = 3000.0
@@ -86,6 +88,11 @@ var jump_init_vol = 0
 var hit_grnd_init_vol = 0
 var death_init_vol = 0
 
+var james_music = false
+var gwyn_music = false
+var mateo_music = false
+var roman_music = false
+
 #endregion
 
 
@@ -103,6 +110,7 @@ func _physics_process(delta: float) -> void:
 	level_begin()
 	stop_sfx()
 	
+	credits_music()
 	
 	# Only while active
 	if not inactive:
@@ -663,3 +671,34 @@ func _on_transition_timer_timeout() -> void:
 
 func _on_groundhittimer_timeout() -> void:
 	hitgroundparticle.emitting = false
+
+
+func credits_music():
+	if Global.level == 10:
+		var areas = $Hitbox.get_overlapping_areas()
+		
+		for area in areas:
+			if area.is_in_group("james"):
+				james_music = true
+				gwyn_music = false
+				mateo_music = false
+				roman_music = false
+			if area.is_in_group("gwyn"):
+				gwyn_music = true
+				james_music = false
+				mateo_music = false
+				roman_music = false
+			if area.is_in_group("teo"):
+				mateo_music = true
+				james_music = false
+				gwyn_music = false
+				roman_music = false
+			if area.is_in_group("roman"):
+				roman_music = true
+				james_music = false
+				gwyn_music = false
+				mateo_music = false
+	
+	if james_music:
+		pass
+	

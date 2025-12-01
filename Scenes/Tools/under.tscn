@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx0obw4e11k8j"]
+[gd_scene load_steps=12 format=3 uid="uid://bx0obw4e11k8j"]
 
 [ext_resource type="Script" uid="uid://bw0d03feswt6i" path="res://Scripts/Tools/under.gd" id="1_l3ads"]
 [ext_resource type="AudioStream" uid="uid://dvgxjbbvxkak5" path="res://Assets/AUDIO/Undermain.mp3" id="2_02t0p"]
@@ -7,8 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://be3nuja8nsfmg" path="res://Assets/AUDIO/Icemain.mp3" id="5_02t0p"]
 [ext_resource type="AudioStream" uid="uid://nyui7gq85e2n" path="res://Assets/AUDIO/Icesine.mp3" id="6_5j3tf"]
 [ext_resource type="AudioStream" uid="uid://cvijuedn6k05e" path="res://Assets/AUDIO/Icelume.mp3" id="7_5vbuy"]
+[ext_resource type="AudioStream" uid="uid://bm0dv64r50vqb" path="res://Assets/AUDIO/World Map.wav" id="8_5j3tf"]
+[ext_resource type="AudioStream" uid="uid://dfd1tl6l473f4" path="res://Assets/AUDIO/cutscene better better.mp3" id="9_35ow0"]
+[ext_resource type="AudioStream" uid="uid://da7kcdt0pyeth" path="res://Assets/AUDIO/Title Screen Beginnings.mp3" id="10_ppaps"]
+[ext_resource type="AudioStream" uid="uid://ccgvmshk1b8bf" path="res://Assets/AUDIO/Icelume.wav" id="11_rqaqw"]
 
-[node name="Under" type="Node"]
+[node name="Under" type="Node2D"]
 script = ExtResource("1_l3ads")
 
 [node name="Undermain" type="AudioStreamPlayer" parent="."]
@@ -39,4 +43,24 @@ bus = &"Music"
 [node name="Icelume" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5vbuy")
 volume_db = 13.0
+bus = &"Music"
+
+[node name="james" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5j3tf")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="gwyn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_35ow0")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="teo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ppaps")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="roman" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rqaqw")
+volume_db = -80.0
 bus = &"Music"
