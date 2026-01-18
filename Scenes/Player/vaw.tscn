@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=161 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://c3txmui8m2di6" path="res://Assets/Backgrounds/tentative backg.png" id="34_5s3mi"]
 [ext_resource type="Script" uid="uid://boi8fdwhobga3" path="res://Scenes/Player/loading.gd" id="34_imby6"]
 [ext_resource type="Texture2D" uid="uid://d1djkelwgf55d" path="res://Assets/UI/loading.png" id="36_imby6"]
+[ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="37_e2ltl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
@@ -46,6 +47,26 @@ shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/force = 0.056
 shader_parameter/size = 0.0
 shader_parameter/thickness = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ujr2"]
+shader = ExtResource("37_e2ltl")
+shader_parameter/grain_intensity = 0.050000002375
+shader_parameter/min_lum = 0.0050000002375
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.2650000125875
+shader_parameter/vignette_outer_radius = 0.7
+shader_parameter/vignette_inner_radius = 0.2
+shader_parameter/scanline_intensity = 0.2010000095475
+shader_parameter/barrel_distortion = 0.0510000024225
+shader_parameter/chromatic_aberration = 0.0030000001425
+shader_parameter/crt_vignette_power = 0.0
+shader_parameter/pixel_resolution_x = 320
+shader_parameter/pixel_resolution_y = 240
+shader_parameter/enable_color_quantization = true
+shader_parameter/color_quant_steps = 32.0
+shader_parameter/warble_amount = 0.0010000000475
+shader_parameter/warble_speed = 1.0710000508725
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg1s8"]
 atlas = ExtResource("11_dk2r0")
@@ -1040,6 +1061,14 @@ position = Vector2(-3, -8)
 
 [node name="Lume_Indicator" parent="UI" instance=ExtResource("7_5s3mi")]
 position = Vector2(2, -8)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8ujr2")
+offset_left = -551.0
+offset_top = -589.0
+offset_right = 932.0
+offset_bottom = 693.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
