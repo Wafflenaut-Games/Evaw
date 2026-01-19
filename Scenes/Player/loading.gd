@@ -2,5 +2,5 @@ extends CanvasLayer
 
 
 func _process(_delta: float) -> void:
-	if $"../LevelTitles".visible == true:
+	if $"../Camera/TransitionsLayer/LevelTitles".visible == true:
 		visible = false

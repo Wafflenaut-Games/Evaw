@@ -1046,7 +1046,6 @@ script = ExtResource("1_hy5rl")
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
 [node name="crt" type="CanvasLayer" parent="Camera"]
-layer = 0
 
 [node name="ColorRect2" type="ColorRect" parent="Camera/crt"]
 z_index = -1
@@ -1092,6 +1091,10 @@ offset_bottom = 581.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LevelTitles" parent="Camera/TransitionsLayer" instance=ExtResource("21_25jie")]
+position = Vector2(80, 60)
+frame_progress = 0.0
+
 [node name="UI" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
@@ -1118,8 +1121,6 @@ position = Vector2(2, -8)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")
 animation = &"to_sine"
-
-[node name="LevelTitles" parent="." instance=ExtResource("21_25jie")]
 
 [node name="NormCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
