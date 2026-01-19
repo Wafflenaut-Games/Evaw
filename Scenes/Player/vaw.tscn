@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://ohaps7u6r2k0"]
+[gd_scene load_steps=162 format=3 uid="uid://ohaps7u6r2k0"]
 
 [ext_resource type="Texture2D" uid="uid://bcxskdoecc0k1" path="res://Assets/Player/Vaw_Run.png" id="1_1a3vd"]
 [ext_resource type="Script" uid="uid://cy7gomqf157ld" path="res://Scripts/Player/vaw.gd" id="1_hy5rl"]
@@ -38,15 +38,28 @@
 [ext_resource type="Texture2D" uid="uid://d1djkelwgf55d" path="res://Assets/UI/loading.png" id="36_imby6"]
 [ext_resource type="Shader" uid="uid://b636c1jv1mq4s" path="res://Scenes/Shaders/crt2.gdshader" id="37_e2ltl"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e2ltl"]
+shader = ExtResource("37_e2ltl")
+shader_parameter/grain_intensity = 0.1
+shader_parameter/min_lum = 0.0
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.5
+shader_parameter/vignette_outer_radius = 0.7
+shader_parameter/vignette_inner_radius = 0.2
+shader_parameter/scanline_intensity = 0.2
+shader_parameter/barrel_distortion = 0.0
+shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/crt_vignette_power = 0.50000002375
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
+shader_parameter/enable_color_quantization = true
+shader_parameter/color_quant_steps = 32.0
+shader_parameter/warble_amount = 0.0
+shader_parameter/warble_speed = 2.70400012844
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8ar"]
 size = Vector2(160, 120)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
-shader = ExtResource("20_52i0t")
-shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/force = 0.056
-shader_parameter/size = 0.0
-shader_parameter/thickness = 0.05
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ujr2"]
 shader = ExtResource("37_e2ltl")
@@ -59,14 +72,21 @@ shader_parameter/vignette_outer_radius = 0.7
 shader_parameter/vignette_inner_radius = 0.2
 shader_parameter/scanline_intensity = 0.2010000095475
 shader_parameter/barrel_distortion = 0.0510000024225
-shader_parameter/chromatic_aberration = 0.0030000001425
-shader_parameter/crt_vignette_power = 0.0
-shader_parameter/pixel_resolution_x = 320
-shader_parameter/pixel_resolution_y = 240
+shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/crt_vignette_power = 2.0
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
 shader_parameter/enable_color_quantization = true
 shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.0010000000475
-shader_parameter/warble_speed = 1.0710000508725
+shader_parameter/warble_speed = 1.0000000475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52i0t"]
+shader = ExtResource("20_52i0t")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.056
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.05
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg1s8"]
 atlas = ExtResource("11_dk2r0")
@@ -1025,19 +1045,52 @@ script = ExtResource("1_hy5rl")
 
 [node name="Camera" parent="." instance=ExtResource("2_8aoa4")]
 
+[node name="crt" type="CanvasLayer" parent="Camera"]
+layer = 0
+
+[node name="ColorRect2" type="ColorRect" parent="Camera/crt"]
+z_index = -1
+material = SubResource("ShaderMaterial_e2ltl")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -180.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="TransitionsLayer" type="CanvasLayer" parent="Camera"]
-layer = 2000
+layer = 99999
 
 [node name="Transitions" parent="Camera/TransitionsLayer" instance=ExtResource("22_s1hrp")]
 light_mask = 64
 visibility_layer = 4
-z_index = 1025
 position = Vector2(80, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/TransitionsLayer"]
 visible = false
 position = Vector2(80, 60)
 shape = SubResource("RectangleShape2D_6p8ar")
+
+[node name="ColorRect2" type="ColorRect" parent="Camera/TransitionsLayer"]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_8ujr2")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -821.5
+offset_top = -701.0
+offset_right = 661.5
+offset_bottom = 581.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="UI" type="Node2D" parent="."]
 
@@ -1061,14 +1114,6 @@ position = Vector2(-3, -8)
 
 [node name="Lume_Indicator" parent="UI" instance=ExtResource("7_5s3mi")]
 position = Vector2(2, -8)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_8ujr2")
-offset_left = -551.0
-offset_top = -589.0
-offset_right = 932.0
-offset_bottom = 693.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_12ev1")

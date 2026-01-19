@@ -169,7 +169,7 @@ animations = [{
 }]
 
 [node name="Transitions" type="AnimatedSprite2D"]
-z_index = 10
+z_index = 4096
 sprite_frames = SubResource("SpriteFrames_bq0f6")
 animation = &"open"
 autoplay = "default"
