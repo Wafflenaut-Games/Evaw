@@ -330,26 +330,58 @@ func wave_spds(delta) -> void:
 
 func wave_direction() -> void:
 	if awaiting_dir:
-		if Input.is_action_pressed("up"):
-			awaiting_dir = false
-			wave_dir = "u"
-			no_y_wdir = false
-		elif Input.is_action_pressed("down"):
-			awaiting_dir = false
-			wave_dir = "d"
-			no_y_wdir = false
+		
+		var joy_x = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
+		var joy_y = Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
+		var input_vector = Vector2(joy_x, joy_y)
+		var angle_rad = input_vector.angle()
+		var angle_deg = rad_to_deg(angle_rad)
+		
+		#controller
+		if input_vector.length() > 0.3: #if you move joystick
+			if angle_deg < -45 and angle_deg > -135: #up
+				awaiting_dir = false
+				wave_dir = "u"
+				no_y_wdir = false
+			elif angle_deg > 45 and angle_deg < 135: #down
+				awaiting_dir = false
+				wave_dir = "d"
+				no_y_wdir = false
+			else:
+				no_y_wdir = true
+			if angle_deg > -45 and angle_deg < 45: #right
+				awaiting_dir = false
+				wave_dir = "r"
+				no_x_wdir = false
+			elif angle_deg > 135 or angle_deg < -135: #left
+				awaiting_dir = false
+				wave_dir = "l"
+				no_x_wdir = false
+			else:
+				no_y_wdir = true
+		
+		#keyboard
 		else:
-			no_y_wdir = true
-		if Input.is_action_pressed("left"):
-			awaiting_dir = false
-			wave_dir = "l"
-			no_x_wdir = false
-		elif Input.is_action_pressed("right"):
-			awaiting_dir = false
-			wave_dir = "r"
-			no_x_wdir = false
-		else:
-			no_x_wdir = true
+			if Input.is_action_pressed("up"):
+				awaiting_dir = false
+				wave_dir = "u"
+				no_y_wdir = false
+			elif Input.is_action_pressed("down"):
+				awaiting_dir = false
+				wave_dir = "d"
+				no_y_wdir = false
+			else:
+				no_y_wdir = true
+			if Input.is_action_pressed("left"):
+				awaiting_dir = false
+				wave_dir = "l"
+				no_x_wdir = false
+			elif Input.is_action_pressed("right"):
+				awaiting_dir = false
+				wave_dir = "r"
+				no_x_wdir = false
+			else:
+				no_x_wdir = true
 	
 	# Default if no directional input
 	if no_x_wdir and no_y_wdir:
@@ -390,7 +422,7 @@ func diff_dir_timer() -> void:
 
 func move(delta) -> void:
 	if Global.vaw_form == "norm":
-		direction = Input.get_axis("left", "right")
+		direction = Input.get_axis("move_left", "move_right")
 		if direction:
 			velocity.x = direction * SPEED * delta
 		else:
